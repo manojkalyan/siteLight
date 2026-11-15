@@ -9,6 +9,7 @@ test('Demo video follows Evidence, plays real media and seeks chapters without c
  await page.waitForFunction(()=>document.querySelector('#demo-video').readyState>=1);
  const duration=await video.evaluate(v=>v.duration);expect(duration).toBeGreaterThan(120);expect(duration).toBeLessThanOrEqual(180);expect(Math.abs(duration-guide.duration)).toBeLessThan(.6);
  expect(await video.evaluate(v=>v.paused)).toBe(true);
+ const play=page.getByRole('button',{name:'Play SiteLight walkthrough',exact:true});await expect(play).toBeVisible();await play.click();await page.waitForFunction(()=>!document.querySelector('#demo-video').paused);await expect(play).toBeHidden();await video.evaluate(v=>v.pause());
  const button=page.locator('[data-demo-chapter="5"]');await button.scrollIntoViewIfNeeded();await button.click();
  await page.waitForFunction(start=>{const v=document.querySelector('#demo-video');return !v.paused&&v.currentTime>=start&&v.currentTime<start+8;},guide.chapters[5].start);
  await page.locator('#demo-speed').selectOption('1.5');expect(await video.evaluate(v=>v.playbackRate)).toBe(1.5);
