@@ -59,9 +59,12 @@ test('mission settings are a cancelable draft and apply atomically to the live m
  await page.getByRole('button',{name:'Open mission settings'}).click();await expect(page.locator('#settings-maxDark')).toBeDisabled();await page.locator('#settings-minSun').fill('50');await page.getByRole('button',{name:'Apply settings',exact:true}).click();await idle(page);
  await expect(page.locator('#mission-settings')).not.toBeVisible();const after=await snapshot(page);expect(after.requirements.minSun).toBe(.5);expect(after.scenarios.A.site).toEqual(before.scenarios.A.site);expect(after.scenarios.B.site).toEqual(before.scenarios.B.site);expect(after.scenarios.A.baselineUtc).toBe(before.scenarios.A.baselineUtc);
 });
-test('four-tab navigation and all seven screening sections retain one renderer and the scenario',async({page})=>{
+test('visible screening tabs skip deferred buttons while all seven sections retain the renderer and scenario',async({page})=>{
  await open(page);const before=await snapshot(page);await page.evaluate(()=>window.__ui1Canvas=document.querySelector('#viewport canvas'));
- for(const section of ['Terrain','Logistics','Thermal & dust','Plume','Radiation','Rescue','Seismic','Terrain']){await page.getByRole('tab',{name:'Screening',exact:true}).click();await page.getByRole('tab',{name:section,exact:true}).click();await expect(page.locator('#content-screening h1')).toBeVisible();expect(await page.locator('canvas').count()).toBe(1);}
+ for(const section of ['Terrain','Logistics','Thermal & dust','Seismic','Terrain']){await page.getByRole('tab',{name:'Screening',exact:true}).click();await page.getByRole('tab',{name:section,exact:true}).click();await expect(page.locator('#content-screening h1')).toBeVisible();expect(await page.locator('canvas').count()).toBe(1);}
+ await expect(page.locator('#screening-navigation [role=tab]:visible')).toHaveText(['Terrain','Logistics','Thermal & dust','Seismic']);
+ await page.locator('#screen-thermal').focus();await page.keyboard.press('ArrowRight');await expect(page.locator('#screen-seismic')).toBeFocused();await page.keyboard.press('Home');await expect(page.locator('#screen-terrain')).toBeFocused();
+ for(const section of ['plume','radiation','rescue']){await expect(page.locator('#screen-'+section)).toBeHidden();await page.evaluate(id=>window.SiteLightWorkspace.setScreening(id),section);await expect(page.locator('#content-screening h1')).toBeVisible();expect(await page.locator('canvas').count()).toBe(1);}
  await page.getByRole('tab',{name:'Explore',exact:true}).click();expect(await page.evaluate(()=>document.querySelector('#viewport canvas')===window.__ui1Canvas)).toBe(true);expect((await snapshot(page)).scenarios).toEqual(before.scenarios);
 });
 test('changed footprint computes the actual 100-member ensemble and exports only applicable settings',async({page})=>{

@@ -513,7 +513,7 @@ root.addEventListener('change',event=>{
 
 root.addEventListener('keydown',event=>{
  const tab=event.target.closest('[role=tab]');if(!tab||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(event.key))return;
- const siblings=[...tab.parentElement.querySelectorAll('[role=tab]')],index=siblings.indexOf(tab);let next=event.key==='Home'?0:event.key==='End'?siblings.length-1:(index+(['ArrowRight','ArrowDown'].includes(event.key)?1:-1)+siblings.length)%siblings.length;
+ const siblings=[...tab.parentElement.querySelectorAll('[role=tab]')].filter(button=>!button.hidden),index=siblings.indexOf(tab);let next=event.key==='Home'?0:event.key==='End'?siblings.length-1:(index+(['ArrowRight','ArrowDown'].includes(event.key)?1:-1)+siblings.length)%siblings.length;
  event.preventDefault();siblings[next].click();siblings[next].focus();
 });
 document.addEventListener('keydown',event=>{if(event.code==='Space'&&!event.repeat&&!/INPUT|SELECT|TEXTAREA|BUTTON/.test(document.activeElement?.tagName||'')&&!document.querySelector('dialog[open]')){event.preventDefault();if(state.view==='screening'&&ui.screening==='seismic')$('content-screening').querySelector('[data-action=seismic-play]')?.click();else $('play').click();}});
