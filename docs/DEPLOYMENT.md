@@ -1,5 +1,14 @@
 # GitHub and Vercel deployment
 
+Production frontend: **https://sitelight.vercel.app**. Repository: **https://github.com/manojkalyan/siteLight**. The initial cleaned source commit is `0dfea81143c89f8905ff9c0dbec1e46d2a305b35`; its GitHub build passed. The Vercel project is `sitelight` under `manoj2001kalyan-gmailcoms-projects`.
+
+The initial production deployment was published through the authenticated Vercel CLI. Anonymous access returned HTTP 200. Live Chrome checks passed for the real-data assessment, both Apollo waveforms (78,840 and 77,760 samples), complete waveform CSV, JSON canonical hash, A/B preservation and mobile bounds, with no JavaScript errors or failed app resources.
+
+Two connections remain separate from that live frontend:
+
+1. **Automatic GitHub deploys:** Vercel currently has no GitHub Login Connection for this account, so repository linking was rejected. Connect `manojkalyan` under Vercel account Authentication/Login Connections, then connect `manojkalyan/siteLight` in this project's Git settings. Until then, future pushes do not automatically redeploy; use the CLI or complete that connection.
+2. **On-demand scientific backend:** the public capabilities endpoint correctly reports `available: false` and `deploymentMode: bundled-real-data`. The live frontend uses the prepared real records. New backend-dependent records are not fabricated. Deploy and configure the separate service below to enable those operations.
+
 The repository root is this directory: it contains `package.json`, `index.html`, `src/` and `vercel.json`. Import `manojkalyan/siteLight` into Vercel with the root directory left as `.`. Do not select an additional nested SiteLight folder.
 
 ## Frontend settings
