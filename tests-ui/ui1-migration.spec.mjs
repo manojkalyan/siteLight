@@ -61,9 +61,9 @@ test('mission settings are a cancelable draft and apply atomically to the live m
 });
 test('visible screening tabs skip deferred buttons while all seven sections retain the renderer and scenario',async({page})=>{
  await open(page);const before=await snapshot(page);await page.evaluate(()=>window.__ui1Canvas=document.querySelector('#viewport canvas'));
- for(const section of ['Terrain','Logistics','Thermal & dust','Seismic','Terrain']){await page.getByRole('tab',{name:'Screening',exact:true}).click();await page.getByRole('tab',{name:section,exact:true}).click();await expect(page.locator('#content-screening h1')).toBeVisible();expect(await page.locator('canvas').count()).toBe(1);}
- await expect(page.locator('#screening-navigation [role=tab]:visible')).toHaveText(['Terrain','Logistics','Thermal & dust','Seismic']);
- await page.locator('#screen-thermal').focus();await page.keyboard.press('ArrowRight');await expect(page.locator('#screen-seismic')).toBeFocused();await page.keyboard.press('Home');await expect(page.locator('#screen-terrain')).toBeFocused();
+ for(const section of ['Terrain','Seismic','Thermal & dust','Logistics','Terrain']){await page.getByRole('tab',{name:'Screening',exact:true}).click();await page.getByRole('tab',{name:section,exact:true}).click();await expect(page.locator('#content-screening h1')).toBeVisible();expect(await page.locator('canvas').count()).toBe(1);}
+ await expect(page.locator('#screening-navigation [role=tab]:visible')).toHaveText(['Terrain','Seismic','Thermal & dust','Logistics']);
+ await page.locator('#screen-thermal').focus();await page.keyboard.press('ArrowRight');await expect(page.locator('#screen-logistics')).toBeFocused();await page.keyboard.press('ArrowRight');await expect(page.locator('#screen-terrain')).toBeFocused();
  for(const section of ['plume','radiation','rescue']){await expect(page.locator('#screen-'+section)).toBeHidden();await page.evaluate(id=>window.SiteLightWorkspace.setScreening(id),section);await expect(page.locator('#content-screening h1')).toBeVisible();expect(await page.locator('canvas').count()).toBe(1);}
  await page.getByRole('tab',{name:'Explore',exact:true}).click();expect(await page.evaluate(()=>document.querySelector('#viewport canvas')===window.__ui1Canvas)).toBe(true);expect((await snapshot(page)).scenarios).toEqual(before.scenarios);
 });

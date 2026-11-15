@@ -1,4 +1,4 @@
-export const screeningSections=[['terrain','Terrain'],['logistics','Logistics'],['thermal','Thermal & dust'],['plume','Plume'],['radiation','Radiation'],['rescue','Rescue'],['seismic','Seismic']];
+export const screeningSections=[['terrain','Terrain'],['seismic','Seismic'],['thermal','Thermal & dust'],['logistics','Logistics'],['plume','Plume'],['radiation','Radiation'],['rescue','Rescue']];
 // Temporarily hide only these navigation buttons; keep every screening model available.
 const hiddenScreeningTabs=new Set(['plume','radiation','rescue']);
 export function workspaceShell(){return `
