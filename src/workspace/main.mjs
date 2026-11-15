@@ -28,7 +28,7 @@ import ephemeris from '../../data/horizons/workspace-ephemeris.json' with {type:
 import science from '../../data/science/real-workspace.json' with {type:'json'};
 import terrainEvidence from '../../data/science/terrain-acceptance-evidence.json' with {type:'json'};
 import {catalog,extensions} from './catalog.mjs';
-import {HOUR,DAY,clamp,startTime,evaluate,explain,nextSet,findAlternative,terrainScreen} from './engine.mjs';
+import {HOUR,DAY,clamp,startTime,evaluate,explain,nextSet,findAlternative,terrainScreen,visibilityRecord} from './engine.mjs';
 import {createWorkspace} from './store.mjs';
 import {horizonChart,skyplot,updateHorizonMarkers,timelineSvg,terrainMap,escapeHtml as esc} from './charts.mjs';
 import {coverage,challengeUrl} from './coverage.mjs';
@@ -41,8 +41,10 @@ import {nasaReferenceMarkup} from './nasa-reference.mjs';
 import {scanStartWindows,startStudyKey,loadedWindows,startWindowMarkup,verifyStartSelection,startWindowReportMarkup} from './start-windows.mjs';
 
 const workspace=createWorkspace(ephemeris,{science,terrainEvidence}),{state}=workspace,$=id=>document.getElementById(id);
-// A shareable presentation selection; scientific scenario inputs are unchanged.
-if(globalThis.location?.search&&new URLSearchParams(globalThis.location.search).get('scenario')==='B')workspace.select('B');
+// Start with Nobile selected, preserving both independent scientific scenarios.
+const timelineMotion=matchMedia('(prefers-reduced-motion: reduce)');
+workspace.select(new URLSearchParams(globalThis.location?.search||'').get('scenario')==='A'?'A':'B');
+state.scene='terrain';state.speed=4;
 if(globalThis.location?.search&&new URLSearchParams(globalThis.location.search).get('view')==='demo')state.view='demo';
 const monthlyStudies=new Map();let monthlyLoader=null;const currentMonthly=()=>monthlyStudies.get(monthlyKey(state));
 const startStudies=new Map(),currentStartStudy=()=>startStudies.get(startStudyKey(state,p()));
@@ -54,7 +56,7 @@ const loadingControls=new Map();
 document.body.classList.add('ui1');
 root.innerHTML=workspaceShell();
 const viewportSection=$('viewport').closest('.viewport-section');
-const ui={screening:'terrain',terrainPresentation:'cinematic',screeningPresentation:'cinematic',overlays:{footprint:true,slope:false,route:false},terrainOverlays:{footprint:true,slope:true,route:true},settingsDraft:null,settingsDrafts:new Map(),comparePreview:null,comparePreviewDate:'',comparePreviewError:'',schedulePreview:null,evidence:'sources',evidenceQuery:'',evidenceSource:null};
+const ui={timelineAutoplay:true,celestial:true,screening:'terrain',terrainPresentation:'cinematic',screeningPresentation:'cinematic',overlays:{footprint:true,slope:true,route:false},terrainOverlays:{footprint:true,slope:true,route:true},settingsDraft:null,settingsDrafts:new Map(),comparePreview:null,comparePreviewDate:'',comparePreviewError:'',schedulePreview:null,evidence:'sources',evidenceQuery:'',evidenceSource:null};
 ui.seismic={scope:'south',layers:{scarp:true,quake:true,impact:true,station:true},selected:null,catalog:'scarp',query:'',waveformId:'12-lm',window:'impact',cursor:0,playing:false};
 const seismicWaves=new Map(),seismicPending=new Map(),seismicErrors=new Map();
 function currentSeismicWaveform(){return seismicWaves.get(ui.seismic.waveformId)||null;}
@@ -317,7 +319,9 @@ function refresh(skipProperties=false){
  clock();viewer?.update();requestAnimationFrame(fitExploreControls);root.setAttribute('aria-busy',String(loading));if(loading)root.querySelectorAll('input,select,[data-site],[data-select],[data-calendar],[data-start-window],[data-action=start-window-scan],[data-action=custom],[data-action=apply-preview],[data-action=reset-preview],[data-action=search],[data-action=preview-found],[data-action=plume-add],[data-action=plume-remove]').forEach(el=>{if(!loadingControls.has(el))loadingControls.set(el,el.disabled);el.disabled=true;});else{for(const [el,disabled] of loadingControls)if(el.isConnected)el.disabled=disabled;loadingControls.clear();}
 }
 let horizonRenderCache=null;
+function syncTimelinePlayback(){const next=ui.timelineAutoplay&&state.view==='layout'&&!loading&&!document.hidden&&!timelineMotion.matches&&!document.querySelector('dialog[open]');const changed=state.playing!==next;state.playing=next;return changed;}
 function clock(){
+ syncTimelinePlayback();
  const t=startTime(active())+state.hour*HOUR;$('clock').textContent=new Date(t).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});$('clock').title=short(t);$('time').setAttribute('aria-valuetext',short(t));$('elapsed').textContent='T+ '+fixed(state.hour)+' / '+state.requirements.duration+' h';
  $('time').value=state.hour;$('tl-cursor').style.left=(state.hour/state.requirements.duration*100)+'%';
  if(state.view==='layout'&&$('horizon-drawer').open){
@@ -337,6 +341,7 @@ function clock(){
  if(state.property==='conditions'){const plot=$('prop-body').querySelector('.skyplot');if(plot)plot.outerHTML=skyplot(r(),p(),t);}
  renderLiveConditions();
  $('play').textContent=state.playing?'Ⅱ':'▶';$('play').setAttribute('aria-label',state.playing?'Pause timeline':'Play timeline');$('play').setAttribute('aria-pressed',String(state.playing));
+ $('play-hint').textContent=timelineMotion.matches?'Motion reduced':loading?'Preparing data':document.querySelector('dialog[open]')?'Paused for editing':state.playing?'Click to pause':'Click to play';$('play').title=state.playing?'Click to pause animation · Space':timelineMotion.matches?'Reduced motion is enabled':'Click to play animation · Space';
 }
 function invalidate(){proposal=null;ui.comparePreview=null;ui.comparePreviewError='';state.playing=false;}
 function setView(view){ui.seismic.playing=false;if(view==='report'&&state.view!=='report')ui.reportReturnView=state.view;if(!['layout','compare','screening','calendar','report','data','demo'].includes(view))return;if(state.view==='demo'&&view!=='demo')$('demo-video')?.pause();if(view==='demo')state.playing=false;if(view!==state.view&&$('mission-settings').open)closeDialog('mission-settings');if(view!=='screening'&&!viewportSection.closest('#view-layout'))$('view-layout').prepend(viewportSection);state.view=view;closeDialog('inspector');state.property='scenario';viewer?.setActive?.(view==='layout'||view==='screening'&&['terrain','rescue'].includes(ui.screening));refresh();}
@@ -408,8 +413,8 @@ root.addEventListener('click',event=>{
   if(action==='sites'){$('workspace').classList.toggle('show-sites');return;}
   if(action==='guide'||action==='evidence-guide'){openDialog('guide');return;}if(action==='close-guide'){closeDialog('guide');return;}
   if(action==='zoom-in'){viewer.zoom(-3);return;}if(action==='zoom-out'){viewer.zoom(3);return;}if(action==='reset-camera'){viewer.reset();return;}
-  if(action==='play'){if(matchMedia('(prefers-reduced-motion: reduce)').matches){notify('Reduced motion is enabled. Use the timeline slider or step buttons.');return;}state.playing=!state.playing;if(state.hour>=state.requirements.duration)state.hour=0;clock();return;}
-  if(['start','end','step-back','step-forward'].includes(action)){state.playing=false;state.hour=action==='start'?0:action==='end'?state.requirements.duration:clamp(state.hour+(action==='step-back'?-1:1),0,state.requirements.duration);clock();return;}
+  if(action==='play'){if(timelineMotion.matches){notify('Reduced motion is enabled. Use the timeline slider or step buttons.');return;}ui.timelineAutoplay=!ui.timelineAutoplay;if(ui.timelineAutoplay&&state.hour>=state.requirements.duration)state.hour=0;clock();return;}
+  if(['start','end','step-back','step-forward'].includes(action)){ui.timelineAutoplay=false;state.playing=false;state.hour=action==='start'?0:action==='end'?state.requirements.duration:clamp(state.hour+(action==='step-back'?-1:1),0,state.requirements.duration);clock();return;}
   if(action==='apply-preview'){void requestScenarioChange(()=>workspace.applyPreview());return;}if(action==='reset-preview'){void requestScenarioChange(()=>workspace.resetPreview());return;}
   if(action==='custom'){const fields=['custom-lat','custom-lon','custom-alt'].map(id=>$(id));if(fields.some(f=>!f.value||!f.checkValidity()))throw Error('Enter valid latitude, longitude, and height values.');const values=fields.map(f=>Number(f.value));if(state.mode==='real'){pendingChange=prepareCustomCoordinates(...values);return;}void requestScenarioChange(()=>workspace.setCustom(...values));return;}
   if(action==='logistics-flip'){const found=workspace.logisticsFlip();const box=$('logistics-proposal');box.textContent=found.match?'Tested hypothetical concentration: '+found.match.iceWtPercent+' wt%; subtotal '+found.match.result.totalKg.toFixed(0)+' kg. '+found.meaning:'No budget fit among '+found.evaluated+' supported samples; '+found.unavailable+' unsupported samples on the 0-6 wt% grid at 0.1 wt% steps.';if(found.match){const button=document.createElement('button');button.textContent='Apply tested assumption';button.onclick=()=>{workspace.setLogistics({ice:{[state.active]:found.match.iceWtPercent}});refresh();};box.appendChild(button);}return;}
@@ -427,7 +432,7 @@ root.addEventListener('input',event=>{
  if(event.target.dataset.terrainRange){const key=event.target.dataset.terrainRange,target=$('terrain-screen-'+key);if(target)target.value=event.target.value;return;}
  if(loading)return;
  if(event.target.hasAttribute('data-evidence-query')){const input=event.target,position=input.selectionStart;ui.evidenceQuery=input.value;renderData();const next=$('evidence-source-query');next?.focus();next?.setSelectionRange?.(position,position);return;}
- const input=event.target;if(input.id==='compare-preview-date'){ui.comparePreviewDate=input.value;ui.comparePreview=null;ui.comparePreviewError='';const apply=$('content-compare').querySelector('[data-action=compare-apply]');if(apply)apply.disabled=true;return;}if(input.id==='time'){state.playing=false;state.hour=Number(input.value);clock();}
+ const input=event.target;if(input.id==='compare-preview-date'){ui.comparePreviewDate=input.value;ui.comparePreview=null;ui.comparePreviewError='';const apply=$('content-compare').querySelector('[data-action=compare-apply]');if(apply)apply.disabled=true;return;}if(input.id==='time'){ui.timelineAutoplay=false;state.playing=false;state.hour=Number(input.value);clock();}
  if(input.id==='offset'){
   const value=Number(input.value),s={...active(),offset:value},a=startTime(s),b=a+state.requirements.duration*HOUR;
   if(workspace.canPreview(value)&&p().covers(a,b)){workspace.setOffset(value);invalidate();$('offset-value').textContent=(value>0?'+':'')+value+' days';refresh(true);}
@@ -472,6 +477,7 @@ const exploreLayoutObserver=new ResizeObserver(()=>requestAnimationFrame(fitExpl
 $('horizon-drawer').addEventListener('toggle',()=>{if(state.view==='layout')clock();});
 new ResizeObserver(()=>{if(state.view==='layout')requestAnimationFrame(()=>clock());}).observe($('horizon-chart'));
 root.addEventListener('change',event=>{
+ if(event.target.hasAttribute('data-celestial-toggle')){ui.celestial=event.target.checked;viewer?.update();return;}
  if(event.target.dataset.seismicLayer){const key=event.target.dataset.seismicLayer;if(Object.hasOwn(ui.seismic.layers,key)){ui.seismic.layers[key]=event.target.checked;renderScreening();$('content-screening').querySelector('[data-seismic-layer="'+key+'"]').focus({preventScroll:true});}return;}
  if(event.target.hasAttribute('data-seismic-projection')){if(['south','north','global'].includes(event.target.value)){ui.seismic.scope=event.target.value;renderScreening();$('content-screening').querySelector('[data-seismic-projection]').focus({preventScroll:true});}return;}
  if(event.target.hasAttribute('data-seismic-event')){selectSeismicWaveform(event.target.value);return;}
@@ -520,15 +526,16 @@ root.addEventListener('keydown',event=>{
  event.preventDefault();siblings[next].click();siblings[next].focus();
 });
 document.addEventListener('keydown',event=>{if(event.code==='Space'&&!event.repeat&&!/INPUT|SELECT|TEXTAREA|BUTTON/.test(document.activeElement?.tagName||'')&&!document.querySelector('dialog[open]')){event.preventDefault();if(state.view==='demo'){const video=$('demo-video');if(video?.paused)void video.play().catch(()=>notify('Press Play in the video controls.'));else video?.pause();}else if(state.view==='screening'&&ui.screening==='seismic')$('content-screening').querySelector('[data-action=seismic-play]')?.click();else $('play').click();}});
-document.addEventListener('visibilitychange',()=>{if(document.hidden){state.playing=false;setSeismicPlaying(false);clock();}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)setSeismicPlaying(false);clock();});
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',e=>{if(e.matches){state.playing=false;setSeismicPlaying(false);clock();}});
 refresh();
 let lastViewportTerrain=null,lastRouteDirection=null,cachedViewportRoute=null;
-function readViewport(){const terrain=assessedTerrain(state,active().site,p()),screeningTerrain=state.view==='screening'&&ui.screening==='terrain';if(terrain!==lastViewportTerrain||state.routeDirection!==lastRouteDirection){lastViewportTerrain=terrain;lastRouteDirection=state.routeDirection;cachedViewportRoute=terrainRoute(terrain,state.routeDirection);}return {presentation:state.view==='layout'?ui.terrainPresentation:screeningTerrain?ui.screeningPresentation:'measured',screeningTerrain,site:active().site,hour:state.hour,geometry:p().geometry(startTime(active())+state.hour*HOUR),terrainGrid:state.mode==='real'?p().terrain?.grid:null,terrainConfig:state.terrain,terrainResult:terrain,route:cachedViewportRoute,overlays:screeningTerrain?ui.terrainOverlays:ui.overlays};}
+function readViewport(){const terrain=assessedTerrain(state,active().site,p()),screeningTerrain=state.view==='screening'&&ui.screening==='terrain';if(terrain!==lastViewportTerrain||state.routeDirection!==lastRouteDirection){lastViewportTerrain=terrain;lastRouteDirection=state.routeDirection;cachedViewportRoute=terrainRoute(terrain,state.routeDirection);}return {presentation:state.view==='layout'?ui.terrainPresentation:screeningTerrain?ui.screeningPresentation:'measured',screeningTerrain,site:active().site,hour:state.hour,geometry:p().geometry(startTime(active())+state.hour*HOUR),celestial:visibilityRecord(startTime(active())+state.hour*HOUR,state.requirements,p()),showCelestial:ui.celestial,assessmentMode:state.mode,exploring:state.view==='layout',terrainGrid:state.mode==='real'?p().terrain?.grid:null,terrainConfig:state.terrain,terrainResult:terrain,route:cachedViewportRoute,overlays:screeningTerrain?ui.terrainOverlays:ui.overlays};}
 viewer=mountViewport($('viewport'),readViewport,notify);
+viewer?.setMode(state.scene);
 if(state.view==='demo')viewer?.setActive?.(false);
-let last=performance.now(),lastClock=0;
-function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;if(ui.seismic.playing&&state.view==='screening'&&ui.screening==='seismic'&&!document.hidden){const wave=currentSeismicWaveform();if(wave){const range=seismicWaveformWindow(wave,ui.seismic.window);ui.seismic.cursor=Math.min(range.toMinute,ui.seismic.cursor+dt);updateSeismicCursor($('content-screening'),wave,ui.seismic.cursor,ui.seismic.window);if(ui.seismic.cursor>=range.toMinute)setSeismicPlaying(false);}}if(state.playing&&!document.hidden){state.hour=Math.min(state.requirements.duration,state.hour+dt*state.speed);if(state.hour>=state.requirements.duration)state.playing=false;if(now-lastClock>100||!state.playing){clock();lastClock=now;}}requestAnimationFrame(frame);}requestAnimationFrame(frame);
+let last=performance.now(),lastClock=0,playbackAccumulator=0;
+function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;const playbackChanged=syncTimelinePlayback();if(ui.seismic.playing&&state.view==='screening'&&ui.screening==='seismic'&&!document.hidden){const wave=currentSeismicWaveform();if(wave){const range=seismicWaveformWindow(wave,ui.seismic.window);ui.seismic.cursor=Math.min(range.toMinute,ui.seismic.cursor+dt);updateSeismicCursor($('content-screening'),wave,ui.seismic.cursor,ui.seismic.window);if(ui.seismic.cursor>=range.toMinute)setSeismicPlaying(false);}}if(state.playing){playbackAccumulator+=dt;if(playbackAccumulator>=.05){state.hour=(state.hour+playbackAccumulator*state.speed)%state.requirements.duration;playbackAccumulator=0;}if(now-lastClock>100){clock();lastClock=now;}}else{playbackAccumulator=0;if(playbackChanged)clock();}requestAnimationFrame(frame);}requestAnimationFrame(frame);
 window.SiteLightWorkspace={state,snapshot:reportData,refresh,setView,setProperty,setScreening:section=>{if(!screeningSections.some(([id])=>id===section))throw Error('Unknown screening section');ui.screening=section;setView('screening');},select:workspace.select,cacheStats:workspace.cacheStats,whenIdle:()=>pendingChange,whenSeismicReady:()=>seismicPending.get(ui.seismic.waveformId)||Promise.resolve(),whenReady:()=>ready,serviceAvailable:()=>serviceAvailable};
 
 if(typeof globalThis.fetch==='function'&&/^https?:$/.test(globalThis.location?.protocol||'')){

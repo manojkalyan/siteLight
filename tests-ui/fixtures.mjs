@@ -10,7 +10,12 @@ export const test=base.extend({
  }
 });
 export {expect};
-export async function open(page){await page.goto('/');await page.waitForFunction(()=>window.SiteLightWorkspace);await page.evaluate(()=>window.SiteLightWorkspace.whenReady());await expect(page.locator('#root')).toHaveAttribute('aria-busy','false');}
+export async function open(page,{landing=false}={}){
+ await page.goto('/');await page.waitForFunction(()=>window.SiteLightWorkspace);await page.evaluate(()=>window.SiteLightWorkspace.whenReady());await expect(page.locator('#root')).toHaveAttribute('aria-busy','false');
+ // Domain-flow tests start from an explicit A/Moon/paused fixture. Landing tests
+ // opt into the untouched public defaults, including automatic playback.
+ if(!landing){await page.locator('#mission-panel [data-select=A]').click();await page.getByRole('button',{name:'Moon',exact:true}).click();await page.locator('#time').fill('0');await page.locator('#time').dispatchEvent('input');}
+}
 export const snapshot=page=>page.evaluate(()=>window.SiteLightWorkspace.snapshot());
 export async function idle(page){await page.evaluate(()=>window.SiteLightWorkspace.whenIdle());await expect(page.locator('#root')).toHaveAttribute('aria-busy','false');}
 export const tab=(page,name)=>name==='Report'?page.locator('.topbar [data-view="report"]'):page.getByRole('tab',{name:({Layout:'Explore',Calendar:'Schedule'}[name]||name),exact:true});

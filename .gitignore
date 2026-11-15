@@ -46,3 +46,7 @@ Thumbs.db
 # Release preparation is local only.
 /.release-check/
 /.deploy-local/
+
+# Local authoring documents and scratch files are not application source.
+/output/
+/tmp/
