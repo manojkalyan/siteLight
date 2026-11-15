@@ -1,0 +1,55 @@
+SiteLight guided walkthrough
+
+00:00 Why SiteLight?
+Compare lunar sites and mission dates in one workspace. See sunlight and Earth visibility.
+Useful when a schedule changes and you need to reassess a site.
+
+00:08 Two independent scenarios
+Mission A and B hold separate sites and start times. Begin by selecting B, the Nobile study point.
+Use the same requirements to compare choices fairly.
+
+00:18 Set mission requirements
+Choose the site, UTC start and duration. Here we require 70% sunlight, 90% Earth visibility and 70% overlap.
+Apply settings evaluates the draft before replacing the current result.
+
+00:40 Moon and terrain views
+Moon shows the wider location. Terrain offers a cinematic view and a separate measured Source DEM.
+Use Source DEM for the selected elevation grid. Cinematic landforms are illustrative.
+
+00:59 Horizon and time lanes
+The horizon plot places the Sun and Earth against surrounding terrain. Scrub time or play the timeline.
+The Sun, Earth and Overlap lanes show when the selected conditions are available.
+
+01:11 Compare the actual results
+Compare keeps both scenarios under shared requirements. Read the sunlight, Earth and overlap values side by side.
+For this setup: A sunlight 0%. B sunlight 73.1%, Earth 100%, overlap 73.1%.
+
+01:33 Test a different start
+Schedule scans loaded records for this site and these requirements. Preview a tested start, then apply it.
+Preview keeps the baseline unchanged. Apply tested start rechecks it before updating the mission.
+
+01:47 Inspect the ground
+Terrain shows slope, roughness and coverage. Switch to Source DEM for measured elevation.
+A footprint or sampled route provides screening evidence. Landing safety needs further assessment.
+
+01:57 Replay Apollo evidence
+Seismic adds historical catalogs and real archived impact waveforms. Replay the record and inspect its source.
+Normalized waveforms explain historical observations. They do not predict local shaking or future events.
+
+02:09 Thermal and dust context
+View historical Diviner observations. Update sensitivity to explore assumed dust coverage.
+Historical data provide context. Dust sensitivity remains an exploratory model.
+
+02:20 Logistics trade-offs
+Explore assumed ice and budget inputs beside a published NASA water-ISRU reference.
+Ice and equipment choices are hypothetical. The reference study stays separate.
+
+02:30 Trace and export evidence
+Evidence links layers to their sources, validation and limits. Export keeps settings, results and qualifications together.
+Use JSON for full evidence, CSV for time records, or Print / PDF for a review copy.
+
+02:46 Your next comparison
+Start another comparison in Explore. Set your requirements, compare the results and inspect the evidence.
+Prepared real records. On-demand science needs a backend. Scientific acceptance remains open.
+
+ChatGPT/Codex assisted the script, written explanations and implementation. App observations come from retained NASA/partner sources. This is a real application screen recording, not SI-generated imagery or audio.

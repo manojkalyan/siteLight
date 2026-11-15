@@ -46,7 +46,7 @@
     "engineering:verify-nasa": ".tools\\python\\python.exe scripts/verify-nasa-reference.py",
     "seismic:acquire": "node scripts/acquire-seismic.mjs",
     "seismic:prepare": ".tools\\python\\python.exe scripts/prepare-seismic.py",
-    "test:deployment": "node --test tests-js/deployment.test.mjs tests-js/report-export.test.mjs"
+    "test:deployment": "node --test tests-js/deployment.test.mjs tests-js/report-export.test.mjs tests-js/demo-video.test.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

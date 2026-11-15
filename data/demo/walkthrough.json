@@ -1,0 +1,109 @@
+{
+  "schema": "sitelight-tutorial-1",
+  "recordedDate": "2026-11-15",
+  "duration": 176.488,
+  "chapters": [
+    {
+      "title": "Why SiteLight?",
+      "description": "Compare lunar sites and mission dates in one workspace. See sunlight and Earth visibility.",
+      "use": "Useful when a schedule changes and you need to reassess a site.",
+      "start": 0.001,
+      "end": 8.01
+    },
+    {
+      "title": "Two independent scenarios",
+      "description": "Mission A and B hold separate sites and start times. Begin by selecting B, the Nobile study point.",
+      "use": "Use the same requirements to compare choices fairly.",
+      "start": 8.375,
+      "end": 18.389
+    },
+    {
+      "title": "Set mission requirements",
+      "description": "Choose the site, UTC start and duration. Here we require 70% sunlight, 90% Earth visibility and 70% overlap.",
+      "use": "Apply settings evaluates the draft before replacing the current result.",
+      "start": 18.611,
+      "end": 40.626
+    },
+    {
+      "title": "Moon and terrain views",
+      "description": "Moon shows the wider location. Terrain offers a cinematic view and a separate measured Source DEM.",
+      "use": "Use Source DEM for the selected elevation grid. Cinematic landforms are illustrative.",
+      "start": 40.849,
+      "end": 58.85
+    },
+    {
+      "title": "Horizon and time lanes",
+      "description": "The horizon plot places the Sun and Earth against surrounding terrain. Scrub time or play the timeline.",
+      "use": "The Sun, Earth and Overlap lanes show when the selected conditions are available.",
+      "start": 59.192,
+      "end": 71.195
+    },
+    {
+      "title": "Compare the actual results",
+      "description": "Compare keeps both scenarios under shared requirements. Read the sunlight, Earth and overlap values side by side.",
+      "use": "For this setup: A sunlight 0%. B sunlight 73.1%, Earth 100%, overlap 73.1%.",
+      "start": 71.455,
+      "end": 93.457
+    },
+    {
+      "title": "Test a different start",
+      "description": "Schedule scans loaded records for this site and these requirements. Preview a tested start, then apply it.",
+      "use": "Preview keeps the baseline unchanged. Apply tested start rechecks it before updating the mission.",
+      "start": 93.59,
+      "end": 107.595
+    },
+    {
+      "title": "Inspect the ground",
+      "description": "Terrain shows slope, roughness and coverage. Switch to Source DEM for measured elevation.",
+      "use": "A footprint or sampled route provides screening evidence. Landing safety needs further assessment.",
+      "start": 107.707,
+      "end": 117.722
+    },
+    {
+      "title": "Replay Apollo evidence",
+      "description": "Seismic adds historical catalogs and real archived impact waveforms. Replay the record and inspect its source.",
+      "use": "Normalized waveforms explain historical observations. They do not predict local shaking or future events.",
+      "start": 117.824,
+      "end": 129.838
+    },
+    {
+      "title": "Thermal and dust context",
+      "description": "View historical Diviner observations. Update sensitivity to explore assumed dust coverage.",
+      "use": "Historical data provide context. Dust sensitivity remains an exploratory model.",
+      "start": 129.985,
+      "end": 139.994
+    },
+    {
+      "title": "Logistics trade-offs",
+      "description": "Explore assumed ice and budget inputs beside a published NASA water-ISRU reference.",
+      "use": "Ice and equipment choices are hypothetical. The reference study stays separate.",
+      "start": 140.172,
+      "end": 150.174
+    },
+    {
+      "title": "Trace and export evidence",
+      "description": "Evidence links layers to their sources, validation and limits. Export keeps settings, results and qualifications together.",
+      "use": "Use JSON for full evidence, CSV for time records, or Print / PDF for a review copy.",
+      "start": 150.371,
+      "end": 166.385
+    },
+    {
+      "title": "Your next comparison",
+      "description": "Start another comparison in Explore. Set your requirements, compare the results and inspect the evidence.",
+      "use": "Prepared real records. On-demand science needs a backend. Scientific acceptance remains open.",
+      "start": 166.472,
+      "end": 176.488
+    }
+  ],
+  "video": {
+    "file": "sitelight-walkthrough.mp4",
+    "bytes": 7584409,
+    "sha256": "2804124fde3460545e8e32eb82c365c95bc0f7448311f0ab74811b4ed8aaacb2",
+    "format": "MP4 / H.264",
+    "resolution": "1920x1080",
+    "audio": false
+  },
+  "capture": "Actual Chrome interactions with the production application build; written sidebar guidance; no audio",
+  "sourceContext": "Recorded from the production build with bundled real data and the same unconnected science-service behavior as the public deployment.",
+  "siDisclosure": "ChatGPT/Codex assisted the script, written explanations and implementation. App observations come from retained NASA/partner sources. This is a real application screen recording, not SI-generated imagery or audio."
+}

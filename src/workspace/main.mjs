@@ -1,4 +1,5 @@
 import {productVersion} from './product-version.mjs';
+import {demoMarkup,bindDemoPlayer} from './demo-video.mjs';
 import {scheduleMarkup} from './schedule-ui.mjs';
 import {terrainScreeningMarkup} from './terrain-ui.mjs';
 import {logisticsScreeningMarkup} from './logistics-ui.mjs';
@@ -42,12 +43,14 @@ import {scanStartWindows,startStudyKey,loadedWindows,startWindowMarkup,verifySta
 const workspace=createWorkspace(ephemeris,{science,terrainEvidence}),{state}=workspace,$=id=>document.getElementById(id);
 // A shareable presentation selection; scientific scenario inputs are unchanged.
 if(globalThis.location?.search&&new URLSearchParams(globalThis.location.search).get('scenario')==='B')workspace.select('B');
+if(globalThis.location?.search&&new URLSearchParams(globalThis.location.search).get('view')==='demo')state.view='demo';
 const monthlyStudies=new Map();let monthlyLoader=null;const currentMonthly=()=>monthlyStudies.get(monthlyKey(state));
 const startStudies=new Map(),currentStartStudy=()=>startStudies.get(startStudyKey(state,p()));
 const ensembleStudies=new Map();let ensembleClient=null;
 const ensembleRequest=()=>({siteId:active().site.id,radius:state.terrain.radius,baseline:state.terrain.baseline,limit:state.terrain.limit});
 const currentEnsemble=()=>state.mode==='real'?ensembleStudies.get(ensembleRequestKey(ensembleRequest()))||null:null;
 const root=$('root');
+const loadingControls=new Map();
 document.body.classList.add('ui1');
 root.innerHTML=workspaceShell();
 const viewportSection=$('viewport').closest('.viewport-section');
@@ -299,10 +302,10 @@ function refresh(skipProperties=false){
  document.querySelectorAll('[data-view]').forEach(b=>{if(b.getAttribute('role')==='tab'){const yes=b.closest('.ws-tabs')?b.dataset.view===(state.view==='calendar'?'compare':state.view==='report'?'data':state.view):b.dataset.view===state.view;b.setAttribute('aria-selected',String(yes));b.tabIndex=yes?0:-1;}});
  document.querySelectorAll('[data-detail]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.detail===state.detail)));
  document.querySelectorAll('[data-scene]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scene===state.scene)));
- for(const view of ['layout','compare','screening','calendar','report','data'])$('view-'+view).hidden=view!==state.view;
+ for(const view of ['layout','compare','screening','calendar','report','data','demo'])$('view-'+view).hidden=view!==state.view;
  renderOutliner();$('compare-strip').innerHTML=card('A')+card('B');renderFloatingPanels();
  if(!skipProperties)renderProperties();
- if(state.view==='compare')renderCompare();else if(state.view==='screening')renderScreening();else if(state.view==='calendar')renderCalendar();else if(state.view==='report')renderReport();else if(state.view==='data')renderData();
+ if(state.view==='compare')renderCompare();else if(state.view==='screening')renderScreening();else if(state.view==='calendar')renderCalendar();else if(state.view==='report')renderReport();else if(state.view==='data')renderData();else if(state.view==='demo'&&!$('content-demo').firstElementChild){$('content-demo').innerHTML=demoMarkup();bindDemoPlayer($('content-demo'),notify);}
  $('timeline-bars').innerHTML=timelineSvg(r());$('time').max=state.requirements.duration;
  $('viewport-name').textContent='Scenario '+state.active+' · '+active().site.name;
  $('viewport-coordinate').textContent=fixed(active().site.lat,3)+'° N, '+fixed(active().site.lon,3)+'° E · reference coordinate';
@@ -311,7 +314,7 @@ function refresh(skipProperties=false){
  $('horizon-label').textContent=state.mode==='real'?`Real DEM · ${p().terrain?.horizon.extentM/1000} km nominal extent`:state.mode==='sample'?'Synthetic profile':'Reference tangent · no DEM';
  $('status-mode').textContent=state.mode==='real'?'REAL NASA DEM + DE421 · BOUNDED MODEL':state.mode==='sample'?'SYNTHETIC DEMO':'JPL REFERENCE · TERRAIN UNASSESSED';$('status-result').textContent='Scenario '+state.active+': '+statusText(r());
  document.querySelectorAll('[data-select]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.select===state.active)));
- clock();viewer?.update();requestAnimationFrame(fitExploreControls);root.setAttribute('aria-busy',String(loading));if(loading)root.querySelectorAll('input,select,[data-site],[data-select],[data-calendar],[data-start-window],[data-action=start-window-scan],[data-action=custom],[data-action=apply-preview],[data-action=reset-preview],[data-action=search],[data-action=preview-found],[data-action=plume-add],[data-action=plume-remove]').forEach(el=>el.disabled=true);
+ clock();viewer?.update();requestAnimationFrame(fitExploreControls);root.setAttribute('aria-busy',String(loading));if(loading)root.querySelectorAll('input,select,[data-site],[data-select],[data-calendar],[data-start-window],[data-action=start-window-scan],[data-action=custom],[data-action=apply-preview],[data-action=reset-preview],[data-action=search],[data-action=preview-found],[data-action=plume-add],[data-action=plume-remove]').forEach(el=>{if(!loadingControls.has(el))loadingControls.set(el,el.disabled);el.disabled=true;});else{for(const [el,disabled] of loadingControls)if(el.isConnected)el.disabled=disabled;loadingControls.clear();}
 }
 let horizonRenderCache=null;
 function clock(){
@@ -336,7 +339,7 @@ function clock(){
  $('play').textContent=state.playing?'Ⅱ':'▶';$('play').setAttribute('aria-label',state.playing?'Pause timeline':'Play timeline');$('play').setAttribute('aria-pressed',String(state.playing));
 }
 function invalidate(){proposal=null;ui.comparePreview=null;ui.comparePreviewError='';state.playing=false;}
-function setView(view){ui.seismic.playing=false;if(view==='report'&&state.view!=='report')ui.reportReturnView=state.view;if(!['layout','compare','screening','calendar','report','data'].includes(view))return;if(view!==state.view&&$('mission-settings').open)closeDialog('mission-settings');if(view!=='screening'&&!viewportSection.closest('#view-layout'))$('view-layout').prepend(viewportSection);state.view=view;closeDialog('inspector');state.property='scenario';viewer?.setActive?.(view==='layout'||view==='screening'&&['terrain','rescue'].includes(ui.screening));refresh();}
+function setView(view){ui.seismic.playing=false;if(view==='report'&&state.view!=='report')ui.reportReturnView=state.view;if(!['layout','compare','screening','calendar','report','data','demo'].includes(view))return;if(state.view==='demo'&&view!=='demo')$('demo-video')?.pause();if(view==='demo')state.playing=false;if(view!==state.view&&$('mission-settings').open)closeDialog('mission-settings');if(view!=='screening'&&!viewportSection.closest('#view-layout'))$('view-layout').prepend(viewportSection);state.view=view;closeDialog('inspector');state.property='scenario';viewer?.setActive?.(view==='layout'||view==='screening'&&['terrain','rescue'].includes(ui.screening));refresh();}
 function setProperty(property){state.property=property;if(property==='resources'){ui.screening='logistics';setView('screening');return;}renderProperties();openDialog('inspector');}
 function download(text,name,type){const url=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);}
 async function exportJson(){
@@ -516,13 +519,14 @@ root.addEventListener('keydown',event=>{
  const siblings=[...tab.parentElement.querySelectorAll('[role=tab]')].filter(button=>!button.hidden),index=siblings.indexOf(tab);let next=event.key==='Home'?0:event.key==='End'?siblings.length-1:(index+(['ArrowRight','ArrowDown'].includes(event.key)?1:-1)+siblings.length)%siblings.length;
  event.preventDefault();siblings[next].click();siblings[next].focus();
 });
-document.addEventListener('keydown',event=>{if(event.code==='Space'&&!event.repeat&&!/INPUT|SELECT|TEXTAREA|BUTTON/.test(document.activeElement?.tagName||'')&&!document.querySelector('dialog[open]')){event.preventDefault();if(state.view==='screening'&&ui.screening==='seismic')$('content-screening').querySelector('[data-action=seismic-play]')?.click();else $('play').click();}});
+document.addEventListener('keydown',event=>{if(event.code==='Space'&&!event.repeat&&!/INPUT|SELECT|TEXTAREA|BUTTON/.test(document.activeElement?.tagName||'')&&!document.querySelector('dialog[open]')){event.preventDefault();if(state.view==='demo'){const video=$('demo-video');if(video?.paused)void video.play().catch(()=>notify('Press Play in the video controls.'));else video?.pause();}else if(state.view==='screening'&&ui.screening==='seismic')$('content-screening').querySelector('[data-action=seismic-play]')?.click();else $('play').click();}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){state.playing=false;setSeismicPlaying(false);clock();}});
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',e=>{if(e.matches){state.playing=false;setSeismicPlaying(false);clock();}});
 refresh();
 let lastViewportTerrain=null,lastRouteDirection=null,cachedViewportRoute=null;
 function readViewport(){const terrain=assessedTerrain(state,active().site,p()),screeningTerrain=state.view==='screening'&&ui.screening==='terrain';if(terrain!==lastViewportTerrain||state.routeDirection!==lastRouteDirection){lastViewportTerrain=terrain;lastRouteDirection=state.routeDirection;cachedViewportRoute=terrainRoute(terrain,state.routeDirection);}return {presentation:state.view==='layout'?ui.terrainPresentation:screeningTerrain?ui.screeningPresentation:'measured',screeningTerrain,site:active().site,hour:state.hour,geometry:p().geometry(startTime(active())+state.hour*HOUR),terrainGrid:state.mode==='real'?p().terrain?.grid:null,terrainConfig:state.terrain,terrainResult:terrain,route:cachedViewportRoute,overlays:screeningTerrain?ui.terrainOverlays:ui.overlays};}
 viewer=mountViewport($('viewport'),readViewport,notify);
+if(state.view==='demo')viewer?.setActive?.(false);
 let last=performance.now(),lastClock=0;
 function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;if(ui.seismic.playing&&state.view==='screening'&&ui.screening==='seismic'&&!document.hidden){const wave=currentSeismicWaveform();if(wave){const range=seismicWaveformWindow(wave,ui.seismic.window);ui.seismic.cursor=Math.min(range.toMinute,ui.seismic.cursor+dt);updateSeismicCursor($('content-screening'),wave,ui.seismic.cursor,ui.seismic.window);if(ui.seismic.cursor>=range.toMinute)setSeismicPlaying(false);}}if(state.playing&&!document.hidden){state.hour=Math.min(state.requirements.duration,state.hour+dt*state.speed);if(state.hour>=state.requirements.duration)state.playing=false;if(now-lastClock>100||!state.playing){clock();lastClock=now;}}requestAnimationFrame(frame);}requestAnimationFrame(frame);
 window.SiteLightWorkspace={state,snapshot:reportData,refresh,setView,setProperty,setScreening:section=>{if(!screeningSections.some(([id])=>id===section))throw Error('Unknown screening section');ui.screening=section;setView('screening');},select:workspace.select,cacheStats:workspace.cacheStats,whenIdle:()=>pendingChange,whenSeismicReady:()=>seismicPending.get(ui.seismic.waveformId)||Promise.resolve(),whenReady:()=>ready,serviceAvailable:()=>serviceAvailable};

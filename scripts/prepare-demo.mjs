@@ -1,0 +1,21 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {spawnSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+const root=path.resolve(import.meta.dirname,'..'),work=path.join(root,'.deploy-local/tutorial'),out=path.join(root,'public/demo');
+const ffmpeg=process.env.SITELIGHT_FFMPEG||'ffmpeg',metadata=JSON.parse(await fs.readFile(path.join(work,'recording.json'),'utf8'));
+if(metadata.chapters.length!==13||metadata.duration<120||metadata.duration>180)throw Error('Expected a complete 2–3 minute tutorial.');
+await fs.mkdir(out,{recursive:true});await fs.mkdir(path.join(root,'data/demo'),{recursive:true});
+function run(args){const result=spawnSync(ffmpeg,args,{stdio:'inherit',windowsHide:true});if(result.status!==0)throw Error('FFmpeg exited '+result.status);}
+const movie=path.join(out,'sitelight-walkthrough.mp4');
+run(['-hide_banner','-loglevel','warning','-y','-ss',String(metadata.trimStartSeconds),'-i',path.join(work,'raw.webm'),'-t',String(metadata.duration),'-an','-c:v','libx264','-preset','medium','-crf','22','-pix_fmt','yuv420p','-movflags','+faststart','-r','25',movie]);
+run(['-hide_banner','-loglevel','warning','-y','-ss','1','-i',movie,'-frames:v','1','-q:v','3',path.join(out,'sitelight-walkthrough-poster.jpg')]);
+const stamp=t=>{const ms=Math.round(t*1000),h=Math.floor(ms/3600000),m=Math.floor(ms/60000)%60,s=Math.floor(ms/1000)%60;return [h,m,s].map(x=>String(x).padStart(2,'0')).join(':')+'.'+String(ms%1000).padStart(3,'0');};
+const cue=metadata.chapters.map((c,i)=>`${i+1}\n${stamp(c.start)} --> ${stamp(c.end)}\n${c.title}\n${c.description}\n${c.use}\n`).join('\n');
+await fs.writeFile(path.join(out,'sitelight-walkthrough.vtt'),'WEBVTT\n\n'+cue);
+await fs.writeFile(path.join(out,'sitelight-walkthrough.txt'),'SiteLight guided walkthrough\n\n'+metadata.chapters.map(c=>`${stamp(c.start).slice(3,8)} ${c.title}\n${c.description}\n${c.use}\n`).join('\n')+'\n'+metadata.siDisclosure+'\n');
+const bytes=await fs.readFile(movie);
+const publicGuide={schema:metadata.schema,recordedDate:metadata.recordedDate,duration:metadata.duration,chapters:metadata.chapters,video:{file:'sitelight-walkthrough.mp4',bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),format:'MP4 / H.264',resolution:'1920x1080',audio:false},capture:metadata.capture,sourceContext:'Recorded from the production build with bundled real data and the same unconnected science-service behavior as the public deployment.',siDisclosure:metadata.siDisclosure};
+await fs.writeFile(path.join(root,'data/demo/walkthrough.json'),JSON.stringify(publicGuide,null,2)+'\n');
+await fs.writeFile(path.join(out,'provenance.json'),JSON.stringify(publicGuide,null,2)+'\n');
+console.log(JSON.stringify({duration:metadata.duration,megabytes:Math.round(bytes.length/1024/1024*10)/10,sha256:publicGuide.video.sha256}));
