@@ -1,0 +1,3953 @@
+{
+  "schema": "sitelight-expanded-geometric-validation-1",
+  "recordedUtc": "2026-11-14T20:14:38.685911+00:00",
+  "scienceVersion": "dem-de421-4",
+  "scienceSha256": "ac1c739e97e9c70c74dbdc05ac6be705575eef3e32c98ea064ff7402a7278a62",
+  "validatorSha256": "78249af397709ea3cb2bf13c6882f9aaf552e0f0a034d4f9cec2181b5b39e1b8",
+  "referenceSha256": "a804f64775f2b88b86a4a38df1a0b5283ce30f2a3d45367ee3f4e2dfe832e8e4",
+  "spec": {
+    "schema": "sitelight-expanded-reference-spec-1",
+    "epochsUtc": [
+      "2027-01-13T00:00:00.000Z",
+      "2027-04-13T00:00:00.000Z",
+      "2027-07-13T00:00:00.000Z",
+      "2027-10-13T00:00:00.000Z",
+      "2028-01-13T00:00:00.000Z",
+      "2028-02-29T00:00:00.000Z",
+      "2028-04-13T00:00:00.000Z",
+      "2028-07-13T00:00:00.000Z",
+      "2028-10-13T00:00:00.000Z",
+      "2029-01-13T00:00:00.000Z",
+      "2029-04-13T00:00:00.000Z",
+      "2029-07-13T00:00:00.000Z",
+      "2029-10-13T00:00:00.000Z",
+      "2030-01-13T00:00:00.000Z",
+      "2030-04-13T00:00:00.000Z",
+      "2030-07-13T00:00:00.000Z",
+      "2030-10-13T00:00:00.000Z",
+      "2031-01-13T00:00:00.000Z",
+      "2031-04-13T00:00:00.000Z",
+      "2031-07-13T00:00:00.000Z",
+      "2031-10-13T00:00:00.000Z",
+      "2032-01-13T00:00:00.000Z",
+      "2032-02-29T00:00:00.000Z",
+      "2032-04-13T00:00:00.000Z",
+      "2032-07-13T00:00:00.000Z",
+      "2032-10-13T00:00:00.000Z",
+      "2033-01-13T00:00:00.000Z",
+      "2033-04-13T00:00:00.000Z",
+      "2033-07-13T00:00:00.000Z",
+      "2033-10-13T00:00:00.000Z",
+      "2033-12-31T23:50:00.000Z"
+    ],
+    "thresholds": {
+      "sunAngularDeg": 0.0001,
+      "earthAngularDeg": 0.005
+    },
+    "thresholdMeaning": "Inherited predeclared software/geometric comparison thresholds, not approved mission accuracy requirements",
+    "convention": {
+      "center": "Moon (301)",
+      "frame": "ICRF",
+      "correction": "NONE",
+      "time": "UT",
+      "units": "KM-S"
+    }
+  },
+  "sources": [
+    {
+      "name": "SUN.json",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40301%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&VEC_TABLE=%271%27&TIME_TYPE=%27UT%27&TLIST_TYPE=%27JD%27&CSV_FORMAT=%27YES%27&TIME_DIGITS=%27FRACSEC%27&TLIST=%272461418.500000000%27+%272461508.500000000%27+%272461599.500000000%27+%272461691.500000000%27+%272461783.500000000%27+%272461830.500000000%27+%272461874.500000000%27+%272461965.500000000%27+%272462057.500000000%27+%272462149.500000000%27+%272462239.500000000%27+%272462330.500000000%27+%272462422.500000000%27+%272462514.500000000%27+%272462604.500000000%27+%272462695.500000000%27+%272462787.500000000%27+%272462879.500000000%27+%272462969.500000000%27+%272463060.500000000%27+%272463152.500000000%27+%272463244.500000000%27+%272463291.500000000%27+%272463335.500000000%27+%272463426.500000000%27+%272463518.500000000%27+%272463610.500000000%27+%272463700.500000000%27+%272463791.500000000%27+%272463883.500000000%27+%272463963.493055556%27",
+      "sha256": "a4cc72096220a0f9d80f9366d39fd39145b6a244fcbdde9d1292be1caeb83174",
+      "bytes": 11438,
+      "ephemeris": "DE441",
+      "correction": "NONE",
+      "frame": "ICRF",
+      "time": "UT; future leap-second assumption retained",
+      "units": "KM-S"
+    },
+    {
+      "name": "EARTH.json",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27399%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40301%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&VEC_TABLE=%271%27&TIME_TYPE=%27UT%27&TLIST_TYPE=%27JD%27&CSV_FORMAT=%27YES%27&TIME_DIGITS=%27FRACSEC%27&TLIST=%272461418.500000000%27+%272461508.500000000%27+%272461599.500000000%27+%272461691.500000000%27+%272461783.500000000%27+%272461830.500000000%27+%272461874.500000000%27+%272461965.500000000%27+%272462057.500000000%27+%272462149.500000000%27+%272462239.500000000%27+%272462330.500000000%27+%272462422.500000000%27+%272462514.500000000%27+%272462604.500000000%27+%272462695.500000000%27+%272462787.500000000%27+%272462879.500000000%27+%272462969.500000000%27+%272463060.500000000%27+%272463152.500000000%27+%272463244.500000000%27+%272463291.500000000%27+%272463335.500000000%27+%272463426.500000000%27+%272463518.500000000%27+%272463610.500000000%27+%272463700.500000000%27+%272463791.500000000%27+%272463883.500000000%27+%272463963.493055556%27",
+      "sha256": "0d44c35161367a4cf7a67ea8542626cb69d9731bbcf11c894a1d5db2e2d40960",
+      "bytes": 11438,
+      "ephemeris": "DE441",
+      "correction": "NONE",
+      "frame": "ICRF",
+      "time": "UT; future leap-second assumption retained",
+      "units": "KM-S"
+    }
+  ],
+  "sites": {
+    "real-shackleton": {
+      "coordinates": {
+        "lat": -89.76674147713055,
+        "lon": -171.89280908299654,
+        "altKm": 0.7699786376953125
+      },
+      "transformPathMaxErrorDeg": 1.7763568394002505e-15,
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "toleranceDeg": 0.0001,
+          "maxAngularComponentErrorDeg": 5.259057733464356e-07,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 288.83301808465893,
+              "referenceElDeg": 0.8729736746899404,
+              "productionAzDeg": 288.833018,
+              "productionElDeg": 0.872974,
+              "azErrorDeg": 8.465895007248037e-08,
+              "elErrorDeg": 3.253100596678493e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 273.2228067945352,
+              "referenceElDeg": -1.3573635321895128,
+              "productionAzDeg": 273.222807,
+              "productionElDeg": -1.357364,
+              "azErrorDeg": 2.0546480072880513e-07,
+              "elErrorDeg": 4.678104872368749e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 241.79264587341433,
+              "referenceElDeg": -0.6952255258723183,
+              "productionAzDeg": 241.792646,
+              "productionElDeg": -0.695225,
+              "azErrorDeg": 1.265856610643823e-07,
+              "elErrorDeg": 5.258723183576564e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 198.63232247379693,
+              "referenceElDeg": 1.2652858410064411,
+              "productionAzDeg": 198.632322,
+              "productionElDeg": 1.265286,
+              "azErrorDeg": 4.7379694478877354e-07,
+              "elErrorDeg": 1.5899355876314303e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 159.36984043565909,
+              "referenceElDeg": 0.07326424425945152,
+              "productionAzDeg": 159.36984,
+              "productionElDeg": 0.073264,
+              "azErrorDeg": 4.356590750376199e-07,
+              "elErrorDeg": 2.4425945152617423e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 307.53821777521637,
+              "referenceElDeg": -0.8240051402000619,
+              "productionAzDeg": 307.538218,
+              "productionElDeg": -0.824005,
+              "azErrorDeg": 2.2478360506283934e-07,
+              "elErrorDeg": 1.4020006189330303e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 131.65273666130412,
+              "referenceElDeg": -1.6986763878468916,
+              "productionAzDeg": 131.652737,
+              "productionElDeg": -1.698676,
+              "azErrorDeg": 3.3869588378365734e-07,
+              "elErrorDeg": 3.8784689149196083e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 100.21293897801534,
+              "referenceElDeg": -0.08865984195986186,
+              "productionAzDeg": 100.212939,
+              "productionElDeg": -0.08866,
+              "azErrorDeg": 2.1984646991768386e-08,
+              "elErrorDeg": 1.5804013814291196e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 57.04584935954199,
+              "referenceElDeg": 1.639035773264051,
+              "productionAzDeg": 57.045849,
+              "productionElDeg": 1.639036,
+              "azErrorDeg": 3.5954198551735317e-07,
+              "elErrorDeg": 2.2673594890498805e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 17.60527813674786,
+              "referenceElDeg": -0.06753679950715827,
+              "productionAzDeg": 17.605278,
+              "productionElDeg": -0.067537,
+              "azErrorDeg": 1.3674787169293268e-07,
+              "elErrorDeg": 2.0049284173151438e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 1.958230319806018,
+              "referenceElDeg": -1.2841737400097641,
+              "productionAzDeg": 1.95823,
+              "productionElDeg": -1.284174,
+              "azErrorDeg": 3.198060198883468e-07,
+              "elErrorDeg": 2.599902357847128e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 330.3998252602679,
+              "referenceElDeg": 0.6120985754350735,
+              "productionAzDeg": 330.399825,
+              "productionElDeg": 0.612099,
+              "azErrorDeg": 2.602678819130233e-07,
+              "elErrorDeg": 4.245649264378315e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 287.15389638251804,
+              "referenceElDeg": 1.4854686413760163,
+              "productionAzDeg": 287.153896,
+              "productionElDeg": 1.485469,
+              "azErrorDeg": 3.8251806699918234e-07,
+              "elErrorDeg": 3.5862398362063175e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 247.7563390974151,
+              "referenceElDeg": -0.8187911327658807,
+              "productionAzDeg": 247.756339,
+              "productionElDeg": -0.818791,
+              "azErrorDeg": 9.7415096433906e-08,
+              "elErrorDeg": 1.3276588062272054e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 232.18259457534688,
+              "referenceElDeg": -1.4472794969813143,
+              "productionAzDeg": 232.182595,
+              "productionElDeg": -1.44728,
+              "azErrorDeg": 4.2465310912120913e-07,
+              "elErrorDeg": 5.030186855936591e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 200.76467472024643,
+              "referenceElDeg": 0.6812951621040318,
+              "productionAzDeg": 200.764675,
+              "productionElDeg": 0.681295,
+              "azErrorDeg": 2.7975357852483285e-07,
+              "elErrorDeg": 1.6210403186445177e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 157.722901123346,
+              "referenceElDeg": 0.9739478276504784,
+              "productionAzDeg": 157.722901,
+              "productionElDeg": 0.973948,
+              "azErrorDeg": 1.2334598409324826e-07,
+              "elErrorDeg": 1.7234952165434692e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 118.37422016365085,
+              "referenceElDeg": -1.2598532973337675,
+              "productionAzDeg": 118.37422,
+              "productionElDeg": -1.259853,
+              "azErrorDeg": 1.6365083865821362e-07,
+              "elErrorDeg": 2.9733376760709973e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 102.8296503476212,
+              "referenceElDeg": -0.9638325832112764,
+              "productionAzDeg": 102.82965,
+              "productionElDeg": -0.963833,
+              "azErrorDeg": 3.4762121003950597e-07,
+              "elErrorDeg": 4.1678872364503405e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 71.37359526555144,
+              "referenceElDeg": 1.357764994599664,
+              "productionAzDeg": 71.373595,
+              "productionElDeg": 1.357765,
+              "azErrorDeg": 2.65551449274426e-07,
+              "elErrorDeg": 5.40033617824065e-09,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 28.13963472376857,
+              "referenceElDeg": 1.0130131931762016,
+              "productionAzDeg": 28.139635,
+              "productionElDeg": 1.013013,
+              "azErrorDeg": 2.7623141818367003e-07,
+              "elErrorDeg": 1.9317620170156147e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 348.64141990353085,
+              "referenceElDeg": -1.1454927635114704,
+              "productionAzDeg": 348.64142,
+              "productionElDeg": -1.145493,
+              "azErrorDeg": 9.646913667893386e-08,
+              "elErrorDeg": 2.364885296479713e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 137.03878367243175,
+              "referenceElDeg": -1.579056062018898,
+              "productionAzDeg": 137.038784,
+              "productionElDeg": -1.579056,
+              "azErrorDeg": 3.27568244529175e-07,
+              "elErrorDeg": 6.201889801715765e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 320.79138452787925,
+              "referenceElDeg": -0.24513396712375066,
+              "productionAzDeg": 320.791385,
+              "productionElDeg": -0.245134,
+              "azErrorDeg": 4.7212074605340604e-07,
+              "elErrorDeg": 3.28762493340129e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 289.24282057414086,
+              "referenceElDeg": 1.5767263264990594,
+              "productionAzDeg": 289.242821,
+              "productionElDeg": 1.576726,
+              "azErrorDeg": 4.2585912751746946e-07,
+              "elErrorDeg": 3.2649905934434287e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 246.0719087274211,
+              "referenceElDeg": 0.21658147409422665,
+              "productionAzDeg": 246.071909,
+              "productionElDeg": 0.216582,
+              "azErrorDeg": 2.725789158830594e-07,
+              "elErrorDeg": 5.259057733464356e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 206.78426441683015,
+              "referenceElDeg": -1.7661151315589991,
+              "productionAzDeg": 206.784264,
+              "productionElDeg": -1.766115,
+              "azErrorDeg": 4.1683014728732815e-07,
+              "elErrorDeg": 1.3155899902805857e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 191.1848200994998,
+              "referenceElDeg": -0.1863448961383361,
+              "productionAzDeg": 191.18482,
+              "productionElDeg": -0.186345,
+              "azErrorDeg": 9.94998003989167e-08,
+              "elErrorDeg": 1.0386166390818907e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 159.7909748412474,
+              "referenceElDeg": 1.3213391369041714,
+              "productionAzDeg": 159.790975,
+              "productionElDeg": 1.321339,
+              "azErrorDeg": 1.5875261283326836e-07,
+              "elErrorDeg": 1.3690417133283006e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 116.72231621299426,
+              "referenceElDeg": -0.3651600571599281,
+              "productionAzDeg": 116.722316,
+              "productionElDeg": -0.36516,
+              "azErrorDeg": 2.1299425156939833e-07,
+              "elErrorDeg": 5.715992812405091e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 223.09352697230818,
+              "referenceElDeg": -1.6934876586089997,
+              "productionAzDeg": 223.093527,
+              "productionElDeg": -1.693488,
+              "azErrorDeg": 2.7691811510521802e-08,
+              "elErrorDeg": 3.413910003580156e-07,
+              "passed": true
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "toleranceDeg": 0.005,
+          "maxAngularComponentErrorDeg": 1.7229962168130442e-06,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 165.31597999382714,
+              "referenceElDeg": 2.6807244297250072,
+              "productionAzDeg": 165.315979,
+              "productionElDeg": 2.680724,
+              "azErrorDeg": 9.938271432474721e-07,
+              "elErrorDeg": 4.297250071338965e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 170.86577723815685,
+              "referenceElDeg": 3.55121915369073,
+              "productionAzDeg": 170.865776,
+              "productionElDeg": 3.551219,
+              "azErrorDeg": 1.2381568410546606e-06,
+              "elErrorDeg": 1.5369072992044153e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 178.68742048728268,
+              "referenceElDeg": -7.254968688453394,
+              "productionAzDeg": 178.68742,
+              "productionElDeg": -7.254969,
+              "azErrorDeg": 4.872826764312777e-07,
+              "elErrorDeg": 3.1154660629084674e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 168.82624892277704,
+              "referenceElDeg": 3.842532760207866,
+              "productionAzDeg": 168.826248,
+              "productionElDeg": 3.842533,
+              "azErrorDeg": 9.227770476627484e-07,
+              "elErrorDeg": 2.3979213414904166e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 170.96084060367855,
+              "referenceElDeg": -0.668879200385186,
+              "productionAzDeg": 170.96084,
+              "productionElDeg": -0.668879,
+              "azErrorDeg": 6.036785578089621e-07,
+              "elErrorDeg": 2.003851859999628e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 166.60915506476366,
+              "referenceElDeg": 6.097901751718382,
+              "productionAzDeg": 166.609154,
+              "productionElDeg": 6.097902,
+              "azErrorDeg": 1.064763665681312e-06,
+              "elErrorDeg": 2.4828161837575635e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 178.5964980681182,
+              "referenceElDeg": -5.318034779975984,
+              "productionAzDeg": 178.596497,
+              "productionElDeg": -5.318035,
+              "azErrorDeg": 1.0681181947802543e-06,
+              "elErrorDeg": 2.200240158956035e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 169.3331845077057,
+              "referenceElDeg": 5.8508360130524055,
+              "productionAzDeg": 169.333184,
+              "productionElDeg": 5.850836,
+              "azErrorDeg": 5.077057210201019e-07,
+              "elErrorDeg": 1.305240537874397e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 165.9903295860583,
+              "referenceElDeg": -2.8052690250844483,
+              "productionAzDeg": 165.990329,
+              "productionElDeg": -2.805269,
+              "azErrorDeg": 5.860582916739077e-07,
+              "elErrorDeg": 2.5084448296297523e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 176.83980757424226,
+              "referenceElDeg": -1.8308438026749576,
+              "productionAzDeg": 176.839807,
+              "productionElDeg": -1.830844,
+              "azErrorDeg": 5.742422501953115e-07,
+              "elErrorDeg": 1.9732504230596248e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 172.10789669971066,
+              "referenceElDeg": 6.080260176485138,
+              "productionAzDeg": 172.107896,
+              "productionElDeg": 6.08026,
+              "azErrorDeg": 6.997106538619846e-07,
+              "elErrorDeg": 1.764851376151455e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 167.08689715710818,
+              "referenceElDeg": -4.172739662594457,
+              "productionAzDeg": 167.086896,
+              "productionElDeg": -4.17274,
+              "azErrorDeg": 1.1571081870442868e-06,
+              "elErrorDeg": 3.374055435045875e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 178.90580749496195,
+              "referenceElDeg": -0.09831226090985967,
+              "productionAzDeg": 178.905806,
+              "productionElDeg": -0.098312,
+              "azErrorDeg": 1.4949619355775212e-06,
+              "elErrorDeg": 2.6090985967563984e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 173.32925625234805,
+              "referenceElDeg": 4.499668887733202,
+              "productionAzDeg": 173.329255,
+              "productionElDeg": 4.499669,
+              "azErrorDeg": 1.2523480563686462e-06,
+              "elErrorDeg": 1.1226679763609582e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 164.18968248866528,
+              "referenceElDeg": -6.0413503391002275,
+              "productionAzDeg": 164.189681,
+              "productionElDeg": -6.04135,
+              "azErrorDeg": 1.4886652763834718e-06,
+              "elErrorDeg": 3.391002270092258e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 171.89579729639928,
+              "referenceElDeg": 0.21245778326537026,
+              "productionAzDeg": 171.895796,
+              "productionElDeg": 0.212458,
+              "azErrorDeg": 1.2963992901404708e-06,
+              "elErrorDeg": 2.1673462974325375e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 175.4207828773541,
+              "referenceElDeg": 2.974414111660436,
+              "productionAzDeg": 175.420782,
+              "productionElDeg": 2.974414,
+              "azErrorDeg": 8.773540969286842e-07,
+              "elErrorDeg": 1.1166043600852049e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 165.80467186514167,
+              "referenceElDeg": -7.147521925400778,
+              "productionAzDeg": 165.804671,
+              "productionElDeg": -7.147522,
+              "azErrorDeg": 8.651416578686622e-07,
+              "elErrorDeg": 7.45992227990655e-08,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 172.2532640368666,
+              "referenceElDeg": 3.215929243829455,
+              "productionAzDeg": 172.253263,
+              "productionElDeg": 3.215929,
+              "azErrorDeg": 1.0368665925852838e-06,
+              "elErrorDeg": 2.438294548490205e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 178.96491889367357,
+              "referenceElDeg": 1.5864604803863203,
+              "productionAzDeg": 178.964918,
+              "productionElDeg": 1.586461,
+              "azErrorDeg": 8.936735582665278e-07,
+              "elErrorDeg": 5.196136796392636e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 168.30674235203824,
+              "referenceElDeg": -6.845160557009062,
+              "productionAzDeg": 168.306741,
+              "productionElDeg": -6.845161,
+              "azErrorDeg": 1.3520382537990372e-06,
+              "elErrorDeg": 4.4299093815425294e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 170.91511587527347,
+              "referenceElDeg": 5.577885567929708,
+              "productionAzDeg": 170.915115,
+              "productionElDeg": 5.577886,
+              "azErrorDeg": 8.752734856898314e-07,
+              "elErrorDeg": 4.320702924331954e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 166.86097896709518,
+              "referenceElDeg": -4.012556877280493,
+              "productionAzDeg": 166.860978,
+              "productionElDeg": -4.012557,
+              "azErrorDeg": 9.67095189707834e-07,
+              "elErrorDeg": 1.2271950744491278e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 177.57366413674447,
+              "referenceElDeg": -2.9133237187815424,
+              "productionAzDeg": 177.573663,
+              "productionElDeg": -2.913324,
+              "azErrorDeg": 1.1367444585630437e-06,
+              "elErrorDeg": 2.812184574096932e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 168.70445857163875,
+              "referenceElDeg": -5.22638959574572,
+              "productionAzDeg": 168.704458,
+              "productionElDeg": -5.22639,
+              "azErrorDeg": 5.716387647680676e-07,
+              "elErrorDeg": 4.04254280716998e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 167.14911638824694,
+              "referenceElDeg": 6.303370039612252,
+              "productionAzDeg": 167.149115,
+              "productionElDeg": 6.30337,
+              "azErrorDeg": 1.3882469431791833e-06,
+              "elErrorDeg": 3.9612252145104776e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 176.93944332014718,
+              "referenceElDeg": -5.997173607768087,
+              "productionAzDeg": 176.939442,
+              "productionElDeg": -5.997174,
+              "azErrorDeg": 1.3201471631418826e-06,
+              "elErrorDeg": 3.9223191361514864e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 171.6168749177329,
+              "referenceElDeg": -2.5548019330894856,
+              "productionAzDeg": 171.616874,
+              "productionElDeg": -2.554802,
+              "azErrorDeg": 9.177329047815874e-07,
+              "elErrorDeg": 6.691051446239271e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 167.6841430140308,
+              "referenceElDeg": 5.902604329045524,
+              "productionAzDeg": 167.684142,
+              "productionElDeg": 5.902604,
+              "azErrorDeg": 1.014030800661203e-06,
+              "elErrorDeg": 3.290455241611312e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 179.15136272299623,
+              "referenceElDeg": -6.938411795415015,
+              "productionAzDeg": 179.151361,
+              "productionElDeg": -6.938412,
+              "azErrorDeg": 1.7229962168130442e-06,
+              "elErrorDeg": 2.0458498450892648e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 172.3995746570461,
+              "referenceElDeg": -4.925106914134317,
+              "productionAzDeg": 172.399573,
+              "productionElDeg": -4.925107,
+              "azErrorDeg": 1.6570460843468027e-06,
+              "elErrorDeg": 8.586568256419014e-08,
+              "passed": true
+            }
+          ]
+        }
+      }
+    },
+    "real-connector": {
+      "coordinates": {
+        "lat": -89.4631577569723,
+        "lon": -137.50198490762307,
+        "altKm": 1.94676708984375
+      },
+      "transformPathMaxErrorDeg": 1.7763568394002505e-15,
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "toleranceDeg": 0.0001,
+          "maxAngularComponentErrorDeg": 5.698091074535228e-07,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 254.43885864198933,
+              "referenceElDeg": 0.6536802319152064,
+              "productionAzDeg": 254.438859,
+              "productionElDeg": 0.65368,
+              "azErrorDeg": 3.5801068065666186e-07,
+              "elErrorDeg": 2.319152063723351e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 238.83853900761676,
+              "referenceElDeg": -1.6483060319197782,
+              "productionAzDeg": 238.838539,
+              "productionElDeg": -1.648306,
+              "azErrorDeg": 7.6167623319634e-09,
+              "elErrorDeg": 3.191977815397706e-08,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 207.40307502101518,
+              "referenceElDeg": -1.0615807229574725,
+              "productionAzDeg": 207.403075,
+              "productionElDeg": -1.061581,
+              "azErrorDeg": 2.1015182483097306e-08,
+              "elErrorDeg": 2.7704252758553594e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 164.24641542165128,
+              "referenceElDeg": 0.9696434301908925,
+              "productionAzDeg": 164.246415,
+              "productionElDeg": 0.969644,
+              "azErrorDeg": 4.216512650145887e-07,
+              "elErrorDeg": 5.698091074535228e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 124.97981584053782,
+              "referenceElDeg": -0.016198289086925652,
+              "productionAzDeg": 124.979816,
+              "productionElDeg": -0.016198,
+              "azErrorDeg": 1.594621608091984e-07,
+              "elErrorDeg": 2.8908692565124405e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 273.15340125589483,
+              "referenceElDeg": -0.9366332320511452,
+              "productionAzDeg": 273.153401,
+              "productionElDeg": -0.936633,
+              "azErrorDeg": 2.558948608566425e-07,
+              "elErrorDeg": 2.3205114518809467e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 97.25218261672795,
+              "referenceElDeg": -1.6114801591853931,
+              "productionAzDeg": 97.252183,
+              "productionElDeg": -1.61148,
+              "azErrorDeg": 3.832720381069521e-07,
+              "elErrorDeg": 1.5918539308934498e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 65.82292553998477,
+              "referenceElDeg": 0.17257038720347362,
+              "productionAzDeg": 65.822926,
+              "productionElDeg": 0.17257,
+              "azErrorDeg": 4.600152294642612e-07,
+              "elErrorDeg": 3.872034736174257e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 22.655994548605918,
+              "referenceElDeg": 2.0075694170355853,
+              "productionAzDeg": 22.655995,
+              "productionElDeg": 2.007569,
+              "azErrorDeg": 4.5139407234273676e-07,
+              "elErrorDeg": 4.1703558517625083e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 343.21476032014783,
+              "referenceElDeg": 0.2240992016722536,
+              "productionAzDeg": 343.21476,
+              "productionElDeg": 0.224099,
+              "azErrorDeg": 3.201478193659568e-07,
+              "elErrorDeg": 2.0167225361911179e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 327.5740841062883,
+              "referenceElDeg": -1.0641711234785705,
+              "productionAzDeg": 327.574084,
+              "productionElDeg": -1.064171,
+              "azErrorDeg": 1.0628826885294984e-07,
+              "elErrorDeg": 1.2347857047956268e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 296.00558605011304,
+              "referenceElDeg": 0.6446835719887413,
+              "productionAzDeg": 296.005586,
+              "productionElDeg": 0.644684,
+              "azErrorDeg": 5.0113044380850624e-08,
+              "elErrorDeg": 4.28011258768457e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 252.75674672600854,
+              "referenceElDeg": 1.2575767928436656,
+              "productionAzDeg": 252.756747,
+              "productionElDeg": 1.257577,
+              "azErrorDeg": 2.7399144642004103e-07,
+              "elErrorDeg": 2.0715633430867797e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 213.36751480680113,
+              "referenceElDeg": -1.1788495265836836,
+              "productionAzDeg": 213.367515,
+              "productionElDeg": -1.17885,
+              "azErrorDeg": 1.931988720116351e-07,
+              "elErrorDeg": 4.7341631637110027e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 197.79181174890186,
+              "referenceElDeg": -1.815424278053679,
+              "productionAzDeg": 197.791812,
+              "productionElDeg": -1.815424,
+              "azErrorDeg": 2.510981289560732e-07,
+              "elErrorDeg": 2.7805367897038025e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 166.37640312900106,
+              "referenceElDeg": 0.37766464002064865,
+              "productionAzDeg": 166.376403,
+              "productionElDeg": 0.377665,
+              "azErrorDeg": 1.2900105161861575e-07,
+              "elErrorDeg": 3.599793513275884e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 123.3385713561742,
+              "referenceElDeg": 0.894784344796887,
+              "productionAzDeg": 123.338571,
+              "productionElDeg": 0.894784,
+              "azErrorDeg": 3.561742119018163e-07,
+              "elErrorDeg": 3.4479688693078714e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 83.9772691286125,
+              "referenceElDeg": -1.092716010551186,
+              "productionAzDeg": 83.977269,
+              "productionElDeg": -1.092716,
+              "azErrorDeg": 1.286124984289927e-07,
+              "elErrorDeg": 1.0551185924967399e-08,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 68.43546433150745,
+              "referenceElDeg": -0.7147436344279693,
+              "productionAzDeg": 68.435464,
+              "productionElDeg": -0.714744,
+              "azErrorDeg": 3.3150746503451956e-07,
+              "elErrorDeg": 3.655720307582655e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 36.98612058986544,
+              "referenceElDeg": 1.7120973553516585,
+              "productionAzDeg": 36.986121,
+              "productionElDeg": 1.712097,
+              "azErrorDeg": 4.1013456097971357e-07,
+              "elErrorDeg": 3.5535165854305717e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 353.74596450280296,
+              "referenceElDeg": 1.3409714410370699,
+              "productionAzDeg": 353.745964,
+              "productionElDeg": 1.340972,
+              "azErrorDeg": 5.028029477216478e-07,
+              "elErrorDeg": 5.589629301638865e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 314.2575477562697,
+              "referenceElDeg": -0.9995539984297372,
+              "productionAzDeg": 314.257548,
+              "productionElDeg": -0.999554,
+              "azErrorDeg": 2.437303123770107e-07,
+              "elErrorDeg": 1.5702628086700088e-09,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 102.63869288406256,
+              "referenceElDeg": -1.5258729550255348,
+              "productionAzDeg": 102.638693,
+              "productionElDeg": -1.525873,
+              "azErrorDeg": 1.15937439204572e-07,
+              "elErrorDeg": 4.497446526308124e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 286.40283935482313,
+              "referenceElDeg": -0.27428839557789214,
+              "productionAzDeg": 286.402839,
+              "productionElDeg": -0.274288,
+              "azErrorDeg": 3.548231575223326e-07,
+              "elErrorDeg": 3.9557789216493333e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 254.8449739191407,
+              "referenceElDeg": 1.359548813596561,
+              "productionAzDeg": 254.844974,
+              "productionElDeg": 1.359549,
+              "azErrorDeg": 8.085930858214851e-08,
+              "elErrorDeg": 1.864034389065239e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 211.68165844635556,
+              "referenceElDeg": -0.14565496601184175,
+              "productionAzDeg": 211.681658,
+              "productionElDeg": -0.145655,
+              "azErrorDeg": 4.4635555696004303e-07,
+              "elErrorDeg": 3.398815826005652e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 172.38812837289439,
+              "referenceElDeg": -2.0899936036895306,
+              "productionAzDeg": 172.388128,
+              "productionElDeg": -2.089994,
+              "azErrorDeg": 3.7289439092091925e-07,
+              "elErrorDeg": 3.963104693305297e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 156.79318808404986,
+              "referenceElDeg": -0.45092462546051826,
+              "productionAzDeg": 156.793188,
+              "productionElDeg": -0.450925,
+              "azErrorDeg": 8.404987283938681e-08,
+              "elErrorDeg": 3.7453948176224827e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 125.40871956188359,
+              "referenceElDeg": 1.2292257979295802,
+              "productionAzDeg": 125.40872,
+              "productionElDeg": 1.229226,
+              "azErrorDeg": 4.3811641603497264e-07,
+              "elErrorDeg": 2.020704197303047e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 82.33054869125422,
+              "referenceElDeg": -0.1886330463887989,
+              "productionAzDeg": 82.330549,
+              "productionElDeg": -0.188633,
+              "azErrorDeg": 3.087457685069239e-07,
+              "elErrorDeg": 4.6388798913277185e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 188.70076485854963,
+              "referenceElDeg": -2.053813144787688,
+              "productionAzDeg": 188.700765,
+              "productionElDeg": -2.053813,
+              "azErrorDeg": 1.4145035720503074e-07,
+              "elErrorDeg": 1.4478768806114317e-07,
+              "passed": true
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "toleranceDeg": 0.005,
+          "maxAngularComponentErrorDeg": 1.6324514149346214e-06,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 130.94313581992478,
+              "referenceElDeg": 2.554442753993695,
+              "productionAzDeg": 130.943135,
+              "productionElDeg": 2.554443,
+              "azErrorDeg": 8.199247645279684e-07,
+              "elErrorDeg": 2.4600630510462906e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 136.4973158613768,
+              "referenceElDeg": 3.3919765880097468,
+              "productionAzDeg": 136.497315,
+              "productionElDeg": 3.391977,
+              "azErrorDeg": 8.613768045506731e-07,
+              "elErrorDeg": 4.119902530241859e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 144.25882390482724,
+              "referenceElDeg": -7.45766849953058,
+              "productionAzDeg": 144.258823,
+              "productionElDeg": -7.457669,
+              "azErrorDeg": 9.048272318068484e-07,
+              "elErrorDeg": 5.004694196841797e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 134.45979137903734,
+              "referenceElDeg": 3.6952397289400336,
+              "productionAzDeg": 134.459791,
+              "productionElDeg": 3.69524,
+              "azErrorDeg": 3.7903734551036905e-07,
+              "elErrorDeg": 2.710599664723645e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 136.56789896447876,
+              "referenceElDeg": -0.8285530224012354,
+              "productionAzDeg": 136.567898,
+              "productionElDeg": -0.828553,
+              "azErrorDeg": 9.644787439810898e-07,
+              "elErrorDeg": 2.240123542218697e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 132.25673984148997,
+              "referenceElDeg": 5.963738501365586,
+              "productionAzDeg": 132.256739,
+              "productionElDeg": 5.963739,
+              "azErrorDeg": 8.414899639319628e-07,
+              "elErrorDeg": 4.986344146473698e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 144.17845476375206,
+              "referenceElDeg": -5.520307480727046,
+              "productionAzDeg": 144.178454,
+              "productionElDeg": -5.520308,
+              "azErrorDeg": 7.637520695880085e-07,
+              "elErrorDeg": 5.192729544134522e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 134.97849669410067,
+              "referenceElDeg": 5.700502751253412,
+              "productionAzDeg": 134.978496,
+              "productionElDeg": 5.700503,
+              "azErrorDeg": 6.941006631677737e-07,
+              "elErrorDeg": 2.4874658866025356e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 131.5844431510416,
+              "referenceElDeg": -2.935475807701466,
+              "productionAzDeg": 131.584442,
+              "productionElDeg": -2.935476,
+              "azErrorDeg": 1.1510416015880764e-06,
+              "elErrorDeg": 1.9229853398528007e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 142.44044940658964,
+              "referenceElDeg": -2.0236784719238305,
+              "productionAzDeg": 142.440448,
+              "productionElDeg": -2.023679,
+              "azErrorDeg": 1.4065896323245397e-06,
+              "elErrorDeg": 5.280761694592684e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 137.75367798714336,
+              "referenceElDeg": 5.913790947865138,
+              "productionAzDeg": 137.753677,
+              "productionElDeg": 5.913791,
+              "azErrorDeg": 9.871433519492712e-07,
+              "elErrorDeg": 5.213486176103288e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 132.6728721417593,
+              "referenceElDeg": -4.309481061669322,
+              "productionAzDeg": 132.672871,
+              "productionElDeg": -4.309481,
+              "azErrorDeg": 1.1417593270834914e-06,
+              "elErrorDeg": 6.166932209339393e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 144.51595671219977,
+              "referenceElDeg": -0.30241029009887993,
+              "productionAzDeg": 144.515956,
+              "productionElDeg": -0.30241,
+              "azErrorDeg": 7.121997782633116e-07,
+              "elErrorDeg": 2.9009887991815475e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 138.9655727388009,
+              "referenceElDeg": 4.326265217909919,
+              "productionAzDeg": 138.965572,
+              "productionElDeg": 4.326265,
+              "azErrorDeg": 7.388008782527322e-07,
+              "elErrorDeg": 2.1790991855397124e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 129.7637623382926,
+              "referenceElDeg": -6.160557174273776,
+              "productionAzDeg": 129.763761,
+              "productionElDeg": -6.160557,
+              "azErrorDeg": 1.338292605623792e-06,
+              "elErrorDeg": 1.7427377585477188e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 137.5079227279111,
+              "referenceElDeg": 0.047355932607955585,
+              "productionAzDeg": 137.507922,
+              "productionElDeg": 0.047356,
+              "azErrorDeg": 7.279111002844729e-07,
+              "elErrorDeg": 6.73920444171916e-08,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 141.04802434584442,
+              "referenceElDeg": 2.789286083605666,
+              "productionAzDeg": 141.048023,
+              "productionElDeg": 2.789286,
+              "azErrorDeg": 1.345844424349707e-06,
+              "elErrorDeg": 8.360566594589613e-08,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 131.37228879043633,
+              "referenceElDeg": -7.276477747501478,
+              "productionAzDeg": 131.372288,
+              "productionElDeg": -7.276478,
+              "azErrorDeg": 7.904363314992224e-07,
+              "elErrorDeg": 2.524985216467712e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 137.88259832737907,
+              "referenceElDeg": 3.048686236424966,
+              "productionAzDeg": 137.882597,
+              "productionElDeg": 3.048686,
+              "azErrorDeg": 1.327379067106449e-06,
+              "elErrorDeg": 2.3642496582709782e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 144.5840207026073,
+              "referenceElDeg": 1.3820044217698202,
+              "productionAzDeg": 144.58402,
+              "productionElDeg": 1.382005,
+              "azErrorDeg": 7.026072808002937e-07,
+              "elErrorDeg": 5.7823017973746e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 133.87684852239022,
+              "referenceElDeg": -6.9890760663514175,
+              "productionAzDeg": 133.876848,
+              "productionElDeg": -6.989076,
+              "azErrorDeg": 5.223902235229616e-07,
+              "elErrorDeg": 6.635141769351094e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 136.55854004834356,
+              "referenceElDeg": 5.418286840072595,
+              "productionAzDeg": 136.558539,
+              "productionElDeg": 5.418287,
+              "azErrorDeg": 1.0483435630703752e-06,
+              "elErrorDeg": 1.599274055408273e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 132.44780782711888,
+              "referenceElDeg": -4.147945211768886,
+              "productionAzDeg": 132.447807,
+              "productionElDeg": -4.147945,
+              "azErrorDeg": 8.271188676189922e-07,
+              "elErrorDeg": 2.1176888598262167e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 143.16846381754326,
+              "referenceElDeg": -3.110134962075435,
+              "productionAzDeg": 143.168463,
+              "productionElDeg": -3.110135,
+              "azErrorDeg": 8.17543252651376e-07,
+              "elErrorDeg": 3.792456526596766e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 134.2843160674596,
+              "referenceElDeg": -5.372702083540913,
+              "productionAzDeg": 134.284315,
+              "productionElDeg": -5.372702,
+              "azErrorDeg": 1.067459606929333e-06,
+              "elErrorDeg": 8.354091285411869e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 132.79791108250177,
+              "referenceElDeg": 6.165949959082249,
+              "productionAzDeg": 132.79791,
+              "productionElDeg": 6.16595,
+              "azErrorDeg": 1.0825017682236648e-06,
+              "elErrorDeg": 4.091775096526362e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 142.51712313119523,
+              "referenceElDeg": -6.190426167017218,
+              "productionAzDeg": 142.517122,
+              "productionElDeg": -6.190426,
+              "azErrorDeg": 1.131195233483595e-06,
+              "elErrorDeg": 1.6701721783363155e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 137.2128630726508,
+              "referenceElDeg": -2.7181956110927055,
+              "productionAzDeg": 137.212862,
+              "productionElDeg": -2.718196,
+              "azErrorDeg": 1.0726508037350868e-06,
+              "elErrorDeg": 3.8890729436857896e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 133.33035918760888,
+              "referenceElDeg": 5.762006398671189,
+              "productionAzDeg": 133.330358,
+              "productionElDeg": 5.762006,
+              "azErrorDeg": 1.187608887676106e-06,
+              "elErrorDeg": 3.9867118850622774e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 144.7247526324514,
+              "referenceElDeg": -7.14361098718031,
+              "productionAzDeg": 144.724751,
+              "productionElDeg": -7.143611,
+              "azErrorDeg": 1.6324514149346214e-06,
+              "elErrorDeg": 1.2819690198284661e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 137.98214627482523,
+              "referenceElDeg": -5.09294230724457,
+              "productionAzDeg": 137.982145,
+              "productionElDeg": -5.092942,
+              "azErrorDeg": 1.274825223163134e-06,
+              "elErrorDeg": 3.072445702301252e-07,
+              "passed": true
+            }
+          ]
+        }
+      }
+    },
+    "real-gerlache": {
+      "coordinates": {
+        "lat": -88.68352551547558,
+        "lon": -67.93407755484023,
+        "altKm": 1.7956644287109376
+      },
+      "transformPathMaxErrorDeg": 1.7763568394002505e-15,
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "toleranceDeg": 0.0001,
+          "maxAngularComponentErrorDeg": 5.18289084538992e-07,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 184.87722962740412,
+              "referenceElDeg": -0.5140394244759876,
+              "productionAzDeg": 184.87723,
+              "productionElDeg": -0.514039,
+              "azErrorDeg": 3.725958777067717e-07,
+              "elErrorDeg": 4.244759875815518e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 169.24989024552656,
+              "referenceElDeg": -2.6638566010459366,
+              "productionAzDeg": 169.24989,
+              "productionElDeg": -2.663857,
+              "azErrorDeg": 2.4552656441301224e-07,
+              "elErrorDeg": 3.989540635629396e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 137.8150777081945,
+              "referenceElDeg": -1.5605986003321553,
+              "productionAzDeg": 137.815078,
+              "productionElDeg": -1.560599,
+              "azErrorDeg": 2.9180549176999193e-07,
+              "elErrorDeg": 3.9966784481926254e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 94.70820868334735,
+              "referenceElDeg": 1.3786306186049568,
+              "productionAzDeg": 94.708209,
+              "productionElDeg": 1.378631,
+              "azErrorDeg": 3.1665263122704346e-07,
+              "elErrorDeg": 3.8139504310308325e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 55.42344353877037,
+              "referenceElDeg": 1.0388142330604464,
+              "productionAzDeg": 55.423444,
+              "productionElDeg": 1.038814,
+              "azErrorDeg": 4.612296322648035e-07,
+              "elErrorDeg": 2.3306044649729074e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 203.59102378000023,
+              "referenceElDeg": -2.1726483093267253,
+              "productionAzDeg": 203.591024,
+              "productionElDeg": -2.172648,
+              "azErrorDeg": 2.1999977661835146e-07,
+              "elErrorDeg": 3.0932672512307136e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 27.68868146506013,
+              "referenceElDeg": -0.37796718495945975,
+              "productionAzDeg": 27.688681,
+              "productionElDeg": -0.377967,
+              "azErrorDeg": 4.650601397315768e-07,
+              "elErrorDeg": 1.849594597480575e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 356.2535611489763,
+              "referenceElDeg": 1.2663609893509045,
+              "productionAzDeg": 356.253561,
+              "productionElDeg": 1.266361,
+              "azErrorDeg": 1.48976312175364e-07,
+              "elErrorDeg": 1.0649095605330672e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 313.04877810107155,
+              "referenceElDeg": 2.4110918238510215,
+              "productionAzDeg": 313.048778,
+              "productionElDeg": 2.411092,
+              "azErrorDeg": 1.0107152093041805e-07,
+              "elErrorDeg": 1.7614897851458977e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 273.6524365182891,
+              "referenceElDeg": -0.20606725225000772,
+              "productionAzDeg": 273.652436,
+              "productionElDeg": -0.206067,
+              "azErrorDeg": 5.18289084538992e-07,
+              "elErrorDeg": 2.5225000771511574e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 258.0368652143107,
+              "referenceElDeg": -1.7906073803107505,
+              "productionAzDeg": 258.036865,
+              "productionElDeg": -1.790607,
+              "azErrorDeg": 2.143107167285052e-07,
+              "elErrorDeg": 3.8031075044742124e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 226.4428489115368,
+              "referenceElDeg": -0.49789999932744483,
+              "productionAzDeg": 226.442849,
+              "productionElDeg": -0.4979,
+              "azErrorDeg": 8.846319587973994e-08,
+              "elErrorDeg": 6.725551782160721e-10,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 183.19983813911333,
+              "referenceElDeg": 0.10223829733764478,
+              "productionAzDeg": 183.199838,
+              "productionElDeg": 0.102238,
+              "azErrorDeg": 1.391133253036969e-07,
+              "elErrorDeg": 2.973376447834575e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 143.777571174077,
+              "referenceElDeg": -1.792657287064342,
+              "productionAzDeg": 143.777571,
+              "productionElDeg": -1.792657,
+              "azErrorDeg": 1.7407700170224416e-07,
+              "elErrorDeg": 2.870643420749275e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 128.18854193706676,
+              "referenceElDeg": -2.1184637155990114,
+              "productionAzDeg": 128.188542,
+              "productionElDeg": -2.118464,
+              "azErrorDeg": 6.293325327533239e-08,
+              "elErrorDeg": 2.844009885372145e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 96.82583883849064,
+              "referenceElDeg": 0.7431429253758361,
+              "productionAzDeg": 96.825839,
+              "productionElDeg": 0.743143,
+              "azErrorDeg": 1.615093765394704e-07,
+              "elErrorDeg": 7.46241638482914e-08,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 53.791783829011514,
+              "referenceElDeg": 1.9677582606669335,
+              "productionAzDeg": 53.791784,
+              "productionElDeg": 1.967758,
+              "azErrorDeg": 1.7098847138186102e-07,
+              "elErrorDeg": 2.606669335936118e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 14.416878379127775,
+              "referenceElDeg": 0.1260186874429482,
+              "productionAzDeg": 14.416878,
+              "productionElDeg": 0.126019,
+              "azErrorDeg": 3.791277833897766e-07,
+              "elErrorDeg": 3.12557051795892e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 358.8747538899183,
+              "referenceElDeg": 0.40419078680981735,
+              "productionAzDeg": 358.874754,
+              "productionElDeg": 0.404191,
+              "azErrorDeg": 1.1008171441062586e-07,
+              "elErrorDeg": 2.131901826740723e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 327.38699770658076,
+              "referenceElDeg": 2.3923144572881334,
+              "productionAzDeg": 327.386998,
+              "productionElDeg": 2.392314,
+              "azErrorDeg": 2.9341924800974084e-07,
+              "elErrorDeg": 4.572881335818124e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 284.1575613840066,
+              "referenceElDeg": 1.1295728997531749,
+              "productionAzDeg": 284.157561,
+              "productionElDeg": 1.129573,
+              "azErrorDeg": 3.840066256088903e-07,
+              "elErrorDeg": 1.0024682506326599e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 244.7160649731385,
+              "referenceElDeg": -1.9368318126960962,
+              "productionAzDeg": 244.716065,
+              "productionElDeg": -1.936832,
+              "azErrorDeg": 2.686149969122198e-08,
+              "elErrorDeg": 1.8730390394239294e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 33.07345781949859,
+              "referenceElDeg": -0.3052333383668972,
+              "productionAzDeg": 33.073458,
+              "productionElDeg": -0.305233,
+              "azErrorDeg": 1.8050141648018325e-07,
+              "elErrorDeg": 3.3836689722344104e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 216.84490808460916,
+              "referenceElDeg": -1.4795043919395248,
+              "productionAzDeg": 216.844908,
+              "productionElDeg": -1.479504,
+              "azErrorDeg": 8.46091552375583e-08,
+              "elErrorDeg": 3.9193952483529415e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 185.28821547768248,
+              "referenceElDeg": 0.18896893453674463,
+              "productionAzDeg": 185.288215,
+              "productionElDeg": 0.188969,
+              "azErrorDeg": 4.776824766850041e-07,
+              "elErrorDeg": 6.546325537204467e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 142.11123153997428,
+              "referenceElDeg": -0.7278188003923894,
+              "productionAzDeg": 142.111232,
+              "productionElDeg": -0.727819,
+              "azErrorDeg": 4.6002571707504103e-07,
+              "elErrorDeg": 1.996076105514888e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 102.78431301852785,
+              "referenceElDeg": -1.8496318338819764,
+              "productionAzDeg": 102.784313,
+              "productionElDeg": -1.849632,
+              "azErrorDeg": 1.85278565822955e-08,
+              "elErrorDeg": 1.661180235590365e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 87.22775345355959,
+              "referenceElDeg": 0.10617798016352159,
+              "productionAzDeg": 87.227753,
+              "productionElDeg": 0.106178,
+              "azErrorDeg": 4.535595792276581e-07,
+              "elErrorDeg": 1.9836478404311464e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 55.86657067729629,
+              "referenceElDeg": 2.2793072061569872,
+              "productionAzDeg": 55.866571,
+              "productionElDeg": 2.279307,
+              "azErrorDeg": 3.227037268516142e-07,
+              "elErrorDeg": 2.0615698703707608e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 12.766660804923612,
+              "referenceElDeg": 1.023666889107908,
+              "productionAzDeg": 12.766661,
+              "productionElDeg": 1.023667,
+              "azErrorDeg": 1.9507638171489816e-07,
+              "elErrorDeg": 1.1089209217551854e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 119.09331741751267,
+              "referenceElDeg": -2.1636539186273516,
+              "productionAzDeg": 119.093317,
+              "productionElDeg": -2.163654,
+              "azErrorDeg": 4.1751266621758987e-07,
+              "elErrorDeg": 8.137264861929339e-08,
+              "passed": true
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "toleranceDeg": 0.005,
+          "maxAngularComponentErrorDeg": 1.7355145587316656e-06,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 61.42424172261964,
+              "referenceElDeg": 3.5368439647799352,
+              "productionAzDeg": 61.424241,
+              "productionElDeg": 3.536844,
+              "azErrorDeg": 7.226196316878486e-07,
+              "elErrorDeg": 3.5220064642516036e-08,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 66.99574981074144,
+              "referenceElDeg": 4.297061909245849,
+              "productionAzDeg": 66.995749,
+              "productionElDeg": 4.297062,
+              "azErrorDeg": 8.107414259939105e-07,
+              "elErrorDeg": 9.075415174919499e-08,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 74.58253329908003,
+              "referenceElDeg": -6.673859300370753,
+              "productionAzDeg": 74.582532,
+              "productionElDeg": -6.673859,
+              "azErrorDeg": 1.2990800257739465e-06,
+              "elErrorDeg": 3.003707531590294e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 64.96011735191436,
+              "referenceElDeg": 4.629690013955684,
+              "productionAzDeg": 64.960116,
+              "productionElDeg": 4.62969,
+              "azErrorDeg": 1.35191436356763e-06,
+              "elErrorDeg": 1.3955683719757417e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 67.00431502803156,
+              "referenceElDeg": 0.07563723394769156,
+              "productionAzDeg": 67.004314,
+              "productionElDeg": 0.075637,
+              "azErrorDeg": 1.0280315621002956e-06,
+              "elErrorDeg": 2.3394769156637185e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 62.78535534654385,
+              "referenceElDeg": 6.928598053347134,
+              "productionAzDeg": 62.785354,
+              "productionElDeg": 6.928598,
+              "azErrorDeg": 1.3465438541970798e-06,
+              "elErrorDeg": 5.334713382154632e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 74.53503752740593,
+              "referenceElDeg": -4.7353247872026865,
+              "productionAzDeg": 74.535037,
+              "productionElDeg": -4.735325,
+              "azErrorDeg": 5.274059162729827e-07,
+              "elErrorDeg": 2.1279731310386296e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 65.50827195165117,
+              "referenceElDeg": 6.627508818105879,
+              "productionAzDeg": 65.508271,
+              "productionElDeg": 6.627509,
+              "azErrorDeg": 9.516511738638656e-07,
+              "elErrorDeg": 1.8189412109848035e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 61.99335114490906,
+              "referenceElDeg": -1.9614791084181638,
+              "productionAzDeg": 61.99335,
+              "productionElDeg": -1.961479,
+              "azErrorDeg": 1.1449090493442782e-06,
+              "elErrorDeg": 1.084181637800441e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 72.85627029613063,
+              "referenceElDeg": -1.2103713716230584,
+              "productionAzDeg": 72.856269,
+              "productionElDeg": -1.210371,
+              "azErrorDeg": 1.2961306197212252e-06,
+              "elErrorDeg": 3.716230583261648e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 68.29130869562104,
+              "referenceElDeg": 6.8000319591331655,
+              "productionAzDeg": 68.291308,
+              "productionElDeg": 6.800032,
+              "azErrorDeg": 6.956210540920438e-07,
+              "elErrorDeg": 4.086683436099747e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 63.0621812734393,
+              "referenceElDeg": -3.3500784561590855,
+              "productionAzDeg": 63.06218,
+              "productionElDeg": -3.350078,
+              "azErrorDeg": 1.2734392953461793e-06,
+              "elErrorDeg": 4.561590856155817e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 74.95975793896683,
+              "referenceElDeg": 0.4765318689058769,
+              "productionAzDeg": 74.959757,
+              "productionElDeg": 0.476532,
+              "azErrorDeg": 9.389668207404611e-07,
+              "elErrorDeg": 1.3109412311251845e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 69.4805665269157,
+              "referenceElDeg": 5.19413910591233,
+              "productionAzDeg": 69.480566,
+              "productionElDeg": 5.194139,
+              "azErrorDeg": 5.269156986287271e-07,
+              "elErrorDeg": 1.0591233046142179e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 60.13265371436587,
+              "referenceElDeg": -5.162876273405548,
+              "productionAzDeg": 60.132653,
+              "productionElDeg": -5.162876,
+              "azErrorDeg": 7.14365882004131e-07,
+              "elErrorDeg": 2.734055479791664e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 67.95728939757414,
+              "referenceElDeg": 0.9375667976783283,
+              "productionAzDeg": 67.957288,
+              "productionElDeg": 0.937567,
+              "azErrorDeg": 1.3975741239846684e-06,
+              "elErrorDeg": 2.0232167174949467e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 71.54093305997456,
+              "referenceElDeg": 3.6246633498318976,
+              "productionAzDeg": 71.540932,
+              "productionElDeg": 3.624664,
+              "azErrorDeg": 1.0599745792205795e-06,
+              "elErrorDeg": 6.501681024673189e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 61.72345218891604,
+              "referenceElDeg": -6.299605789196132,
+              "productionAzDeg": 61.723451,
+              "productionElDeg": -6.299606,
+              "azErrorDeg": 1.1889160305145197e-06,
+              "elErrorDeg": 2.108038676951196e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 68.37724950156446,
+              "referenceElDeg": 3.933145811207221,
+              "productionAzDeg": 68.377248,
+              "productionElDeg": 3.933146,
+              "azErrorDeg": 1.5015644692084607e-06,
+              "elErrorDeg": 1.8879277874361833e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 75.05584673359166,
+              "referenceElDeg": 2.1596703440366958,
+              "productionAzDeg": 75.055846,
+              "productionElDeg": 2.159671,
+              "azErrorDeg": 7.335916620831995e-07,
+              "elErrorDeg": 6.559633041192114e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 64.22699450477003,
+              "referenceElDeg": -6.046156393451261,
+              "productionAzDeg": 64.226993,
+              "productionElDeg": -6.046157,
+              "azErrorDeg": 1.5047700401282782e-06,
+              "elErrorDeg": 6.065487392348246e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 67.08725790777201,
+              "referenceElDeg": 6.322415067318168,
+              "productionAzDeg": 67.087257,
+              "productionElDeg": 6.322415,
+              "azErrorDeg": 9.077720051209326e-07,
+              "elErrorDeg": 6.731816792893142e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 62.8393932275736,
+              "referenceElDeg": -3.1854811826852867,
+              "productionAzDeg": 62.839392,
+              "productionElDeg": -3.185481,
+              "azErrorDeg": 1.2275735912226082e-06,
+              "elErrorDeg": 1.826852868980211e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 73.56607798720111,
+              "referenceElDeg": -2.3086371661632334,
+              "productionAzDeg": 73.566077,
+              "productionElDeg": -2.308637,
+              "azErrorDeg": 9.872011048628337e-07,
+              "elErrorDeg": 1.6616323339491146e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 64.6565428397478,
+              "referenceElDeg": -4.435516757362279,
+              "productionAzDeg": 64.656542,
+              "productionElDeg": -4.435517,
+              "azErrorDeg": 8.397477984090074e-07,
+              "elErrorDeg": 2.42637720582195e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 63.33061467166863,
+              "referenceElDeg": 7.123486394569845,
+              "productionAzDeg": 63.330613,
+              "productionElDeg": 7.123486,
+              "azErrorDeg": 1.671668627523104e-06,
+              "elErrorDeg": 3.9456984524122163e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 72.86484255821662,
+              "referenceElDeg": -5.378074567861919,
+              "productionAzDeg": 72.864841,
+              "productionElDeg": -5.378074,
+              "azErrorDeg": 1.5582166383865115e-06,
+              "elErrorDeg": 5.678619192650558e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 67.62057908474716,
+              "referenceElDeg": -1.8234615685515356,
+              "productionAzDeg": 67.620578,
+              "productionElDeg": -1.823462,
+              "azErrorDeg": 1.084747168533795e-06,
+              "elErrorDeg": 4.31448464288664e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 63.85840797998837,
+              "referenceElDeg": 6.712225695653835,
+              "productionAzDeg": 63.858407,
+              "productionElDeg": 6.712226,
+              "azErrorDeg": 9.79988385552133e-07,
+              "elErrorDeg": 3.043461651586199e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 75.05319473551455,
+              "referenceElDeg": -6.367633272663037,
+              "productionAzDeg": 75.053193,
+              "productionElDeg": -6.367633,
+              "azErrorDeg": 1.7355145587316656e-06,
+              "elErrorDeg": 2.72663037037546e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 68.35379170910672,
+              "referenceElDeg": -4.209649154370205,
+              "productionAzDeg": 68.35379,
+              "productionElDeg": -4.209649,
+              "azErrorDeg": 1.7091066979446623e-06,
+              "elErrorDeg": 1.5437020550734815e-07,
+              "passed": true
+            }
+          ]
+        }
+      }
+    },
+    "real-nobile": {
+      "coordinates": {
+        "lat": -85.43811594434003,
+        "lon": 37.36812005733697,
+        "altKm": 5.948380859375
+      },
+      "transformPathMaxErrorDeg": 1.5543122344752192e-15,
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "toleranceDeg": 0.0001,
+          "maxAngularComponentErrorDeg": 5.719074810672797e-07,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 79.67009350040178,
+              "referenceElDeg": 1.619817156304065,
+              "productionAzDeg": 79.670093,
+              "productionElDeg": 1.619817,
+              "azErrorDeg": 5.004017680221295e-07,
+              "elErrorDeg": 1.5630406502431526e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 63.930038975770415,
+              "referenceElDeg": 0.634249812532253,
+              "productionAzDeg": 63.930039,
+              "productionElDeg": 0.63425,
+              "azErrorDeg": 2.4229592554547708e-08,
+              "elErrorDeg": 1.8746774699263113e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 32.58681355085348,
+              "referenceElDeg": 3.2605851032957696,
+              "productionAzDeg": 32.586814,
+              "productionElDeg": 3.260585,
+              "azErrorDeg": 4.4914651198268984e-07,
+              "elErrorDeg": 1.032957697155723e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 349.3181904591121,
+              "referenceElDeg": 5.969640292017502,
+              "productionAzDeg": 349.31819,
+              "productionElDeg": 5.96964,
+              "azErrorDeg": 4.5911207280369126e-07,
+              "elErrorDeg": 2.920175017351312e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 310.001265597651,
+              "referenceElDeg": 3.2281470721084213,
+              "productionAzDeg": 310.001266,
+              "productionElDeg": 3.228147,
+              "azErrorDeg": 4.0234897369373357e-07,
+              "elErrorDeg": 7.210842145610741e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 98.17252893968138,
+              "referenceElDeg": -1.618968508686753,
+              "productionAzDeg": 98.172529,
+              "productionElDeg": -1.618969,
+              "azErrorDeg": 6.031859811628237e-08,
+              "elErrorDeg": 4.913132471973114e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 282.47854354275626,
+              "referenceElDeg": -0.5606240627209998,
+              "productionAzDeg": 282.478544,
+              "productionElDeg": -0.560624,
+              "azErrorDeg": 4.572437433125742e-07,
+              "elErrorDeg": 6.272099983828383e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 251.01180201050394,
+              "referenceElDeg": -1.5345611974467468,
+              "productionAzDeg": 251.011802,
+              "productionElDeg": -1.534561,
+              "azErrorDeg": 1.0503953262741561e-08,
+              "elErrorDeg": 1.9744674673027873e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 207.7983017498732,
+              "referenceElDeg": -2.5240909667713534,
+              "productionAzDeg": 207.798302,
+              "productionElDeg": -2.524091,
+              "azErrorDeg": 2.5012681703628914e-07,
+              "elErrorDeg": 3.3228646501015646e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 168.30386767117966,
+              "referenceElDeg": -4.75745817848532,
+              "productionAzDeg": 168.303868,
+              "productionElDeg": -4.757458,
+              "azErrorDeg": 3.28820334516422e-07,
+              "elErrorDeg": 1.7848531985720228e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 152.56760285650748,
+              "referenceElDeg": -5.5690526857275024,
+              "productionAzDeg": 152.567603,
+              "productionElDeg": -5.569053,
+              "azErrorDeg": 1.4349251387102413e-07,
+              "elErrorDeg": 3.142724978033584e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 121.08746231640274,
+              "referenceElDeg": -1.948932919381186,
+              "productionAzDeg": 121.087462,
+              "productionElDeg": -1.948933,
+              "azErrorDeg": 3.1640274755773135e-07,
+              "elErrorDeg": 8.061881406895566e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 78.04614957303544,
+              "referenceElDeg": 2.3677600421989653,
+              "productionAzDeg": 78.04615,
+              "productionElDeg": 2.36776,
+              "azErrorDeg": 4.269645614840556e-07,
+              "elErrorDeg": 4.219896521107103e-08,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 38.544847752522806,
+              "referenceElDeg": 2.8394861366862902,
+              "productionAzDeg": 38.544848,
+              "productionElDeg": 2.839486,
+              "azErrorDeg": 2.474772031746397e-07,
+              "elErrorDeg": 1.3668629028629198e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 22.94198891670402,
+              "referenceElDeg": 2.897508016770224,
+              "productionAzDeg": 22.941989,
+              "productionElDeg": 2.897508,
+              "azErrorDeg": 8.329598699674534e-08,
+              "elErrorDeg": 1.6770223876250157e-08,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 351.4676301280651,
+              "referenceElDeg": 5.411068702440592,
+              "productionAzDeg": 351.46763,
+              "productionElDeg": 5.411069,
+              "azErrorDeg": 1.280650963053631e-07,
+              "elErrorDeg": 2.975594082244015e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 308.2973804206179,
+              "referenceElDeg": 4.023000828798037,
+              "productionAzDeg": 308.29738,
+              "productionElDeg": 4.023001,
+              "azErrorDeg": 4.206179369248275e-07,
+              "elErrorDeg": 1.7120196282860434e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 269.2117345805471,
+              "referenceElDeg": -1.2155381938160297,
+              "productionAzDeg": 269.211735,
+              "productionElDeg": -1.215538,
+              "azErrorDeg": 4.194528742118564e-07,
+              "elErrorDeg": 1.938160296699465e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 253.69128426480773,
+              "referenceElDeg": -2.1982322491099215,
+              "productionAzDeg": 253.691284,
+              "productionElDeg": -2.198232,
+              "azErrorDeg": 2.648077384037606e-07,
+              "elErrorDeg": 2.4910992157956e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 222.1293883996892,
+              "referenceElDeg": -2.101373894262734,
+              "productionAzDeg": 222.129388,
+              "productionElDeg": -2.101374,
+              "azErrorDeg": 3.9968918486010807e-07,
+              "elErrorDeg": 1.057372660540068e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 178.87465469380356,
+              "referenceElDeg": -3.7536836617683007,
+              "productionAzDeg": 178.874655,
+              "productionElDeg": -3.753684,
+              "azErrorDeg": 3.06196426436145e-07,
+              "elErrorDeg": 3.3823169909297235e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 139.2181198193315,
+              "referenceElDeg": -4.8334210836354,
+              "productionAzDeg": 139.21812,
+              "productionElDeg": -4.833421,
+              "azErrorDeg": 1.806685077099246e-07,
+              "elErrorDeg": 8.363539993894165e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 287.8358299266431,
+              "referenceElDeg": -0.012459428092518933,
+              "productionAzDeg": 287.83583,
+              "productionElDeg": -0.01246,
+              "azErrorDeg": 7.335688678722363e-08,
+              "elErrorDeg": 5.719074810672797e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 111.4361092657425,
+              "referenceElDeg": -2.0973055513885503,
+              "productionAzDeg": 111.436109,
+              "productionElDeg": -2.097306,
+              "azErrorDeg": 2.6574250000521715e-07,
+              "elErrorDeg": 4.4861144976593437e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 80.13650488327185,
+              "referenceElDeg": 2.2875307380090497,
+              "productionAzDeg": 80.136505,
+              "productionElDeg": 2.287531,
+              "azErrorDeg": 1.1672813116092584e-07,
+              "elErrorDeg": 2.619909502676876e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 36.914143461145514,
+              "referenceElDeg": 3.9617161677952364,
+              "productionAzDeg": 36.914143,
+              "productionElDeg": 3.961716,
+              "azErrorDeg": 4.611455040048895e-07,
+              "elErrorDeg": 1.6779523637211469e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 357.51779827560676,
+              "referenceElDeg": 2.9997309905266367,
+              "productionAzDeg": 357.517798,
+              "productionElDeg": 2.999731,
+              "azErrorDeg": 2.756067374320992e-07,
+              "elErrorDeg": 9.473363427048298e-09,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 341.86906982888223,
+              "referenceElDeg": 4.378759662508831,
+              "productionAzDeg": 341.86907,
+              "productionElDeg": 4.37876,
+              "azErrorDeg": 1.7111779015976936e-07,
+              "elErrorDeg": 3.374911683451387e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 310.34470410508976,
+              "referenceElDeg": 4.499998358748262,
+              "productionAzDeg": 310.344704,
+              "productionElDeg": 4.499998,
+              "azErrorDeg": 1.0508978220968856e-07,
+              "elErrorDeg": 3.587482622080529e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 267.4911782346872,
+              "referenceElDeg": -0.4612051904095865,
+              "productionAzDeg": 267.491178,
+              "productionElDeg": -0.461205,
+              "azErrorDeg": 2.3468720655728248e-07,
+              "elErrorDeg": 1.9040958654237272e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 13.841314891832425,
+              "referenceElDeg": 2.9065273768873174,
+              "productionAzDeg": 13.841315,
+              "productionElDeg": 2.906527,
+              "azErrorDeg": 1.0816756912390701e-07,
+              "elErrorDeg": 3.7688731735485703e-07,
+              "passed": true
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "toleranceDeg": 0.005,
+          "maxAngularComponentErrorDeg": 1.7558747344992298e-06,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 315.7854649669823,
+              "referenceElDeg": 6.1846972242409946,
+              "productionAzDeg": 315.785464,
+              "productionElDeg": 6.184697,
+              "azErrorDeg": 9.669823270996858e-07,
+              "elErrorDeg": 2.2424099466178404e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 321.3116917899219,
+              "referenceElDeg": 7.351197098972228,
+              "productionAzDeg": 321.311691,
+              "productionElDeg": 7.351197,
+              "azErrorDeg": 7.899218985585321e-07,
+              "elErrorDeg": 9.897222774668535e-08,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 329.621675532135,
+              "referenceElDeg": -3.092012191508369,
+              "productionAzDeg": 329.621675,
+              "productionElDeg": -3.092012,
+              "azErrorDeg": 5.321350045051076e-07,
+              "elErrorDeg": 1.9150836916281833e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 319.24705765305833,
+              "referenceElDeg": 7.536957046783766,
+              "productionAzDeg": 319.247057,
+              "productionElDeg": 7.536957,
+              "azErrorDeg": 6.530583505082177e-07,
+              "elErrorDeg": 4.6783766194380405e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 321.61960806446905,
+              "referenceElDeg": 3.1398599338168247,
+              "productionAzDeg": 321.619607,
+              "productionElDeg": 3.13986,
+              "azErrorDeg": 1.0644690746630658e-06,
+              "elErrorDeg": 6.618317538453766e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 316.8921006232973,
+              "referenceElDeg": 9.669757521108828,
+              "productionAzDeg": 316.8921,
+              "productionElDeg": 9.669758,
+              "azErrorDeg": 6.232972964426153e-07,
+              "elErrorDeg": 4.788911720510214e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 329.452202541816,
+              "referenceElDeg": -1.159789103910317,
+              "productionAzDeg": 329.452202,
+              "productionElDeg": -1.159789,
+              "azErrorDeg": 5.418160071712919e-07,
+              "elErrorDeg": 1.0391031701750819e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 319.6503933487032,
+              "referenceElDeg": 9.56964982564846,
+              "productionAzDeg": 319.650392,
+              "productionElDeg": 9.56965,
+              "azErrorDeg": 1.3487031651493453e-06,
+              "elErrorDeg": 1.743515394281303e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 316.7672194782252,
+              "referenceElDeg": 0.7434948463425476,
+              "productionAzDeg": 316.767218,
+              "productionElDeg": 0.743495,
+              "azErrorDeg": 1.478225158280111e-06,
+              "elErrorDeg": 1.5365745242856832e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 327.5541183941225,
+              "referenceElDeg": 2.252243029994398,
+              "productionAzDeg": 327.554117,
+              "productionElDeg": 2.252243,
+              "azErrorDeg": 1.3941224779046024e-06,
+              "elErrorDeg": 2.999439807638282e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 322.43592508450433,
+              "referenceElDeg": 9.939559530042125,
+              "productionAzDeg": 322.435924,
+              "productionElDeg": 9.93956,
+              "azErrorDeg": 1.0845043334484217e-06,
+              "elErrorDeg": 4.6995787528203437e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 317.93581367743116,
+              "referenceElDeg": -0.5621624019837385,
+              "productionAzDeg": 317.935813,
+              "productionElDeg": -0.562162,
+              "azErrorDeg": 6.774311600565852e-07,
+              "elErrorDeg": 4.019837384072744e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 329.5492886657997,
+              "referenceElDeg": 4.069886405141664,
+              "productionAzDeg": 329.549288,
+              "productionElDeg": 4.069886,
+              "azErrorDeg": 6.657996891590301e-07,
+              "elErrorDeg": 4.0514166332883406e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 323.74442471752184,
+              "referenceElDeg": 8.419408092282223,
+              "productionAzDeg": 323.744424,
+              "productionElDeg": 8.419408,
+              "azErrorDeg": 7.175218570409925e-07,
+              "elErrorDeg": 9.228222275226017e-08,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 315.15746687449433,
+              "referenceElDeg": -2.589653787334219,
+              "productionAzDeg": 315.157466,
+              "productionElDeg": -2.589654,
+              "azErrorDeg": 8.744943329475063e-07,
+              "elErrorDeg": 2.1266578098533273e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 322.5119373213945,
+              "referenceElDeg": 4.066701288377854,
+              "productionAzDeg": 322.511936,
+              "productionElDeg": 4.066701,
+              "azErrorDeg": 1.3213945067036548e-06,
+              "elErrorDeg": 2.8837785404078886e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 325.9200733927456,
+              "referenceElDeg": 6.992068680068546,
+              "productionAzDeg": 325.920072,
+              "productionElDeg": 6.992069,
+              "azErrorDeg": 1.392745616612956e-06,
+              "elErrorDeg": 3.1993145377384735e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 316.82502952888876,
+              "referenceElDeg": -3.603418844096985,
+              "productionAzDeg": 316.825029,
+              "productionElDeg": -3.603419,
+              "azErrorDeg": 5.288887905408046e-07,
+              "elErrorDeg": 1.5590301494228243e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 322.72326793380336,
+              "referenceElDeg": 7.085017709163765,
+              "productionAzDeg": 322.723267,
+              "productionElDeg": 7.085018,
+              "azErrorDeg": 9.338033351014019e-07,
+              "elErrorDeg": 2.9083623509507106e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 329.54080553210474,
+              "referenceElDeg": 5.756231637119086,
+              "productionAzDeg": 329.540804,
+              "productionElDeg": 5.756232,
+              "azErrorDeg": 1.5321047612815164e-06,
+              "elErrorDeg": 3.6288091376235343e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 319.29342397495634,
+              "referenceElDeg": -3.1662256835530407,
+              "productionAzDeg": 319.293423,
+              "productionElDeg": -3.166226,
+              "azErrorDeg": 9.7495632189748e-07,
+              "elErrorDeg": 3.164469593031072e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 321.2571813936284,
+              "referenceElDeg": 9.37843121357691,
+              "productionAzDeg": 321.25718,
+              "productionElDeg": 9.378431,
+              "azErrorDeg": 1.3936283949078643e-06,
+              "elErrorDeg": 2.135769090472195e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 317.70270626099193,
+              "referenceElDeg": -0.4143516934580304,
+              "productionAzDeg": 317.702705,
+              "productionElDeg": -0.414352,
+              "azErrorDeg": 1.260991950857715e-06,
+              "elErrorDeg": 3.0654196958579405e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 328.3332402484205,
+              "referenceElDeg": 1.2015122976183688,
+              "productionAzDeg": 328.333239,
+              "productionElDeg": 1.201512,
+              "azErrorDeg": 1.2484205171858775e-06,
+              "elErrorDeg": 2.976183688385703e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 319.6035658933994,
+              "referenceElDeg": -1.5283400535599092,
+              "productionAzDeg": 319.603565,
+              "productionElDeg": -1.52834,
+              "azErrorDeg": 8.933993740356527e-07,
+              "elErrorDeg": 5.355990917443876e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 317.42349769868895,
+              "referenceElDeg": 9.904789165999805,
+              "productionAzDeg": 317.423496,
+              "productionElDeg": 9.904789,
+              "azErrorDeg": 1.6986889477266232e-06,
+              "elErrorDeg": 1.6599980590115138e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 327.832077793634,
+              "referenceElDeg": -1.9073269943728475,
+              "productionAzDeg": 327.832077,
+              "productionElDeg": -1.907327,
+              "azErrorDeg": 7.936340011838183e-07,
+              "elErrorDeg": 5.62715252172552e-09,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 322.37048916282447,
+              "referenceElDeg": 1.288340914168744,
+              "productionAzDeg": 322.370488,
+              "productionElDeg": 1.288341,
+              "azErrorDeg": 1.162824446510058e-06,
+              "elErrorDeg": 8.583125588046414e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 317.98494748091093,
+              "referenceElDeg": 9.533647646992216,
+              "productionAzDeg": 317.984946,
+              "productionElDeg": 9.533648,
+              "azErrorDeg": 1.4809109529778652e-06,
+              "elErrorDeg": 3.5300778300495494e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 330.06915540574295,
+              "referenceElDeg": -2.7571786327950405,
+              "productionAzDeg": 330.069154,
+              "productionElDeg": -2.757179,
+              "azErrorDeg": 1.4057429211788985e-06,
+              "elErrorDeg": 3.6720495932840436e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 323.2651157558747,
+              "referenceElDeg": -1.0419716839515185,
+              "productionAzDeg": 323.265114,
+              "productionElDeg": -1.041972,
+              "azErrorDeg": 1.7558747344992298e-06,
+              "elErrorDeg": 3.160484813857778e-07,
+              "passed": true
+            }
+          ]
+        }
+      }
+    },
+    "real-peak": {
+      "coordinates": {
+        "lat": -88.81089375534428,
+        "lon": 123.69116926195721,
+        "altKm": 1.647548828125
+      },
+      "transformPathMaxErrorDeg": 1.1102230246251565e-15,
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "toleranceDeg": 0.0001,
+          "maxAngularComponentErrorDeg": 5.151030109118437e-07,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 353.2488729711302,
+              "referenceElDeg": 1.9785347742769774,
+              "productionAzDeg": 353.248873,
+              "productionElDeg": 1.978535,
+              "azErrorDeg": 2.8869806101283757e-08,
+              "elErrorDeg": 2.2572302249557197e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 337.63976164420984,
+              "referenceElDeg": -0.2707885364858085,
+              "productionAzDeg": 337.639762,
+              "productionElDeg": -0.270789,
+              "azErrorDeg": 3.557901777639927e-07,
+              "elErrorDeg": 4.6351419152879103e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 306.2102767782039,
+              "referenceElDeg": 0.11747992865312788,
+              "productionAzDeg": 306.210277,
+              "productionElDeg": 0.11748,
+              "azErrorDeg": 2.2179614234119072e-07,
+              "elErrorDeg": 7.134687211862722e-08,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 263.02098026896886,
+              "referenceElDeg": 1.3421292264922533,
+              "productionAzDeg": 263.02098,
+              "productionElDeg": 1.342129,
+              "azErrorDeg": 2.689688471946283e-07,
+              "elErrorDeg": 2.264922533967706e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 223.78756684502704,
+              "referenceElDeg": -0.5668926338334873,
+              "productionAzDeg": 223.787567,
+              "productionElDeg": -0.566893,
+              "azErrorDeg": 1.5497295180466608e-07,
+              "elErrorDeg": 3.661665126664104e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 11.949702515103011,
+              "referenceElDeg": 0.19721304427031228,
+              "productionAzDeg": 11.949702,
+              "productionElDeg": 0.197213,
+              "azErrorDeg": 5.151030109118437e-07,
+              "elErrorDeg": 4.4270312277161494e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 196.08584825422398,
+              "referenceElDeg": -2.686229746068173,
+              "productionAzDeg": 196.085848,
+              "productionElDeg": -2.68623,
+              "azErrorDeg": 2.5422397698093846e-07,
+              "elErrorDeg": 2.5393182712107887e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 164.6258194663601,
+              "referenceElDeg": -1.193867391694624,
+              "productionAzDeg": 164.625819,
+              "productionElDeg": -1.193867,
+              "azErrorDeg": 4.663600918775046e-07,
+              "elErrorDeg": 3.9169462406896116e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 121.47777431325777,
+              "referenceElDeg": 0.8914000433206145,
+              "productionAzDeg": 121.477774,
+              "productionElDeg": 0.8914,
+              "azErrorDeg": 3.132577717224194e-07,
+              "elErrorDeg": 4.332061454004332e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 82.01727175389361,
+              "referenceElDeg": -0.1247715879355588,
+              "productionAzDeg": 82.017272,
+              "productionElDeg": -0.124772,
+              "azErrorDeg": 2.461063957071019e-07,
+              "elErrorDeg": 4.1206444119368246e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 66.35013935625686,
+              "referenceElDeg": -1.040507505168262,
+              "productionAzDeg": 66.350139,
+              "productionElDeg": -1.040508,
+              "azErrorDeg": 3.562568622328399e-07,
+              "elErrorDeg": 4.948317380293332e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 34.82751906354964,
+              "referenceElDeg": 1.385462639624661,
+              "productionAzDeg": 34.827519,
+              "productionElDeg": 1.385463,
+              "azErrorDeg": 6.354963488774956e-08,
+              "elErrorDeg": 3.6037533890365125e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 351.5694638660827,
+              "referenceElDeg": 2.5929279439313424,
+              "productionAzDeg": 351.569464,
+              "productionElDeg": 2.592928,
+              "azErrorDeg": 1.3391729680733988e-07,
+              "elErrorDeg": 5.6068657716679127e-08,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 312.1745301697042,
+              "referenceElDeg": 0.06784529595572468,
+              "productionAzDeg": 312.17453,
+              "productionElDeg": 0.067845,
+              "azErrorDeg": 1.6970420801953878e-07,
+              "elErrorDeg": 2.9595572467733255e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 296.6134450514491,
+              "referenceElDeg": -0.7717316844135812,
+              "productionAzDeg": 296.613445,
+              "productionElDeg": -0.771732,
+              "azErrorDeg": 5.1449092097755056e-08,
+              "elErrorDeg": 3.1558641877538207e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 265.1642575746478,
+              "referenceElDeg": 0.7993383474160958,
+              "productionAzDeg": 265.164258,
+              "productionElDeg": 0.799338,
+              "azErrorDeg": 4.253521979080688e-07,
+              "elErrorDeg": 3.4741609578059496e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 222.12681548329059,
+              "referenceElDeg": 0.30793806890183784,
+              "productionAzDeg": 222.126815,
+              "productionElDeg": 0.307938,
+              "azErrorDeg": 4.832905915463925e-07,
+              "elErrorDeg": 6.890183784635795e-08,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 182.79631820921327,
+              "referenceElDeg": -2.336685669847095,
+              "productionAzDeg": 182.796318,
+              "productionElDeg": -2.336686,
+              "azErrorDeg": 2.0921325472045282e-07,
+              "elErrorDeg": 3.301529050148133e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 167.2425584825012,
+              "referenceElDeg": -2.0717985854114644,
+              "productionAzDeg": 167.242558,
+              "productionElDeg": -2.071799,
+              "azErrorDeg": 4.825012069886725e-07,
+              "elErrorDeg": 4.1458853550224717e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 135.79693292763736,
+              "referenceElDeg": 0.43088915493700297,
+              "productionAzDeg": 135.796933,
+              "productionElDeg": 0.430889,
+              "azErrorDeg": 7.236263854792924e-08,
+              "elErrorDeg": 1.5493700294966217e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 92.5701101493778,
+              "referenceElDeg": 0.7541678536207599,
+              "productionAzDeg": 92.57011,
+              "productionElDeg": 0.754168,
+              "azErrorDeg": 1.493777972427779e-07,
+              "elErrorDeg": 1.4637924006244418e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 53.03957745163856,
+              "referenceElDeg": -0.6593401997326869,
+              "productionAzDeg": 53.039577,
+              "productionElDeg": -0.65934,
+              "azErrorDeg": 4.516385558872571e-07,
+              "elErrorDeg": 1.9973268683415313e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 201.47384853684224,
+              "referenceElDeg": -2.5149740855132627,
+              "productionAzDeg": 201.473849,
+              "productionElDeg": -2.514974,
+              "azErrorDeg": 4.631577610325621e-07,
+              "elErrorDeg": 8.551326269312653e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 25.207540902359234,
+              "referenceElDeg": 0.6500067681657766,
+              "productionAzDeg": 25.207541,
+              "productionElDeg": 0.650007,
+              "azErrorDeg": 9.764076480678341e-08,
+              "elErrorDeg": 2.3183422337424986e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 353.6599650933481,
+              "referenceElDeg": 2.6816791670561098,
+              "productionAzDeg": 353.659965,
+              "productionElDeg": 2.681679,
+              "azErrorDeg": 9.334809192296234e-08,
+              "elErrorDeg": 1.670561098343626e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 310.4778979937101,
+              "referenceElDeg": 1.0832036658329214,
+              "productionAzDeg": 310.477898,
+              "productionElDeg": 1.083204,
+              "azErrorDeg": 6.289894827204989e-09,
+              "elErrorDeg": 3.3416707867495177e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 271.22929594451887,
+              "referenceElDeg": -1.5327016300677097,
+              "productionAzDeg": 271.229296,
+              "productionElDeg": -1.532702,
+              "azErrorDeg": 5.548110948438989e-08,
+              "elErrorDeg": 3.6993229035608977e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 255.60289023289107,
+              "referenceElDeg": -0.253208758136314,
+              "productionAzDeg": 255.60289,
+              "productionElDeg": -0.253209,
+              "azErrorDeg": 2.3289106820811867e-07,
+              "elErrorDeg": 2.418636860235246e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 224.1888539065204,
+              "referenceElDeg": 0.687693760524048,
+              "productionAzDeg": 224.188854,
+              "productionElDeg": 0.687694,
+              "azErrorDeg": 9.347959917249682e-08,
+              "elErrorDeg": 2.394759520685241e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 181.13982514987578,
+              "referenceElDeg": -1.4491404146296736,
+              "productionAzDeg": 181.139825,
+              "productionElDeg": -1.44914,
+              "azErrorDeg": 1.49875774013708e-07,
+              "elErrorDeg": 4.14629673484157e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 287.5316715576975,
+              "referenceElDeg": -1.1652007484855431,
+              "productionAzDeg": 287.531672,
+              "productionElDeg": -1.165201,
+              "azErrorDeg": 4.423025075084297e-07,
+              "elErrorDeg": 2.515144568171479e-07,
+              "passed": true
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "toleranceDeg": 0.005,
+          "maxAngularComponentErrorDeg": 1.4696196330987732e-06,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 229.68492336731487,
+              "referenceElDeg": 2.1371268055451007,
+              "productionAzDeg": 229.684923,
+              "productionElDeg": 2.137127,
+              "azErrorDeg": 3.673148682992178e-07,
+              "elErrorDeg": 1.9445489929381665e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 235.2158804275487,
+              "referenceElDeg": 3.1034165913777247,
+              "productionAzDeg": 235.215879,
+              "productionElDeg": 3.103417,
+              "azErrorDeg": 1.4275487103532214e-06,
+              "elErrorDeg": 4.086222751276125e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 243.23509645543152,
+              "referenceElDeg": -7.558445255537447,
+              "productionAzDeg": 243.235096,
+              "productionElDeg": -7.558445,
+              "azErrorDeg": 4.554315182758728e-07,
+              "elErrorDeg": 2.555374472024141e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 233.1729515074161,
+              "referenceElDeg": 3.358889750899143,
+              "productionAzDeg": 233.172951,
+              "productionElDeg": 3.35889,
+              "azErrorDeg": 5.074160753792967e-07,
+              "elErrorDeg": 2.4910085727469777e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 235.38556246961963,
+              "referenceElDeg": -1.1141862247071523,
+              "productionAzDeg": 235.385561,
+              "productionElDeg": -1.114186,
+              "azErrorDeg": 1.4696196330987732e-06,
+              "elErrorDeg": 2.247071524408284e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 230.91874919117353,
+              "referenceElDeg": 5.57561364594734,
+              "productionAzDeg": 230.918748,
+              "productionElDeg": 5.575614,
+              "azErrorDeg": 1.1911735384728672e-06,
+              "elErrorDeg": 3.540526600787075e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 243.10751318287095,
+              "referenceElDeg": -5.623588461525755,
+              "productionAzDeg": 243.107512,
+              "productionElDeg": -5.623589,
+              "azErrorDeg": 1.1828709318706387e-06,
+              "elErrorDeg": 5.384742447489543e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 233.6442406622313,
+              "referenceElDeg": 5.375661103082711,
+              "productionAzDeg": 233.64424,
+              "productionElDeg": 5.375661,
+              "azErrorDeg": 6.622313151183334e-07,
+              "elErrorDeg": 1.0308271125580859e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 230.45180253053158,
+              "referenceElDeg": -3.33644645870593,
+              "productionAzDeg": 230.451802,
+              "productionElDeg": -3.336446,
+              "azErrorDeg": 5.305315937675914e-07,
+              "elErrorDeg": 4.5870593012864447e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 241.2857215045974,
+              "referenceElDeg": -2.169598931921138,
+              "productionAzDeg": 241.285721,
+              "productionElDeg": -2.169599,
+              "azErrorDeg": 5.045974091899552e-07,
+              "elErrorDeg": 6.807886165915988e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 236.41215941321934,
+              "referenceElDeg": 5.654086425661602,
+              "productionAzDeg": 236.412159,
+              "productionElDeg": 5.654087,
+              "azErrorDeg": 4.132193396344519e-07,
+              "elErrorDeg": 5.743383972856009e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 231.5723496731894,
+              "referenceElDeg": -4.684942295789039,
+              "productionAzDeg": 231.572349,
+              "productionElDeg": -4.684942,
+              "azErrorDeg": 6.73189390454354e-07,
+              "elErrorDeg": 2.9578903859572847e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 243.31930998156406,
+              "referenceElDeg": -0.3991469670017369,
+              "productionAzDeg": 243.319309,
+              "productionElDeg": -0.399147,
+              "azErrorDeg": 9.815640567012451e-07,
+              "elErrorDeg": 3.2998263066463807e-08,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 237.6610565017375,
+              "referenceElDeg": 4.095710871109826,
+              "productionAzDeg": 237.661056,
+              "productionElDeg": 4.095711,
+              "azErrorDeg": 5.017375031002302e-07,
+              "elErrorDeg": 1.2889017408923564e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 228.70510378966102,
+              "referenceElDeg": -6.602237852581277,
+              "productionAzDeg": 228.705103,
+              "productionElDeg": -6.602238,
+              "azErrorDeg": 7.896610156876704e-07,
+              "elErrorDeg": 1.474187225625201e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 236.30475866049062,
+              "referenceElDeg": -0.21639738868170597,
+              "productionAzDeg": 236.304758,
+              "productionElDeg": -0.216398,
+              "azErrorDeg": 6.604906275242683e-07,
+              "elErrorDeg": 6.113182940414852e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 239.7790269414396,
+              "referenceElDeg": 2.6086965151302346,
+              "productionAzDeg": 239.779026,
+              "productionElDeg": 2.608697,
+              "azErrorDeg": 9.41439623147744e-07,
+              "elErrorDeg": 4.848697652271028e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 230.34062211117924,
+              "referenceElDeg": -7.681038782737253,
+              "productionAzDeg": 230.340621,
+              "productionElDeg": -7.681039,
+              "azErrorDeg": 1.111179244617233e-06,
+              "elErrorDeg": 2.1726274734845674e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 236.60847639495972,
+              "referenceElDeg": 2.7928777002829066,
+              "productionAzDeg": 236.608475,
+              "productionElDeg": 2.792878,
+              "azErrorDeg": 1.3949597246210033e-06,
+              "elErrorDeg": 2.997170933660698e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 243.34728346685367,
+              "referenceElDeg": 1.286404480654587,
+              "productionAzDeg": 243.347282,
+              "productionElDeg": 1.286405,
+              "azErrorDeg": 1.4668536607587157e-06,
+              "elErrorDeg": 5.193454131191544e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 232.83983067557045,
+              "referenceElDeg": -7.335815001135063,
+              "productionAzDeg": 232.83983,
+              "productionElDeg": -7.335815,
+              "azErrorDeg": 6.755704475835955e-07,
+              "elErrorDeg": 1.13506271048891e-09,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 235.22891737825478,
+              "referenceElDeg": 5.130549305475952,
+              "productionAzDeg": 235.228916,
+              "productionElDeg": 5.130549,
+              "azErrorDeg": 1.378254779638155e-06,
+              "elErrorDeg": 3.054759520892958e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 231.34377810556072,
+              "referenceElDeg": -4.528661859216235,
+              "productionAzDeg": 231.343777,
+              "productionElDeg": -4.528662,
+              "azErrorDeg": 1.105560727410193e-06,
+              "elErrorDeg": 1.4078376509019108e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 242.03964707299448,
+              "referenceElDeg": -3.2383205576788834,
+              "productionAzDeg": 242.039646,
+              "productionElDeg": -3.23832,
+              "azErrorDeg": 1.0729944790455193e-06,
+              "elErrorDeg": 5.576788835170987e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 233.20946154868972,
+              "referenceElDeg": -5.710442172671608,
+              "productionAzDeg": 233.209461,
+              "productionElDeg": -5.710442,
+              "azErrorDeg": 5.486897123319068e-07,
+              "elErrorDeg": 1.7267160856704322e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 231.45420914744636,
+              "referenceElDeg": 5.790250448294142,
+              "productionAzDeg": 231.454208,
+              "productionElDeg": 5.79025,
+              "azErrorDeg": 1.147446369031968e-06,
+              "elErrorDeg": 4.4829414136415835e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 241.46263406548076,
+              "referenceElDeg": -6.333270155305092,
+              "productionAzDeg": 241.462633,
+              "productionElDeg": -6.33327,
+              "azErrorDeg": 1.065480745410241e-06,
+              "elErrorDeg": 1.5530509234196188e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 236.0757323420379,
+              "referenceElDeg": -2.988079505737568,
+              "productionAzDeg": 236.075731,
+              "productionElDeg": -2.98808,
+              "azErrorDeg": 1.342037904805693e-06,
+              "elErrorDeg": 4.942624318715616e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 231.99563692541452,
+              "referenceElDeg": 5.39876260437898,
+              "productionAzDeg": 231.995636,
+              "productionElDeg": 5.398763,
+              "azErrorDeg": 9.25414525454471e-07,
+              "elErrorDeg": 3.9562101949996986e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 243.69302508129303,
+              "referenceElDeg": -7.233311850182538,
+              "productionAzDeg": 243.693024,
+              "productionElDeg": -7.233312,
+              "azErrorDeg": 1.0812930213432992e-06,
+              "elErrorDeg": 1.49817461547741e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 236.90076993441477,
+              "referenceElDeg": -5.343951336689355,
+              "productionAzDeg": 236.900769,
+              "productionElDeg": -5.343951,
+              "azErrorDeg": 9.344147713363782e-07,
+              "elErrorDeg": 3.366893555067918e-07,
+              "passed": true
+            }
+          ]
+        }
+      }
+    },
+    "real-malapert": {
+      "coordinates": {
+        "lat": -85.99486736492493,
+        "lon": -0.23460969154338968,
+        "altKm": 4.78562939453125
+      },
+      "transformPathMaxErrorDeg": 1.2212453270876722e-15,
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "toleranceDeg": 0.0001,
+          "maxAngularComponentErrorDeg": 5.152977564648609e-07,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 117.17079106376413,
+              "referenceElDeg": -1.032069285936699,
+              "productionAzDeg": 117.170791,
+              "productionElDeg": -1.032069,
+              "azErrorDeg": 6.376413352882082e-08,
+              "elErrorDeg": 2.8593669920695675e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 101.43779064367564,
+              "referenceElDeg": -2.16916718308302,
+              "productionAzDeg": 101.437791,
+              "productionElDeg": -2.169167,
+              "azErrorDeg": 3.5632436379273713e-07,
+              "elErrorDeg": 1.8308302029979018e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 70.13849272258427,
+              "referenceElDeg": 0.7764637573404632,
+              "productionAzDeg": 70.138493,
+              "productionElDeg": 0.776464,
+              "azErrorDeg": 2.7741572239392553e-07,
+              "elErrorDeg": 2.426595367976958e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 27.07997412554909,
+              "referenceElDeg": 5.054332172214146,
+              "productionAzDeg": 27.079974,
+              "productionElDeg": 5.054332,
+              "azErrorDeg": 1.2554909289974603e-07,
+              "elErrorDeg": 1.7221414605472773e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 347.6778447821597,
+              "referenceElDeg": 4.204754373487704,
+              "productionAzDeg": 347.677845,
+              "productionElDeg": 4.204754,
+              "azErrorDeg": 2.1784029513582936e-07,
+              "elErrorDeg": 3.7348770387524155e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 135.76000246472017,
+              "referenceElDeg": -3.83891929534961,
+              "productionAzDeg": 135.760002,
+              "productionElDeg": -3.838919,
+              "azErrorDeg": 4.647201876650797e-07,
+              "elErrorDeg": 2.953496096580466e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 319.9998576878494,
+              "referenceElDeg": 1.524967250048179,
+              "productionAzDeg": 319.999858,
+              "productionElDeg": 1.524967,
+              "azErrorDeg": 3.1215063245326746e-07,
+              "elErrorDeg": 2.500481790512765e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 288.51587651529775,
+              "referenceElDeg": 1.2263605987472863,
+              "productionAzDeg": 288.515876,
+              "productionElDeg": 1.226361,
+              "azErrorDeg": 5.152977564648609e-07,
+              "elErrorDeg": 4.012527137220445e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 245.33918792707536,
+              "referenceElDeg": -0.1581781164825045,
+              "productionAzDeg": 245.339188,
+              "productionElDeg": -0.158178,
+              "azErrorDeg": 7.292464943020605e-08,
+              "elErrorDeg": 1.164825044752682e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 206.01133565019202,
+              "referenceElDeg": -3.8905748305044314,
+              "productionAzDeg": 206.011336,
+              "productionElDeg": -3.890575,
+              "azErrorDeg": 3.4980797636308125e-07,
+              "elErrorDeg": 1.6949556869150229e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 190.34397091018454,
+              "referenceElDeg": -5.457660077146638,
+              "productionAzDeg": 190.343971,
+              "productionElDeg": -5.45766,
+              "azErrorDeg": 8.981547239272913e-08,
+              "elErrorDeg": 7.714663841085212e-08,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 158.70569385612458,
+              "referenceElDeg": -3.3230804296199232,
+              "productionAzDeg": 158.705694,
+              "productionElDeg": -3.32308,
+              "azErrorDeg": 1.4387541114047053e-07,
+              "elErrorDeg": 4.296199231923481e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 115.53632910340146,
+              "referenceElDeg": -0.30935622494725024,
+              "productionAzDeg": 115.536329,
+              "productionElDeg": -0.309356,
+              "azErrorDeg": 1.034014758261037e-07,
+              "elErrorDeg": 2.249472502158234e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 76.07838178579124,
+              "referenceElDeg": 0.2329223000212834,
+              "productionAzDeg": 76.078382,
+              "productionElDeg": 0.232922,
+              "azErrorDeg": 2.1420876805677835e-07,
+              "elErrorDeg": 3.000212834003424e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 60.500646091013074,
+              "referenceElDeg": 0.667950751796979,
+              "productionAzDeg": 60.500646,
+              "productionElDeg": 0.667951,
+              "azErrorDeg": 9.101307796299807e-08,
+              "elErrorDeg": 2.4820302091388413e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 29.19792697507032,
+              "referenceElDeg": 4.397519000861726,
+              "productionAzDeg": 29.197927,
+              "productionElDeg": 4.397519,
+              "azErrorDeg": 2.492967610123742e-08,
+              "elErrorDeg": 8.617258018261964e-10,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 346.01009474816095,
+              "referenceElDeg": 5.076669129263509,
+              "productionAzDeg": 346.010095,
+              "productionElDeg": 5.076669,
+              "azErrorDeg": 2.5183902607750497e-07,
+              "elErrorDeg": 1.2926350922981555e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 306.71756913324623,
+              "referenceElDeg": 1.2462607058006197,
+              "productionAzDeg": 306.717569,
+              "productionElDeg": 1.246261,
+              "azErrorDeg": 1.3324620340426918e-07,
+              "elErrorDeg": 2.9419938041286287e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 291.1874008200397,
+              "referenceElDeg": 0.5356162818996133,
+              "productionAzDeg": 291.187401,
+              "productionElDeg": 0.535616,
+              "azErrorDeg": 1.799602955543378e-07,
+              "elErrorDeg": 2.818996133191476e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 259.64665549819733,
+              "referenceElDeg": 0.5653616594950696,
+              "productionAzDeg": 259.646655,
+              "productionElDeg": 0.565362,
+              "azErrorDeg": 4.981973233952885e-07,
+              "elErrorDeg": 3.4050493047388386e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 216.51305008605866,
+              "referenceElDeg": -2.412845446455799,
+              "productionAzDeg": 216.51305,
+              "productionElDeg": -2.412845,
+              "azErrorDeg": 8.60586624185089e-08,
+              "elErrorDeg": 4.4645579899693644e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 176.9697516117158,
+              "referenceElDeg": -5.373741034063778,
+              "productionAzDeg": 176.969752,
+              "productionElDeg": -5.373741,
+              "azErrorDeg": 3.8828420656500384e-07,
+              "elErrorDeg": 3.406377846459918e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 325.3751712744694,
+              "referenceElDeg": 1.8880579374836295,
+              "productionAzDeg": 325.375171,
+              "productionElDeg": 1.888058,
+              "azErrorDeg": 2.7446935746411327e-07,
+              "elErrorDeg": 6.251637052478998e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 149.05529086547986,
+              "referenceElDeg": -3.8626845733386177,
+              "productionAzDeg": 149.055291,
+              "productionElDeg": -3.862685,
+              "azErrorDeg": 1.3452014968606818e-07,
+              "elErrorDeg": 4.2666138222458017e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 117.62599489229973,
+              "referenceElDeg": -0.3568303414651807,
+              "productionAzDeg": 117.625995,
+              "productionElDeg": -0.35683,
+              "azErrorDeg": 1.0770025937745231e-07,
+              "elErrorDeg": 3.414651807420732e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 74.47190325623029,
+              "referenceElDeg": 1.3857359684626356,
+              "productionAzDeg": 74.471903,
+              "productionElDeg": 1.385736,
+              "azErrorDeg": 2.562302938713401e-07,
+              "elErrorDeg": 3.153736449768019e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 35.126272319003334,
+              "referenceElDeg": 1.7183671060019068,
+              "productionAzDeg": 35.126272,
+              "productionElDeg": 1.718367,
+              "azErrorDeg": 3.190033339706133e-07,
+              "elErrorDeg": 1.0600190680776223e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 19.571752084825338,
+              "referenceElDeg": 3.81691131844635,
+              "productionAzDeg": 19.571752,
+              "productionElDeg": 3.816911,
+              "azErrorDeg": 8.482533075948595e-08,
+              "elErrorDeg": 3.184463497341028e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 348.0802444568826,
+              "referenceElDeg": 5.45944358711552,
+              "productionAzDeg": 348.080244,
+              "productionElDeg": 5.459444,
+              "azErrorDeg": 4.568826170725515e-07,
+              "elErrorDeg": 4.128844803830134e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 305.0142620355366,
+              "referenceElDeg": 2.0398833806274,
+              "productionAzDeg": 305.014262,
+              "productionElDeg": 2.039883,
+              "azErrorDeg": 3.5536629638954764e-08,
+              "elErrorDeg": 3.8062739982080984e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 51.415906014555304,
+              "referenceElDeg": 0.9749162088159741,
+              "productionAzDeg": 51.415906,
+              "productionElDeg": 0.974916,
+              "azErrorDeg": 1.455529741178907e-08,
+              "elErrorDeg": 2.088159740676332e-07,
+              "passed": true
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "toleranceDeg": 0.005,
+          "maxAngularComponentErrorDeg": 1.5988474046935153e-06,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 353.61461590352724,
+              "referenceElDeg": 6.887787218059698,
+              "productionAzDeg": 353.614615,
+              "productionElDeg": 6.887787,
+              "azErrorDeg": 9.035272228175018e-07,
+              "elErrorDeg": 2.180596974099558e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-04-13T00:00:00+00:00",
+              "referenceAzDeg": 359.1991142937657,
+              "referenceElDeg": 7.787612081483701,
+              "productionAzDeg": 359.199113,
+              "productionElDeg": 7.787612,
+              "azErrorDeg": 1.2937657061229402e-06,
+              "elErrorDeg": 8.148370067573296e-08,
+              "passed": true
+            },
+            {
+              "utc": "2027-07-13T00:00:00+00:00",
+              "referenceAzDeg": 6.988960180852523,
+              "referenceElDeg": -3.048807840952591,
+              "productionAzDeg": 6.988959,
+              "productionElDeg": -3.048808,
+              "azErrorDeg": 1.1808525357537292e-06,
+              "elErrorDeg": 1.5904740902072945e-07,
+              "passed": true
+            },
+            {
+              "utc": "2027-10-13T00:00:00+00:00",
+              "referenceAzDeg": 357.14268658296197,
+              "referenceElDeg": 8.072906172415857,
+              "productionAzDeg": 357.142686,
+              "productionElDeg": 8.072906,
+              "azErrorDeg": 5.829619453834312e-07,
+              "elErrorDeg": 1.7241585759109057e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-01-13T00:00:00+00:00",
+              "referenceAzDeg": 359.30124902670207,
+              "referenceElDeg": 3.5661969693489315,
+              "productionAzDeg": 359.301248,
+              "productionElDeg": 3.566197,
+              "azErrorDeg": 1.0267020797982696e-06,
+              "elErrorDeg": 3.065106835009601e-08,
+              "passed": true
+            },
+            {
+              "utc": "2028-02-29T00:00:00+00:00",
+              "referenceAzDeg": 354.89137353617707,
+              "referenceElDeg": 10.316265169694919,
+              "productionAzDeg": 354.891373,
+              "productionElDeg": 10.316265,
+              "azErrorDeg": 5.361770831768808e-07,
+              "elErrorDeg": 1.6969491944962556e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-04-13T00:00:00+00:00",
+              "referenceAzDeg": 6.914849270811264,
+              "referenceElDeg": -1.1106031127118798,
+              "productionAzDeg": 6.914848,
+              "productionElDeg": -1.110603,
+              "azErrorDeg": 1.2708112535619875e-06,
+              "elErrorDeg": 1.127118798294191e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-07-13T00:00:00+00:00",
+              "referenceAzDeg": 357.6463268169189,
+              "referenceElDeg": 10.083814652817281,
+              "productionAzDeg": 357.646326,
+              "productionElDeg": 10.083815,
+              "azErrorDeg": 8.169188845386088e-07,
+              "elErrorDeg": 3.4718271813005686e-07,
+              "passed": true
+            },
+            {
+              "utc": "2028-10-13T00:00:00+00:00",
+              "referenceAzDeg": 354.33671551029687,
+              "referenceElDeg": 1.4057833332531509,
+              "productionAzDeg": 354.336715,
+              "productionElDeg": 1.405783,
+              "azErrorDeg": 5.102968430037436e-07,
+              "elErrorDeg": 3.332531508526415e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-01-13T00:00:00+00:00",
+              "referenceAzDeg": 5.1860805020206415,
+              "referenceElDeg": 2.3903173411140473,
+              "productionAzDeg": 5.18608,
+              "productionElDeg": 2.390317,
+              "azErrorDeg": 5.020206401695759e-07,
+              "elErrorDeg": 3.411140472309171e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-04-13T00:00:00+00:00",
+              "referenceAzDeg": 0.45080051264458665,
+              "referenceElDeg": 10.318344636991796,
+              "productionAzDeg": 0.4508,
+              "productionElDeg": 10.318345,
+              "azErrorDeg": 5.126445898895327e-07,
+              "elErrorDeg": 3.630082048289296e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-07-13T00:00:00+00:00",
+              "referenceAzDeg": 355.44154285625575,
+              "referenceElDeg": 0.045763276536945875,
+              "productionAzDeg": 355.441542,
+              "productionElDeg": 0.045763,
+              "azErrorDeg": 8.562557241020841e-07,
+              "elErrorDeg": 2.7653694587709277e-07,
+              "passed": true
+            },
+            {
+              "utc": "2029-10-13T00:00:00+00:00",
+              "referenceAzDeg": 7.268697650047367,
+              "referenceElDeg": 4.1080394088305,
+              "productionAzDeg": 7.268697,
+              "productionElDeg": 4.108039,
+              "azErrorDeg": 6.500473546111607e-07,
+              "elErrorDeg": 4.088305001204162e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-01-13T00:00:00+00:00",
+              "referenceAzDeg": 1.6830956486777102,
+              "referenceElDeg": 8.736303787170536,
+              "productionAzDeg": 1.683095,
+              "productionElDeg": 8.736304,
+              "azErrorDeg": 6.486777124337095e-07,
+              "elErrorDeg": 2.1282946427447769e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-04-13T00:00:00+00:00",
+              "referenceAzDeg": 352.5702261570067,
+              "referenceElDeg": -1.8474248498955825,
+              "productionAzDeg": 352.570225,
+              "productionElDeg": -1.847425,
+              "azErrorDeg": 1.1570066931199108e-06,
+              "elErrorDeg": 1.501044175622468e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-07-13T00:00:00+00:00",
+              "referenceAzDeg": 0.23804159884741455,
+              "referenceElDeg": 4.44867833062497,
+              "productionAzDeg": 0.23804,
+              "productionElDeg": 4.448678,
+              "azErrorDeg": 1.5988474046935153e-06,
+              "elErrorDeg": 3.306249700685271e-07,
+              "passed": true
+            },
+            {
+              "utc": "2030-10-13T00:00:00+00:00",
+              "referenceAzDeg": 3.7866788944312715,
+              "referenceElDeg": 7.204443362397604,
+              "productionAzDeg": 3.786678,
+              "productionElDeg": 7.204444,
+              "azErrorDeg": 8.944312810399424e-07,
+              "elErrorDeg": 6.376023957699317e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-01-13T00:00:00+00:00",
+              "referenceAzDeg": 354.18657921372517,
+              "referenceElDeg": -2.9391673458090057,
+              "productionAzDeg": 354.186578,
+              "productionElDeg": -2.939167,
+              "azErrorDeg": 1.2137251701460627e-06,
+              "elErrorDeg": 3.458090058749974e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-04-13T00:00:00+00:00",
+              "referenceAzDeg": 0.5972539350323314,
+              "referenceElDeg": 7.453213595111187,
+              "productionAzDeg": 0.597253,
+              "productionElDeg": 7.453213,
+              "azErrorDeg": 9.35032318238882e-07,
+              "elErrorDeg": 5.951111869961778e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-07-13T00:00:00+00:00",
+              "referenceAzDeg": 7.342821876182376,
+              "referenceElDeg": 5.7927695217277835,
+              "productionAzDeg": 7.342821,
+              "productionElDeg": 5.79277,
+              "azErrorDeg": 8.761823835357063e-07,
+              "elErrorDeg": 4.782722164975439e-07,
+              "passed": true
+            },
+            {
+              "utc": "2031-10-13T00:00:00+00:00",
+              "referenceAzDeg": 356.67172906303233,
+              "referenceElDeg": -2.620502018357644,
+              "productionAzDeg": 356.671728,
+              "productionElDeg": -2.620502,
+              "azErrorDeg": 1.063032357251359e-06,
+              "elErrorDeg": 1.8357643849498118e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-01-13T00:00:00+00:00",
+              "referenceAzDeg": 359.24560391248065,
+              "referenceElDeg": 9.815132056074201,
+              "productionAzDeg": 359.245603,
+              "productionElDeg": 9.815132,
+              "azErrorDeg": 9.124806297222676e-07,
+              "elErrorDeg": 5.6074201282285685e-08,
+              "passed": true
+            },
+            {
+              "utc": "2032-02-29T00:00:00+00:00",
+              "referenceAzDeg": 355.21515455846856,
+              "referenceElDeg": 0.20456564110198094,
+              "productionAzDeg": 355.215154,
+              "productionElDeg": 0.204565,
+              "azErrorDeg": 5.584685709436599e-07,
+              "elErrorDeg": 6.411019809471341e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-04-13T00:00:00+00:00",
+              "referenceAzDeg": 5.912809521266705,
+              "referenceElDeg": 1.3026887272721432,
+              "productionAzDeg": 5.912808,
+              "productionElDeg": 1.302689,
+              "azErrorDeg": 1.5212667108244204e-06,
+              "elErrorDeg": 2.7272785674270494e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-07-13T00:00:00+00:00",
+              "referenceAzDeg": 357.060045305176,
+              "referenceElDeg": -0.9993552596436399,
+              "productionAzDeg": 357.060044,
+              "productionElDeg": -0.999355,
+              "azErrorDeg": 1.3051759992777079e-06,
+              "elErrorDeg": 2.596436399215918e-07,
+              "passed": true
+            },
+            {
+              "utc": "2032-10-13T00:00:00+00:00",
+              "referenceAzDeg": 355.43577642075985,
+              "referenceElDeg": 10.525644455119187,
+              "productionAzDeg": 355.435775,
+              "productionElDeg": 10.525645,
+              "azErrorDeg": 1.4207598724169657e-06,
+              "elErrorDeg": 5.448808142460848e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-01-13T00:00:00+00:00",
+              "referenceAzDeg": 5.25986007789949,
+              "referenceElDeg": -1.7779120594427824,
+              "productionAzDeg": 5.259859,
+              "productionElDeg": -1.777912,
+              "azErrorDeg": 1.0778994976590184e-06,
+              "elErrorDeg": 5.944278247405066e-08,
+              "passed": true
+            },
+            {
+              "utc": "2033-04-13T00:00:00+00:00",
+              "referenceAzDeg": 359.9599821345046,
+              "referenceElDeg": 1.6803911149523558,
+              "productionAzDeg": 359.959981,
+              "productionElDeg": 1.680391,
+              "azErrorDeg": 1.1345046004862525e-06,
+              "elErrorDeg": 1.1495235585634589e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-07-13T00:00:00+00:00",
+              "referenceAzDeg": 355.97922317689574,
+              "referenceElDeg": 10.128012334587252,
+              "productionAzDeg": 355.979222,
+              "productionElDeg": 10.128012,
+              "azErrorDeg": 1.1768957506319566e-06,
+              "elErrorDeg": 3.3458725212653917e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-10-13T00:00:00+00:00",
+              "referenceAzDeg": 7.45295881999291,
+              "referenceElDeg": -2.7363036071964872,
+              "productionAzDeg": 7.452958,
+              "productionElDeg": -2.736304,
+              "azErrorDeg": 8.199929197871825e-07,
+              "elErrorDeg": 3.928035128275553e-07,
+              "passed": true
+            },
+            {
+              "utc": "2033-12-31T23:50:00+00:00",
+              "referenceAzDeg": 0.741627858389045,
+              "referenceElDeg": -0.6907056772117826,
+              "productionAzDeg": 0.741627,
+              "productionElDeg": -0.690706,
+              "azErrorDeg": 8.583890576119302e-07,
+              "elErrorDeg": 3.227882174883234e-07,
+              "passed": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "limits": [
+    "DE441/Horizons inertial vectors provide an external software/ephemeris comparison; the local lunar orientation uses the production DE421 rotation kernel",
+    "Not independent terrain, full orientation/time-range, global-horizon or mission-accuracy acceptance",
+    "Future UTC/ET conversion retains the current leap-second assumptions; sampled epochs do not prove every intervening date"
+  ],
+  "caseCount": 372,
+  "passed": true
+}

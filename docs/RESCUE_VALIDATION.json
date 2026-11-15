@@ -1,0 +1,1231 @@
+{
+  "schema": "sitelight-rescue-validation-1",
+  "meaning": "Real pinned terrain with explicitly hypothetical assets and response assumptions; not operational validation.",
+  "scientificBundle": "dem-de421-4",
+  "scientificBundleSha256": "ac1c739e97e9c70c74dbdc05ac6be705575eef3e32c98ea064ff7402a7278a62",
+  "cases": [
+    {
+      "site": {
+        "id": "real-shackleton",
+        "name": "Shackleton · DEM study point",
+        "lat": -89.76674147713055,
+        "lon": -171.89280908299654,
+        "altKm": 0.7699786376953125,
+        "polar": true,
+        "surfaceElevationM": 767.9786376953125,
+        "observerHeightM": 2,
+        "tile": "Site04",
+        "source": "https://pgda.gsfc.nasa.gov/products/78",
+        "coordinateStatus": "Derived center of Site04 pixel row 1600, column 1600; study point, not a certified landing site",
+        "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+        "projectedPointM": [
+          -997.5,
+          -7002.5
+        ],
+        "sourcePixel": [
+          1600,
+          1600
+        ]
+      },
+      "result": {
+        "model": "conditional-rescue-time-1",
+        "acceptedForVerdict": false,
+        "classification": "HYPOTHETICAL RESPONSE ASSUMPTIONS",
+        "context": {
+          "mode": "real",
+          "siteId": "real-shackleton",
+          "lat": -89.76674147713055,
+          "lon": -171.89280908299654,
+          "altKm": 0.7699786376953125,
+          "incidentUtc": "2027-01-13T00:00:00.000Z"
+        },
+        "assumptions": {
+          "assetDeclared": true,
+          "available": true,
+          "returnRequired": true,
+          "outboundMps": 0.5,
+          "returnMps": 0.25,
+          "mobilizationMin": 10,
+          "handlingMin": 15,
+          "enduranceMin": 120,
+          "deadlineMin": 60,
+          "assetScope": {
+            "mode": "real",
+            "siteId": "real-shackleton",
+            "lat": -89.76674147713055,
+            "lon": -171.89280908299654,
+            "altKm": 0.7699786376953125,
+            "incidentUtc": "2027-01-13T00:00:00.000Z"
+          }
+        },
+        "asset": {
+          "type": "User-declared hypothetical rescue vehicle",
+          "origin": "Selected footprint center",
+          "casualty": "Terrain-route destination",
+          "declaredForCurrentScenario": true
+        },
+        "route": {
+          "model": "sampled-grid-route-1",
+          "status": "no_route",
+          "direction": "+X",
+          "lengthM": null,
+          "spacingM": 10,
+          "slopeLimitDeg": 12,
+          "classification": "REAL NASA PGDA DEM · BOUNDED FOOTPRINT",
+          "path": []
+        },
+        "timing": null,
+        "checks": [],
+        "meaning": "Conditional time/endurance comparison on a bounded sampled route. This is not an operational rescue or safe-return verdict.",
+        "exclusions": [
+          "Asset existence, transport capacity, deployment and availability are hypothetical declarations, not observations.",
+          "Energy/battery use, traction, boulders, vehicle clearance, medical care, communications and environmental conditions along the route are not evaluated.",
+          "Constant declared speeds and the same reversed path are assumed for return; no unassessed destination or external route is connected.",
+          "The incident is assumed at the selected scenario start. Endurance and completion limits are user assumptions, independent of the visibility assessment."
+        ],
+        "status": "no_sampled_route",
+        "reason": "No route meets the selected sampled slope/coverage limits. This does not establish that every possible rescue route is impossible."
+      },
+      "terrainSources": [
+        {
+          "name": "kernels/de421.bsp",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/de421.bsp",
+          "bytes": 16790528,
+          "sha256": "08b20db2ae22488650641c5a9033e5bfda4b1c4b440cfeaf20f621cfa18ecdb3",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_pa_de421_1900-2050.bpc",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de421_1900-2050.bpc",
+          "bytes": 1770496,
+          "sha256": "656f90616403d75a75f0cd6c8830fc5b44f8cb4facb5ccb8915e752b397520cf",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_080317.tf",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_080317.tf",
+          "bytes": 21437,
+          "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/naif0012.tls",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+          "bytes": 5257,
+          "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+          "bytes": 189158392,
+          "sha256": "82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "bytes": 254808965,
+          "sha256": "e89306914bb209143f61ba66d341703d75221339424b774c6a1eb3c6c370ffc6",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site04_surf.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_final_adj_5mpp_surf.tif",
+          "bytes": 40980806,
+          "sha256": "38ff70dbdf2f066c2cfa94a646c3a59d653ce7f6b4528b15fc1b43ee397ce758",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site04_toterr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_final_adj_5mpp_toterr.tif",
+          "bytes": 40980808,
+          "sha256": "416c4baa3b64def0182bb3379a1a9228482efd8ce32a39309ea8de5d0330fbe6",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site04_slperr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_final_adj_5mpp_slperr.tif",
+          "bytes": 40980806,
+          "sha256": "067cd4d8e3e8c14a9a5be1915242532f85063f1b300f248407cc8c8b68e90695",
+          "retrievedDate": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "site": {
+        "id": "real-connector",
+        "name": "Connecting ridge · DEM study point",
+        "lat": -89.4631577569723,
+        "lon": -137.50198490762307,
+        "altKm": 1.94676708984375,
+        "polar": true,
+        "surfaceElevationM": 1944.76708984375,
+        "observerHeightM": 2,
+        "tile": "Site01",
+        "source": "https://pgda.gsfc.nasa.gov/products/78",
+        "coordinateStatus": "Derived center of Site01 pixel row 1600, column 1600; study point, not a certified landing site",
+        "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+        "projectedPointM": [
+          -10997.5,
+          -12002.5
+        ],
+        "sourcePixel": [
+          1600,
+          1600
+        ]
+      },
+      "result": {
+        "model": "conditional-rescue-time-1",
+        "acceptedForVerdict": false,
+        "classification": "HYPOTHETICAL RESPONSE ASSUMPTIONS",
+        "context": {
+          "mode": "real",
+          "siteId": "real-connector",
+          "lat": -89.4631577569723,
+          "lon": -137.50198490762307,
+          "altKm": 1.94676708984375,
+          "incidentUtc": "2027-01-13T00:00:00.000Z"
+        },
+        "assumptions": {
+          "assetDeclared": true,
+          "available": true,
+          "returnRequired": true,
+          "outboundMps": 0.5,
+          "returnMps": 0.25,
+          "mobilizationMin": 10,
+          "handlingMin": 15,
+          "enduranceMin": 120,
+          "deadlineMin": 60,
+          "assetScope": {
+            "mode": "real",
+            "siteId": "real-connector",
+            "lat": -89.4631577569723,
+            "lon": -137.50198490762307,
+            "altKm": 1.94676708984375,
+            "incidentUtc": "2027-01-13T00:00:00.000Z"
+          }
+        },
+        "asset": {
+          "type": "User-declared hypothetical rescue vehicle",
+          "origin": "Selected footprint center",
+          "casualty": "Terrain-route destination",
+          "declaredForCurrentScenario": true
+        },
+        "route": {
+          "model": "sampled-grid-route-1",
+          "status": "found",
+          "direction": "+X",
+          "lengthM": 80.27961406030656,
+          "spacingM": 10,
+          "slopeLimitDeg": 12,
+          "classification": "REAL NASA PGDA DEM · BOUNDED FOOTPRINT",
+          "qualification": "uncertain_real_terrain",
+          "path": [
+            {
+              "x": 0,
+              "z": 0,
+              "h": 1944.7671,
+              "slope": 3.472687600149905
+            },
+            {
+              "x": 10,
+              "z": 0,
+              "h": 1943.903568100813,
+              "slope": 7.678801047959798
+            },
+            {
+              "x": 20,
+              "z": 0,
+              "h": 1942.687372389447,
+              "slope": 7.284826539098245
+            },
+            {
+              "x": 30,
+              "z": 0,
+              "h": 1942.1245626006503,
+              "slope": 6.393635374237349
+            },
+            {
+              "x": 40,
+              "z": 0,
+              "h": 1941.2903913136263,
+              "slope": 7.485577884267058
+            },
+            {
+              "x": 50,
+              "z": 0,
+              "h": 1940.051690764927,
+              "slope": 7.056206898299735
+            },
+            {
+              "x": 60,
+              "z": 0,
+              "h": 1939.2847592557785,
+              "slope": 4.802009607978118
+            },
+            {
+              "x": 70,
+              "z": 0,
+              "h": 1938.962242232929,
+              "slope": 4.5233899543799065
+            },
+            {
+              "x": 80,
+              "z": 0,
+              "h": 1938.5836421275787,
+              "slope": 4.287452337882241
+            }
+          ]
+        },
+        "timing": {
+          "mobilizationMin": 10,
+          "outboundMin": 2.675987135343552,
+          "arrivalMin": 12.675987135343552,
+          "handlingMin": 15,
+          "returnMin": 5.351974270687104,
+          "completionMin": 33.027961406030656,
+          "totalDistanceM": 160.5592281206131,
+          "arrivalUtc": "2027-01-13T00:12:40.559Z",
+          "completionUtc": "2027-01-13T00:33:01.677Z",
+          "completionMeaning": "Casualty returned to footprint-center asset origin"
+        },
+        "checks": [
+          {
+            "id": "endurance",
+            "limitMin": 120,
+            "actualMin": 33.027961406030656,
+            "marginMin": 86.97203859396934,
+            "fits": true
+          },
+          {
+            "id": "completion",
+            "limitMin": 60,
+            "actualMin": 33.027961406030656,
+            "marginMin": 26.972038593969344,
+            "fits": true
+          }
+        ],
+        "meaning": "Conditional time/endurance comparison on a bounded sampled route. This is not an operational rescue or safe-return verdict.",
+        "exclusions": [
+          "Asset existence, transport capacity, deployment and availability are hypothetical declarations, not observations.",
+          "Energy/battery use, traction, boulders, vehicle clearance, medical care, communications and environmental conditions along the route are not evaluated.",
+          "Constant declared speeds and the same reversed path are assumed for return; no unassessed destination or external route is connected.",
+          "The incident is assumed at the selected scenario start. Endurance and completion limits are user assumptions, independent of the visibility assessment."
+        ],
+        "status": "conditional_fit",
+        "reason": "The assumed response fits both declared time limits."
+      },
+      "terrainSources": [
+        {
+          "name": "kernels/de421.bsp",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/de421.bsp",
+          "bytes": 16790528,
+          "sha256": "08b20db2ae22488650641c5a9033e5bfda4b1c4b440cfeaf20f621cfa18ecdb3",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_pa_de421_1900-2050.bpc",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de421_1900-2050.bpc",
+          "bytes": 1770496,
+          "sha256": "656f90616403d75a75f0cd6c8830fc5b44f8cb4facb5ccb8915e752b397520cf",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_080317.tf",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_080317.tf",
+          "bytes": 21437,
+          "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/naif0012.tls",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+          "bytes": 5257,
+          "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+          "bytes": 189158392,
+          "sha256": "82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "bytes": 254808965,
+          "sha256": "e89306914bb209143f61ba66d341703d75221339424b774c6a1eb3c6c370ffc6",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site01_surf.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_surf.tif",
+          "bytes": 40980810,
+          "sha256": "3ba7b97cb00a2bcf21189c3aeb535f65afc21207154ab9f0d43c5bdc1f7e747e",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site01_toterr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_toterr.tif",
+          "bytes": 40980810,
+          "sha256": "cf2cf52f52d2aa51e60d058010d10b0ebfb1d3e920f5a2b9a46eb6c51054ab1c",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site01_slperr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_slperr.tif",
+          "bytes": 40980810,
+          "sha256": "52bc3b239f61605e6bb98bab6d6b17acd22389c59e57336862157f2fbd643a33",
+          "retrievedDate": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "site": {
+        "id": "real-gerlache",
+        "name": "de Gerlache · DEM study point",
+        "lat": -88.68352551547558,
+        "lon": -67.93407755484023,
+        "altKm": 1.7956644287109376,
+        "polar": true,
+        "surfaceElevationM": 1793.6644287109375,
+        "observerHeightM": 2,
+        "tile": "Site11",
+        "source": "https://pgda.gsfc.nasa.gov/products/78",
+        "coordinateStatus": "Derived center of Site11 pixel row 1600, column 1600; study point, not a certified landing site",
+        "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+        "projectedPointM": [
+          -36997.5,
+          14997.5
+        ],
+        "sourcePixel": [
+          1600,
+          1600
+        ]
+      },
+      "result": {
+        "model": "conditional-rescue-time-1",
+        "acceptedForVerdict": false,
+        "classification": "HYPOTHETICAL RESPONSE ASSUMPTIONS",
+        "context": {
+          "mode": "real",
+          "siteId": "real-gerlache",
+          "lat": -88.68352551547558,
+          "lon": -67.93407755484023,
+          "altKm": 1.7956644287109376,
+          "incidentUtc": "2027-01-13T00:00:00.000Z"
+        },
+        "assumptions": {
+          "assetDeclared": true,
+          "available": true,
+          "returnRequired": true,
+          "outboundMps": 0.5,
+          "returnMps": 0.25,
+          "mobilizationMin": 10,
+          "handlingMin": 15,
+          "enduranceMin": 120,
+          "deadlineMin": 60,
+          "assetScope": {
+            "mode": "real",
+            "siteId": "real-gerlache",
+            "lat": -88.68352551547558,
+            "lon": -67.93407755484023,
+            "altKm": 1.7956644287109376,
+            "incidentUtc": "2027-01-13T00:00:00.000Z"
+          }
+        },
+        "asset": {
+          "type": "User-declared hypothetical rescue vehicle",
+          "origin": "Selected footprint center",
+          "casualty": "Terrain-route destination",
+          "declaredForCurrentScenario": true
+        },
+        "route": {
+          "model": "sampled-grid-route-1",
+          "status": "found",
+          "direction": "+X",
+          "lengthM": 80.28385863165275,
+          "spacingM": 10,
+          "slopeLimitDeg": 12,
+          "classification": "REAL NASA PGDA DEM · BOUNDED FOOTPRINT",
+          "qualification": "uncertain_real_terrain",
+          "path": [
+            {
+              "x": 0,
+              "z": 0,
+              "h": 1793.6644,
+              "slope": 1.140346613185315
+            },
+            {
+              "x": 10,
+              "z": 0,
+              "h": 1793.4525118003633,
+              "slope": 0.7235747659392807
+            },
+            {
+              "x": 20,
+              "z": 0,
+              "h": 1793.9125685861686,
+              "slope": 1.3660534915031681
+            },
+            {
+              "x": 30,
+              "z": 0,
+              "h": 1793.0649275894923,
+              "slope": 6.282597349103447
+            },
+            {
+              "x": 40,
+              "z": 0,
+              "h": 1791.8722060219939,
+              "slope": 6.911176059329522
+            },
+            {
+              "x": 50,
+              "z": 0,
+              "h": 1790.7716096655618,
+              "slope": 6.384401835987774
+            },
+            {
+              "x": 60,
+              "z": 0,
+              "h": 1789.7446845336922,
+              "slope": 5.326008552157293
+            },
+            {
+              "x": 70,
+              "z": 0,
+              "h": 1788.9545265868321,
+              "slope": 4.328368816269852
+            },
+            {
+              "x": 80,
+              "z": 0,
+              "h": 1788.3192920818017,
+              "slope": 3.912092367227116
+            }
+          ]
+        },
+        "timing": {
+          "mobilizationMin": 10,
+          "outboundMin": 2.6761286210550916,
+          "arrivalMin": 12.676128621055092,
+          "handlingMin": 15,
+          "returnMin": 5.352257242110183,
+          "completionMin": 33.028385863165276,
+          "totalDistanceM": 160.5677172633055,
+          "arrivalUtc": "2027-01-13T00:12:40.567Z",
+          "completionUtc": "2027-01-13T00:33:01.703Z",
+          "completionMeaning": "Casualty returned to footprint-center asset origin"
+        },
+        "checks": [
+          {
+            "id": "endurance",
+            "limitMin": 120,
+            "actualMin": 33.028385863165276,
+            "marginMin": 86.97161413683472,
+            "fits": true
+          },
+          {
+            "id": "completion",
+            "limitMin": 60,
+            "actualMin": 33.028385863165276,
+            "marginMin": 26.971614136834724,
+            "fits": true
+          }
+        ],
+        "meaning": "Conditional time/endurance comparison on a bounded sampled route. This is not an operational rescue or safe-return verdict.",
+        "exclusions": [
+          "Asset existence, transport capacity, deployment and availability are hypothetical declarations, not observations.",
+          "Energy/battery use, traction, boulders, vehicle clearance, medical care, communications and environmental conditions along the route are not evaluated.",
+          "Constant declared speeds and the same reversed path are assumed for return; no unassessed destination or external route is connected.",
+          "The incident is assumed at the selected scenario start. Endurance and completion limits are user assumptions, independent of the visibility assessment."
+        ],
+        "status": "conditional_fit",
+        "reason": "The assumed response fits both declared time limits."
+      },
+      "terrainSources": [
+        {
+          "name": "kernels/de421.bsp",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/de421.bsp",
+          "bytes": 16790528,
+          "sha256": "08b20db2ae22488650641c5a9033e5bfda4b1c4b440cfeaf20f621cfa18ecdb3",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_pa_de421_1900-2050.bpc",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de421_1900-2050.bpc",
+          "bytes": 1770496,
+          "sha256": "656f90616403d75a75f0cd6c8830fc5b44f8cb4facb5ccb8915e752b397520cf",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_080317.tf",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_080317.tf",
+          "bytes": 21437,
+          "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/naif0012.tls",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+          "bytes": 5257,
+          "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+          "bytes": 189158392,
+          "sha256": "82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "bytes": 254808965,
+          "sha256": "e89306914bb209143f61ba66d341703d75221339424b774c6a1eb3c6c370ffc6",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site11_surf.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site11/Site11_final_adj_5mpp_surf.tif",
+          "bytes": 40980806,
+          "sha256": "58f3372c35bbd6baf38ffd5633c1c96b59bd89dbd252150581d12893a43136e5",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site11_toterr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site11/Site11_final_adj_5mpp_toterr.tif",
+          "bytes": 40980810,
+          "sha256": "0d61e972981483fb3022af8e65d052506969a758aa95eb0ebe0478a83ac55e1b",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site11_slperr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site11/Site11_final_adj_5mpp_slperr.tif",
+          "bytes": 40980808,
+          "sha256": "57cf88cc62721ade317cdd7b0300b607f8a8b3e6bfe571e307319ad4329f4cc1",
+          "retrievedDate": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "site": {
+        "id": "real-nobile",
+        "name": "Nobile · DEM study point",
+        "lat": -85.43811594434003,
+        "lon": 37.36812005733697,
+        "altKm": 5.948380859375,
+        "polar": true,
+        "surfaceElevationM": 5946.380859375,
+        "observerHeightM": 2,
+        "tile": "Site06",
+        "source": "https://pgda.gsfc.nasa.gov/products/78",
+        "coordinateStatus": "Derived center of Site06 pixel row 2000, column 2000; study point, not a certified landing site",
+        "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+        "projectedPointM": [
+          84002.5,
+          109997.5
+        ],
+        "sourcePixel": [
+          2000,
+          2000
+        ]
+      },
+      "result": {
+        "model": "conditional-rescue-time-1",
+        "acceptedForVerdict": false,
+        "classification": "HYPOTHETICAL RESPONSE ASSUMPTIONS",
+        "context": {
+          "mode": "real",
+          "siteId": "real-nobile",
+          "lat": -85.43811594434003,
+          "lon": 37.36812005733697,
+          "altKm": 5.948380859375,
+          "incidentUtc": "2027-01-13T00:00:00.000Z"
+        },
+        "assumptions": {
+          "assetDeclared": true,
+          "available": true,
+          "returnRequired": true,
+          "outboundMps": 0.5,
+          "returnMps": 0.25,
+          "mobilizationMin": 10,
+          "handlingMin": 15,
+          "enduranceMin": 120,
+          "deadlineMin": 60,
+          "assetScope": {
+            "mode": "real",
+            "siteId": "real-nobile",
+            "lat": -85.43811594434003,
+            "lon": 37.36812005733697,
+            "altKm": 5.948380859375,
+            "incidentUtc": "2027-01-13T00:00:00.000Z"
+          }
+        },
+        "asset": {
+          "type": "User-declared hypothetical rescue vehicle",
+          "origin": "Selected footprint center",
+          "casualty": "Terrain-route destination",
+          "declaredForCurrentScenario": true
+        },
+        "route": {
+          "model": "sampled-grid-route-1",
+          "status": "no_route",
+          "direction": "+X",
+          "lengthM": null,
+          "spacingM": 10,
+          "slopeLimitDeg": 12,
+          "classification": "REAL NASA PGDA DEM · BOUNDED FOOTPRINT",
+          "path": []
+        },
+        "timing": null,
+        "checks": [],
+        "meaning": "Conditional time/endurance comparison on a bounded sampled route. This is not an operational rescue or safe-return verdict.",
+        "exclusions": [
+          "Asset existence, transport capacity, deployment and availability are hypothetical declarations, not observations.",
+          "Energy/battery use, traction, boulders, vehicle clearance, medical care, communications and environmental conditions along the route are not evaluated.",
+          "Constant declared speeds and the same reversed path are assumed for return; no unassessed destination or external route is connected.",
+          "The incident is assumed at the selected scenario start. Endurance and completion limits are user assumptions, independent of the visibility assessment."
+        ],
+        "status": "no_sampled_route",
+        "reason": "No route meets the selected sampled slope/coverage limits. This does not establish that every possible rescue route is impossible."
+      },
+      "terrainSources": [
+        {
+          "name": "kernels/de421.bsp",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/de421.bsp",
+          "bytes": 16790528,
+          "sha256": "08b20db2ae22488650641c5a9033e5bfda4b1c4b440cfeaf20f621cfa18ecdb3",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_pa_de421_1900-2050.bpc",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de421_1900-2050.bpc",
+          "bytes": 1770496,
+          "sha256": "656f90616403d75a75f0cd6c8830fc5b44f8cb4facb5ccb8915e752b397520cf",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_080317.tf",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_080317.tf",
+          "bytes": 21437,
+          "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/naif0012.tls",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+          "bytes": 5257,
+          "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+          "bytes": 189158392,
+          "sha256": "82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "bytes": 254808965,
+          "sha256": "e89306914bb209143f61ba66d341703d75221339424b774c6a1eb3c6c370ffc6",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site06_surf.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site06/Site06_final_adj_5mpp_surf.tif",
+          "bytes": 64025603,
+          "sha256": "cca17e8067601dd659b583f889204db6bce685bc30c60a9e62427a8bce36b03d",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site06_toterr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site06/Site06_final_adj_5mpp_toterr.tif",
+          "bytes": 64025607,
+          "sha256": "997c7d2d7ae6a74a1d5c38411cf30a414b1a83474b6b3c3a7b1cb32ef675661e",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site06_slperr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site06/Site06_final_adj_5mpp_slperr.tif",
+          "bytes": 64025605,
+          "sha256": "fd7fe86186013df32a60130ffadff2b8b49a4b2730dd6a1e53b06a058610d382",
+          "retrievedDate": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "site": {
+        "id": "real-peak",
+        "name": "Peak near Shackleton · DEM study point",
+        "lat": -88.81089375534428,
+        "lon": 123.69116926195721,
+        "altKm": 1.647548828125,
+        "polar": true,
+        "surfaceElevationM": 1645.548828125,
+        "observerHeightM": 2,
+        "tile": "Site07",
+        "source": "https://pgda.gsfc.nasa.gov/products/78",
+        "coordinateStatus": "Derived center of Site07 pixel row 1600, column 1600; study point, not a certified landing site",
+        "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+        "projectedPointM": [
+          30002.5,
+          -20002.5
+        ],
+        "sourcePixel": [
+          1600,
+          1600
+        ]
+      },
+      "result": {
+        "model": "conditional-rescue-time-1",
+        "acceptedForVerdict": false,
+        "classification": "HYPOTHETICAL RESPONSE ASSUMPTIONS",
+        "context": {
+          "mode": "real",
+          "siteId": "real-peak",
+          "lat": -88.81089375534428,
+          "lon": 123.69116926195721,
+          "altKm": 1.647548828125,
+          "incidentUtc": "2027-01-13T00:00:00.000Z"
+        },
+        "assumptions": {
+          "assetDeclared": true,
+          "available": true,
+          "returnRequired": true,
+          "outboundMps": 0.5,
+          "returnMps": 0.25,
+          "mobilizationMin": 10,
+          "handlingMin": 15,
+          "enduranceMin": 120,
+          "deadlineMin": 60,
+          "assetScope": {
+            "mode": "real",
+            "siteId": "real-peak",
+            "lat": -88.81089375534428,
+            "lon": 123.69116926195721,
+            "altKm": 1.647548828125,
+            "incidentUtc": "2027-01-13T00:00:00.000Z"
+          }
+        },
+        "asset": {
+          "type": "User-declared hypothetical rescue vehicle",
+          "origin": "Selected footprint center",
+          "casualty": "Terrain-route destination",
+          "declaredForCurrentScenario": true
+        },
+        "route": {
+          "model": "sampled-grid-route-1",
+          "status": "found",
+          "direction": "+X",
+          "lengthM": 80.06851162851949,
+          "spacingM": 10,
+          "slopeLimitDeg": 12,
+          "classification": "REAL NASA PGDA DEM · BOUNDED FOOTPRINT",
+          "qualification": "uncertain_real_terrain",
+          "path": [
+            {
+              "x": 0,
+              "z": 0,
+              "h": 1645.5488,
+              "slope": 4.87287628708199
+            },
+            {
+              "x": 10,
+              "z": 0,
+              "h": 1646.2036285373154,
+              "slope": 3.1249898809314205
+            },
+            {
+              "x": 20,
+              "z": 0,
+              "h": 1646.4236228729276,
+              "slope": 2.3698872955263823
+            },
+            {
+              "x": 30,
+              "z": 0,
+              "h": 1646.489673314918,
+              "slope": 3.1691940459523202
+            },
+            {
+              "x": 40,
+              "z": 0,
+              "h": 1646.376336228116,
+              "slope": 3.8709194924859274
+            },
+            {
+              "x": 50,
+              "z": 0,
+              "h": 1645.9190080578792,
+              "slope": 4.956844886444351
+            },
+            {
+              "x": 60,
+              "z": 0,
+              "h": 1645.4000368967208,
+              "slope": 6.1939563928160295
+            },
+            {
+              "x": 70,
+              "z": 0,
+              "h": 1644.9749056035328,
+              "slope": 6.938445897584462
+            },
+            {
+              "x": 80,
+              "z": 0,
+              "h": 1644.5084668526995,
+              "slope": 7.117021512372553
+            }
+          ]
+        },
+        "timing": {
+          "mobilizationMin": 10,
+          "outboundMin": 2.668950387617316,
+          "arrivalMin": 12.668950387617317,
+          "handlingMin": 15,
+          "returnMin": 5.337900775234632,
+          "completionMin": 33.006851162851945,
+          "totalDistanceM": 160.13702325703898,
+          "arrivalUtc": "2027-01-13T00:12:40.137Z",
+          "completionUtc": "2027-01-13T00:33:00.411Z",
+          "completionMeaning": "Casualty returned to footprint-center asset origin"
+        },
+        "checks": [
+          {
+            "id": "endurance",
+            "limitMin": 120,
+            "actualMin": 33.006851162851945,
+            "marginMin": 86.99314883714806,
+            "fits": true
+          },
+          {
+            "id": "completion",
+            "limitMin": 60,
+            "actualMin": 33.006851162851945,
+            "marginMin": 26.993148837148055,
+            "fits": true
+          }
+        ],
+        "meaning": "Conditional time/endurance comparison on a bounded sampled route. This is not an operational rescue or safe-return verdict.",
+        "exclusions": [
+          "Asset existence, transport capacity, deployment and availability are hypothetical declarations, not observations.",
+          "Energy/battery use, traction, boulders, vehicle clearance, medical care, communications and environmental conditions along the route are not evaluated.",
+          "Constant declared speeds and the same reversed path are assumed for return; no unassessed destination or external route is connected.",
+          "The incident is assumed at the selected scenario start. Endurance and completion limits are user assumptions, independent of the visibility assessment."
+        ],
+        "status": "conditional_fit",
+        "reason": "The assumed response fits both declared time limits."
+      },
+      "terrainSources": [
+        {
+          "name": "kernels/de421.bsp",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/de421.bsp",
+          "bytes": 16790528,
+          "sha256": "08b20db2ae22488650641c5a9033e5bfda4b1c4b440cfeaf20f621cfa18ecdb3",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_pa_de421_1900-2050.bpc",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de421_1900-2050.bpc",
+          "bytes": 1770496,
+          "sha256": "656f90616403d75a75f0cd6c8830fc5b44f8cb4facb5ccb8915e752b397520cf",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_080317.tf",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_080317.tf",
+          "bytes": 21437,
+          "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/naif0012.tls",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+          "bytes": 5257,
+          "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+          "bytes": 189158392,
+          "sha256": "82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "bytes": 254808965,
+          "sha256": "e89306914bb209143f61ba66d341703d75221339424b774c6a1eb3c6c370ffc6",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site07_surf.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site07/Site07_final_adj_5mpp_surf.tif",
+          "bytes": 40980808,
+          "sha256": "38aaee10bb4da4d63e7427aa1ca25c79bdbc649d212079a04990e135462091f8",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site07_toterr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site07/Site07_final_adj_5mpp_toterr.tif",
+          "bytes": 40980810,
+          "sha256": "9be3e4b989ad3164ab5c9036fadab548e5c1c027d056b96f5ef055362c4b1e3e",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site07_slperr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site07/Site07_final_adj_5mpp_slperr.tif",
+          "bytes": 40980808,
+          "sha256": "a7cca9566b91e12da4b0f5d31547a122afe859d3ccf81b1379e094bdd85d6488",
+          "retrievedDate": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "site": {
+        "id": "real-malapert",
+        "name": "Malapert · DEM study point",
+        "lat": -85.99486736492493,
+        "lon": -0.23460969154338968,
+        "altKm": 4.78562939453125,
+        "polar": true,
+        "surfaceElevationM": 4783.62939453125,
+        "observerHeightM": 2,
+        "tile": "Site23",
+        "source": "https://pgda.gsfc.nasa.gov/products/78",
+        "coordinateStatus": "Derived center of Site23 pixel row 2100, column 2100; study point, not a certified landing site",
+        "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+        "projectedPointM": [
+          -497.5,
+          121497.5
+        ],
+        "sourcePixel": [
+          2100,
+          2100
+        ]
+      },
+      "result": {
+        "model": "conditional-rescue-time-1",
+        "acceptedForVerdict": false,
+        "classification": "HYPOTHETICAL RESPONSE ASSUMPTIONS",
+        "context": {
+          "mode": "real",
+          "siteId": "real-malapert",
+          "lat": -85.99486736492493,
+          "lon": -0.23460969154338968,
+          "altKm": 4.78562939453125,
+          "incidentUtc": "2027-01-13T00:00:00.000Z"
+        },
+        "assumptions": {
+          "assetDeclared": true,
+          "available": true,
+          "returnRequired": true,
+          "outboundMps": 0.5,
+          "returnMps": 0.25,
+          "mobilizationMin": 10,
+          "handlingMin": 15,
+          "enduranceMin": 120,
+          "deadlineMin": 60,
+          "assetScope": {
+            "mode": "real",
+            "siteId": "real-malapert",
+            "lat": -85.99486736492493,
+            "lon": -0.23460969154338968,
+            "altKm": 4.78562939453125,
+            "incidentUtc": "2027-01-13T00:00:00.000Z"
+          }
+        },
+        "asset": {
+          "type": "User-declared hypothetical rescue vehicle",
+          "origin": "Selected footprint center",
+          "casualty": "Terrain-route destination",
+          "declaredForCurrentScenario": true
+        },
+        "route": {
+          "model": "sampled-grid-route-1",
+          "status": "found",
+          "direction": "+X",
+          "lengthM": 80.17020186755853,
+          "spacingM": 10,
+          "slopeLimitDeg": 12,
+          "classification": "REAL NASA PGDA DEM · BOUNDED FOOTPRINT",
+          "qualification": "uncertain_real_terrain",
+          "path": [
+            {
+              "x": 0,
+              "z": 0,
+              "h": 4783.6294,
+              "slope": 3.5321325014798073
+            },
+            {
+              "x": 10,
+              "z": 0,
+              "h": 4783.077481611842,
+              "slope": 3.054341800390759
+            },
+            {
+              "x": 20,
+              "z": 0,
+              "h": 4782.593423897187,
+              "slope": 1.8226198651431313
+            },
+            {
+              "x": 30,
+              "z": 0,
+              "h": 4782.534046809796,
+              "slope": 1.1306548357014528
+            },
+            {
+              "x": 40,
+              "z": 0,
+              "h": 4782.941776926652,
+              "slope": 1.7531142121690366
+            },
+            {
+              "x": 50,
+              "z": 0,
+              "h": 4783.145933979912,
+              "slope": 1.684071546125306
+            },
+            {
+              "x": 60,
+              "z": 0,
+              "h": 4783.280737514989,
+              "slope": 5.883265339710767
+            },
+            {
+              "x": 70,
+              "z": 0,
+              "h": 4784.861998257244,
+              "slope": 6.205437168842927
+            },
+            {
+              "x": 80,
+              "z": 0,
+              "h": 4785.250639241331,
+              "slope": 4.353161013679275
+            }
+          ]
+        },
+        "timing": {
+          "mobilizationMin": 10,
+          "outboundMin": 2.672340062251951,
+          "arrivalMin": 12.672340062251951,
+          "handlingMin": 15,
+          "returnMin": 5.344680124503902,
+          "completionMin": 33.01702018675585,
+          "totalDistanceM": 160.34040373511706,
+          "arrivalUtc": "2027-01-13T00:12:40.340Z",
+          "completionUtc": "2027-01-13T00:33:01.021Z",
+          "completionMeaning": "Casualty returned to footprint-center asset origin"
+        },
+        "checks": [
+          {
+            "id": "endurance",
+            "limitMin": 120,
+            "actualMin": 33.01702018675585,
+            "marginMin": 86.98297981324416,
+            "fits": true
+          },
+          {
+            "id": "completion",
+            "limitMin": 60,
+            "actualMin": 33.01702018675585,
+            "marginMin": 26.98297981324415,
+            "fits": true
+          }
+        ],
+        "meaning": "Conditional time/endurance comparison on a bounded sampled route. This is not an operational rescue or safe-return verdict.",
+        "exclusions": [
+          "Asset existence, transport capacity, deployment and availability are hypothetical declarations, not observations.",
+          "Energy/battery use, traction, boulders, vehicle clearance, medical care, communications and environmental conditions along the route are not evaluated.",
+          "Constant declared speeds and the same reversed path are assumed for return; no unassessed destination or external route is connected.",
+          "The incident is assumed at the selected scenario start. Endurance and completion limits are user assumptions, independent of the visibility assessment."
+        ],
+        "status": "conditional_fit",
+        "reason": "The assumed response fits both declared time limits."
+      },
+      "terrainSources": [
+        {
+          "name": "kernels/de421.bsp",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/de421.bsp",
+          "bytes": 16790528,
+          "sha256": "08b20db2ae22488650641c5a9033e5bfda4b1c4b440cfeaf20f621cfa18ecdb3",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_pa_de421_1900-2050.bpc",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de421_1900-2050.bpc",
+          "bytes": 1770496,
+          "sha256": "656f90616403d75a75f0cd6c8830fc5b44f8cb4facb5ccb8915e752b397520cf",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/moon_080317.tf",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_080317.tf",
+          "bytes": 21437,
+          "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "kernels/naif0012.tls",
+          "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+          "bytes": 5257,
+          "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+          "bytes": 189158392,
+          "sha256": "82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ_ERR.TIF",
+          "bytes": 254808965,
+          "sha256": "e89306914bb209143f61ba66d341703d75221339424b774c6a1eb3c6c370ffc6",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site23_surf.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site23/Site23_final_adj_5mpp_surf.tif",
+          "bytes": 70586804,
+          "sha256": "12d280a59cd7580415f6bada638d0abe025ce6727541fddf68d5dc371a6c94cf",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site23_toterr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site23/Site23_final_adj_5mpp_toterr.tif",
+          "bytes": 70586811,
+          "sha256": "fe08539cfa3a0f7bb4ddf15dd7e0835fae0c761d516b2157d51116311a1ff69d",
+          "retrievedDate": "2026-11-14"
+        },
+        {
+          "name": "terrain/Site23_slperr.tif",
+          "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site23/Site23_final_adj_5mpp_slperr.tif",
+          "bytes": 70586809,
+          "sha256": "86bc31f33c0395feffeaafe2d0b07bfcf4936f703c6eb955804c3b8b42ece173",
+          "retrievedDate": "2026-11-14"
+        }
+      ]
+    }
+  ],
+  "terrainSettings": {
+    "radius": 100,
+    "baseline": 20,
+    "limit": 12,
+    "missing": false,
+    "direction": "+X"
+  }
+}

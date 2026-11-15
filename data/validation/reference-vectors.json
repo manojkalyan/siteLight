@@ -1,0 +1,69 @@
+{
+  "purpose": "External Horizons geometric inertial-vector cross-check of DE421. Not an independent terrain/orientation certification.",
+  "thresholds": {
+    "sunAngularDeg": 0.0001,
+    "earthAngularDeg": 0.005
+  },
+  "sources": [
+    {
+      "name": "SUN.json",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40301%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&VEC_TABLE=%271%27&TIME_TYPE=%27UT%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+01%3A00%27&STEP_SIZE=%2730+m%27&CSV_FORMAT=%27YES%27",
+      "sha256": "69e79597af8ccd1041afb5bb157ba423e53bdbfcab5f926e19e972dd123700ad",
+      "ephemeris": "DE441",
+      "correction": "NONE",
+      "frame": "ICRF",
+      "time": "UTC, future leap-second assumption retained"
+    },
+    {
+      "name": "EARTH.json",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27399%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40301%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&VEC_TABLE=%271%27&TIME_TYPE=%27UT%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+01%3A00%27&STEP_SIZE=%2730+m%27&CSV_FORMAT=%27YES%27",
+      "sha256": "9c449a8419fa0a365f1d40bf92d7a080d5f072896f79420c95f589e50c3178f5",
+      "ephemeris": "DE441",
+      "correction": "NONE",
+      "frame": "ICRF",
+      "time": "UTC, future leap-second assumption retained"
+    }
+  ],
+  "targets": {
+    "SUN": [
+      [
+        1799798400000,
+        55154616.36887641,
+        -124929702.5085575,
+        -54173196.13811775
+      ],
+      [
+        1799800200000,
+        55204879.82755928,
+        -124912476.3579465,
+        -54165879.53455058
+      ],
+      [
+        1799802000000,
+        55255143.87510695,
+        -124895234.8718554,
+        -54158555.88789442
+      ]
+    ],
+    "EARTH": [
+      [
+        1799798400000,
+        -387873.3840065144,
+        78564.30213139008,
+        15319.73998639381
+      ],
+      [
+        1799800200000,
+        -388134.6079906518,
+        77006.35197077466,
+        14492.28547755392
+      ],
+      [
+        1799802000000,
+        -388387.6392557717,
+        75446.84464718368,
+        13664.55628643597
+      ]
+    ]
+  }
+}

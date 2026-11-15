@@ -1,0 +1,86 @@
+{
+  "recordedUtc": "2026-11-15T03:48:13.979Z",
+  "environment": {
+    "kind": "Node local compute benchmark; not browser end-to-end",
+    "node": "v24.20.0",
+    "platform": "win32",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx  ",
+    "logicalCpus": 8,
+    "totalMemoryGiB": 5.888927459716797
+  },
+  "applicationModel": "workspace-evaluator-11",
+  "dataset": {
+    "terrainEvidenceBytes": 290134,
+    "catalogHorizonExtentM": 500000,
+    "scienceBytes": 10942627,
+    "referenceBytes": 1834504,
+    "sites": 6
+  },
+  "initialDataDecodeAndComparisonMs": 177.01780000000002,
+  "metrics": [
+    {
+      "name": "Uncached seven-day real scenario",
+      "runs": 40,
+      "medianMs": 6.221699999999942,
+      "p95Ms": 13.792599999999993,
+      "maxMs": 16.13340000000005
+    },
+    {
+      "name": "Cached unchanged verdict",
+      "runs": 500,
+      "medianMs": 0.011199999999917054,
+      "p95Ms": 0.025899999999978718,
+      "maxMs": 0.4734999999999445
+    },
+    {
+      "name": "Uncached settled requirement edit",
+      "runs": 30,
+      "medianMs": 7.367200000000025,
+      "p95Ms": 12.89160000000004,
+      "maxMs": 13.695100000000025
+    },
+    {
+      "name": "Real footprint statistics",
+      "runs": 40,
+      "medianMs": 1.4333000000001448,
+      "p95Ms": 9.784700000000043,
+      "maxMs": 15.023099999999886
+    },
+    {
+      "name": "Bounded date search",
+      "runs": 5,
+      "medianMs": 339.9701,
+      "p95Ms": 400.827,
+      "maxMs": 400.827
+    },
+    {
+      "name": "29-cell uncached calendar",
+      "runs": 5,
+      "medianMs": 95.82430000000022,
+      "p95Ms": 119.80549999999994,
+      "maxMs": 119.80549999999994
+    }
+  ],
+  "targets": {
+    "initialDataDecodeAndComparisonMs": 5000,
+    "cachedVerdictP95Ms": 2000,
+    "settledEditP95Ms": 1000
+  },
+  "checks": {
+    "dataDecodeAndComparison": true,
+    "cachedVerdict": true,
+    "settledEdit": true
+  },
+  "cacheStats": {
+    "providerHits": 38,
+    "resultHits": 501,
+    "resultMisses": 33,
+    "providers": 2,
+    "results": 33
+  },
+  "limitations": [
+    "Does not measure network, browser parse/layout, GPU rendering, real-device accessibility, or full user-perceived latency",
+    "Initial figure includes scientific JSON parsing and first A/B computations; not full app load",
+    "LCSS timing is not applicable until an accepted model exists"
+  ]
+}

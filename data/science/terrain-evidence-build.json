@@ -1,0 +1,9 @@
+{
+  "bundleSha256": "b57e815cc4ff44c67e71b8eade566b2ada135f97af80a3fa559ca5d4ad6be6eb",
+  "bundleBytes": 290134,
+  "scienceSha256": "ac1c739e97e9c70c74dbdc05ac6be705575eef3e32c98ea064ff7402a7278a62",
+  "preparerSha256": "d3dc3937a6937e77bcac33cc487799601cabdad1c5d6d977ea01050f51a9ef47",
+  "cloneManifestSha256": "17ecd4db70b22d1765bebbb424f3d8f8d41cec96eaac54b57aa38cc11d1fc03d",
+  "farAuditSha256": "eaa369668c8c69acd927fbf84f291b10b5b05036aa3dae2f9202916cb5e7469e",
+  "stereoAuditSha256": "8e86b7e3f8c7c047853cd338f8f5f47f33081c27c7cc1753294103e9b6752fe2"
+}

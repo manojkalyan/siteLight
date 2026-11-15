@@ -1,0 +1,120 @@
+{
+  "schema": "sitelight-seismic-sources-1",
+  "records": [
+    {
+      "name": "nakamura_1979_sm_locations.csv",
+      "url": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1979_sm_locations.csv",
+      "resolvedUrl": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1979_sm_locations.csv",
+      "bytes": 933,
+      "sha256": "151307757fd66017c3e71dda2db27be4f27c58012a869b56763c0305d86759b5",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "nakamura_1979_sm_locations.xml",
+      "url": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1979_sm_locations.xml",
+      "resolvedUrl": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1979_sm_locations.xml",
+      "bytes": 21927,
+      "sha256": "2311f7bab775f52ce72fc039dc35fc7ee66ac516b7dc8a4fdef2b0af20ac31a3",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "nakamura_1983_ai_locations.csv",
+      "url": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1983_ai_locations.csv",
+      "resolvedUrl": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1983_ai_locations.csv",
+      "bytes": 330,
+      "sha256": "f3fa3ce4837c4d5ad355a189968e25cb974fba9c4da84dbbf41f59d2fb459776",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "nakamura_1983_ai_locations.xml",
+      "url": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1983_ai_locations.xml",
+      "resolvedUrl": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1983_ai_locations.xml",
+      "bytes": 20748,
+      "sha256": "a7e42d58d56faa8699c910eee448fc4d30147bbcc09baf1ae2ac5baba8147d92",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "nakamura_1983_ai_arrivals.csv",
+      "url": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1983_ai_arrivals.csv",
+      "resolvedUrl": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1983_ai_arrivals.csv",
+      "bytes": 430,
+      "sha256": "e3e3b102ed4e9b74d1694268b57bbe83e6115217570a432883526b745c4e2541",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "nakamura_1983_ai_arrivals.xml",
+      "url": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1983_ai_arrivals.xml",
+      "resolvedUrl": "https://pds-geosciences.wustl.edu/lunar/urn-nasa-pds-apollo_seismic_event_catalog/data/nakamura_1983_ai_arrivals.xml",
+      "bytes": 22399,
+      "sha256": "1499df432eba1b14684ff7c43cd78ab129786d9da52d2e922c936537f4cd7d79",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "POLAR_SCARP_LOCATIONS.CSV",
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/SHAPEFILE/POLAR_SCARP_LOCATIONS/POLAR_SCARP_LOCATIONS.CSV",
+      "resolvedUrl": "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/SHAPEFILE/POLAR_SCARP_LOCATIONS/POLAR_SCARP_LOCATIONS.CSV",
+      "bytes": 4910,
+      "sha256": "90993fc28a7bb187fbd9c420023231b522b6acd167c20e5ca2f77a1a890c62f0",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "POLAR_SCARP_LOCATIONS_README.TXT",
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/SHAPEFILE/POLAR_SCARP_LOCATIONS/POLAR_SCARP_LOCATIONS_README.TXT",
+      "resolvedUrl": "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/SHAPEFILE/POLAR_SCARP_LOCATIONS/POLAR_SCARP_LOCATIONS_README.TXT",
+      "bytes": 1510,
+      "sha256": "f2ac5eb35edec5339e4f2fdd9e40bd2c62af7d132405620e6b096a71df509437",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "fpsac.12l.12.lpz.Z",
+      "url": "https://data.darts.isas.jaxa.jp/pub/apollo/ai/sacs/fpsac.12l.12.lpz.Z",
+      "resolvedUrl": "https://data.darts.isas.jaxa.jp/pub/apollo/ai/sacs/fpsac.12l.12.lpz.Z",
+      "bytes": 72737,
+      "sha256": "2785fa9f593d90e6ae9de41f5e2fdb1084ebcade458345cd3ddd18466e215079",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "apollo-experiments.pdf",
+      "url": "https://darts.isas.jaxa.jp/missions/apollo/The_Description_of_Apollo_Seismic_Experiments.pdf",
+      "resolvedUrl": "https://darts.isas.jaxa.jp/missions/apollo/The_Description_of_Apollo_Seismic_Experiments.pdf",
+      "bytes": 842507,
+      "sha256": "09e8cfae875db183865af0e3c8d7d27905e868d34d379aca0e14156de4287886",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "fpsac.13s.12.lpz.Z",
+      "url": "https://data.darts.isas.jaxa.jp/pub/apollo/ai/sacs/fpsac.13s.12.lpz.Z",
+      "resolvedUrl": "https://data.darts.isas.jaxa.jp/pub/apollo/ai/sacs/fpsac.13s.12.lpz.Z",
+      "bytes": 107575,
+      "sha256": "186fba49d01c344a702c1f980f411f0a73e8087b008fcba9d3980b9b110fac20",
+      "retrievedDate": "2026-11-15"
+    },
+    {
+      "name": "sac-file-format.html",
+      "url": "https://ds.iris.edu/files/sac-manual/manual/file_format.html",
+      "resolvedUrl": "https://ds.iris.edu/files/sac-manual/manual/file_format.html",
+      "bytes": 42224,
+      "sha256": "03cc91d960fb80eb37a049857ad299f5bffd97dfb34c51bc111b5c4228943a79",
+      "retrievedDate": "2026-11-15"
+    }
+  ],
+  "scope": "Retained historical Apollo observations, locations and 2015 LROC polar scarp reference points. No local shaking hazard, event forecast or stability verdict.",
+  "citations": [
+    {
+      "title": "LROC polar scarp locations; Watters et al. (2015)",
+      "url": "https://data.lroc.im-ldi.com/lroc/view_rdr/SHAPEFILE_POLAR_SCARP_LOCATIONS"
+    },
+    {
+      "title": "NASA PDS expanded Apollo seismic event catalog",
+      "url": "https://pds-geosciences.wustl.edu/missions/apollo/seismic_event_catalog.htm"
+    },
+    {
+      "title": "JAXA artificial impact archive",
+      "url": "https://darts.isas.jaxa.jp/en/datasets/apollo-ai-data"
+    },
+    {
+      "title": "Watters et al. (2024), Tectonics and Seismicity of the Lunar South Polar Region",
+      "url": "https://doi.org/10.3847/PSJ/ad1332"
+    }
+  ]
+}

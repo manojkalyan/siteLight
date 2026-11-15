@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiteLight AI — Blender Workspace</title>
+<style>
+:root{
+  --bg:#1d1d1d; --editor:#303030; --editor2:#282828; --header:#262626;
+  --panel:#2e2e2e; --ph:#383838; --widget:#545454; --field:#545454;
+  --text:#e6e6e6; --dim:#b4b4b4; --dim2:#8a8a8a; --dim3:#666;
+  --accent:#4772b3; --hi:#5b8ad4; --sep:#111;
+  --ok:#7ac47a; --warn:#d9a441; --bad:#d96a6a; --unk:#8a8a8a;
+  --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  font-size:11px;line-height:1.35;-webkit-font-smoothing:antialiased;
+  letter-spacing:0;user-select:none;
+}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-track{background:#1a1a1a}
+::-webkit-scrollbar-thumb{background:#4a4a4a;border-radius:5px;border:2px solid #1a1a1a}
+::-webkit-scrollbar-thumb:hover{background:#5c5c5c}
+::selection{background:rgba(71,114,179,.5)}
+
+.app{display:flex;flex-direction:column;height:100vh;background:var(--sep)}
+
+.topbar{
+  height:27px;flex:none;display:flex;align-items:center;
+  background:var(--bg);padding:0 8px;gap:2px;border-bottom:1px solid #000;
+}
+.logo{
+  width:16px;height:16px;border-radius:50%;flex:none;margin-right:8px;
+  background:radial-gradient(circle at 34% 30%,#ffb066,#d96a1f 62%,#8a3d0c);
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.82),0 0 0 1px rgba(0,0,0,.5);
+  position:relative;
+}
+.logo::after{content:'';position:absolute;inset:4px;border-radius:50%;background:#1d1d1d}
+.tmenu{padding:3px 8px;border-radius:var(--r);font-size:11.5px;color:var(--dim);cursor:default}
+.tmenu:hover{background:#343434;color:var(--text)}
+.ws-tabs{flex:1;display:flex;justify-content:center;gap:1px;overflow:hidden}
+.ws-tab{
+  padding:4px 10px;border-radius:var(--r) var(--r) 0 0;font-size:11.5px;
+  color:var(--dim2);cursor:pointer;white-space:nowrap;
+  border-bottom:2px solid transparent;
+}
+.ws-tab:hover{color:var(--text);background:#2a2a2a}
+.ws-tab.active{color:var(--text);background:#303030;border-bottom-color:var(--accent)}
+.seg{
+  display:inline-flex;padding:2px;gap:2px;border-radius:6px;
+  background:#2a2a2a;border:1px solid #3a3a3a;
+}
+.seg button{
+  appearance:none;border:0;background:transparent;color:var(--dim2);
+  font:inherit;font-size:11px;padding:3px 9px;border-radius:4px;cursor:pointer;
+}
+.seg button:hover{color:var(--text)}
+.seg button.active{background:#4a4a4a;color:#fff}
+.btn-sm{
+  appearance:none;font:inherit;font-size:11px;padding:4px 10px;border-radius:4px;
+  background:#3a3a3a;border:1px solid #4a4a4a;color:var(--dim);cursor:pointer;
+}
+.btn-sm:hover{background:#454545;color:var(--text)}
+.btn-sm.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-sm.primary:hover{background:var(--hi)}
+.scene-sel{
+  display:flex;align-items:center;gap:6px;padding:3px 9px;border-radius:var(--r);
+  background:#2a2a2a;border:1px solid #3a3a3a;font-size:11px;color:var(--dim);
+  cursor:pointer;white-space:nowrap;
+}
+
+.main{flex:1;display:flex;min-height:0;gap:1px;background:var(--sep)}
+
+.outliner{
+  width:190px;flex:none;display:flex;flex-direction:column;
+  background:var(--editor);border-radius:var(--r);
+}
+.ol-head{
+  height:26px;flex:none;display:flex;align-items:center;gap:2px;padding:0 5px;
+  background:var(--header);border-bottom:1px solid #1a1a1a;border-radius:var(--r) var(--r) 0 0;
+}
+.icon-btn{
+  width:22px;height:20px;display:grid;place-items:center;border-radius:3px;
+  color:var(--dim2);cursor:pointer;font-size:11px;
+}
+.icon-btn:hover{background:#343434;color:var(--text)}
+.icon-btn svg{width:12px;height:12px;display:block}
+.ol-body{flex:1;overflow-y:auto;padding:4px 0}
+.ol-row{
+  display:flex;align-items:center;gap:6px;height:21px;padding:0 8px 0 6px;
+  font-size:11px;color:var(--dim);cursor:pointer;position:relative;
+}
+.ol-row:hover{background:#3a3a3a}
+.ol-row.sel{background:var(--accent);color:#fff}
+.ol-row.sel:hover{background:var(--hi)}
+.ol-row .tri{width:9px;font-size:7px;color:var(--dim3);flex:none;text-align:center}
+.ol-row.sel .tri{color:rgba(255,255,255,.7)}
+.ol-row .ico{width:12px;height:12px;flex:none;display:grid;place-items:center}
+.ol-row .ico svg{width:12px;height:12px;display:block}
+.ol-row .lbl{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ol-row .badge{
+  font-size:9px;padding:0 4px;border-radius:3px;line-height:13px;
+  background:rgba(255,255,255,.12);color:var(--dim2);
+}
+.ol-row .badge.ok{background:rgba(122,196,122,.22);color:var(--ok)}
+.ol-row .badge.bad{background:rgba(217,106,106,.22);color:var(--bad)}
+.ol-row .badge.unk{background:rgba(138,138,138,.2);color:#aaa}
+.ol-row.sel .badge{background:rgba(255,255,255,.24);color:#fff}
+.ol-row.disabled{opacity:.42}
+
+.center{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+
+.viewport{flex:1;min-height:0;display:flex;flex-direction:column;background:var(--editor);border-radius:var(--r)}
+.vp-head{
+  height:26px;flex:none;display:flex;align-items:center;padding:0 6px;gap:2px;
+  background:var(--header);border-bottom:1px solid #1a1a1a;border-radius:var(--r) var(--r) 0 0;
+}
+.vp-btn{
+  display:flex;align-items:center;gap:4px;padding:3px 7px;border-radius:var(--r);
+  font-size:11px;color:var(--dim);cursor:pointer;white-space:nowrap;
+}
+.vp-btn:hover{background:#343434;color:var(--text)}
+.vp-spacer{flex:1}
+.vp-body{flex:1;position:relative;min-height:0;overflow:hidden;
+  border-radius:0 0 var(--r) var(--r);
+  background:#060a14;
+}
+.vp-body canvas{display:block;width:100%;height:100%;cursor:grab}
+.vp-body canvas:active{cursor:grabbing}
+.vp-overlay{position:absolute;pointer-events:none;font-size:11px;color:rgba(255,255,255,.82)}
+.vp-tl{top:8px;left:10px;line-height:1.5;text-shadow:0 1px 3px rgba(0,0,0,.9)}
+.vp-tl .dim{color:rgba(255,255,255,.5)}
+.vp-tl b{font-weight:400;color:rgba(255,255,255,.92)}
+.vp-legend{
+  position:absolute;left:10px;bottom:10px;display:flex;flex-direction:column;gap:4px;
+  padding:6px 8px;border-radius:var(--r);background:rgba(10,10,14,.72);
+  border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(8px);
+  font-size:10.5px;color:rgba(255,255,255,.78);pointer-events:none;
+}
+.vp-legend div{display:flex;align-items:center;gap:6px}
+.vp-legend i{width:12px;height:2px;border-radius:1px;display:block}
+.vp-fallback{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  color:var(--dim3);font-size:11.5px;text-align:center;padding:24px;
+}
+
+.compare-strip{flex:none;display:flex;gap:1px;background:var(--sep)}
+.cmp-card{
+  flex:1;min-width:0;background:var(--editor);border-radius:var(--r);
+  padding:8px 10px;position:relative;transition:border-color .4s;
+  border:1px solid transparent;
+}
+.cmp-card.is-pass{border-color:rgba(122,196,122,.32)}
+.cmp-card.is-fail{border-color:rgba(217,106,106,.3)}
+.cmp-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.cmp-tag{
+  font-size:10px;font-weight:700;width:18px;height:18px;border-radius:4px;
+  display:grid;place-items:center;background:rgba(71,114,179,.3);color:#9fb8e0;flex:none;
+}
+.cmp-tag.b{background:rgba(217,164,65,.24);color:#d9b86a}
+.cmp-name{font-size:12px;font-weight:600;letter-spacing:-.01em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.status-pill{
+  display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:8px;
+  font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;flex:none;
+}
+.status-pill .dot{width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 5px currentColor}
+.status-pill.pass{background:rgba(122,196,122,.16);color:var(--ok);border:1px solid rgba(122,196,122,.3)}
+.status-pill.fail{background:rgba(217,106,106,.16);color:var(--bad);border:1px solid rgba(217,106,106,.3)}
+
+.cmp-metrics{display:flex;gap:10px}
+.cmp-metric{flex:1;display:flex;align-items:center;gap:7px;min-width:0}
+.ring{
+  width:36px;height:36px;border-radius:50%;position:relative;display:grid;place-items:center;flex:none;
+  background:conic-gradient(var(--col) calc(var(--pct)*1%),rgba(255,255,255,.075) 0);
+  transition:background .5s;
+}
+.ring::before{content:'';position:absolute;inset:3.5px;border-radius:50%;background:#1e1e1e}
+.ring b{position:relative;font-size:10.5px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.cmp-metric small{font-size:9.5px;color:var(--dim3);line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmp-metric small b{display:block;color:var(--dim);font-weight:500}
+.cmp-fails{
+  margin-top:5px;font-size:10px;color:var(--dim3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.cmp-fails .f{color:var(--bad)}
+
+.flip-banner{
+  display:none;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--r);
+  background:rgba(122,196,122,.1);border:1px solid rgba(122,196,122,.28);
+  font-size:11.5px;letter-spacing:-.01em;animation:bnIn .4s ease;
+}
+.flip-banner.show{display:flex}
+.flip-banner.to-fail{background:rgba(217,106,106,.1);border-color:rgba(217,106,106,.28)}
+@keyframes bnIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.flip-banner b{font-weight:600}
+
+.properties{
+  width:clamp(300px,27vw,380px);flex:none;display:flex;background:var(--editor);
+  border-radius:var(--r);overflow:hidden;
+}
+.prop-tabs{
+  width:26px;flex:none;display:flex;flex-direction:column;align-items:center;gap:1px;
+  padding:4px 0;background:var(--header);border-right:1px solid #1a1a1a;
+}
+.ptab{
+  width:20px;height:20px;display:grid;place-items:center;border-radius:3px;
+  color:var(--dim3);cursor:pointer;
+}
+.ptab:hover{background:#343434;color:var(--dim)}
+.ptab.active{background:#3f3f3f;color:#fff}
+.ptab svg{width:12px;height:12px;display:block}
+.prop-body{flex:1;min-width:0;overflow-y:auto;padding:5px 6px 20px}
+
+.panel{margin-bottom:4px}
+.panel-h{
+  display:flex;align-items:center;gap:5px;height:22px;padding:0 7px;
+  background:var(--ph);border-radius:var(--r);cursor:pointer;font-size:11px;color:#d8d8d8;
+}
+.panel-h:hover{background:#424242}
+.panel-h .tri{font-size:7px;color:var(--dim3);width:8px}
+.panel-h .ph-sp{flex:1}
+.panel-h .ph-badge{
+  font-size:9px;padding:0 5px;border-radius:3px;line-height:13px;
+  background:#4a4a4a;color:#ccc;
+}
+.panel-h .ph-badge.ok{background:rgba(122,196,122,.24);color:var(--ok)}
+.panel-h .ph-badge.bad{background:rgba(217,106,106,.24);color:var(--bad)}
+.panel-h .ph-badge.warn{background:rgba(217,164,65,.24);color:var(--warn)}
+.panel-c{padding:5px 7px 7px}
+.panel.collapsed .panel-c{display:none}
+.panel.collapsed .panel-h .tri{transform:rotate(-90deg)}
+.panel-h .tri{transition:transform .15s}
+
+.prow{display:flex;align-items:center;gap:7px;min-height:22px;padding:1px 0}
+.prow > label{flex:none;width:92px;font-size:11px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prow .fill{flex:1;min-width:0}
+.field{
+  height:19px;display:flex;align-items:center;justify-content:flex-end;
+  padding:0 6px;border-radius:var(--r);background:var(--field);
+  border:1px solid #1d1d1d;font-size:11px;color:var(--text);
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.field.dim{background:#3a3a3a;color:var(--dim2);justify-content:flex-start}
+.field.wide{width:100%}
+.field.mono{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px}
+
+.slider-wrap{position:relative;height:19px;flex:1;min-width:60px}
+.slider-wrap input[type=range]{
+  -webkit-appearance:none;appearance:none;position:absolute;inset:0;
+  width:100%;height:100%;margin:0;background:transparent;cursor:ew-resize;
+}
+.slider-wrap input[type=range]::-webkit-slider-runnable-track{
+  height:19px;border-radius:var(--r);border:1px solid #1d1d1d;
+  background:linear-gradient(to right,var(--accent) 0%,var(--accent) var(--fill,40%),#4a4a4a var(--fill,40%),#4a4a4a 100%);
+}
+.slider-wrap input[type=range]::-moz-range-track{
+  height:19px;border-radius:var(--r);border:1px solid #1d1d1d;
+  background:linear-gradient(to right,var(--accent) 0%,var(--accent) var(--fill,40%),#4a4a4a var(--fill,40%),#4a4a4a 100%);
+}
+.slider-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:1px;height:19px;background:transparent}
+.slider-wrap input[type=range]::-moz-range-thumb{width:0;height:0;border:0;background:transparent}
+.slider-wrap .val{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-size:11px;color:#fff;pointer-events:none;
+  text-shadow:0 1px 2px rgba(0,0,0,.55);font-variant-numeric:tabular-nums;
+}
+
+select.bselect{
+  width:100%;height:19px;border-radius:var(--r);background:var(--field);
+  border:1px solid #1d1d1d;color:var(--text);font-size:11px;font-family:inherit;
+  padding:0 4px;appearance:none;cursor:pointer;
+}
+select.bselect:focus{outline:1px solid var(--hi)}
+
+.rule{
+  display:flex;align-items:center;gap:7px;padding:5px 7px;border-radius:var(--r);
+  background:#363636;margin-bottom:3px;border-left:2px solid #4a4a4a;
+}
+.rule.ok{border-left-color:var(--ok)}
+.rule.no{border-left-color:var(--bad)}
+.rule.na{border-left-color:#5a5a5a;opacity:.72}
+.rule .dot{width:7px;height:7px;border-radius:50%;flex:none;background:#666}
+.rule.ok .dot{background:var(--ok);box-shadow:0 0 6px rgba(122,196,122,.7)}
+.rule.no .dot{background:var(--bad);box-shadow:0 0 6px rgba(217,106,106,.7)}
+.rule .txt{flex:1;font-size:11px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rule .num{font-size:10.5px;color:var(--text);font-variant-numeric:tabular-nums}
+.rule.no .num{color:var(--bad)}
+.rule.ok .num{color:var(--ok)}
+
+.note{font-size:10.5px;color:var(--dim3);line-height:1.55;padding:5px 2px 2px}
+.note b{color:var(--dim);font-weight:500}
+.note.mono{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px}
+
+.badge-row{display:flex;gap:4px;flex-wrap:wrap;padding:2px 0 4px}
+.badge{
+  font-size:9.5px;padding:2px 6px;border-radius:3px;letter-spacing:.02em;
+  background:#3d3d3d;color:var(--dim2);border:1px solid #4a4a4a;
+}
+.badge.warn{background:rgba(217,164,65,.16);color:var(--warn);border-color:rgba(217,164,65,.35)}
+.badge.ok{background:rgba(122,196,122,.16);color:var(--ok);border-color:rgba(122,196,122,.35)}
+.badge.bad{background:rgba(217,106,106,.16);color:var(--bad);border-color:rgba(217,106,106,.35)}
+.badge.unk{background:rgba(138,138,138,.14);color:var(--unk);border-color:rgba(138,138,138,.3)}
+
+table.tbl{width:100%;border-collapse:collapse;font-size:10.5px}
+table.tbl th{
+  text-align:left;font-weight:500;color:var(--dim3);padding:3px 4px 4px 0;
+  border-bottom:1px solid #3d3d3d;font-size:10px;letter-spacing:.04em;
+}
+table.tbl td{padding:4px 4px 4px 0;border-bottom:1px solid #363636;color:var(--dim2)}
+table.tbl td:first-child{color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+table.tbl tr:last-child td{border-bottom:0}
+
+.bar{height:6px;border-radius:3px;background:#3a3a3a;overflow:hidden;display:flex;margin:2px 0 6px}
+.bar > div{height:100%}
+.legend-row{display:flex;align-items:center;gap:6px;padding:2px 0;font-size:10.5px;color:var(--dim2)}
+.legend-row .sw{width:8px;height:8px;border-radius:2px;flex:none}
+.legend-row .lb{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.legend-row .vl{font-variant-numeric:tabular-nums;color:var(--text)}
+
+.btn{
+  appearance:none;font:inherit;font-size:11px;font-weight:600;letter-spacing:-.01em;
+  padding:5px 10px;border-radius:var(--r);cursor:pointer;border:1px solid transparent;
+  transition:background .15s;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--hi)}
+.btn-ghost{background:#3d3d3d;border-color:#4a4a4a;color:var(--dim)}
+.btn-ghost:hover{background:#474747;color:var(--text)}
+
+.calendar{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin-top:4px}
+.cell{
+  aspect-ratio:1;border-radius:3px;background:rgba(255,255,255,.06);
+  transition:transform .15s;cursor:pointer;position:relative;
+}
+.cell:hover{transform:scale(1.22);z-index:5;box-shadow:0 4px 12px rgba(0,0,0,.6)}
+.cell.pass{background:rgba(122,196,122,.62)}
+.cell.fail{background:rgba(217,106,106,.58)}
+.cell.unk{background:rgba(138,138,138,.25)}
+
+.timeline{
+  height:86px;flex:none;display:flex;flex-direction:column;
+  background:var(--editor);border-radius:var(--r);
+}
+.tl-head{
+  height:26px;flex:none;display:flex;align-items:center;gap:2px;padding:0 7px;
+  background:var(--header);border-bottom:1px solid #1a1a1a;border-radius:var(--r) var(--r) 0 0;
+}
+.tl-play{width:22px;height:20px;display:grid;place-items:center;border-radius:3px;color:var(--dim);cursor:pointer}
+.tl-play:hover{background:#343434;color:#fff}
+.tl-play svg{width:11px;height:11px;display:block}
+.tl-frame{
+  height:19px;width:52px;display:flex;align-items:center;justify-content:flex-end;
+  padding:0 6px;border-radius:var(--r);background:var(--field);
+  border:1px solid #1d1d1d;font-variant-numeric:tabular-nums;margin-left:6px;
+}
+.tl-label{color:var(--dim3);font-size:10.5px;margin-left:10px;white-space:nowrap}
+.tl-label b{color:var(--dim);font-weight:500;font-variant-numeric:tabular-nums}
+.tl-body{flex:1;position:relative;overflow:hidden;cursor:ew-resize;
+  background:linear-gradient(180deg,#2c2c2c,#282828);border-radius:0 0 var(--r) var(--r)}
+.tl-ruler{position:absolute;left:0;right:0;top:0;height:17px;border-bottom:1px solid #3a3a3a}
+.tl-tick{position:absolute;top:0;width:1px;height:5px;background:#4a4a4a}
+.tl-tick.major{height:8px;background:#666}
+.tl-num{position:absolute;top:2px;transform:translateX(-50%);font-size:9px;color:var(--dim3);font-variant-numeric:tabular-nums}
+.tl-lane{position:absolute;left:0;right:0;top:20px;height:24px}
+.keyframe{
+  position:absolute;top:6px;width:9px;height:9px;margin-left:-4.5px;
+  background:#d9b04a;transform:rotate(45deg);border-radius:1px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.5);cursor:pointer;
+}
+.keyframe:hover{background:#ffd166}
+.playhead{position:absolute;top:0;bottom:0;width:1px;background:var(--accent);pointer-events:none;
+  box-shadow:0 0 4px rgba(71,114,179,.9)}
+.playhead::before{
+  content:'';position:absolute;top:0;left:-4.5px;width:10px;height:9px;
+  background:var(--accent);border-radius:1px 1px 3px 3px;
+}
+.tl-track-label{position:absolute;left:6px;top:26px;font-size:9.5px;color:var(--dim3)}
+
+.statusbar{
+  height:22px;flex:none;display:flex;align-items:center;gap:14px;
+  padding:0 12px;background:var(--bg);border-top:1px solid #000;
+  font-size:10.5px;color:var(--dim3);
+}
+.statusbar .sep{width:1px;height:11px;background:#333}
+.statusbar b{color:var(--dim2);font-weight:500}
+
+.compare-view{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--sep);min-height:0}
+.cv-card{background:var(--editor);border-radius:var(--r);padding:14px;overflow-y:auto}
+.cv-card.is-pass{border:1px solid rgba(122,196,122,.3)}
+.cv-card.is-fail{border:1px solid rgba(217,106,106,.3)}
+.cv-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.cv-name{font-size:15px;font-weight:600;letter-spacing:-.02em;flex:1}
+.cv-ring-row{display:flex;gap:14px;margin-bottom:16px}
+.cv-ring-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.cv-ring{width:74px;height:74px;border-radius:50%;position:relative;display:grid;place-items:center;
+  background:conic-gradient(var(--col) calc(var(--pct)*1%),rgba(255,255,255,.08) 0);transition:background .5s}
+.cv-ring::before{content:'';position:absolute;inset:6px;border-radius:50%;background:#1e1e1e}
+.cv-ring b{position:relative;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.cv-ring-col small{font-size:10.5px;color:var(--dim3);text-align:center;line-height:1.35}
+.cv-ring-col small b{color:var(--dim);font-weight:500}
+.cv-rule-row{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:4px;
+  background:#363636;margin-bottom:3px;font-size:11px}
+.cv-rule-row.ok{border-left:2px solid var(--ok)}
+.cv-rule-row.no{border-left:2px solid var(--bad)}
+.cv-rule-row .lbl{flex:1;color:var(--dim)}
+.cv-rule-row .val{color:var(--text);font-variant-numeric:tabular-nums;font-size:10.5px}
+.cv-rule-row.no .val{color:var(--bad)}
+
+.report-view{flex:1;display:flex;flex-direction:column;min-height:0;background:var(--editor);border-radius:var(--r)}
+.report-head{padding:10px 14px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;gap:8px}
+.report-body{flex:1;overflow-y:auto;padding:14px}
+.report-body pre{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;
+  color:var(--dim2);line-height:1.6;white-space:pre-wrap;word-break:break-all}
+
+button:focus-visible,select:focus-visible,input:focus-visible,.ol-row:focus-visible{
+  outline:1.5px solid var(--hi);outline-offset:1px;
+}
+.ol-row:focus-visible{outline-offset:-2px}
+
+@media (max-width:900px){
+  .outliner{width:140px}
+  .properties{width:260px}
+  .ws-tabs .ws-tab:nth-child(n+4){display:none}
+}
+@media (max-width:700px){
+  .outliner{display:none}
+  .properties{width:230px}
+  .ws-tabs{display:none}
+  .compare-view{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="logo"></div>
+    <div class="tmenu">File</div>
+    <div class="tmenu">Edit</div>
+    <div class="tmenu">Render</div>
+    <div class="tmenu">Window</div>
+    <div class="tmenu">Help</div>
+    <div class="ws-tabs" id="wsTabs">
+      <div class="ws-tab active" data-ws="layout">Layout</div>
+      <div class="ws-tab" data-ws="compare">Compare</div>
+      <div class="ws-tab" data-ws="robust">Robustness</div>
+      <div class="ws-tab" data-ws="report">Report</div>
+    </div>
+    <div class="seg" id="viewToggle">
+      <button class="active" data-view="plain">Plain</button>
+      <button data-view="technical">Technical</button>
+    </div>
+    <button class="btn-sm primary" id="demoBtn" style="margin-left:8px">Demo</button>
+    <div class="scene-sel" style="margin-left:4px">Scene <span style="font-size:8px;color:var(--dim3)">▾</span></div>
+  </header>
+
+  <div class="main">
+    <aside class="outliner">
+      <div class="ol-head">
+        <div class="icon-btn" title="Search">⌕</div>
+        <div class="icon-btn" title="Filter">▿</div>
+        <div class="icon-btn" title="New">＋</div>
+      </div>
+      <div class="ol-body" id="outliner"></div>
+    </aside>
+
+    <div class="center" id="center">
+      <div id="viewLayout" style="display:flex;flex-direction:column;flex:1;min-height:0;gap:1px">
+        <section class="viewport">
+          <div class="vp-head">
+            <div class="vp-btn">View <span style="font-size:8px;color:var(--dim3)">▾</span></div>
+            <div class="vp-btn">Select <span style="font-size:8px;color:var(--dim3)">▾</span></div>
+            <div class="vp-btn">Add <span style="font-size:8px;color:var(--dim3)">▾</span></div>
+            <div class="vp-spacer"></div>
+            <div class="seg" id="vpScnToggle" style="font-size:10px">
+              <button class="active" data-scn="A">A</button>
+              <button data-scn="B">B</button>
+            </div>
+          </div>
+          <div class="vp-body" id="viewport">
+            <div class="vp-overlay vp-tl">
+              <b>Horizon · geometric</b><br>
+              <span class="dim" id="vpSiteLabel">Shackleton_Rim</span>
+            </div>
+            <div class="vp-legend">
+              <div><i style="background:#9af09a"></i>Solar-eligible</div>
+              <div><i style="background:#ff8080"></i>Blocked / below ridge</div>
+              <div><i style="background:#8ac0ff"></i>Earth-visibility track</div>
+            </div>
+            <div class="vp-fallback" id="vpFallback">
+              3D renderer unavailable.<br>All evaluator values remain live.
+            </div>
+          </div>
+        </section>
+
+        <div class="compare-strip" id="compareStrip"></div>
+        <div class="flip-banner" id="flipBanner">
+          <span style="font-size:14px">◈</span>
+          <span id="flipText"></span>
+        </div>
+      </div>
+
+      <div id="viewCompare" class="compare-view" style="display:none"></div>
+      <div id="viewRobust" style="display:none;flex:1;background:var(--editor);border-radius:var(--r);padding:14px;overflow-y:auto"></div>
+      <div id="viewReport" class="report-view" style="display:none">
+        <div class="report-head">
+          <span style="font-size:12px;font-weight:600">Result export</span>
+          <div style="flex:1"></div>
+          <button class="btn-sm primary" id="exportJson">Export JSON</button>
+          <button class="btn-sm" id="exportPrint">Print / PDF</button>
+        </div>
+        <div class="report-body" id="reportBody"></div>
+      </div>
+    </div>
+
+    <aside class="properties">
+      <div class="prop-tabs" id="propTabs">
+        <div class="ptab active" data-tab="object" title="Object">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2.5" y="2.5" width="11" height="11" rx="2"/></svg>
+        </div>
+        <div class="ptab" data-tab="constraints" title="Constraints">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="5" cy="8" r="2.4"/><circle cx="11" cy="8" r="2.4"/></svg>
+        </div>
+        <div class="ptab" data-tab="scene" title="Scene">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="6" r="3"/><path d="M3 14c0-2.5 2.2-4 5-4s5 1.5 5 4"/></svg>
+        </div>
+        <div class="ptab" data-tab="world" title="World / LCSS">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="5.5"/><ellipse cx="8" cy="8" rx="2.4" ry="5.5"/><path d="M2.8 6h10.4M2.8 10h10.4"/></svg>
+        </div>
+        <div class="ptab" data-tab="ext" title="Extensions">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3h4v3h3v4h-3v3H6v-3H3V6h3z"/></svg>
+        </div>
+        <div class="ptab" data-tab="render" title="Render / Provenance">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2.2" y="4.6" width="8" height="6.8" rx="1.4"/><path d="M10.2 7.4l3.6-2v5.2l-3.6-2z"/></svg>
+        </div>
+      </div>
+      <div class="prop-body" id="propBody"></div>
+    </aside>
+  </div>
+
+  <section class="timeline">
+    <div class="tl-head">
+      <div class="tl-play" id="playBtn" title="Play / Pause">
+        <svg viewBox="0 0 16 16" fill="currentColor" id="playIcon"><path d="M4 2.5v11l9-5.5z"/></svg>
+      </div>
+      <div class="tl-play" title="Start">⏮</div>
+      <div class="tl-play" title="Prev">◀</div>
+      <div class="tl-play" title="Next">▶</div>
+      <div class="tl-play" title="End">⏭</div>
+      <div class="tl-frame" id="frameField">1</div>
+      <div class="tl-label">Start <b>1</b></div>
+      <div class="tl-label">End <b>250</b></div>
+      <div class="tl-label" style="margin-left:auto">T+ <b id="elapsedLbl">0.0 h</b> / <b id="durLbl">168 h</b></div>
+    </div>
+    <div class="tl-body" id="tlBody">
+      <div class="tl-ruler" id="tlRuler"></div>
+      <div class="tl-lane" id="tlLane"></div>
+      <div class="playhead" id="playhead" style="left:0"></div>
+      <div class="tl-track-label">SiteLight_Evaluation</div>
+    </div>
+  </section>
+
+  <div class="statusbar">
+    <span><b>LMB</b> Orbit</span>
+    <span class="sep"></span>
+    <span><b>Wheel</b> Zoom</span>
+    <span class="sep"></span>
+    <span><b>Space</b> Play</span>
+    <span class="sep"></span>
+    <span id="statusHint">Synthetic fixture — not validated</span>
+  </div>
+
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+
+<script type="module">
+/* =================================================================
+   SiteLight AI — full workspace (synthetic fixture)
+   ================================================================= */
+
+const CATALOG = {
+  shackleton: { id:'shackleton', name:'Shackleton Rim', pgda:'Site04',
+    latStr:'89.45°S', lonStr:'129.2°E', t0:0.10,
+    phase:{ sunAz:0.00, sunPhase:0.60, earthAz:1.90, earthPhase:3.90, seed:1.05 } },
+  malapert: { id:'malapert', name:'Malapert Massif', pgda:'Site23',
+    latStr:'86.00°S', lonStr:'0.0°E', t0:0.38,
+    phase:{ sunAz:0.45, sunPhase:2.15, earthAz:2.50, earthPhase:5.20, seed:2.55 } },
+  gerlache: { id:'gerlache', name:'de Gerlache Rim', pgda:'Site11',
+    latStr:'88.50°S', lonStr:'87.2°W', t0:0.62,
+    phase:{ sunAz:1.20, sunPhase:1.40, earthAz:3.60, earthPhase:1.10, seed:3.80 } },
+  connector: { id:'connector', name:'Connector Ridge', pgda:'Site01',
+    latStr:'89.40°S', lonStr:'222.7°E', t0:0.25,
+    phase:{ sunAz:2.10, sunPhase:3.10, earthAz:0.30, earthPhase:2.70, seed:5.20 } },
+  nobile: { id:'nobile', name:'Nobile Rim 1', pgda:'Site06',
+    latStr:'85.40°S', lonStr:'53.4°E', t0:0.80,
+    phase:{ sunAz:0.80, sunPhase:4.80, earthAz:4.40, earthPhase:0.60, seed:0.30 } },
+  apollo: { id:'apollo', name:'Apollo 17 · Taurus-Littrow', pgda:'reference',
+    latStr:'20.19°N', lonStr:'30.77°E', t0:0.0,
+    phase:{ sunAz:3.14, sunPhase:0.10, earthAz:0.20, earthPhase:0.30, seed:4.50 },
+    nonPolar:true }
+};
+
+const TERRAIN = {
+  shackleton:{ slopeMean:3.8, slopeMax:14.2, slopeP95:8.1, rough:0.45, coverage:0.982, noData:0.018, res:5 },
+  malapert:  { slopeMean:5.2, slopeMax:19.8, slopeP95:11.3, rough:0.62, coverage:0.965, noData:0.035, res:5 },
+  gerlache:  { slopeMean:4.1, slopeMax:11.5, slopeP95:7.2, rough:0.38, coverage:0.990, noData:0.010, res:5 },
+  connector: { slopeMean:6.8, slopeMax:22.4, slopeP95:14.1, rough:0.78, coverage:0.948, noData:0.052, res:5 },
+  nobile:    { slopeMean:3.2, slopeMax:9.8, slopeP95:6.4, rough:0.31, coverage:0.994, noData:0.006, res:5 },
+  apollo:    { slopeMean:2.4, slopeMax:8.1, slopeP95:5.0, rough:0.22, coverage:1.000, noData:0.000, res:5 }
+};
+
+const TEMP = {
+  shackleton:{ tmin:42, tmax:218, tmean:128, period:'lunar diurnal', gaps:'~2% seasonal' },
+  malapert:  { tmin:58, tmax:312, tmean:168, period:'lunar diurnal', gaps:'~4% polar night' },
+  gerlache:  { tmin:48, tmax:245, tmean:142, period:'lunar diurnal', gaps:'~2%' },
+  connector: { tmin:44, tmax:230, tmean:135, period:'lunar diurnal', gaps:'~3%' },
+  nobile:    { tmin:46, tmax:225, tmean:132, period:'lunar diurnal', gaps:'~2%' },
+  apollo:    { tmin:100, tmax:390, tmean:250, period:'lunar diurnal', gaps:'~1%' }
+};
+
+const ICE = {
+  shackleton:{ value:1.8, unc:null, type:'orbital proxy', source:'LEND neutron → interpreted WEH', applicable:true },
+  malapert:  { value:null, unc:null, type:'unknown', source:'no direct measurement', applicable:false },
+  gerlache:  { value:2.0, unc:null, type:'published bound', source:'SMD-LUN-102 ≤ 2.0 wt%', applicable:true, bound:'upper' },
+  connector: { value:null, unc:null, type:'unknown', source:'no direct measurement', applicable:false },
+  nobile:    { value:1.2, unc:0.6, type:'orbital proxy', source:'LEND (interpreted)', applicable:true },
+  apollo:    { value:0.01, unc:null, type:'literature', source:'sample-return baseline', applicable:true }
+};
+
+const LCSS_MODEL = {
+  version: '1.0.0-dummy',
+  status: 'reviewed dummy — not flight-validated',
+  assumptions: {
+    crew: 4, days: 730,
+    waterPerCrewDay: 2.5, loopClosure: 0.75,
+    foodPerCrewDay: 1.8, eclssHardware: 8000, sparesFraction: 0.10,
+    extractableFraction: 0.50, recoveryEfficiency: 0.60,
+    energyPerKgRegolith: 2.5, reactorKW: 2.5, reactorKgPerKW: 20,
+    reactorDutyCycle: 0.50, isruHardware: 800, isruSupplyFraction: 0.90
+  }
+};
+
+const LUNAR_DAY_H = 708.7;
+
+function mkScenario(siteId, date){
+  return {
+    siteId, date,
+    duration: 168, offset: 0,
+    thr: { minElev:2, solarFrac:40, earthFrac:30, overlapFrac:20, maxDark:null, maxOutage:null },
+    iceOverride: null
+  };
+}
+
+const state = {
+  view: 'plain',
+  workspace: 'layout',
+  activeScn: 'A',
+  propTab: 'object',
+  A: mkScenario('shackleton','2028-03-14'),
+  B: mkScenario('malapert','2028-03-14'),
+  lcssEnabled: false,
+  lcssBudget: 18000,
+  vpScn: 'A',
+  playing: false,
+  frame: 1,
+  lastFlip: null,
+  lastIceFlip: null
+};
+
+function horizonAt(siteId, az){
+  const s = CATALOG[siteId].phase.seed;
+  const v = 3.6 + 3.2*Math.sin(3*az + s) + 1.9*Math.sin(7*az + s*1.7)
+          + 1.1*Math.sin(11*az + s*2.3) + 0.6*Math.sin(17*az + s*0.7);
+  return Math.max(0.5, Math.min(13, v));
+}
+function sunState(siteId, t){
+  const p = CATALOG[siteId].phase;
+  return { az: 2*Math.PI*t + p.sunAz, elev: 3.8 + 3.4*Math.sin(2*Math.PI*t + p.sunPhase) };
+}
+function earthState(siteId, t){
+  const p = CATALOG[siteId].phase;
+  return { az: 2*Math.PI*t + p.earthAz, elev: 9.4 + 7.6*Math.sin(2*Math.PI*t + p.earthPhase) };
+}
+function evalWindow(scn){
+  return { t0: CATALOG[scn.siteId].t0 + scn.offset/29.53, span: scn.duration/LUNAR_DAY_H };
+}
+
+function evaluate(scn, N){
+  N = N || 720;
+  const { t0, span } = evalWindow(scn);
+  let sC=0, eC=0, oC=0;
+  const samples = [];
+  for (let i=0;i<N;i++){
+    const t = t0 + span*(i+0.5)/N;
+    const s = sunState(scn.siteId, t);
+    const e = earthState(scn.siteId, t);
+    const sVis = s.elev >= Math.max(horizonAt(scn.siteId, s.az), scn.thr.minElev);
+    const eVis = e.elev >= horizonAt(scn.siteId, e.az);
+    if (sVis) sC++;
+    if (eVis) eC++;
+    if (sVis && eVis) oC++;
+    samples.push({ sVis, eVis, sunElev:s.elev, earthElev:e.elev, sunHorizon:horizonAt(scn.siteId,s.az) });
+  }
+  return { solar:sC/N*100, earth:eC/N*100, overlap:oC/N*100, samples, t0, span };
+}
+
+function verdictOf(scn, res){
+  res = res || evaluate(scn);
+  const fails = [];
+  if (res.solar   < scn.thr.solarFrac)   fails.push({ key:'solar',   label:'Solar eligibility', value:res.solar,   req:scn.thr.solarFrac });
+  if (res.earth   < scn.thr.earthFrac)   fails.push({ key:'earth',   label:'Earth visibility',  value:res.earth,   req:scn.thr.earthFrac });
+  if (res.overlap < scn.thr.overlapFrac) fails.push({ key:'overlap', label:'Overlap',           value:res.overlap, req:scn.thr.overlapFrac });
+  const solarGap = longestGap(res, 'solar')*scn.duration/100;
+  const earthGap = longestGap(res, 'earth')*scn.duration/100;
+  if (scn.thr.maxDark   != null && solarGap > scn.thr.maxDark)   fails.push({ key:'maxDark',   label:'Max darkness', value:solarGap, req:scn.thr.maxDark, unit:'h' });
+  if (scn.thr.maxOutage != null && earthGap > scn.thr.maxOutage) fails.push({ key:'maxOutage', label:'Max Earth outage', value:earthGap, req:scn.thr.maxOutage, unit:'h' });
+  return { pass: fails.length === 0, fails, solarGap, earthGap };
+}
+
+function longestGap(res, kind){
+  let best=0, cur=0;
+  for (const s of res.samples){
+    const bad = kind==='solar' ? !s.sVis : !s.eVis;
+    if (bad){ cur++; best = Math.max(best, cur); } else cur = 0;
+  }
+  return best / res.samples.length * 100;
+}
+
+function runs(res, kind){
+  const out = [];
+  const n = res.samples.length;
+  let start = -1;
+  const isBad = s => kind==='solar' ? !s.sVis : !s.eVis;
+  for (let i=0;i<n;i++){
+    if (isBad(res.samples[i]) && start === -1) start = i;
+    if ((!isBad(res.samples[i]) || i === n-1) && start !== -1){
+      const end = isBad(res.samples[i]) ? i : i-1;
+      out.push({ startFrac:start/n, endFrac:(end+1)/n, durFrac:(end-start+1)/n });
+      start = -1;
+    }
+  }
+  return out.sort((a,b)=>b.durFrac-a.durFrac);
+}
+
+function computeLCSS(iceWtPct){
+  const A = LCSS_MODEL.assumptions;
+  const grossWater = A.crew * A.days * A.waterPerCrewDay;
+  const netMakeup = grossWater * (1 - A.loopClosure);
+  const food = A.crew * A.days * A.foodPerCrewDay;
+  const eclss = A.eclssHardware;
+
+  let earthWater = netMakeup;
+  let reactorMass = 0, isruPlant = 0, reactorCount = 0, isruPowerKW = 0;
+  let regolithProcessed = 0, iceProcessed = 0;
+
+  if (iceWtPct > 0){
+    const waterYield = (iceWtPct/100) * A.extractableFraction * A.recoveryEfficiency;
+    if (waterYield > 0){
+      regolithProcessed = netMakeup / waterYield;
+      iceProcessed = regolithProcessed * (iceWtPct/100);
+      const totalEnergy = regolithProcessed * A.energyPerKgRegolith;
+      const availableHours = A.days * 24 * A.reactorDutyCycle;
+      reactorCount = Math.max(1, Math.ceil(totalEnergy / (availableHours * A.reactorKW)));
+      isruPowerKW = reactorCount * A.reactorKW;
+      reactorMass = isruPowerKW * A.reactorKgPerKW;
+      isruPlant = A.isruHardware;
+      earthWater = netMakeup * (1 - A.isruSupplyFraction);
+    }
+  }
+
+  const spares = (eclss + reactorMass + isruPlant) * A.sparesFraction;
+  const total = earthWater + food + eclss + reactorMass + isruPlant + spares;
+
+  return {
+    total,
+    contributors: {
+      earthWater:{ label:'Earth-supplied water', mass:earthWater, color:'#5b8ad4' },
+      food:{ label:'Food & consumables', mass:food, color:'#a06ad9' },
+      eclss:{ label:'ECLSS hardware', mass:eclss, color:'#7ac47a' },
+      reactor:{ label:'Reactor / ISRU power', mass:reactorMass, color:'#d9a441' },
+      isru:{ label:'ISRU plant', mass:isruPlant, color:'#d97a4a' },
+      spares:{ label:'Spares', mass:spares, color:'#8a8a8a' }
+    }
+  };
+}
+
+function getIce(scn){
+  if (scn.iceOverride !== null) return { value: scn.iceOverride, category:'user-adjusted', source:'slider override' };
+  const ev = ICE[scn.siteId];
+  if (!ev || ev.value === null) return { value: 0, category:'unknown', source: ev?.source || 'no evidence' };
+  return { value: ev.value, category: ev.type, source: ev.source, unc: ev.unc, bound: ev.bound };
+}
+
+function hashInputs(scn){
+  const canonical = JSON.stringify({
+    site: scn.siteId, offset: scn.offset, duration: scn.duration,
+    thr: scn.thr, ice: getIce(scn).value,
+    lcss: state.lcssEnabled, budget: state.lcssBudget,
+    model: LCSS_MODEL.version
+  });
+  let h = 0;
+  for (let i=0;i<canonical.length;i++) h = ((h<<5) - h + canonical.charCodeAt(i)) | 0;
+  return 'SL-' + Math.abs(h).toString(16).padStart(8,'0').toUpperCase();
+}
+
+const $ = id => document.getElementById(id);
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+const fmt1 = v => (Math.round(v*10)/10).toFixed(1);
+
+function setRing(el, pct, threshold){
+  el.style.setProperty('--pct', clamp(pct,0,100));
+  el.style.setProperty('--col', pct >= threshold ? 'var(--ok)' : 'var(--bad)');
+  el.querySelector('b').textContent = fmt1(pct) + '%';
+}
+
+/* ================= OUTLINER ================= */
+
+const outlinerEl = $('outliner');
+
+const OL_ICON = {
+  collection:`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M1.8 5.2h5l1.4 1.7h6v6.4a1 1 0 01-1 1H2.8a1 1 0 01-1-1z"/></svg>`,
+  mesh:`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2">
+    <circle cx="8" cy="8" r="5"/><ellipse cx="8" cy="8" rx="5" ry="2.1"/></svg>`,
+  constraint:`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2">
+    <circle cx="5" cy="8" r="2.4"/><circle cx="11" cy="8" r="2.4"/></svg>`,
+  ext:`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M6 3h4v3h3v4h-3v3H6v-3H3V6h3z"/></svg>`,
+  off:`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2">
+    <circle cx="8" cy="8" r="5"/><path d="M4.5 11.5l7-7"/></svg>`
+};
+
+function renderOutliner(){
+  const scn = state[state.activeScn];
+  const res = evaluate(scn);
+  const v = verdictOf(scn, res);
+  const badge = v.pass ? '<span class="badge ok">✓</span>' : '<span class="badge bad">✕</span>';
+
+  const rows = [
+    { depth:0, type:'collection', label:'Scene Collection', tri:'▾' },
+    { depth:1, type:'collection', label:'Scenarios', tri:'▾' },
+    { depth:2, type:'mesh', label:'Scenario A · '+CATALOG[state.A.siteId].name, key:'A', badge: state.A===scn ? badge : '' },
+    { depth:2, type:'mesh', label:'Scenario B · '+CATALOG[state.B.siteId].name, key:'B', badge: state.B===scn ? badge : '' },
+    { depth:1, type:'collection', label:'Requirements', tri:'▾' },
+    { depth:2, type:'constraint', label:'Solar eligibility' },
+    { depth:2, type:'constraint', label:'Earth visibility' },
+    { depth:2, type:'constraint', label:'Overlap' },
+    { depth:2, type:'constraint', label:'Continuous gaps (EXT-02)' },
+    { depth:1, type:'collection', label:'Extensions', tri:'▾' },
+    { depth:2, type:'ext', label:'Terrain screening (EXT-01)' },
+    { depth:2, type:'ext', label:'Temperature (EXT-03)' },
+    { depth:2, type:'off', label:'Connectivity (EXT-04)', disabled:true },
+    { depth:2, type:'off', label:'Dust / plume / radiation', disabled:true },
+    { depth:1, type:'collection', label:'Logistics', tri:'▾' },
+    { depth:2, type: state.lcssEnabled?'mesh':'off', label:'LCSS — ' + (state.lcssEnabled ? 'enabled' : 'not evaluated'), disabled:!state.lcssEnabled },
+    { depth:2, type:'ext', label:'Ice evidence' }
+  ];
+
+  outlinerEl.innerHTML = rows.map(r=>{
+    const sel = r.key && r.key === state.activeScn;
+    return `<div class="ol-row ${sel?'sel':''} ${r.disabled?'disabled':''}"
+      data-key="${r.key||''}" data-depth="${r.depth}"
+      style="padding-left:${6 + r.depth*13}px" tabindex="0">
+      <span class="tri">${r.tri||''}</span>
+      <span class="ico">${OL_ICON[r.type]}</span>
+      <span class="lbl">${r.label}</span>
+      ${r.badge||''}
+    </div>`;
+  }).join('');
+}
+
+outlinerEl.addEventListener('click', e => {
+  const row = e.target.closest('.ol-row');
+  if (!row) return;
+  const k = row.dataset.key;
+  if (k && k !== state.activeScn){
+    state.activeScn = k;
+    state.vpScn = k;
+    if (dome) dome.setSite(state[k].siteId);
+    refreshAll();
+  }
+});
+
+/* ================= PROPERTIES ================= */
+
+const propBody = $('propBody');
+
+function slider(bind, label, min, max, step, value, unit, fmt){
+  const f = fmt || (v => v);
+  const pct = ((value-min)/(max-min)*100).toFixed(1)+'%';
+  return `<div class="prow">
+    <label>${label}</label>
+    <div class="fill">
+      <div class="slider-wrap" style="--fill:${pct}">
+        <input type="range" data-bind="${bind}" min="${min}" max="${max}" step="${step}" value="${value}">
+        <span class="val">${f(value)}${unit||''}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function panel(title, content, opts){
+  opts = opts || {};
+  const cls = opts.collapsed ? 'collapsed' : '';
+  const badge = opts.badge ? `<span class="ph-badge ${opts.badgeClass||''}">${opts.badge}</span>` : '';
+  return `<div class="panel ${cls}">
+    <div class="panel-h"><span class="tri">▾</span>${title}<span class="ph-sp"></span>${badge}</div>
+    <div class="panel-c">${content}</div>
+  </div>`;
+}
+
+function ruleRow(ok, label, value, req, unit){
+  const cls = ok ? 'ok' : 'no';
+  return `<div class="rule ${cls}">
+    <span class="dot"></span><span class="txt">${label}</span>
+    <span class="num">${value.toFixed(1)}${unit} / ${req}${unit}</span>
+  </div>`;
+}
+
+function renderProperties(){
+  const scn = state[state.activeScn];
+  const site = CATALOG[scn.siteId];
+  const res = evaluate(scn);
+  const v = verdictOf(scn, res);
+  const tab = state.propTab;
+  let html = '';
+
+  if (tab === 'object'){
+    html += panel(`Scenario ${state.activeScn} · ${site.name}`, `
+      <div class="prow"><label>Site</label><div class="fill">
+        <select class="bselect" data-field="site">
+          ${Object.values(CATALOG).map(s => `<option value="${s.id}" ${s.id===scn.siteId?'selected':''}>${s.name} · ${s.pgda}</option>`).join('')}
+        </select>
+      </div></div>
+      <div class="prow"><label>Latitude</label><div class="fill"><div class="field dim wide mono">${site.latStr}</div></div></div>
+      <div class="prow"><label>Longitude</label><div class="fill"><div class="field dim wide mono">${site.lonStr}</div></div></div>
+      <div class="prow"><label>Frame</label><div class="fill"><div class="field dim wide mono">DE421 mean-Earth lunar</div></div></div>
+      ${site.nonPolar ? `<div class="note"><b>Non-polar reference.</b> Not presented as a supported south-polar candidate.</div>` : ''}
+    `);
+
+    const T = TERRAIN[scn.siteId];
+    html += panel('Terrain screening — EXT-01', `
+      <div class="badge-row">
+        <span class="badge ok">Synthetic DEM</span>
+        <span class="badge">${T.res} m/px</span>
+        <span class="badge warn">Rocks not evaluated</span>
+      </div>
+      <div class="prow"><label>Slope mean</label><div class="fill"><div class="field wide">${T.slopeMean.toFixed(1)}°</div></div></div>
+      <div class="prow"><label>Slope p95</label><div class="fill"><div class="field wide">${T.slopeP95.toFixed(1)}°</div></div></div>
+      <div class="prow"><label>Slope max</label><div class="fill"><div class="field wide">${T.slopeMax.toFixed(1)}°</div></div></div>
+      <div class="prow"><label>Roughness</label><div class="fill"><div class="field wide">${T.rough.toFixed(2)}</div></div></div>
+      <div class="prow"><label>Coverage</label><div class="fill"><div class="field wide">${(T.coverage*100).toFixed(1)}% · no-data ${(T.noData*100).toFixed(1)}%</div></div></div>
+      <div class="note">No universal safe-angle limit is assumed. A DEM's absence of visible
+      hazards is <b>not</b> proof of an obstacle-free footprint.</div>
+    `, { badge:'staged', badgeClass:'warn' });
+
+    const TP = TEMP[scn.siteId];
+    html += panel('Temperature context — EXT-03', `
+      <div class="badge-row"><span class="badge unk">Diviner-like</span><span class="badge">not a forecast</span></div>
+      <div class="prow"><label>Min</label><div class="fill"><div class="field wide">${TP.tmin} K</div></div></div>
+      <div class="prow"><label>Mean</label><div class="fill"><div class="field wide">${TP.tmean} K</div></div></div>
+      <div class="prow"><label>Max</label><div class="fill"><div class="field wide">${TP.tmax} K</div></div></div>
+      <div class="prow"><label>Period</label><div class="fill"><div class="field dim wide">${TP.period}</div></div></div>
+      <div class="prow"><label>Gaps</label><div class="fill"><div class="field dim wide">${TP.gaps}</div></div></div>
+      <div class="note">Historical observations are <b>not</b> automatic forecasts for a
+      selected future mission time.</div>
+    `, { collapsed:true });
+  }
+
+  if (tab === 'constraints'){
+    html += panel(`Binding constraints — ${site.name}`, `
+      <div class="badge-row">
+        <span class="badge ${v.pass?'ok':'bad'}">${v.pass?'PASS':'FAIL'}</span>
+        <span class="badge">${scn.duration} h window</span>
+        <span class="badge">${scn.thr.minElev.toFixed(1)}° min elev.</span>
+      </div>
+      ${ruleRow(res.solar   >= scn.thr.solarFrac,   'Solar eligibility', res.solar,   scn.thr.solarFrac,   '%')}
+      ${ruleRow(res.earth   >= scn.thr.earthFrac,   'Earth visibility',  res.earth,   scn.thr.earthFrac,   '%')}
+      ${ruleRow(res.overlap >= scn.thr.overlapFrac, 'Overlap',           res.overlap, scn.thr.overlapFrac, '%')}
+      ${scn.thr.maxDark   != null
+        ? ruleRow(v.solarGap   <= scn.thr.maxDark,   'Max darkness',     v.solarGap,   scn.thr.maxDark,   'h')
+        : `<div class="rule na"><span class="dot"></span><span class="txt">Max darkness</span><span class="num">no limit</span></div>`}
+      ${scn.thr.maxOutage != null
+        ? ruleRow(v.earthGap   <= scn.thr.maxOutage, 'Max Earth outage', v.earthGap,   scn.thr.maxOutage, 'h')
+        : `<div class="rule na"><span class="dot"></span><span class="txt">Max Earth outage</span><span class="num">no limit</span></div>`}
+      <div class="rule na"><span class="dot"></span><span class="txt">LCSS logistics</span>
+        <span class="num">${state.lcssEnabled ? (computeLCSS(getIce(scn).value).total <= state.lcssBudget ? 'PASS' : 'FAIL') : 'Not evaluated'}</span></div>
+    `);
+
+    if (!v.pass){
+      const list = v.fails.map(f => `
+        <div class="rule no" style="border-left-width:2px">
+          <span class="dot"></span><span class="txt">${f.label}</span>
+          <span class="num">−${(f.req - f.value).toFixed(1)}${f.unit||' pts'}</span>
+        </div>`).join('');
+      html += panel('Deficits — ranked', list);
+    }
+
+    const solarRuns = runs(res, 'solar');
+    const earthRuns = runs(res, 'earth');
+    const fmtInt = r => {
+      const s = r.startFrac * scn.duration, e = r.endFrac * scn.duration;
+      return `T+${s.toFixed(1)}h → T+${e.toFixed(1)}h (${(r.durFrac*scn.duration).toFixed(1)}h)`;
+    };
+    html += panel('Continuous gaps — EXT-02', `
+      <div class="prow"><label>Longest dark</label>
+        <div class="fill"><div class="field wide">${v.solarGap.toFixed(1)} h</div></div></div>
+      ${solarRuns.slice(0,3).map(r=>`<div class="note mono">${fmtInt(r)}</div>`).join('')}
+      <div class="prow"><label>Longest no-Earth</label>
+        <div class="fill"><div class="field wide">${v.earthGap.toFixed(1)} h</div></div></div>
+      ${earthRuns.slice(0,3).map(r=>`<div class="note mono">${fmtInt(r)}</div>`).join('')}
+      <div class="note">Intervals truncated by assessment boundaries. No battery endurance,
+      RF performance, relay necessity, or relay mass is inferred.</div>
+    `);
+
+    const plain = v.pass
+      ? 'This scenario meets every enabled, sufficiently assessed environmental requirement under the current model. It is <b>not</b> a safe-landing certification.'
+      : (()=>{
+        const f = v.fails[0];
+        if (f.key === 'solar')
+          return `Measured <b>${f.value.toFixed(1)}%</b> against a <b>${f.req}%</b> solar-eligibility requirement. The terrain ridge blocks the Sun for a long contiguous stretch rather than a brief dip.`;
+        if (f.key === 'earth')
+          return `Measured <b>${f.value.toFixed(1)}%</b> against a <b>${f.req}%</b> Earth-visibility requirement. Earth falls below the terrain horizon for part of the window. This says nothing about RF link availability.`;
+        if (f.key === 'overlap')
+          return `Sunlight and Earth visibility each clear their own thresholds, but they rarely occur at the same moment: overlap is <b>${f.value.toFixed(1)}%</b> against a <b>${f.req}%</b> requirement.`;
+        return `${f.label}: measured <b>${f.value.toFixed(1)}${f.unit||''}</b> against a <b>${f.req}${f.unit||''}</b> requirement.`;
+      })();
+    html += panel('Explanation', `<div class="note">${plain}</div>`,
+      { collapsed: state.view === 'technical' });
+  }
+
+  if (tab === 'scene'){
+    html += panel('Surface window', `
+      ${slider('duration', 'Duration', 48, 336, 12, scn.duration, ' h')}
+      ${slider('offset', 'Landing offset', -60, 60, 1, scn.offset, ' d', v => (v>0?'+':'')+v)}
+      <div class="prow"><label>Interval</label><div class="fill"><div class="field dim wide">Half-open [start, end) UTC</div></div></div>
+      <div class="prow"><label>Date (UTC)</label><div class="fill"><div class="field wide mono">${scn.date}</div></div></div>
+    `);
+
+    html += panel('Environmental requirements', `
+      ${slider('minElev', 'Min solar elev.', 0, 8, 0.1, scn.thr.minElev, '°', v=>v.toFixed(1))}
+      ${slider('solarFrac', 'Min solar frac.', 0, 100, 5, scn.thr.solarFrac, '%')}
+      ${slider('earthFrac', 'Min Earth frac.', 0, 100, 5, scn.thr.earthFrac, '%')}
+      ${slider('overlapFrac', 'Min overlap', 0, 100, 5, scn.thr.overlapFrac, '%')}
+      ${slider('maxDark', 'Max darkness (0=off)', 0, 100, 1, scn.thr.maxDark ?? 0, ' h')}
+      ${slider('maxOutage', 'Max Earth outage', 0, 100, 1, scn.thr.maxOutage ?? 0, ' h')}
+    `);
+
+    html += panel('Sampled flip search', `
+      <button class="btn btn-ghost" id="flipBtn" style="width:100%;margin-bottom:6px">Find nearest elevation flip</button>
+      ${state.lastFlip ? `<div class="note mono" style="padding:6px;background:#333;border-radius:4px">${state.lastFlip}</div>` : ''}
+      <div class="note">Searches elevation 0–8° at 0.25° resolution. Binary verdicts are never
+      interpolated. No flip within range is reported explicitly.</div>
+    `);
+  }
+
+  if (tab === 'world'){
+    const ice = getIce(scn);
+    const lcss = computeLCSS(ice.value);
+    const pass = lcss.total <= state.lcssBudget;
+
+    html += panel('Life-Support Coupled Site Score', `
+      <div class="badge-row">
+        <span class="badge ${state.lcssEnabled ? 'warn' : 'unk'}">${state.lcssEnabled ? 'reviewed dummy' : 'not evaluated'}</span>
+        <span class="badge">v${LCSS_MODEL.version}</span>
+      </div>
+      <div class="prow"><label>Enable LCSS</label><div class="fill">
+        <select class="bselect" data-field="lcssEnabled">
+          <option value="0" ${!state.lcssEnabled?'selected':''}>Disabled (exclude from verdict)</option>
+          <option value="1" ${state.lcssEnabled?'selected':''}>Enabled (reviewed dummy model)</option>
+        </select>
+      </div></div>
+      ${state.lcssEnabled ? `
+        <div class="prow"><label>Budget</label><div class="fill"><div class="field wide">${state.lcssBudget.toLocaleString()} kg</div></div></div>
+        <div class="prow"><label>Total</label><div class="fill"><div class="field wide" style="color:${pass?'var(--ok)':'var(--bad)'}">${lcss.total.toFixed(0)} kg</div></div></div>
+        <div class="bar">
+          ${Object.values(lcss.contributors).map(c=>`<div style="width:${c.mass/lcss.total*100}%;background:${c.color}"></div>`).join('')}
+        </div>
+        ${Object.values(lcss.contributors).map(c=>`
+          <div class="legend-row"><span class="sw" style="background:${c.color}"></span>
+            <span class="lb">${c.label}</span><span class="vl">${c.mass.toFixed(0)} kg</span></div>
+        `).join('')}
+        <div class="note" style="margin-top:4px">${pass?'Under budget':'Over budget by ' + (lcss.total-state.lcssBudget).toFixed(0) + ' kg'}</div>
+      ` : `<div class="note">Enabling LCSS adds the reviewed dummy model to the verdict. If the model is disabled, it is <b>not evaluated</b>.</div>`}
+    `, { badge: state.lcssEnabled ? (pass ? 'PASS':'FAIL') : 'pending', badgeClass: state.lcssEnabled ? (pass?'ok':'bad') : 'warn' });
+
+    html += panel('Ice evidence', `
+      <div class="badge-row">
+        <span class="badge ${ice.category==='unknown'?'unk':'warn'}">${ice.category}</span>
+        <span class="badge">${ice.value.toFixed(1)} wt%</span>
+      </div>
+      <div class="note" style="padding-top:0">${ice.source}${ice.unc ? ' · ±' + ice.unc + ' wt%' : ''}${ice.bound ? ' · ' + ice.bound + ' bound' : ''}</div>
+      ${slider('iceOverride', 'Ice override', 0, 6, 0.1, ice.value, ' wt%', v=>v.toFixed(1))}
+      <div class="note">Slider value is <b>hypothetical</b> and preserved separately from the sourced evidence.</div>
+    `);
+
+    if (state.lcssEnabled){
+      html += panel('Logistics flip', `
+        <button class="btn btn-ghost" id="iceFlipBtn" style="width:100%;margin-bottom:6px">Find minimum passing ice conc.</button>
+        ${state.lastIceFlip ? `<div class="note mono" style="padding:6px;background:#333;border-radius:4px">${state.lastIceFlip}</div>` : ''}
+      `);
+    }
+  }
+
+  if (tab === 'ext'){
+    ['EXT-01 · Terrain screening (dummy)','EXT-02 · Continuous gaps (dummy)','EXT-03 · Temperature (conditional)',
+     'EXT-04 · Connectivity','EXT-05 · Dust / thermal','EXT-06 · Plume / ejecta','EXT-07 · Radiation','EXT-08 · Contingency']
+      .forEach((t,i) => {
+        html += panel(t, `<div class="badge-row"><span class="badge ${i<2?'ok':i===2?'warn':'unk'}">${i<2?'implemented':i===2?'conditional':'research gate'}</span></div>
+          <div class="note">${i<2?'Implemented with synthetic dummy data.':i===2?'Diviner-like product — not a forecast.':'Not evaluated. Requires accepted model before numerical use.'}</div>`, { collapsed:i>1 });
+      });
+  }
+
+  if (tab === 'render'){
+    const hash = hashInputs(scn);
+    html += panel('Result classification', `
+      <div class="badge-row">
+        <span class="badge warn">Synthetic fixture</span>
+        <span class="badge">not validated</span>
+      </div>
+      <div class="note">Generated geometry, horizon profiles and visibility fractions for design and interaction testing.</div>
+    `);
+    html += panel('Deterministic identity', `
+      <div class="prow"><label>Hash</label><div class="fill"><div class="field wide mono">${hash}</div></div></div>
+    `);
+    html += panel('Demo', `
+      <button class="btn btn-primary" id="demoBtn2" style="width:100%">Load comparison preset</button>
+    `);
+  }
+
+  propBody.innerHTML = html;
+}
+
+propBody.addEventListener('input', e => {
+  const bind = e.target.dataset.bind;
+  if (!bind) return;
+  const scn = state[state.activeScn];
+  const v = parseFloat(e.target.value);
+
+  if (bind === 'duration') scn.duration = v;
+  else if (bind === 'offset') scn.offset = v;
+  else if (bind === 'iceOverride') scn.iceOverride = v;
+  else if (bind === 'maxDark') scn.thr.maxDark = v > 0 ? v : null;
+  else if (bind === 'maxOutage') scn.thr.maxOutage = v > 0 ? v : null;
+  else scn.thr[bind] = v;
+
+  const wrap = e.target.closest('.slider-wrap');
+  const min = parseFloat(e.target.min), max = parseFloat(e.target.max);
+  wrap.style.setProperty('--fill', ((v-min)/(max-min)*100).toFixed(1)+'%');
+  const units = { minElev:'°', duration:' h', offset:' d', iceOverride:' wt%', maxDark:' h', maxOutage:' h' };
+  const fmtVal = bind === 'offset' ? (v>0?'+':'')+v
+              : bind === 'minElev' || bind === 'iceOverride' ? v.toFixed(1)
+              : v;
+  wrap.querySelector('.val').textContent = fmtVal + (units[bind] || '%');
+
+  if (bind === 'duration') $('durLbl').textContent = v + ' h';
+  if (dome) dome.refreshPaths();
+  renderCompareStrip();
+  if (state.workspace === 'compare') renderCompareView();
+});
+
+propBody.addEventListener('change', e => {
+  const field = e.target.dataset.field;
+  if (!field) return;
+  const scn = state[state.activeScn];
+  if (field === 'site'){ scn.siteId = e.target.value; scn.iceOverride = null; if (dome) dome.setSite(scn.siteId); }
+  else if (field === 'lcssEnabled'){ state.lcssEnabled = e.target.value === '1'; }
+  refreshAll();
+});
+
+propBody.addEventListener('click', e => {
+  const head = e.target.closest('.panel-h');
+  if (head) head.parentElement.classList.toggle('collapsed');
+  if (e.target.id === 'flipBtn') runElevationFlip();
+  if (e.target.id === 'iceFlipBtn') runIceFlip();
+  if (e.target.id === 'demoBtn2') loadDemoPreset();
+});
+
+$('propTabs').addEventListener('click', e => {
+  const t = e.target.closest('.ptab');
+  if (!t) return;
+  document.querySelectorAll('.ptab').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  state.propTab = t.dataset.tab;
+  renderProperties();
+});
+
+/* ================= COMPARE STRIP ================= */
+
+function renderCompareStrip(){
+  const el = $('compareStrip');
+  const cards = ['A','B'].map(k => {
+    const scn = state[k];
+    const res = evaluate(scn);
+    const v = verdictOf(scn, res);
+    const site = CATALOG[scn.siteId];
+    const lcss = state.lcssEnabled ? computeLCSS(getIce(scn).value) : null;
+
+    return `<div class="cmp-card ${v.pass?'is-pass':'is-fail'}">
+      <div class="cmp-head">
+        <span class="cmp-tag ${k==='B'?'b':''}">${k}</span>
+        <span class="cmp-name">${site.name}</span>
+        <span class="status-pill ${v.pass?'pass':'fail'}"><span class="dot"></span>${v.pass?'PASS':'FAIL'}</span>
+      </div>
+      <div class="cmp-metrics">
+        <div class="cmp-metric"><div class="ring" id="ringS${k}" style="--pct:0;--col:var(--ok)"><b>0%</b></div><small>Solar<br><b>≥${scn.thr.solarFrac}%</b></small></div>
+        <div class="cmp-metric"><div class="ring" id="ringE${k}" style="--pct:0;--col:var(--ok)"><b>0%</b></div><small>Earth<br><b>≥${scn.thr.earthFrac}%</b></small></div>
+        <div class="cmp-metric"><div class="ring" id="ringO${k}" style="--pct:0;--col:var(--ok)"><b>0%</b></div><small>Overlap<br><b>≥${scn.thr.overlapFrac}%</b></small></div>
+        ${lcss ? `<div class="cmp-metric"><div class="ring" style="--pct:${clamp(lcss.total/state.lcssBudget*100,0,100)};--col:${lcss.total<=state.lcssBudget?'var(--ok)':'var(--bad)'}"><b>${(lcss.total/1000).toFixed(1)}k</b></div><small>LCSS<br><b>≤${(state.lcssBudget/1000).toFixed(0)}k kg</b></small></div>` : ''}
+      </div>
+      <div class="cmp-fails">${v.fails.length ? 'Fails: ' + v.fails.map(f=>`<span class="f">${f.label}</span>`).join(', ') : 'All enabled rules pass.'}</div>
+    </div>`;
+  }).join('');
+  el.innerHTML = cards;
+
+  ['A','B'].forEach(k => {
+    const scn = state[k];
+    const res = evaluate(scn);
+    setRing($('ringS'+k), res.solar, scn.thr.solarFrac);
+    setRing($('ringE'+k), res.earth, scn.thr.earthFrac);
+    setRing($('ringO'+k), res.overlap, scn.thr.overlapFrac);
+  });
+}
+
+/* ================= COMPARE VIEW ================= */
+
+function renderCompareView(){
+  const el = $('viewCompare');
+  const a = evaluate(state.A), b = evaluate(state.B);
+  const va = verdictOf(state.A, a), vb = verdictOf(state.B, b);
+  const sa = CATALOG[state.A.siteId], sb = CATALOG[state.B.siteId];
+  const lcssA = state.lcssEnabled ? computeLCSS(getIce(state.A).value) : null;
+  const lcssB = state.lcssEnabled ? computeLCSS(getIce(state.B).value) : null;
+
+  const card = (scn, res, v, site, k, lcss) => `
+    <div class="cv-card ${v.pass?'is-pass':'is-fail'}">
+      <div class="cv-head">
+        <span class="cmp-tag ${k==='B'?'b':''}">${k}</span>
+        <span class="cv-name">${site.name}</span>
+        <span class="status-pill ${v.pass?'pass':'fail'}"><span class="dot"></span>${v.pass?'PASS':'FAIL'}</span>
+      </div>
+      <div class="cv-ring-row">
+        <div class="cv-ring-col"><div class="cv-ring" style="--pct:${res.solar};--col:${res.solar>=scn.thr.solarFrac?'var(--ok)':'var(--bad)'}"><b>${fmt1(res.solar)}%</b></div><small>Solar<br><b>≥${scn.thr.solarFrac}%</b></small></div>
+        <div class="cv-ring-col"><div class="cv-ring" style="--pct:${res.earth};--col:${res.earth>=scn.thr.earthFrac?'var(--ok)':'var(--bad)'}"><b>${fmt1(res.earth)}%</b></div><small>Earth<br><b>≥${scn.thr.earthFrac}%</b></small></div>
+        <div class="cv-ring-col"><div class="cv-ring" style="--pct:${res.overlap};--col:${res.overlap>=scn.thr.overlapFrac?'var(--ok)':'var(--bad)'}"><b>${fmt1(res.overlap)}%</b></div><small>Overlap<br><b>≥${scn.thr.overlapFrac}%</b></small></div>
+      </div>
+      ${lcss ? `<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:10.5px;padding:8px 0;border-top:1px solid #3a3a3a;margin-bottom:10px"><div style="color:var(--dim3)">LCSS mass</div><div style="text-align:right;color:${lcss.total<=state.lcssBudget?'var(--ok)':'var(--bad)'}">${lcss.total.toFixed(0)} kg</div></div>` : ''}
+      <div style="font-size:10.5px;color:var(--dim3);margin-bottom:6px">${site.latStr} · ${site.lonStr} · ${scn.duration} h · elev ≥ ${scn.thr.minElev}°</div>
+      ${['solar','earth','overlap'].map(m => {
+        const val = res[m], req = scn.thr[m==='solar'?'solarFrac':m==='earth'?'earthFrac':'overlapFrac'];
+        return `<div class="cv-rule-row ${val>=req?'ok':'no'}"><span class="lbl">${m==='solar'?'Solar eligibility':m==='earth'?'Earth visibility':'Overlap'}</span><span class="val">${fmt1(val)}% / ${req}%</span></div>`;
+      }).join('')}
+    </div>`;
+
+  el.innerHTML = card(state.A, a, va, sa, 'A', lcssA) + card(state.B, b, vb, sb, 'B', lcssB);
+}
+
+/* ================= ROBUSTNESS ================= */
+
+function renderRobustView(){
+  const el = $('viewRobust');
+  const scn = state[state.activeScn];
+  let html = `<div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px">
+    <div style="font-size:13px;font-weight:600">Monthly sampled starts · Scenario ${state.activeScn} · ${CATALOG[scn.siteId].name}</div>
+    <div style="font-size:10.5px;color:var(--dim3)" id="robustSum">—</div>
+  </div>`;
+
+  let pass=0, fail=0, unk=0, cells='';
+  for (let m=0;m<84;m++){
+    const scnCopy = JSON.parse(JSON.stringify(scn));
+    scnCopy.offset = (m - 42) * 30;
+    if (scnCopy.offset < -60 || scnCopy.offset > 60){
+      cells += `<div class="cell unk" title="Sampled start ${m+1} · outside ±60 d sweep"></div>`;
+      unk++; continue;
+    }
+    const res = evaluate(scnCopy, 180);
+    const v = verdictOf(scnCopy, res);
+    const cls = v.pass ? 'pass' : 'fail';
+    if (v.pass) pass++; else fail++;
+    cells += `<div class="cell ${cls}" title="Sampled start ${m+1} · offset ${scnCopy.offset}d · ${v.pass?'PASS':'FAIL'}"></div>`;
+  }
+  html += `<div class="calendar">${cells}</div>`;
+  html += `<div style="display:flex;gap:14px;margin-top:12px;flex-wrap:wrap;font-size:10.5px;color:var(--dim3)">
+    <span style="display:flex;align-items:center;gap:5px"><i style="width:8px;height:8px;border-radius:2px;background:rgba(122,196,122,.62);display:block"></i>Pass</span>
+    <span style="display:flex;align-items:center;gap:5px"><i style="width:8px;height:8px;border-radius:2px;background:rgba(217,106,106,.58);display:block"></i>Fail</span>
+    <span style="display:flex;align-items:center;gap:5px"><i style="width:8px;height:8px;border-radius:2px;background:rgba(138,138,138,.25);display:block"></i>Outside sweep</span>
+  </div>`;
+  html += `<div class="note" style="margin-top:14px;padding:6px 0">Cells reproduce direct sampled evaluations. Tier 3 stretch.</div>`;
+  el.innerHTML = html;
+  $('robustSum').textContent = `${pass} pass · ${fail} fail · ${unk} outside sweep`;
+}
+
+/* ================= REPORT ================= */
+
+function renderReportView(){
+  const el = $('reportBody');
+  const scn = state.activeScn === 'A' ? state.A : state.B;
+  const res = evaluate(scn);
+  const v = verdictOf(scn, res);
+  const site = CATALOG[scn.siteId];
+  const hash = hashInputs(scn);
+  const lcss = state.lcssEnabled ? computeLCSS(getIce(scn).value) : null;
+
+  const report = {
+    product: 'SiteLight AI — Lunar Landing Site Navigator',
+    version: 'v3.3 — synthetic fixture',
+    generatedAt: new Date().toISOString(),
+    deterministicHash: hash,
+    classification: 'synthetic fixture — not validated',
+    scenario: { site: site.name, pgda: site.pgda, lat: site.latStr, lon: site.lonStr,
+      date: scn.date, duration: scn.duration, offset: scn.offset, thresholds: scn.thr },
+    environmental: { solar: +res.solar.toFixed(2), earth: +res.earth.toFixed(2), overlap: +res.overlap.toFixed(2),
+      maxDarkness: +v.solarGap.toFixed(2), maxEarthOutage: +v.earthGap.toFixed(2),
+      verdict: v.pass ? 'PASS' : 'FAIL',
+      failingRules: v.fails.map(f => ({ rule:f.label, measured:+f.value.toFixed(2), required:f.req, unit:f.unit||'%' })) },
+    terrain: TERRAIN[scn.siteId],
+    temperature: TEMP[scn.siteId],
+    ice: getIce(scn),
+    lcss: lcss ? { enabled:true, budget:state.lcssBudget, total:+lcss.total.toFixed(1) } : { enabled:false }
+  };
+  el.innerHTML = `<pre>${JSON.stringify(report, null, 2)}</pre>`;
+}
+
+$('exportJson').addEventListener('click', () => {
+  const scn = state.activeScn === 'A' ? state.A : state.B;
+  const res = evaluate(scn);
+  const v = verdictOf(scn, res);
+  const hash = hashInputs(scn);
+  const lcss = state.lcssEnabled ? computeLCSS(getIce(scn).value) : null;
+  const payload = { product:'SiteLight AI', hash, environmental:{ solar:+res.solar.toFixed(2), earth:+res.earth.toFixed(2), overlap:+res.overlap.toFixed(2), verdict: v.pass?'PASS':'FAIL', failingRules: v.fails }, lcss: lcss ? { total:+lcss.total.toFixed(1) } : { enabled:false } };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `sitelight-${hash}.json`; a.click();
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+});
+
+$('exportPrint').addEventListener('click', () => window.print());
+
+/* ================= FLIP SEARCH ================= */
+
+function runElevationFlip(){
+  const scn = state[state.activeScn];
+  const original = scn.thr.minElev;
+  let best = null, bestDist = Infinity, dir = 'none';
+
+  for (let e = 0; e <= 8.0001; e += 0.25){
+    scn.thr.minElev = e;
+    if (verdictOf(scn, evaluate(scn)).pass){
+      const dist = Math.abs(e - original);
+      if (dist < bestDist){ bestDist = dist; best = e; dir = e < original ? 'down' : e > original ? 'up' : 'none'; }
+      if (dist === 0) break;
+    }
+  }
+  scn.thr.minElev = original;
+
+  if (best === null){
+    state.lastFlip = `No flip within range. No sampled elevation from 0.00° to 8.00° produces a passing verdict.`;
+  } else if (Math.abs(best - original) < 0.001){
+    state.lastFlip = `Current elevation ${original.toFixed(2)}° already passes.`;
+  } else {
+    state.lastFlip = `Nearest tested passing config: <b>${best.toFixed(2)}°</b> (${dir} from ${original.toFixed(2)}°). Resolution 0.25°. <button class="btn btn-ghost" id="snapElevBtn" style="margin-left:6px;padding:2px 8px">Snap</button>`;
+  }
+  renderProperties();
+
+  const snapBtn = document.getElementById('snapElevBtn');
+  if (snapBtn) snapBtn.onclick = () => {
+    scn.thr.minElev = best;
+    const el = document.querySelector('input[data-bind="minElev"]');
+    if (el){
+      el.value = best;
+      const wrap = el.closest('.slider-wrap');
+      wrap.style.setProperty('--fill', (best/8*100).toFixed(1)+'%');
+      wrap.querySelector('.val').textContent = best.toFixed(2)+'°';
+    }
+    state.lastFlip = null;
+    if (dome) dome.refreshPaths();
+    refreshAll();
+  };
+}
+
+function runIceFlip(){
+  const scn = state[state.activeScn];
+  let best = null;
+  for (let ice = 0.1; ice <= 6.0001; ice += 0.1){
+    if (computeLCSS(ice).total <= state.lcssBudget){ best = ice; break; }
+  }
+  state.lastIceFlip = best === null
+    ? `No passing ice concentration found within 0.1–6.0 wt%.`
+    : `Minimum passing ice conc.: <b>${best.toFixed(1)} wt%</b> → LCSS ${computeLCSS(best).total.toFixed(0)} kg ≤ ${state.lcssBudget.toLocaleString()} kg.`;
+  renderProperties();
+}
+
+/* ================= DEMO / WORKSPACE ================= */
+
+function loadDemoPreset(){
+  state.A = mkScenario('shackleton','2028-03-14');
+  state.B = mkScenario('malapert','2028-03-14');
+  state.activeScn = 'A';
+  state.vpScn = 'A';
+  state.lcssEnabled = false;
+  state.lastFlip = null;
+  state.lastIceFlip = null;
+  if (dome) dome.setSite(state.A.siteId);
+  setWorkspace('compare');
+  refreshAll();
+}
+
+$('demoBtn').addEventListener('click', loadDemoPreset);
+
+function setWorkspace(ws){
+  state.workspace = ws;
+  document.querySelectorAll('.ws-tab').forEach(t => t.classList.toggle('active', t.dataset.ws === ws));
+  $('viewLayout').style.display = ws === 'layout' ? 'flex' : 'none';
+  $('viewCompare').style.display = ws === 'compare' ? 'grid' : 'none';
+  $('viewRobust').style.display = ws === 'robust' ? 'block' : 'none';
+  $('viewReport').style.display = ws === 'report' ? 'flex' : 'none';
+  if (ws === 'compare') renderCompareView();
+  if (ws === 'robust') renderRobustView();
+  if (ws === 'report') renderReportView();
+}
+
+$('wsTabs').addEventListener('click', e => {
+  const t = e.target.closest('.ws-tab');
+  if (!t) return;
+  setWorkspace(t.dataset.ws);
+});
+
+$('viewToggle').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  $('viewToggle').querySelectorAll('button').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  state.view = b.dataset.view;
+  state.propTab = state.view === 'technical' ? 'constraints' : 'object';
+  document.querySelectorAll('.ptab').forEach(x => x.classList.toggle('active', x.dataset.tab === state.propTab));
+  renderProperties();
+});
+
+$('vpScnToggle').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  $('vpScnToggle').querySelectorAll('button').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  state.vpScn = b.dataset.scn;
+  const scn = state[state.vpScn];
+  $('vpSiteLabel').textContent = CATALOG[scn.siteId].name.replace(/ /g,'_');
+  if (dome) dome.setSite(scn.siteId);
+});
+
+/* =================================================================
+   BRIGHT, DETAIL-RICH 3D LUNAR SCENE
+   ================================================================= */
+
+let THREE = null;
+try { THREE = await import('three'); } catch(err){ THREE = null; }
+const viewportEl = $('viewport');
+let dome = null;
+if (!THREE){ $('vpFallback').style.display = 'flex'; }
+else { dome = createRealisticScene(); }
+
+function smoothstep(a, b, x){
+  const t = clamp((x - a) / (b - a), 0, 1);
+  return t * t * (3 - 2 * t);
+}
+function hash2(x, y){
+  const h = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
+  return h - Math.floor(h);
+}
+function valueNoise(x, y){
+  const xi = Math.floor(x), yi = Math.floor(y);
+  const xf = x - xi, yf = y - yi;
+  const a = hash2(xi, yi);
+  const b = hash2(xi + 1, yi);
+  const c = hash2(xi, yi + 1);
+  const d = hash2(xi + 1, yi + 1);
+  const u = xf * xf * (3 - 2 * xf);
+  const v = yf * yf * (3 - 2 * yf);
+  return a * (1-u) * (1-v) + b * u * (1-v) + c * (1-u) * v + d * u * v;
+}
+function fbm(x, y, octaves){
+  let val = 0, amp = 0.5, freq = 1;
+  for (let i = 0; i < octaves; i++){
+    val += amp * valueNoise(x * freq, y * freq);
+    amp *= 0.5;
+    freq *= 2;
+  }
+  return val;
+}
+function craterField(x, z, R){
+  let h = 0;
+  const craters = [
+    { x: 0.35*R, z: 0.25*R, r: 0.14*R, depth: 0.30 },
+    { x: -0.42*R, z: -0.28*R, r: 0.18*R, depth: 0.40 },
+    { x: 0.48*R, z: -0.42*R, r: 0.10*R, depth: 0.24 },
+    { x: -0.22*R, z: 0.48*R, r: 0.16*R, depth: 0.34 },
+    { x: 0.05*R, z: -0.15*R, r: 0.08*R, depth: 0.18 },
+    { x: -0.55*R, z: 0.10*R, r: 0.12*R, depth: 0.28 },
+    { x: 0.15*R, z: 0.55*R, r: 0.09*R, depth: 0.20 },
+    { x: -0.10*R, z: -0.55*R, r: 0.11*R, depth: 0.26 }
+  ];
+  for (const c of craters){
+    const dx = x - c.x, dz = z - c.z;
+    const d = Math.sqrt(dx*dx + dz*dz);
+    if (d < c.r * 1.35){
+      const t = d / c.r;
+      if (t < 1) h -= c.depth * (1 - t*t);
+      else { const rt = (t - 1) / 0.35; h += c.depth * 0.35 * Math.sin(rt * Math.PI); }
+    }
+  }
+  return h;
+}
+function terrainHeight(siteId, x, z, R){
+  const r = Math.sqrt(x*x + z*z);
+  const theta = Math.atan2(x, z);
+  const horizonAngle = horizonAt(siteId, theta) * Math.PI / 180;
+  const peakHeight = R * 0.85 * Math.tan(horizonAngle);
+  const rise = smoothstep(0.05 * R, 0.85 * R, r);
+  const fall = 1 - smoothstep(0.85 * R, R * 1.02, r);
+  const ridge = peakHeight * rise * fall;
+  const craters = r < R * 1.05 ? craterField(x, z, R) : 0;
+  const noise = (fbm(x * 0.4, z * 0.4, 4) - 0.5) * 0.35;
+  const micro = (fbm(x * 2.5, z * 2.5, 2) - 0.5) * 0.08;
+  return ridge + craters + noise + micro;
+}
+
+function spherical(r, az, elevDeg){
+  const e = elevDeg * Math.PI / 180;
+  return { x: r * Math.cos(e) * Math.sin(az), y: r * Math.sin(e), z: r * Math.cos(e) * Math.cos(az) };
+}
+
+function createRealisticScene(){
+  const R = 12;
+  const TRACK_R = 22;
+  const CAM_R = 30;
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.setClearColor(0x0a1220, 1);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.35;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  viewportEl.appendChild(renderer.domElement);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(42, 1, 0.05, 500);
+
+  /* ============ SKY GRADIENT DOME ============ */
+  const skyGeo = new THREE.SphereGeometry(250, 32, 16);
+  const skyMat = new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false,
+    uniforms: {
+      topColor:    { value: new THREE.Color(0x000206) },
+      midColor:    { value: new THREE.Color(0x0a1730) },
+      bottomColor: { value: new THREE.Color(0x2e4262) },
+      offset:      { value: 15.0 },
+      exponent:    { value: 0.75 }
+    },
+    vertexShader: `
+      varying vec3 vWorldPos;
+      void main(){
+        vec4 wp = modelMatrix * vec4(position, 1.0);
+        vWorldPos = wp.xyz;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform vec3 topColor, midColor, bottomColor;
+      uniform float offset, exponent;
+      varying vec3 vWorldPos;
+      void main(){
+        float h = normalize(vWorldPos + vec3(0.0, offset, 0.0)).y;
+        float t = pow(max(h, 0.0), exponent);
+        vec3 col = mix(bottomColor, midColor, smoothstep(0.0, 0.35, t));
+        col = mix(col, topColor, smoothstep(0.35, 1.0, t));
+        gl_FragColor = vec4(col, 1.0);
+      }
+    `
+  });
+  scene.add(new THREE.Mesh(skyGeo, skyMat));
+
+  /* ============ STARS ============ */
+  const starCount = 2200;
+  const starGeo = new THREE.BufferGeometry();
+  const starPos = new Float32Array(starCount * 3);
+  const starCol = new Float32Array(starCount * 3);
+  for (let i = 0; i < starCount; i++){
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const r = 180;
+    starPos[i*3]   = r * Math.sin(phi) * Math.cos(theta);
+    starPos[i*3+1] = r * Math.cos(phi);
+    starPos[i*3+2] = r * Math.sin(phi) * Math.sin(theta);
+    const warm = 0.65 + Math.random() * 0.35;
+    starCol[i*3]   = 0.85 * warm;
+    starCol[i*3+1] = 0.88 * warm;
+    starCol[i*3+2] = 1.0 * warm;
+  }
+  starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+  starGeo.setAttribute('color', new THREE.BufferAttribute(starCol, 3));
+  const stars = new THREE.Points(starGeo, new THREE.PointsMaterial({
+    size: 1.15, sizeAttenuation: false, transparent: true, opacity: 0.9,
+    vertexColors: true, depthWrite: false
+  }));
+  scene.add(stars);
+
+  /* ============ GROUND PLANE ============ */
+  const ground = new THREE.Mesh(
+    new THREE.CircleGeometry(140, 64),
+    new THREE.MeshBasicMaterial({ color: 0x0e1420 })
+  );
+  ground.rotation.x = -Math.PI / 2;
+  ground.position.y = -2.2;
+  scene.add(ground);
+
+  /* ============ LIGHTS ============ */
+  const sunLight = new THREE.DirectionalLight(0xfff2d8, 3.4);
+  sunLight.castShadow = true;
+  sunLight.shadow.mapSize.width = 2048;
+  sunLight.shadow.mapSize.height = 2048;
+  sunLight.shadow.camera.left = -R * 1.4;
+  sunLight.shadow.camera.right = R * 1.4;
+  sunLight.shadow.camera.top = R * 1.4;
+  sunLight.shadow.camera.bottom = -R * 1.4;
+  sunLight.shadow.camera.near = 0.5;
+  sunLight.shadow.camera.far = 100;
+  sunLight.shadow.bias = -0.0004;
+  sunLight.shadow.normalBias = 0.05;
+  scene.add(sunLight);
+  scene.add(sunLight.target);
+
+  scene.add(new THREE.AmbientLight(0x4a5a7a, 1.6));
+  scene.add(new THREE.HemisphereLight(0xa8b8d8, 0x3a3a44, 0.9));
+
+  const fill = new THREE.DirectionalLight(0x6a7a9a, 0.45);
+  fill.position.set(-12, 8, -10);
+  scene.add(fill);
+
+  /* ============ TERRAIN MATERIAL — PROCEDURAL DETAIL ============ */
+  function makeTerrainMaterial(){
+    const mat = new THREE.MeshStandardMaterial({
+      vertexColors: true, roughness: 0.92, metalness: 0.03
+    });
+
+    mat.onBeforeCompile = (shader) => {
+      /* ---- vertex ---- */
+      shader.vertexShader = shader.vertexShader
+        .replace('#include <common>', `#include <common>
+          varying vec3 vWPos;
+        `)
+        .replace('#include <project_vertex>', `#include <project_vertex>
+          vWPos = (modelMatrix * vec4(transformed, 1.0)).xyz;
+        `);
+
+      /* ---- fragment ---- */
+      shader.fragmentShader = shader.fragmentShader
+        .replace('#include <common>', `#include <common>
+          varying vec3 vWPos;
+
+          float hash21(vec2 p){
+            p = fract(p * vec2(234.34, 435.345));
+            p += dot(p, p + 34.23);
+            return fract(p.x * p.y);
+          }
+          float vnoise(vec2 p){
+            vec2 i = floor(p);
+            vec2 f = fract(p);
+            f = f * f * (3.0 - 2.0 * f);
+            return mix(
+              mix(hash21(i), hash21(i + vec2(1.0, 0.0)), f.x),
+              mix(hash21(i + vec2(0.0, 1.0)), hash21(i + vec2(1.0, 1.0)), f.x),
+              f.y
+            );
+          }
+          float fbm3(vec2 p){
+            float v = 0.0;
+            float a = 0.5;
+            for(int i = 0; i < 3; i++){
+              v += a * vnoise(p);
+              p *= 2.03;
+              a *= 0.5;
+            }
+            return v;
+          }
+          float fbm4(vec2 p){
+            float v = 0.0;
+            float a = 0.5;
+            for(int i = 0; i < 4; i++){
+              v += a * vnoise(p);
+              p *= 2.03;
+              a *= 0.5;
+            }
+            return v;
+          }
+          // Shared micro-height field for bump normal
+          float microHeight(vec2 p){
+            return fbm3(p * 6.0) * 0.6 + fbm3(p * 18.0) * 0.4;
+          }
+        `)
+        .replace('#include <color_fragment>', `#include <color_fragment>
+          vec2 wp = vWPos.xz;
+
+          // Multi-scale surface detail
+          float d1 = fbm4(wp * 0.5);
+          float d2 = fbm4(wp * 1.8 + 13.0);
+          float d3 = fbm4(wp * 6.0 + 41.0);
+          float d4 = fbm4(wp * 20.0 + 97.0);
+          float d5 = fbm3(wp * 64.0 + 211.0);
+
+          float detail = d1 * 0.20 + d2 * 0.22 + d3 * 0.24 + d4 * 0.20 + d5 * 0.14;
+
+          // Base brightness modulation (crisp grain at all zoom levels)
+          diffuseColor.rgb *= 0.72 + detail * 0.62;
+
+          // Dark pits / micro-craters
+          float pits = smoothstep(0.74, 0.94, d5);
+          diffuseColor.rgb *= 1.0 - pits * 0.42;
+
+          // Bright dust peaks
+          float peaks = smoothstep(0.78, 1.0, d4) * smoothstep(0.45, 0.85, d3);
+          diffuseColor.rgb += peaks * vec3(0.10, 0.095, 0.085);
+
+          // Very fine speckle so close-up never looks flat
+          float speck = vnoise(wp * 180.0);
+          diffuseColor.rgb *= 0.94 + speck * 0.12;
+        `)
+        .replace('#include <normal_fragment_begin>', `#include <normal_fragment_begin>
+          // Micro-relief bump from procedural height field
+          {
+            vec2 wp = vWPos.xz;
+            float e = 0.03;
+            float h0 = microHeight(wp);
+            float hx = microHeight(wp + vec2(e, 0.0));
+            float hz = microHeight(wp + vec2(0.0, e));
+            float dhdx = (hx - h0) / e;
+            float dhdz = (hz - h0) / e;
+
+            // Tangent basis in view space
+            vec3 tX = (viewMatrix * vec4(1.0, 0.0, 0.0, 0.0)).xyz;
+            vec3 tZ = (viewMatrix * vec4(0.0, 0.0, 1.0, 0.0)).xyz;
+
+            // Clamp + scale
+            float bx = clamp(dhdx, -6.0, 6.0) * 0.06;
+            float bz = clamp(dhdz, -6.0, 6.0) * 0.06;
+
+            normal = normalize(normal - tX * bx - tZ * bz);
+          }
+        `);
+    };
+    return mat;
+  }
+
+  /* ============ TERRAIN ============ */
+  let terrainMesh = null;
+
+  function buildTerrainGeo(siteId){
+    const SEG = 280;  // higher resolution for clear close-ups
+    const geo = new THREE.PlaneGeometry(R * 2, R * 2, SEG, SEG);
+    geo.rotateX(-Math.PI / 2);
+    const pos = geo.attributes.position;
+    const colors = new Float32Array(pos.count * 3);
+
+    const cDark  = new THREE.Color(0x4e4e58);
+    const cMid   = new THREE.Color(0x72727c);
+    const cLight = new THREE.Color(0xa8a8b2);
+    const cWarm  = new THREE.Color(0x8a7e6e);
+
+    for (let i = 0; i < pos.count; i++){
+      const x = pos.getX(i), z = pos.getZ(i);
+      const h = terrainHeight(siteId, x, z, R);
+      pos.setY(i, h);
+
+      const hn = clamp(h / 3, 0, 1);
+      const n1 = valueNoise(x * 0.8, z * 0.8);
+      const n2 = valueNoise(x * 3, z * 3);
+
+      let c = cDark.clone()
+        .lerp(cMid, 0.3 + n1 * 0.45)
+        .lerp(cLight, hn * 0.65)
+        .lerp(cWarm, n2 * 0.15);
+
+      colors[i*3]   = c.r;
+      colors[i*3+1] = c.g;
+      colors[i*3+2] = c.b;
+    }
+    geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geo.computeVertexNormals();
+    return geo;
+  }
+
+  function rebuildTerrain(siteId){
+    if (terrainMesh){
+      scene.remove(terrainMesh);
+      terrainMesh.geometry.dispose();
+      terrainMesh.material.dispose();
+    }
+    const geo = buildTerrainGeo(siteId);
+    const mat = makeTerrainMaterial();
+    terrainMesh = new THREE.Mesh(geo, mat);
+    terrainMesh.receiveShadow = true;
+    terrainMesh.castShadow = true;
+    scene.add(terrainMesh);
+  }
+
+  rebuildTerrain(state[state.vpScn].siteId);
+
+  /* ============ GLOW TEXTURE ============ */
+  function makeGlowTexture(inner, outer){
+    const c = document.createElement('canvas');
+    c.width = c.height = 128;
+    const ctx = c.getContext('2d');
+    const g = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
+    g.addColorStop(0, inner);
+    g.addColorStop(0.35, outer);
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, 128, 128);
+    return new THREE.CanvasTexture(c);
+  }
+
+  /* ============ SUN ============ */
+  const sunMesh = new THREE.Mesh(
+    new THREE.SphereGeometry(0.55, 32, 32),
+    new THREE.MeshBasicMaterial({ color: 0xfffff2 })
+  );
+  const sunGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: makeGlowTexture('rgba(255,255,255,1)', 'rgba(255,235,180,0.7)'),
+    transparent: true, blending: THREE.AdditiveBlending,
+    depthWrite: false, depthTest: true
+  }));
+  sunGlow.scale.setScalar(5.5);
+  sunMesh.add(sunGlow);
+  scene.add(sunMesh);
+
+  /* ============ EARTH ============ */
+  const earthMesh = new THREE.Mesh(
+    new THREE.SphereGeometry(0.42, 32, 32),
+    new THREE.MeshBasicMaterial({ color: 0x6aa3ff })
+  );
+  const earthGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: makeGlowTexture('rgba(220,235,255,0.95)', 'rgba(120,170,255,0.5)'),
+    transparent: true, blending: THREE.AdditiveBlending,
+    depthWrite: false, depthTest: true
+  }));
+  earthGlow.scale.setScalar(2.6);
+  earthMesh.add(earthGlow);
+  scene.add(earthMesh);
+
+  /* ============ TRACKS ============ */
+  let sunTrack = null, earthTrack = null;
+
+  function buildTrack(scn, kind){
+    const N = 320;
+    const { t0, span } = evalWindow(scn);
+    const positions = [], colors = [];
+    const visC = kind === 'sun' ? new THREE.Color(0x9af09a) : new THREE.Color(0x8ac0ff);
+    const blkC = new THREE.Color(0xff8080);
+
+    const pts = [];
+    for (let i = 0; i <= N; i++){
+      const t = t0 + span * i / N;
+      const st = kind === 'sun' ? sunState(scn.siteId, t) : earthState(scn.siteId, t);
+      const h = horizonAt(scn.siteId, st.az);
+      const vis = kind === 'sun' ? st.elev >= Math.max(h, scn.thr.minElev) : st.elev >= h;
+      pts.push({ p: spherical(TRACK_R, st.az, st.elev), vis });
+    }
+    for (let i = 0; i < N; i++){
+      const a = pts[i], b = pts[i+1];
+      const c = (a.vis && b.vis) ? visC : blkC;
+      positions.push(a.p.x, a.p.y, a.p.z, b.p.x, b.p.y, b.p.z);
+      colors.push(c.r, c.g, c.b, c.r, c.g, c.b);
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    return new THREE.LineSegments(geo, new THREE.LineBasicMaterial({
+      vertexColors: true, transparent: true, opacity: 1.0, depthWrite: false, depthTest: true
+    }));
+  }
+
+  function rebuildTracks(){
+    if (sunTrack){ scene.remove(sunTrack); sunTrack.geometry.dispose(); sunTrack.material.dispose(); }
+    if (earthTrack){ scene.remove(earthTrack); earthTrack.geometry.dispose(); earthTrack.material.dispose(); }
+    const scn = state[state.vpScn];
+    sunTrack = buildTrack(scn, 'sun');
+    earthTrack = buildTrack(scn, 'earth');
+    scene.add(sunTrack);
+    scene.add(earthTrack);
+  }
+
+  /* ============ CAMERA ============ */
+  let camAz = 0.72, camEl = 0.30, camDist = CAM_R;
+  let dragging = false, lastX = 0, lastY = 0;
+  let timeP = 0;
+
+  const canvas = renderer.domElement;
+  canvas.addEventListener('pointerdown', e => {
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    canvas.setPointerCapture(e.pointerId);
+  });
+  canvas.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    camAz -= (e.clientX - lastX) * 0.006;
+    camEl = clamp(camEl + (e.clientY - lastY) * 0.004, 0.04, 1.2);
+    lastX = e.clientX; lastY = e.clientY;
+  });
+  canvas.addEventListener('pointerup', e => {
+    dragging = false;
+    try { canvas.releasePointerCapture(e.pointerId); } catch(_){}
+  });
+  canvas.addEventListener('pointercancel', () => { dragging = false; });
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    // Much closer zoom range so user can inspect surface detail
+    camDist = clamp(camDist + e.deltaY * 0.025, 6.5, 55);
+  }, { passive: false });
+
+  function resize(){
+    const w = viewportEl.clientWidth, h = viewportEl.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(viewportEl);
+  resize();
+
+  /* ============ LOOP ============ */
+  const clock = new THREE.Clock();
+  const _sunDir = new THREE.Vector3();
+
+  function animate(){
+    requestAnimationFrame(animate);
+    const dt = Math.min(clock.getDelta(), 0.06);
+
+    if (state.playing){
+      let f = state.frame + dt * 55;
+      if (f > 250) f = 1;
+      setFrame(f);
+    }
+
+    // Orbit camera
+    camera.position.set(
+      camDist * Math.cos(camEl) * Math.sin(camAz),
+      camDist * Math.sin(camEl) + 2.5,
+      camDist * Math.cos(camEl) * Math.cos(camAz)
+    );
+
+    // Terrain collision: never let camera dip below the surface
+    const siteNow = state[state.vpScn].siteId;
+    if (Math.abs(camera.position.x) < R * 1.1 && Math.abs(camera.position.z) < R * 1.1){
+      const th = terrainHeight(siteNow, camera.position.x, camera.position.z, R);
+      const minY = th + 1.2;
+      if (camera.position.y < minY) camera.position.y = minY;
+    }
+
+    camera.lookAt(0, 1.5, 0);
+
+    const scn = state[state.vpScn];
+    const { t0, span } = evalWindow(scn);
+    const t = t0 + span * timeP;
+    const s = sunState(scn.siteId, t);
+    const e = earthState(scn.siteId, t);
+
+    const sp = spherical(TRACK_R, s.az, s.elev);
+    sunMesh.position.set(sp.x, sp.y, sp.z);
+
+    _sunDir.set(sp.x, sp.y, sp.z).normalize();
+    sunLight.position.copy(_sunDir).multiplyScalar(30);
+    sunLight.target.position.set(0, 0, 0);
+    sunLight.target.updateMatrixWorld();
+
+    const ridgeAngle = horizonAt(scn.siteId, s.az);
+    if (s.elev <= 0) sunLight.intensity = 0.12;
+    else if (s.elev < ridgeAngle) sunLight.intensity = 0.35;
+    else sunLight.intensity = 3.4;
+
+    const sunVis = s.elev >= Math.max(ridgeAngle, scn.thr.minElev);
+    sunGlow.material.opacity = sunVis ? 1 : 0.5;
+    sunMesh.material.color.setHex(sunVis ? 0xfffff2 : 0xff9a8a);
+
+    const ep = spherical(TRACK_R, e.az, e.elev);
+    earthMesh.position.set(ep.x, ep.y, ep.z);
+    const earthVis = e.elev >= ridgeAngle;
+    earthGlow.material.opacity = earthVis ? 1 : 0.45;
+    earthMesh.material.color.setHex(earthVis ? 0x6aa3ff : 0x8a6a6a);
+
+    stars.rotation.y += dt * 0.002;
+
+    renderer.render(scene, camera);
+  }
+
+  rebuildTracks();
+  animate();
+
+  return {
+    setSite(id){ rebuildTerrain(id); rebuildTracks(); },
+    refreshPaths(){ rebuildTracks(); },
+    setTime(p){ timeP = p; }
+  };
+}
+
+/* ================= TIMELINE ================= */
+
+const FRAMES = 250;
+const tlBody = $('tlBody'), tlRuler = $('tlRuler'), tlLane = $('tlLane');
+const playhead = $('playhead'), frameField = $('frameField');
+
+function buildRuler(){
+  let html = '';
+  for (let f=1;f<=FRAMES;f++){
+    const p = (f-1)/(FRAMES-1)*100;
+    const major = f % 10 === 0 || f === 1;
+    html += `<div class="tl-tick ${major?'major':''}" style="left:${p}%"></div>`;
+    if (f % 25 === 0 || f === 1) html += `<div class="tl-num" style="left:${p}%">${f}</div>`;
+  }
+  tlRuler.innerHTML = html;
+  tlLane.innerHTML = [1,62,125,188,250].map(f =>
+    `<div class="keyframe" style="left:${(f-1)/(FRAMES-1)*100}%" title="Frame ${f}"></div>`).join('');
+}
+buildRuler();
+
+function setFrame(f){
+  state.frame = clamp(Math.round(f), 1, FRAMES);
+  const p = (state.frame-1)/(FRAMES-1);
+  playhead.style.left = (p*100)+'%';
+  frameField.textContent = state.frame;
+  const scn = state[state.vpScn];
+  $('elapsedLbl').textContent = (p*scn.duration).toFixed(1) + ' h';
+  if (dome) dome.setTime(p);
+}
+
+let scrubbing = false;
+tlBody.addEventListener('pointerdown', e => { scrubbing = true; tlBody.setPointerCapture(e.pointerId); scrub(e); });
+tlBody.addEventListener('pointermove', e => { if (scrubbing) scrub(e); });
+tlBody.addEventListener('pointerup', e => { scrubbing = false; try { tlBody.releasePointerCapture(e.pointerId); } catch(_){} });
+function scrub(e){
+  const r = tlBody.getBoundingClientRect();
+  setFrame(1 + clamp((e.clientX-r.left)/r.width, 0, 1) * (FRAMES-1));
+}
+
+$('playBtn').addEventListener('click', () => {
+  state.playing = !state.playing;
+  $('playIcon').innerHTML = state.playing
+    ? '<rect x="4" y="2.5" width="3" height="11"/><rect x="9" y="2.5" width="3" height="11"/>'
+    : '<path d="M4 2.5v11l9-5.5z"/>';
+});
+
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space' && !/INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName || '')){
+    e.preventDefault();
+    $('playBtn').click();
+  }
+});
+
+/* ================= REFRESH ================= */
+
+function refreshAll(){
+  renderOutliner();
+  renderProperties();
+  renderCompareStrip();
+  if (state.workspace === 'compare') renderCompareView();
+  if (state.workspace === 'robust') renderRobustView();
+  if (state.workspace === 'report') renderReportView();
+  $('durLbl').textContent = state[state.vpScn].duration + ' h';
+  $('vpSiteLabel').textContent = CATALOG[state[state.vpScn].siteId].name.replace(/ /g,'_');
+}
+
+setWorkspace('layout');
+refreshAll();
+setFrame(1);
+
+setInterval(() => {
+  const scn = state[state.activeScn];
+  const v = verdictOf(scn, evaluate(scn, 180));
+  $('statusHint').textContent = `Synthetic fixture — not validated · ${CATALOG[scn.siteId].name}: ${v.pass?'PASS':'FAIL'}`;
+}, 1200);
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Scientific/source provenance records hash exact bytes, including line endings.
+# Preserve them across Windows and Linux checkouts; do not silently normalize.
+* -text
+*.png binary
+*.jpg binary
+*.pdf binary

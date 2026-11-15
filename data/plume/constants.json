@@ -1,0 +1,9 @@
+{
+  "schema":"sitelight-ejecta-constants-1",
+  "sourceFile":"jpl-satellite-parameters.html",
+  "sourceUrl":"https://ssd.jpl.nasa.gov/sats/phys_par/sep.html",
+  "row":"Moon",
+  "gmKm3S2":4902.8,
+  "meanRadiusKm":1737.4,
+  "meaning":"Rounded published Moon GM (DE440) and mean radius, used only for an independent ideal central-gravity sphere; not the DE421 terrain/visibility evaluator."
+}

@@ -1,0 +1,23 @@
+{
+  "credit": "NASA’s Scientific Visualization Studio",
+  "assets": [
+    {
+      "filename": "lroc_color_2k.jpg",
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+      "sourcePage": "https://svs.gsfc.nasa.gov/4720/",
+      "retrieved": "2026-11-14",
+      "sha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170",
+      "bytes": 457942,
+      "purpose": "Visualization only; not accepted mission-analysis input"
+    },
+    {
+      "filename": "ldem_3_8bit.jpg",
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_3_8bit.jpg",
+      "sourcePage": "https://svs.gsfc.nasa.gov/4720/",
+      "retrieved": "2026-11-14",
+      "sha256": "6d93f887e7d8bedfe35ab89ba785e5e3ca12381bd092a5e6abe2c707dda8bb98",
+      "bytes": 111552,
+      "purpose": "Visualization only; not accepted mission-analysis input"
+    }
+  ]
+}

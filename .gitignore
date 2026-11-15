@@ -1,0 +1,48 @@
+node_modules/
+dist/
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+artifacts/
+.tools/
+data/raw/
+data/cache/
+
+# Credentials and machine-specific state (examples are safe to track).
+.env.*
+!.env.example
+!.env.*.example
+.vercel/
+.vscode/
+.codex/
+.agents/
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.tmp
+*.partial
+.DS_Store
+Thumbs.db
+
+# Generated previews, screenshots and archived design concepts.
+/lunar-*.html
+/docs/review/
+/docs/ui-concepts/
+/playwright-report/
+/test-results/
+/coverage/
+*.zip
+*.tar
+*.tar.gz
+
+# Seismic originals are reacquired from their pinned manifest when reproducing
+# preparation/tests. The small prepared context + actual waveform JSON stay tracked.
+/data/seismic/sources/
+
+# Release preparation is local only.
+/.release-check/
+/.deploy-local/

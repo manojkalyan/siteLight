@@ -1,0 +1,9 @@
+{
+  "schema": "sitelight-ejecta-transcription-1",
+  "constantsSpecSha256": "f7a3fc7dde5b01a08f26abe2f14965530b58667d0a59139838943605305cb664",
+  "sourceSha256": "b2d4be08fba8b2b71956f3f2b3ec462f7b61d94ed8c268320fcd812e96b95e9d",
+  "gmKm3S2": 4902.8,
+  "meanRadiusKm": 1737.4,
+  "status": "verified_transcription",
+  "meaning": "Two published constants and three reference checksums verified; no erosion, launch distribution or asset damage calibration."
+}

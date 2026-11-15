@@ -1,0 +1,12 @@
+{
+  "source": "apollo-experiments.pdf",
+  "pdfPage": 2,
+  "meaning": "Historical PSE station coordinates transcribed from the JAXA-hosted R. Yamada description, page 2. Deployment dates and coordinates are source values, not present-day monitoring coverage.",
+  "stations": [
+    {"id":"11","name":"Apollo 11 PSE","lat":0.6734,"lon":23.4729,"deploymentYear":1969,"deploymentDay":202,"latitudeText":"0.6734N","longitudeText":"23.4729E"},
+    {"id":"12","name":"Apollo 12 PSE","lat":-3.0094,"lon":-23.4246,"deploymentYear":1969,"deploymentDay":323,"latitudeText":"3.0094S","longitudeText":"23.4246W"},
+    {"id":"14","name":"Apollo 14 PSE","lat":-3.6440,"lon":-17.4775,"deploymentYear":1971,"deploymentDay":36,"latitudeText":"3.6440S","longitudeText":"17.4775W"},
+    {"id":"15","name":"Apollo 15 PSE","lat":26.1341,"lon":3.6298,"deploymentYear":1971,"deploymentDay":212,"latitudeText":"26.1341N","longitudeText":"3.6298E"},
+    {"id":"16","name":"Apollo 16 PSE","lat":-8.9754,"lon":15.4981,"deploymentYear":1972,"deploymentDay":112,"latitudeText":"8.9754S","longitudeText":"15.4981E"}
+  ]
+}

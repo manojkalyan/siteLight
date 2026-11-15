@@ -1,0 +1,591 @@
+{
+  "schema": "sitelight-diviner-context-1",
+  "algorithm": {
+    "file": "scripts/acquire-thermal.mjs",
+    "sha256": "b47f2f8dbafbdbe9316c72411281ae9809d3b07f3f1d62d06f392639a8eee3b6",
+    "dependencies": [
+      {
+        "file": "src/workspace/thermal.mjs",
+        "sha256": "ee012cb0eb07fb0d01d31a3d2e4513da9877da35e0bc6b4c7f9096f32ea469a0"
+      }
+    ]
+  },
+  "sites": {
+    "real-shackleton": [
+      {
+        "status": "observed_context",
+        "product": "pcp_avg_tbol_pols_sum_ltim01_240",
+        "localTimeHours": [
+          0,
+          0.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": {
+          "x": -0.000553,
+          "y": -0.004007,
+          "lon": -172.142332,
+          "lat": -89.76824,
+          "kelvin": 89.213486,
+          "distanceM": 54.84139596244788,
+          "sourceRecord": 1838412,
+          "rawLine": "-0.000553, -0.004007, -172.142332, -89.768240,  89.213486"
+        },
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "bytes": 3637,
+            "sha256": "17d9d1a8bac3963543aa59446d818253caa912b4dcf4edb4d9f45f51f1363538",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "bytes": 12210,
+            "sha256": "21d2ffad65c22e05c6878337d77b5217b3d9ce9431098a71bda8afdeef50c23a",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "bytes": 212653759,
+            "sha256": "414354cb2334b62161e895fe0f36369fdee77af13b0c5f333b86ddb05a0f618b",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      },
+      {
+        "status": "observed_context",
+        "product": "pcp_avg_tbol_pols_sum_ltim49_240",
+        "localTimeHours": [
+          12,
+          12.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": {
+          "x": -0.000553,
+          "y": -0.004007,
+          "lon": -172.142332,
+          "lat": -89.76824,
+          "kelvin": 90.156509,
+          "distanceM": 54.84139596244788,
+          "sourceRecord": 1657334,
+          "rawLine": "-0.000553, -0.004007, -172.142332, -89.768240,  90.156509"
+        },
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "bytes": 3639,
+            "sha256": "4523de3cc856cd1943d4d9e8f4e2f69f223c13be39a9d87453c7a7492227a718",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "bytes": 12211,
+            "sha256": "73e2a55db6743b5bbb5116fae9c51aa77a07743042b0284ea2bf8804fbbfd7b1",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "bytes": 197367449,
+            "sha256": "35348174fb3d973fe3d43fa7777cb4a10055361c6313675f35b181079bad5ca3",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      }
+    ],
+    "real-connector": [
+      {
+        "status": "observed_context",
+        "product": "pcp_avg_tbol_pols_sum_ltim01_240",
+        "localTimeHours": [
+          0,
+          0.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": {
+          "x": -0.006355,
+          "y": -0.006908,
+          "lon": -137.387561,
+          "lat": -89.462197,
+          "kelvin": 140.792358,
+          "distanceM": 43.67514766945815,
+          "sourceRecord": 1754987,
+          "rawLine": "-0.006355, -0.006908, -137.387561, -89.462197, 140.792358"
+        },
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "bytes": 3637,
+            "sha256": "17d9d1a8bac3963543aa59446d818253caa912b4dcf4edb4d9f45f51f1363538",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "bytes": 12210,
+            "sha256": "21d2ffad65c22e05c6878337d77b5217b3d9ce9431098a71bda8afdeef50c23a",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "bytes": 212653759,
+            "sha256": "414354cb2334b62161e895fe0f36369fdee77af13b0c5f333b86ddb05a0f618b",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      },
+      {
+        "status": "no_matching_bin",
+        "product": "pcp_avg_tbol_pols_sum_ltim49_240",
+        "localTimeHours": [
+          12,
+          12.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": null,
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "bytes": 3639,
+            "sha256": "4523de3cc856cd1943d4d9e8f4e2f69f223c13be39a9d87453c7a7492227a718",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "bytes": 12211,
+            "sha256": "73e2a55db6743b5bbb5116fae9c51aa77a07743042b0284ea2bf8804fbbfd7b1",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "bytes": 197367449,
+            "sha256": "35348174fb3d973fe3d43fa7777cb4a10055361c6313675f35b181079bad5ca3",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      }
+    ],
+    "real-gerlache": [
+      {
+        "status": "observed_context",
+        "product": "pcp_avg_tbol_pols_sum_ltim01_240",
+        "localTimeHours": [
+          0,
+          0.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": {
+          "x": -0.021276,
+          "y": 0.008566,
+          "lon": -68.06963,
+          "lat": -88.685941,
+          "kelvin": 169.894806,
+          "distanceM": 119.4430828912086,
+          "sourceRecord": 1545422,
+          "rawLine": "-0.021276,  0.008566,  -68.069630, -88.685941, 169.894806"
+        },
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "bytes": 3637,
+            "sha256": "17d9d1a8bac3963543aa59446d818253caa912b4dcf4edb4d9f45f51f1363538",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "bytes": 12210,
+            "sha256": "21d2ffad65c22e05c6878337d77b5217b3d9ce9431098a71bda8afdeef50c23a",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "bytes": 212653759,
+            "sha256": "414354cb2334b62161e895fe0f36369fdee77af13b0c5f333b86ddb05a0f618b",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      },
+      {
+        "status": "no_matching_bin",
+        "product": "pcp_avg_tbol_pols_sum_ltim49_240",
+        "localTimeHours": [
+          12,
+          12.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": null,
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "bytes": 3639,
+            "sha256": "4523de3cc856cd1943d4d9e8f4e2f69f223c13be39a9d87453c7a7492227a718",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "bytes": 12211,
+            "sha256": "73e2a55db6743b5bbb5116fae9c51aa77a07743042b0284ea2bf8804fbbfd7b1",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "bytes": 197367449,
+            "sha256": "35348174fb3d973fe3d43fa7777cb4a10055361c6313675f35b181079bad5ca3",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      }
+    ],
+    "real-nobile": [
+      {
+        "status": "observed_context",
+        "product": "pcp_avg_tbol_pols_sum_ltim01_240",
+        "localTimeHours": [
+          0,
+          0.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": {
+          "x": 0.048355,
+          "y": 0.063276,
+          "lon": 37.386766,
+          "lat": -85.439543,
+          "kelvin": 79.99942,
+          "distanceM": 62.40387526188559,
+          "sourceRecord": 2534737,
+          "rawLine": " 0.048355,  0.063276,   37.386766, -85.439543,  79.999420"
+        },
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "bytes": 3637,
+            "sha256": "17d9d1a8bac3963543aa59446d818253caa912b4dcf4edb4d9f45f51f1363538",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "bytes": 12210,
+            "sha256": "21d2ffad65c22e05c6878337d77b5217b3d9ce9431098a71bda8afdeef50c23a",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "bytes": 212653759,
+            "sha256": "414354cb2334b62161e895fe0f36369fdee77af13b0c5f333b86ddb05a0f618b",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      },
+      {
+        "status": "observed_context",
+        "product": "pcp_avg_tbol_pols_sum_ltim49_240",
+        "localTimeHours": [
+          12,
+          12.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": {
+          "x": 0.048355,
+          "y": 0.063276,
+          "lon": 37.386766,
+          "lat": -85.439543,
+          "kelvin": 110.666458,
+          "distanceM": 62.40387526188559,
+          "sourceRecord": 2298667,
+          "rawLine": " 0.048355,  0.063276,   37.386766, -85.439543, 110.666458"
+        },
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "bytes": 3639,
+            "sha256": "4523de3cc856cd1943d4d9e8f4e2f69f223c13be39a9d87453c7a7492227a718",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "bytes": 12211,
+            "sha256": "73e2a55db6743b5bbb5116fae9c51aa77a07743042b0284ea2bf8804fbbfd7b1",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "bytes": 197367449,
+            "sha256": "35348174fb3d973fe3d43fa7777cb4a10055361c6313675f35b181079bad5ca3",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      }
+    ],
+    "real-peak": [
+      {
+        "status": "no_matching_bin",
+        "product": "pcp_avg_tbol_pols_sum_ltim01_240",
+        "localTimeHours": [
+          0,
+          0.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": null,
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "bytes": 3637,
+            "sha256": "17d9d1a8bac3963543aa59446d818253caa912b4dcf4edb4d9f45f51f1363538",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "bytes": 12210,
+            "sha256": "21d2ffad65c22e05c6878337d77b5217b3d9ce9431098a71bda8afdeef50c23a",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "bytes": 212653759,
+            "sha256": "414354cb2334b62161e895fe0f36369fdee77af13b0c5f333b86ddb05a0f618b",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      },
+      {
+        "status": "observed_context",
+        "product": "pcp_avg_tbol_pols_sum_ltim49_240",
+        "localTimeHours": [
+          12,
+          12.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": {
+          "x": 0.01727,
+          "y": -0.011467,
+          "lon": 123.583516,
+          "lat": -88.812284,
+          "kelvin": 155.072479,
+          "distanceM": 79.7564662040496,
+          "sourceRecord": 1893015,
+          "rawLine": " 0.017270, -0.011467,  123.583516, -88.812284, 155.072479"
+        },
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "bytes": 3639,
+            "sha256": "4523de3cc856cd1943d4d9e8f4e2f69f223c13be39a9d87453c7a7492227a718",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "bytes": 12211,
+            "sha256": "73e2a55db6743b5bbb5116fae9c51aa77a07743042b0284ea2bf8804fbbfd7b1",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "bytes": 197367449,
+            "sha256": "35348174fb3d973fe3d43fa7777cb4a10055361c6313675f35b181079bad5ca3",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      }
+    ],
+    "real-malapert": [
+      {
+        "status": "observed_context",
+        "product": "pcp_avg_tbol_pols_sum_ltim01_240",
+        "localTimeHours": [
+          0,
+          0.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": {
+          "x": -0.000276,
+          "y": 0.069908,
+          "lon": -0.226205,
+          "lat": -85.996166,
+          "kelvin": 149.865784,
+          "distanceM": 43.214220531232534,
+          "sourceRecord": 1842738,
+          "rawLine": "-0.000276,  0.069908,   -0.226205, -85.996166, 149.865784"
+        },
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+            "bytes": 3637,
+            "sha256": "17d9d1a8bac3963543aa59446d818253caa912b4dcf4edb4d9f45f51f1363538",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.xml",
+            "bytes": 12210,
+            "sha256": "21d2ffad65c22e05c6878337d77b5217b3d9ce9431098a71bda8afdeef50c23a",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.tab",
+            "bytes": 212653759,
+            "sha256": "414354cb2334b62161e895fe0f36369fdee77af13b0c5f333b86ddb05a0f618b",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      },
+      {
+        "status": "no_matching_bin",
+        "product": "pcp_avg_tbol_pols_sum_ltim49_240",
+        "localTimeHours": [
+          12,
+          12.25
+        ],
+        "season": "Southern summer: subsolar latitude < 0°",
+        "observationPeriod": {
+          "start": "2009-07-05T16:50:26.195",
+          "end": "2019-02-17T00:00:00.000"
+        },
+        "pixelSpacingM": 240,
+        "quantity": "Average bolometric brightness temperature",
+        "unit": "K",
+        "match": null,
+        "sources": [
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+            "bytes": 3639,
+            "sha256": "4523de3cc856cd1943d4d9e8f4e2f69f223c13be39a9d87453c7a7492227a718",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.xml",
+            "bytes": 12211,
+            "sha256": "73e2a55db6743b5bbb5116fae9c51aa77a07743042b0284ea2bf8804fbbfd7b1",
+            "retrievedDate": "2026-11-14"
+          },
+          {
+            "name": "pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.tab",
+            "bytes": 197367449,
+            "sha256": "35348174fb3d973fe3d43fa7777cb4a10055361c6313675f35b181079bad5ca3",
+            "retrievedDate": "2026-11-14"
+          }
+        ],
+        "interpretation": "Historical cumulative local-time/season bin near the study point; not a temperature prediction for the selected mission UTC. No observation-count, temperature error bar, or subpixel co-registration is supplied here. Missing bins are not filled."
+      }
+    ]
+  }
+}

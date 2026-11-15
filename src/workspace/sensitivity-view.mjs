@@ -1,0 +1,5 @@
+import {escapeHtml as esc} from './charts.mjs';
+export function sensitivityMarkup(result){
+ const sensitivity=result.sensitivity;if(!sensitivity)return '';
+ return `<section class="card"><h3>Height-error sensitivity</h3><span class="extension-status">One source RMS · not confidence bounds</span><p>${esc(sensitivity.method)}. Repeat the geometric comparison with supported-domain terrain heights shifted by ±1 interpolated source RMS and the observer shifted oppositely.</p>${sensitivity.fractions?Object.entries(sensitivity.fractions).map(([key,b])=>`<div class="readout"><span>${{sun:'Solar eligibility',earth:'Earth visibility',overlap:'Simultaneous availability'}[key]}</span><strong>${(b.lower*100).toFixed(1)}–${(b.upper*100).toFixed(1)}%</strong></div>`).join(''):'<p>Some height-error samples are missing; no full-window sensitivity range is shown.</p>'}<p class="external-note">These perturbation scenarios do not establish probabilities or guaranteed bounds. Spatial covariance, unresolved terrain and orientation errors remain unassessed. The nominal verdict keeps its existing qualification.</p></section>`;
+}

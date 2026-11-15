@@ -1,0 +1,18 @@
+{
+  "schema": "sitelight-dust-inputs-1",
+  "retrievedUtc": "2026-11-14T18:01:43.984Z",
+  "records": [
+    {
+      "name": "thermal-impacts-2024.pdf",
+      "url": "https://ntrs.nasa.gov/api/citations/20240009989/downloads/Thermal%20Impacts%20of%20Lunar%20Dust-%20TFAWS%2024.pdf",
+      "bytes": 955515,
+      "sha256": "440e96239597000ca06e66f0aa4588d7c9ad786fae5a9a7ce8e6a83a04d11cef"
+    },
+    {
+      "name": "simulant-optics-2011.pdf",
+      "url": "https://ntrs.nasa.gov/api/citations/20110013486/downloads/20110013486.pdf",
+      "bytes": 1084853,
+      "sha256": "02979ab8b6cdcd804fe0532e764f71861b2c5020afdd5cb0cc792e6875d85abe"
+    }
+  ]
+}

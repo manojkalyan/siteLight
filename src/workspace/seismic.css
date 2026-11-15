@@ -1,0 +1,118 @@
+/* Historical seismic context. Scientific map coordinates never use the artistic terrain. */
+body.ui1[data-view=screening][data-screening=seismic] .workspace { background:linear-gradient(#0007,#04101caa),var(--seismic-terrain-image,linear-gradient(#111b25,#020609)) center/cover; }
+body.ui1[data-view=screening][data-screening=seismic] .center,body.ui1[data-view=screening][data-screening=seismic] #view-screening { background:transparent; }
+body.ui1[data-view=screening][data-screening=seismic] .timeline { display:none; }
+body.ui1[data-view=screening][data-screening=seismic] .statusbar>:not(.right) { display:none; }
+body.ui1[data-view=screening][data-screening=seismic] .statusbar .right { margin-left:auto; }
+body.ui1 #screening-navigation { max-width:calc(100% - 28px); }
+body.ui1[data-view=screening][data-screening=seismic] #content-screening { max-width:2280px; padding:24px 30px 35px; margin:auto; }
+body.ui1 .seismic-screen { min-width:0; }
+body.ui1 .seismic-heading { display:flex; align-items:center; justify-content:space-between; gap:22px; margin:0 7px 18px; }
+body.ui1 .seismic-heading h1 { font-size:36px; font-weight:620; margin:0 0 4px; }
+body.ui1 .seismic-heading p { color:#c5d1dc; font-size:17px; line-height:1.5; margin:0; }
+body.ui1 .seismic-heading>div:last-child { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+body.ui1 .seismic-heading .screen-select { margin:0; }
+body.ui1 .seismic-hazard-note { border:1px solid #cda74477; border-radius:13px; background:#a67b1828; color:#f3d58c; padding:11px 17px; font-size:15px; margin-bottom:18px; }
+body.ui1 .seismic-source-counts { display:flex; flex-wrap:wrap; gap:12px 26px; padding:0 10px 20px; color:#c1cdda; font-size:13px; }
+body.ui1 .seismic-source-counts b { font-size:21px; color:#f5f7fa; margin-right:4px; font-weight:600; }
+body.ui1 .seismic-map-layout { display:grid; grid-template-columns:minmax(0,1.9fr) minmax(300px,.9fr); align-items:stretch; gap:20px; }
+body.ui1 .seismic-glass { min-width:0; border:1px solid #becbd34d; border-radius:24px; background:linear-gradient(130deg,#48535dbd,#111b25e8 85%); box-shadow:inset 0 1px 1px #ffffff1a,0 10px 35px #0003; backdrop-filter:blur(20px); padding:22px; }
+body.ui1 .seismic-glass>header { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; margin-bottom:16px; }
+body.ui1 .seismic-glass h2 { font-size:24px; line-height:1.3; margin:0 0 5px; }
+body.ui1 .seismic-glass header p { font-size:13px; line-height:1.5; color:#bdcbd7; margin:0; }
+body.ui1 .seismic-glass>header>label { flex:0 1 245px; font-size:11px; color:#c1ced9; }
+body.ui1 .seismic-glass select { width:100%; margin-top:5px; min-height:38px; font-size:13px; }
+body.ui1 .seismic-map { display:block; width:100%; height:auto; border:1px solid #9eafbd2e; border-radius:16px; }
+body.ui1 .seismic-map-grid { fill:none; stroke:#a3bfd52b; stroke-width:1; }
+body.ui1 .seismic-map-grid text,body.ui1 .seismic-map-count { fill:#9fb5c7; stroke:none; font-size:13px; font-family:inherit; }
+body.ui1 .seismic-map-count { font-size:11px; }
+body.ui1 .seismic-marker { outline:none; fill:#e8bd72; stroke:#f3dcad; stroke-width:.5; }
+body.ui1 .seismic-marker:hover,body.ui1 .seismic-marker:focus { filter:drop-shadow(0 0 5px #fff); stroke:white; stroke-width:2; }
+body.ui1 .marker-scarp { fill:#dd9887; stroke:#f4bbaa; }
+body.ui1 .marker-impact { fill:#74b8f5; stroke:#c1dfff; }
+body.ui1 .marker-station { fill:#e5edf2; stroke:#fff; }
+body.ui1 .seismic-selection-ring { fill:none; stroke:#f5faff; stroke-width:1.7; }
+body.ui1 .seismic-alternative-link { fill:none; stroke:#e2c28c; stroke-width:1; stroke-dasharray:4 4; }
+body.ui1 .seismic-alternative-location { fill:none; stroke:#ebc481; stroke-width:1.5; }
+body.ui1 .seismic-target circle { fill:#245c91; stroke:#d0e9ff; stroke-width:1.5; }
+body.ui1 .seismic-target[data-seismic-target=B] circle { fill:#197bdf; }
+body.ui1 .seismic-target text { fill:#fff; font-size:13px; font-weight:650; }
+body.ui1 .seismic-layer-controls { display:flex; flex-wrap:wrap; gap:10px 18px; margin:16px 1px 10px; }
+body.ui1 .seismic-layer-controls label { display:flex; align-items:center; gap:7px; font-size:12px; cursor:pointer; }
+body.ui1 .seismic-layer-controls .legend-scarp { color:#f1baa8; }
+body.ui1 .seismic-layer-controls .legend-quake { color:#f5ce81; }
+body.ui1 .seismic-layer-controls .legend-impact { color:#99ceff; }
+body.ui1 .seismic-map-note,body.ui1 .seismic-quiet { color:#c4cfd8; font-size:12px; line-height:1.6; margin:10px 0 0; }
+body.ui1 .seismic-eyebrow { font-size:11px; color:#abc4d8; margin:0 0 9px; }
+body.ui1 .seismic-inspector h2 { font-size:27px; }
+body.ui1 .seismic-position { font-size:17px; color:#e8eef5; margin:10px 0 4px; }
+body.ui1 .seismic-record-date { color:#b2c5d5; font-size:12px; }
+body.ui1 .seismic-inspector>p:not([class]) { color:#c7d1da; font-size:13px; line-height:1.65; }
+body.ui1 .seismic-scope-badge { display:inline-block; max-width:100%; color:#f3d596; border:1px solid #c7a76270; background:#b38c2b20; border-radius:20px; padding:5px 11px; font-size:12px; line-height:1.4; margin:10px 0; }
+body.ui1 .seismic-point-distances { margin:18px 0 12px; border-top:1px solid #ffffff30; }
+body.ui1 .seismic-point-distances>div { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0; border-bottom:1px solid #ffffff26; }
+body.ui1 .seismic-point-distances span { color:#c0cfda; font-size:12px; }
+body.ui1 .seismic-point-distances strong { font-size:21px; font-weight:550; }
+body.ui1 .seismic-inspector>button { margin:12px 8px 4px 0; font-size:12px; }
+body.ui1 .seismic-inspector details { margin-top:17px; }
+body.ui1 .seismic-inspector pre { font:11px/1.7 ui-monospace,Consolas,monospace; overflow-wrap:anywhere; white-space:pre-wrap; max-height:260px; overflow:auto; color:#bfd0df; }
+body.ui1 .seismic-source-link { display:block; margin-top:17px; color:#95d4ff; font-size:14px; }
+body.ui1 .seismic-inspector>small { display:block; margin-top:6px; font-size:10px; color:#acbdcb; }
+body.ui1 .seismic-ab-panel,body.ui1 .seismic-wave-panel,body.ui1 .seismic-catalog-panel,body.ui1 .seismic-research-limits { margin-top:21px; }
+body.ui1 .seismic-comparison-scroll { min-width:0; overflow-x:auto; }
+body.ui1 .seismic-comparison-table { width:100%; border-collapse:collapse; font-size:14px; table-layout:fixed; }
+body.ui1 .seismic-comparison-table th,body.ui1 .seismic-comparison-table td { text-align:left; vertical-align:top; padding:13px 14px; border-bottom:1px solid #d2dce332; line-height:1.5; overflow-wrap:anywhere; }
+body.ui1 .seismic-comparison-table th { font-weight:500; color:#bdcbd7; }
+body.ui1 .seismic-comparison-table thead th { font-size:17px; color:#f3f7fc; }
+body.ui1 .seismic-comparison-table strong { display:block; font-size:21px; font-weight:550; color:#a5d5ff; }
+body.ui1 .seismic-comparison-table .scenario-tag { margin-right:9px; }
+body.ui1 .seismic-unassessed { font-size:12px; color:#f0d395; }
+body.ui1 .seismic-wave-controls { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:20px; max-width:900px; }
+body.ui1 .seismic-wave-controls label { font-size:12px; color:#c4d3df; }
+body.ui1 .seismic-waveform { width:100%; height:auto; display:block; margin-top:15px; max-height:420px; }
+body.ui1 .seismic-wave-grid { stroke:#d3e9ff24; stroke-width:.8; }
+body.ui1 .seismic-wave-grid text { fill:#c1d2df; stroke:none; font-size:12px; }
+body.ui1 .seismic-wave-envelope { fill:none; stroke:#8bc9fc; stroke-width:1; }
+body.ui1 .seismic-impact-marker { stroke:#e4c47e; stroke-dasharray:5 4; stroke-width:1; }
+body.ui1 .seismic-impact-label { fill:#edce93; font-size:12px; }
+body.ui1 [data-seismic-wave-cursor] { stroke:#f6faff; stroke-width:1; }
+body.ui1 [data-seismic-wave-dot] { fill:#fff; stroke:#51aff7; stroke-width:2; }
+body.ui1 .seismic-wave-axis { fill:#c8d9e7; font-size:13px; }
+body.ui1 .seismic-playback { display:flex; align-items:center; gap:14px; margin:7px 10px 17px; }
+body.ui1 .seismic-playback>input { flex:1; min-width:30px; accent-color:#78bcf9; }
+body.ui1 .seismic-playback>span { font-size:11px; color:#b2c7d8; white-space:nowrap; }
+body.ui1 .seismic-playback>button { flex-shrink:0; }
+body.ui1 .seismic-wave-readouts { display:grid; grid-template-columns:1.3fr 1fr 1fr; border-top:1px solid #ffffff30; padding-top:15px; margin-bottom:13px; gap:20px; }
+body.ui1 .seismic-wave-readouts>div { min-width:0; }
+body.ui1 .seismic-wave-readouts span { display:block; color:#b8c8d5; font-size:11px; margin-bottom:6px; }
+body.ui1 .seismic-wave-readouts output,body.ui1 .seismic-wave-readouts strong { display:block; color:#eff6ff; font-size:15px; font-weight:500; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+body.ui1 .seismic-wave-panel details p { font-size:12px; color:#c1d1de; }
+body.ui1 .seismic-wave-panel details code { overflow-wrap:anywhere; }
+body.ui1 .seismic-wave-qualification { border-top:1px solid #ffffff25; color:#ddcca6; padding-top:12px; margin-top:12px; font-size:12px; }
+body.ui1 .seismic-wave-loading { padding:45px 12px; color:#bdcede; font-size:14px; }
+body.ui1 .seismic-wave-loading button { margin-left:15px; }
+body.ui1 .seismic-catalog-panel>header label { flex-basis:300px; }
+body.ui1 .seismic-catalog-panel input[type=search] { width:100%; margin-top:5px; }
+body.ui1 .seismic-catalog-tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px; }
+body.ui1 .seismic-catalog-tabs button { font-size:12px; }
+body.ui1 .seismic-catalog-tabs [aria-pressed=true] { background:#315e85; border-color:#7ca9ca77; }
+body.ui1 .seismic-catalog-scroll { max-height:350px; overflow:auto; border:1px solid #ffffff22; border-radius:12px; }
+body.ui1 .seismic-catalog-scroll table { border-collapse:collapse; width:100%; min-width:600px; font-size:12px; }
+body.ui1 .seismic-catalog-scroll th { position:sticky; top:0; z-index:1; text-align:left; background:#26323d; font-weight:550; }
+body.ui1 .seismic-catalog-scroll th,body.ui1 .seismic-catalog-scroll td { border-bottom:1px solid #ffffff26; padding:12px 15px; }
+body.ui1 .seismic-catalog-scroll small { display:block; color:#b6c8d7; font-size:11px; line-height:1.5; margin-top:4px; }
+body.ui1 .seismic-catalog-scroll button { font-size:11px; min-height:28px; padding:4px 9px; }
+body.ui1 .seismic-research-limits p,body.ui1 .seismic-research-limits li { font-size:13px; color:#c9d3dc; line-height:1.7; }
+body.ui1 .seismic-research-limits>button { margin:10px 10px 6px 0; }
+body.ui1 #seismic-context-report .seismic-comparison-table { font-size:10px; }
+body.ui1 #seismic-context-report .seismic-comparison-table th,body.ui1 #seismic-context-report .seismic-comparison-table td { color:#263546; padding:8px; border-color:#bac2ca; }
+body.ui1 #seismic-context-report .seismic-comparison-table strong { color:#315b7d; font-size:14px; }
+body.ui1 #seismic-context-report .seismic-unassessed { color:#76571e; font-size:10px; }
+body.ui1 #seismic-context-report code { overflow-wrap:anywhere; }
+body.ui1 #seismic-context-report li { font-size:11px; line-height:1.5; }
+@media(max-width:1200px) { body.ui1 .seismic-heading { align-items:flex-start; }body.ui1 .seismic-heading h1 { font-size:30px; }body.ui1 .seismic-heading>div:last-child { flex-direction:column; align-items:flex-end; }body.ui1 .seismic-map-layout { grid-template-columns:minmax(0,1.5fr) minmax(270px,1fr); }body.ui1 .seismic-glass { padding:18px; }body.ui1 .seismic-glass h2 { font-size:21px; }body.ui1 .seismic-map-panel>header { flex-wrap:wrap; }body.ui1 .seismic-map-panel>header>label { flex-basis:100%; } }
+@media(max-width:900px) { body.ui1 .seismic-map-layout { grid-template-columns:minmax(0,1fr); }body.ui1 .seismic-inspector { display:block; }body.ui1 .seismic-point-distances { display:grid; grid-template-columns:1fr 1fr; gap:20px; }body.ui1 .seismic-glass>header { flex-wrap:wrap; }body.ui1 .seismic-wave-readouts { grid-template-columns:minmax(0,1fr); gap:15px; } }
+@media(max-width:720px) { body.ui1[data-view=screening][data-screening=seismic] #content-screening { padding:20px 12px 30px; }body.ui1 .seismic-heading { display:block; margin:0 0 15px; }body.ui1 .seismic-heading h1 { font-size:28px; }body.ui1 .seismic-heading p { font-size:15px; }body.ui1 .seismic-heading>div:last-child { flex-direction:row; align-items:center; flex-wrap:wrap; margin-top:13px; justify-content:space-between; gap:8px; }body.ui1 .seismic-heading>div:last-child button { font-size:11px; }body.ui1 .seismic-hazard-note { font-size:13px; }body.ui1 .seismic-source-counts { display:grid; grid-template-columns:1fr 1fr; font-size:10px; padding:0 4px 18px; gap:12px; }body.ui1 .seismic-source-counts b { font-size:19px; }body.ui1 .seismic-glass { padding:17px 13px; border-radius:19px; }body.ui1 .seismic-glass h2 { font-size:21px; }body.ui1 .seismic-map-grid text { font-size:17px; }body.ui1 .seismic-map-count { font-size:16px; }body.ui1 .seismic-layer-controls { gap:9px 12px; }body.ui1 .seismic-layer-controls label { font-size:11px; }body.ui1 .seismic-map-note { font-size:11px; }body.ui1 .seismic-comparison-table { font-size:11px; }body.ui1 .seismic-comparison-table th,body.ui1 .seismic-comparison-table td { padding:11px 6px; }body.ui1 .seismic-comparison-table thead th { font-size:11px; }body.ui1 .seismic-comparison-table .scenario-tag { display:none; }body.ui1 .seismic-comparison-table strong { font-size:17px; }body.ui1 .seismic-unassessed { font-size:10px; }body.ui1 .seismic-wave-controls { grid-template-columns:minmax(0,1fr); gap:13px; }body.ui1 .seismic-playback { flex-wrap:wrap; gap:10px; margin-left:0; margin-right:0; }body.ui1 .seismic-playback>input { flex-basis:70%; }body.ui1 .seismic-playback>span { flex:1; }body.ui1 .seismic-playback>button { font-size:12px; }body.ui1 .seismic-wave-grid text { font-size:23px; }body.ui1 .seismic-wave-axis { font-size:22px; }body.ui1 .seismic-impact-label { font-size:21px; }body.ui1 .seismic-catalog-panel>header { gap:12px; }body.ui1 .seismic-catalog-panel>header label { flex-basis:100%; }body.ui1 .seismic-catalog-tabs button { font-size:10px; padding:7px 8px; } }
+@media print { body.ui1 #seismic-context-report .seismic-comparison-scroll { overflow:visible; }body.ui1 #seismic-context-report .seismic-comparison-table { width:100%; }body.ui1 #seismic-context-report code { overflow-wrap:anywhere; } }
+body.ui1 .seismic-map { height:clamp(290px,36vw,560px); }
+body.ui1 .seismic-map-panel .seismic-map-count { color:#aabfd0; font-size:11px; margin:8px 2px 0; }

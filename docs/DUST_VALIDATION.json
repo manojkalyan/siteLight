@@ -1,0 +1,702 @@
+{
+  "schema": "sitelight-dust-validation-1",
+  "meaning": "Laboratory optical endmembers applied to a hypothetical optical-only radiator; not device or site validation.",
+  "cases": [
+    {
+      "model": "radiator-optical-balance-1",
+      "acceptedForVerdict": false,
+      "status": "exploratory",
+      "assumptions": {
+        "enabled": true,
+        "material": "jsc1a",
+        "coveragePercent": 25,
+        "areaM2": 1,
+        "internalHeatW": 200,
+        "incidentSolarWm2": 500,
+        "cleanAlpha": 0.2,
+        "cleanEpsilon": 0.9,
+        "dustAlpha": 0.8,
+        "dustEpsilon": 0.9,
+        "skyViewFactor": 1,
+        "skyTemperatureK": 3,
+        "groundTemperatureK": 250,
+        "limitK": 350
+      },
+      "dustEndmember": {
+        "id": "jsc1a",
+        "name": "JSC-1A (<20 µm)",
+        "rowLabel": "JSC-1A",
+        "alpha": 0.75,
+        "epsilon": 0.83,
+        "category": "laboratory simulant optical-property measurement",
+        "referenceK": 300,
+        "pdfPage": 10,
+        "transcription": "verified_transcription"
+      },
+      "constants": {
+        "stefanBoltzmannWm2K4": 5.670374419e-8,
+        "source": "https://physics.nist.gov/cgi-bin/cuu/Value?sigma%7Csearch_for=stefan+boltzmann"
+      },
+      "propertyEvidence": {
+        "cleanCoating": "planning assumption",
+        "dustCoverage": "hypothetical area fraction",
+        "endmember": "laboratory simulant optical-property measurement",
+        "siteMeasurementApplied": false,
+        "temperatureDependence": "Emittance held constant; laboratory reference is 300 K for presets, with no validated extrapolation range."
+      },
+      "sources": [
+        {
+          "name": "thermal-impacts-2024.pdf",
+          "url": "https://ntrs.nasa.gov/api/citations/20240009989/downloads/Thermal%20Impacts%20of%20Lunar%20Dust-%20TFAWS%2024.pdf",
+          "bytes": 955515,
+          "sha256": "440e96239597000ca06e66f0aa4588d7c9ad786fae5a9a7ce8e6a83a04d11cef"
+        },
+        {
+          "name": "simulant-optics-2011.pdf",
+          "url": "https://ntrs.nasa.gov/api/citations/20110013486/downloads/20110013486.pdf",
+          "bytes": 1084853,
+          "sha256": "02979ab8b6cdcd804fe0532e764f71861b2c5020afdd5cb0cc792e6875d85abe"
+        }
+      ],
+      "materialSpecificationSha256": "41510cb7aa8a452d697ac65aad86273255c3b43d9c880ac3b253bfcea49ce5a5",
+      "method": "Steady-state, one-sided, opaque diffuse two-band surface with insulated back; area-weighted optical coefficients and black sky/ground reservoirs.",
+      "warning": "The rule-of-mixtures optical approximation is not conservative and is not a calibrated dust-on-coating response.",
+      "exclusions": [
+        "Dust thickness, grain contact/conduction, multilayer insulation, abrasion, cleaning and coating aging are not modeled.",
+        "No transient temperature, thermal capacity, mount/back conduction, two-sided geometry or hardware-survival verdict.",
+        "Incident shortwave flux, view factors and sink temperatures are user assumptions; no site/date forecast or automatic Diviner substitution.",
+        "Radiative sky view factor is not the upward solid-angle fraction shown elsewhere. Lab simulant measurements are not local lunar material measurements."
+      ],
+      "clean": {
+        "alpha": 0.2,
+        "epsilon": 0.9,
+        "temperatureK": 276.8960456664984,
+        "temperatureC": 3.7460456664984463,
+        "limitK": 350,
+        "temperatureMarginK": 73.10395433350158,
+        "capacityAtLimitW": 665.8195009923658,
+        "heatMarginW": 465.81950099236576,
+        "limitStatus": "within_assumed_limit",
+        "balance": {
+          "internalHeatW": 200,
+          "absorbedShortwaveW": 100,
+          "absorbedIrW": 0.000004133702951451,
+          "emittedIrW": 300.00000413370304,
+          "residualW": 1.1368683772161603e-13
+        }
+      },
+      "dusty": {
+        "alpha": 0.3375,
+        "epsilon": 0.8825000000000001,
+        "temperatureK": 292.98905416750927,
+        "temperatureC": 19.83905416750929,
+        "limitK": 350,
+        "temperatureMarginK": 57.010945832490734,
+        "capacityAtLimitW": 582.1785662508477,
+        "heatMarginW": 382.17856625084767,
+        "limitStatus": "within_assumed_limit",
+        "balance": {
+          "internalHeatW": 200,
+          "absorbedShortwaveW": 168.75,
+          "absorbedIrW": 0.000004053325394061675,
+          "emittedIrW": 368.7500040533254,
+          "residualW": 5.684341886080802e-14
+        }
+      },
+      "deltaTemperatureK": 16.093008501010843,
+      "deltaCapacityAtLimitW": -83.6409347415181,
+      "curve": [
+        {
+          "coveragePercent": 0,
+          "temperatureK": 276.8960456664984,
+          "capacityAtLimitW": 665.8195009923658,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 5,
+          "temperatureK": 280.2885955341566,
+          "capacityAtLimitW": 649.0913140440622,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 10,
+          "temperatureK": 283.58746376523163,
+          "capacityAtLimitW": 632.3631270957585,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 15,
+          "temperatureK": 286.7997339028941,
+          "capacityAtLimitW": 615.6349401474548,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 20,
+          "temperatureK": 289.9317152655639,
+          "capacityAtLimitW": 598.9067531991512,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 25,
+          "temperatureK": 292.98905416750927,
+          "capacityAtLimitW": 582.1785662508477,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 30,
+          "temperatureK": 295.97682566996764,
+          "capacityAtLimitW": 565.450379302544,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 35,
+          "temperatureK": 298.8996098410146,
+          "capacityAtLimitW": 548.7221923542403,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 40,
+          "temperatureK": 301.7615555810038,
+          "capacityAtLimitW": 531.9940054059367,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 45,
+          "temperatureK": 304.56643438588986,
+          "capacityAtLimitW": 515.265818457633,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 50,
+          "temperatureK": 307.3176859065635,
+          "capacityAtLimitW": 498.53763150932934,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 55,
+          "temperatureK": 310.01845677212225,
+          "capacityAtLimitW": 481.80944456102566,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 60,
+          "temperatureK": 312.671633846025,
+          "capacityAtLimitW": 465.0812576127221,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 65,
+          "temperatureK": 315.2798728529716,
+          "capacityAtLimitW": 448.3530706644185,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 70,
+          "temperatureK": 317.8456231342013,
+          "capacityAtLimitW": 431.6248837161147,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 75,
+          "temperatureK": 320.37114914738396,
+          "capacityAtLimitW": 414.896696767811,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 80,
+          "temperatureK": 322.8585492152902,
+          "capacityAtLimitW": 398.1685098195074,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 85,
+          "temperatureK": 325.3097719381876,
+          "capacityAtLimitW": 381.44032287120376,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 90,
+          "temperatureK": 327.72663061334407,
+          "capacityAtLimitW": 364.71213592290013,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 95,
+          "temperatureK": 330.11081594726977,
+          "capacityAtLimitW": 347.98394897459656,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 100,
+          "temperatureK": 332.46390729945574,
+          "capacityAtLimitW": 331.2557620262929,
+          "limitStatus": "within_assumed_limit"
+        }
+      ]
+    },
+    {
+      "model": "radiator-optical-balance-1",
+      "acceptedForVerdict": false,
+      "status": "exploratory",
+      "assumptions": {
+        "enabled": true,
+        "material": "nulht2m",
+        "coveragePercent": 25,
+        "areaM2": 1,
+        "internalHeatW": 200,
+        "incidentSolarWm2": 500,
+        "cleanAlpha": 0.2,
+        "cleanEpsilon": 0.9,
+        "dustAlpha": 0.8,
+        "dustEpsilon": 0.9,
+        "skyViewFactor": 1,
+        "skyTemperatureK": 3,
+        "groundTemperatureK": 250,
+        "limitK": 350
+      },
+      "dustEndmember": {
+        "id": "nulht2m",
+        "name": "NU-LHT-2M (<20 µm)",
+        "rowLabel": "NU-LHT-2M",
+        "alpha": 0.45,
+        "epsilon": 0.78,
+        "category": "laboratory simulant optical-property measurement",
+        "referenceK": 300,
+        "pdfPage": 10,
+        "transcription": "verified_transcription"
+      },
+      "constants": {
+        "stefanBoltzmannWm2K4": 5.670374419e-8,
+        "source": "https://physics.nist.gov/cgi-bin/cuu/Value?sigma%7Csearch_for=stefan+boltzmann"
+      },
+      "propertyEvidence": {
+        "cleanCoating": "planning assumption",
+        "dustCoverage": "hypothetical area fraction",
+        "endmember": "laboratory simulant optical-property measurement",
+        "siteMeasurementApplied": false,
+        "temperatureDependence": "Emittance held constant; laboratory reference is 300 K for presets, with no validated extrapolation range."
+      },
+      "sources": [
+        {
+          "name": "thermal-impacts-2024.pdf",
+          "url": "https://ntrs.nasa.gov/api/citations/20240009989/downloads/Thermal%20Impacts%20of%20Lunar%20Dust-%20TFAWS%2024.pdf",
+          "bytes": 955515,
+          "sha256": "440e96239597000ca06e66f0aa4588d7c9ad786fae5a9a7ce8e6a83a04d11cef"
+        },
+        {
+          "name": "simulant-optics-2011.pdf",
+          "url": "https://ntrs.nasa.gov/api/citations/20110013486/downloads/20110013486.pdf",
+          "bytes": 1084853,
+          "sha256": "02979ab8b6cdcd804fe0532e764f71861b2c5020afdd5cb0cc792e6875d85abe"
+        }
+      ],
+      "materialSpecificationSha256": "41510cb7aa8a452d697ac65aad86273255c3b43d9c880ac3b253bfcea49ce5a5",
+      "method": "Steady-state, one-sided, opaque diffuse two-band surface with insulated back; area-weighted optical coefficients and black sky/ground reservoirs.",
+      "warning": "The rule-of-mixtures optical approximation is not conservative and is not a calibrated dust-on-coating response.",
+      "exclusions": [
+        "Dust thickness, grain contact/conduction, multilayer insulation, abrasion, cleaning and coating aging are not modeled.",
+        "No transient temperature, thermal capacity, mount/back conduction, two-sided geometry or hardware-survival verdict.",
+        "Incident shortwave flux, view factors and sink temperatures are user assumptions; no site/date forecast or automatic Diviner substitution.",
+        "Radiative sky view factor is not the upward solid-angle fraction shown elsewhere. Lab simulant measurements are not local lunar material measurements."
+      ],
+      "clean": {
+        "alpha": 0.2,
+        "epsilon": 0.9,
+        "temperatureK": 276.8960456664984,
+        "temperatureC": 3.7460456664984463,
+        "limitK": 350,
+        "temperatureMarginK": 73.10395433350158,
+        "capacityAtLimitW": 665.8195009923658,
+        "heatMarginW": 465.81950099236576,
+        "limitStatus": "within_assumed_limit",
+        "balance": {
+          "internalHeatW": 200,
+          "absorbedShortwaveW": 100,
+          "absorbedIrW": 0.000004133702951451,
+          "emittedIrW": 300.00000413370304,
+          "residualW": 1.1368683772161603e-13
+        }
+      },
+      "dusty": {
+        "alpha": 0.2625,
+        "epsilon": 0.8700000000000001,
+        "temperatureK": 286.25707264640397,
+        "temperatureC": 13.107072646403992,
+        "limitK": 350,
+        "temperatureMarginK": 63.74292735359603,
+        "capacityAtLimitW": 609.0421842926204,
+        "heatMarginW": 409.0421842926204,
+        "limitStatus": "within_assumed_limit",
+        "balance": {
+          "internalHeatW": 200,
+          "absorbedShortwaveW": 131.25,
+          "absorbedIrW": 0.0000039959128530693,
+          "emittedIrW": 331.2500039959128,
+          "residualW": -5.684341886080802e-14
+        }
+      },
+      "deltaTemperatureK": 9.361026979905546,
+      "deltaCapacityAtLimitW": -56.77731669974537,
+      "curve": [
+        {
+          "coveragePercent": 0,
+          "temperatureK": 276.8960456664984,
+          "capacityAtLimitW": 665.8195009923658,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 5,
+          "temperatureK": 278.7929016211258,
+          "capacityAtLimitW": 654.4640376524167,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 10,
+          "temperatureK": 280.6766802753514,
+          "capacityAtLimitW": 643.1085743124677,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 15,
+          "temperatureK": 282.5481507975066,
+          "capacityAtLimitW": 631.7531109725185,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 20,
+          "temperatureK": 284.4080475200728,
+          "capacityAtLimitW": 620.3976476325695,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 25,
+          "temperatureK": 286.25707264640397,
+          "capacityAtLimitW": 609.0421842926204,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 30,
+          "temperatureK": 288.09589872277974,
+          "capacityAtLimitW": 597.6867209526712,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 35,
+          "temperatureK": 289.92517090097664,
+          "capacityAtLimitW": 586.3312576127221,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 40,
+          "temperatureK": 291.74550901348744,
+          "capacityAtLimitW": 574.975794272773,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 45,
+          "temperatureK": 293.55750948087484,
+          "capacityAtLimitW": 563.6203309328239,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 50,
+          "temperatureK": 295.36174706847055,
+          "capacityAtLimitW": 552.2648675928748,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 55,
+          "temperatureK": 297.1587765076487,
+          "capacityAtLimitW": 540.9094042529257,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 60,
+          "temperatureK": 298.94913399518964,
+          "capacityAtLimitW": 529.5539409129766,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 65,
+          "temperatureK": 300.73333858275214,
+          "capacityAtLimitW": 518.1984775730275,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 70,
+          "temperatureK": 302.51189346716893,
+          "capacityAtLimitW": 506.8430142330783,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 75,
+          "temperatureK": 304.28528719113723,
+          "capacityAtLimitW": 495.4875508931292,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 80,
+          "temperatureK": 306.0539947628774,
+          "capacityAtLimitW": 484.1320875531801,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 85,
+          "temperatureK": 307.8184787024534,
+          "capacityAtLimitW": 472.776624213231,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 90,
+          "temperatureK": 309.57919002167574,
+          "capacityAtLimitW": 461.4211608732819,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 95,
+          "temperatureK": 311.33656914382846,
+          "capacityAtLimitW": 450.0656975333328,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 100,
+          "temperatureK": 313.0910467688586,
+          "capacityAtLimitW": 438.7102341933837,
+          "limitStatus": "within_assumed_limit"
+        }
+      ]
+    },
+    {
+      "model": "radiator-optical-balance-1",
+      "acceptedForVerdict": false,
+      "status": "exploratory",
+      "assumptions": {
+        "enabled": true,
+        "material": "ob1",
+        "coveragePercent": 25,
+        "areaM2": 1,
+        "internalHeatW": 200,
+        "incidentSolarWm2": 500,
+        "cleanAlpha": 0.2,
+        "cleanEpsilon": 0.9,
+        "dustAlpha": 0.8,
+        "dustEpsilon": 0.9,
+        "skyViewFactor": 1,
+        "skyTemperatureK": 3,
+        "groundTemperatureK": 250,
+        "limitK": 350
+      },
+      "dustEndmember": {
+        "id": "ob1",
+        "name": "OB-1 (<20 µm)",
+        "rowLabel": "OB-1",
+        "alpha": 0.73,
+        "epsilon": 0.92,
+        "category": "laboratory simulant optical-property measurement",
+        "referenceK": 300,
+        "pdfPage": 10,
+        "transcription": "verified_transcription"
+      },
+      "constants": {
+        "stefanBoltzmannWm2K4": 5.670374419e-8,
+        "source": "https://physics.nist.gov/cgi-bin/cuu/Value?sigma%7Csearch_for=stefan+boltzmann"
+      },
+      "propertyEvidence": {
+        "cleanCoating": "planning assumption",
+        "dustCoverage": "hypothetical area fraction",
+        "endmember": "laboratory simulant optical-property measurement",
+        "siteMeasurementApplied": false,
+        "temperatureDependence": "Emittance held constant; laboratory reference is 300 K for presets, with no validated extrapolation range."
+      },
+      "sources": [
+        {
+          "name": "thermal-impacts-2024.pdf",
+          "url": "https://ntrs.nasa.gov/api/citations/20240009989/downloads/Thermal%20Impacts%20of%20Lunar%20Dust-%20TFAWS%2024.pdf",
+          "bytes": 955515,
+          "sha256": "440e96239597000ca06e66f0aa4588d7c9ad786fae5a9a7ce8e6a83a04d11cef"
+        },
+        {
+          "name": "simulant-optics-2011.pdf",
+          "url": "https://ntrs.nasa.gov/api/citations/20110013486/downloads/20110013486.pdf",
+          "bytes": 1084853,
+          "sha256": "02979ab8b6cdcd804fe0532e764f71861b2c5020afdd5cb0cc792e6875d85abe"
+        }
+      ],
+      "materialSpecificationSha256": "41510cb7aa8a452d697ac65aad86273255c3b43d9c880ac3b253bfcea49ce5a5",
+      "method": "Steady-state, one-sided, opaque diffuse two-band surface with insulated back; area-weighted optical coefficients and black sky/ground reservoirs.",
+      "warning": "The rule-of-mixtures optical approximation is not conservative and is not a calibrated dust-on-coating response.",
+      "exclusions": [
+        "Dust thickness, grain contact/conduction, multilayer insulation, abrasion, cleaning and coating aging are not modeled.",
+        "No transient temperature, thermal capacity, mount/back conduction, two-sided geometry or hardware-survival verdict.",
+        "Incident shortwave flux, view factors and sink temperatures are user assumptions; no site/date forecast or automatic Diviner substitution.",
+        "Radiative sky view factor is not the upward solid-angle fraction shown elsewhere. Lab simulant measurements are not local lunar material measurements."
+      ],
+      "clean": {
+        "alpha": 0.2,
+        "epsilon": 0.9,
+        "temperatureK": 276.8960456664984,
+        "temperatureC": 3.7460456664984463,
+        "limitK": 350,
+        "temperatureMarginK": 73.10395433350158,
+        "capacityAtLimitW": 665.8195009923658,
+        "heatMarginW": 465.81950099236576,
+        "limitStatus": "within_assumed_limit",
+        "balance": {
+          "internalHeatW": 200,
+          "absorbedShortwaveW": 100,
+          "absorbedIrW": 0.000004133702951451,
+          "emittedIrW": 300.00000413370304,
+          "residualW": 1.1368683772161603e-13
+        }
+      },
+      "dusty": {
+        "alpha": 0.3325,
+        "epsilon": 0.905,
+        "temperatureK": 290.6560255035729,
+        "temperatureC": 17.506025503572914,
+        "limitK": 350,
+        "temperatureMarginK": 59.34397449642711,
+        "capacityAtLimitW": 603.8240537756567,
+        "heatMarginW": 403.8240537756567,
+        "limitStatus": "within_assumed_limit",
+        "balance": {
+          "internalHeatW": 200,
+          "absorbedShortwaveW": 166.25,
+          "absorbedIrW": 0.00000415666796784795,
+          "emittedIrW": 366.250004156668,
+          "residualW": 5.684341886080802e-14
+        }
+      },
+      "deltaTemperatureK": 13.759979837074468,
+      "deltaCapacityAtLimitW": -61.99544721670907,
+      "curve": [
+        {
+          "coveragePercent": 0,
+          "temperatureK": 276.8960456664984,
+          "capacityAtLimitW": 665.8195009923658,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 5,
+          "temperatureK": 279.82637048514846,
+          "capacityAtLimitW": 653.4204115490239,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 10,
+          "temperatureK": 282.661220094679,
+          "capacityAtLimitW": 641.0213221056822,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 15,
+          "temperatureK": 285.4072466783223,
+          "capacityAtLimitW": 628.6222326623404,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 20,
+          "temperatureK": 288.070400125784,
+          "capacityAtLimitW": 616.2231432189986,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 25,
+          "temperatureK": 290.6560255035729,
+          "capacityAtLimitW": 603.8240537756567,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 30,
+          "temperatureK": 293.16894399402224,
+          "capacityAtLimitW": 591.424964332315,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 35,
+          "temperatureK": 295.6135205809337,
+          "capacityAtLimitW": 579.0258748889731,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 40,
+          "temperatureK": 297.9937210220557,
+          "capacityAtLimitW": 566.6267854456314,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 45,
+          "temperatureK": 300.31316009539415,
+          "capacityAtLimitW": 554.2276960022895,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 50,
+          "temperatureK": 302.5751426871661,
+          "capacityAtLimitW": 541.8286065589477,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 55,
+          "temperatureK": 304.78269896849054,
+          "capacityAtLimitW": 529.4295171156059,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 60,
+          "temperatureK": 306.938614660318,
+          "capacityAtLimitW": 517.0304276722641,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 65,
+          "temperatureK": 309.0454571933391,
+          "capacityAtLimitW": 504.6313382289221,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 70,
+          "temperatureK": 311.10559841835544,
+          "capacityAtLimitW": 492.23224878558045,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 75,
+          "temperatureK": 313.12123440302605,
+          "capacityAtLimitW": 479.83315934223856,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 80,
+          "temperatureK": 315.0944027557146,
+          "capacityAtLimitW": 467.4340698988967,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 85,
+          "temperatureK": 317.0269978408978,
+          "capacityAtLimitW": 455.0349804555549,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 90,
+          "temperatureK": 318.9207841891017,
+          "capacityAtLimitW": 442.63589101221316,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 95,
+          "temperatureK": 320.7774083544637,
+          "capacityAtLimitW": 430.23680156887133,
+          "limitStatus": "within_assumed_limit"
+        },
+        {
+          "coveragePercent": 100,
+          "temperatureK": 322.5984094323518,
+          "capacityAtLimitW": 417.8377121255295,
+          "limitStatus": "within_assumed_limit"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "sitelight-plume-inputs-1",
+  "retrievedUtc": "2026-11-14T18:16:19.050Z",
+  "records": [
+    {
+      "name": "lunar-ejecta-ballistics-2010.pdf",
+      "url": "https://ntrs.nasa.gov/api/citations/20100031187/downloads/20100031187.pdf",
+      "bytes": 5970794,
+      "sha256": "b3de33a006e0ea2b4f50cbadc70555c2225619a0bfd8067a39de73ddd28d49ff"
+    },
+    {
+      "name": "spherical-ballistics-2014.pdf",
+      "url": "https://ntrs.nasa.gov/api/citations/20140017853/downloads/20140017853.pdf",
+      "bytes": 1266547,
+      "sha256": "58c6f392609b2eb6205a53634cefda46aba411333c4e8dee1c03730ebd39b9fc"
+    },
+    {
+      "name": "jpl-satellite-parameters.html",
+      "url": "https://ssd.jpl.nasa.gov/sats/phys_par/sep.html",
+      "bytes": 85633,
+      "sha256": "b2d4be08fba8b2b71956f3f2b3ec462f7b61d94ed8c268320fcd812e96b95e9d"
+    }
+  ]
+}

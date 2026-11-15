@@ -1,0 +1,15 @@
+{
+  "schema":"sitelight-dust-materials-1",
+  "sourceFile":"simulant-optics-2011.pdf",
+  "sourceUrl":"https://ntrs.nasa.gov/citations/20110013486",
+  "pdfPage":10,
+  "table":"Table 2, less-than-20-micrometre fraction",
+  "emittanceReferenceK":300,
+  "category":"laboratory simulant optical-property measurement",
+  "materials":[
+    {"id":"jsc1a","name":"JSC-1A (<20 µm)","rowLabel":"JSC-1A","alpha":0.75,"epsilon":0.83},
+    {"id":"nulht2m","name":"NU-LHT-2M (<20 µm)","rowLabel":"NU-LHT-2M","alpha":0.45,"epsilon":0.78},
+    {"id":"ob1","name":"OB-1 (<20 µm)","rowLabel":"OB-1","alpha":0.73,"epsilon":0.92}
+  ],
+  "meaning":"Laboratory dust endmembers; not a measured lunar site or a tested dust-on-coating response. Emittance is held constant away from its 300 K reference without validation."
+}

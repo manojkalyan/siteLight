@@ -1,0 +1,476 @@
+
+The user has shared the exact NASA Space Apps 2026 challenge they registered for: "Lunar Landing Site Navigator." They want to win. I need to connect the previous strategic analysis (constraint attribution, scenario replay, impact framing, interactive queryability) directly to this specific challenge description. I should search for recent developments around this challenge—resources, judging criteria, past winners, technical approaches for Sun/Earth visibility, terrain horizons, and the specific pain points mentioned (complicated interfaces, rapid scenario comparison, non-specialist accessibility). I'll also look for any 2026-specific updates or community discussions.
+
+Found 36 web pages
+The search results show a few key items. Result 0 is a Zenodo entry for "ARTEMIS Lunar Mission Browser" for the 2026 challenge—this is likely a relevant existing tool or paper. Result 1 is a ChatGPT discussion about the challenge. Result 2 is a hackathon listing. I should open these to get more details. Also, result 0 from the second search (Siderust) seems relevant. I need to understand what resources exist, what the judging rubrics look like, and any specific insights about this challenge. Let me open the Zenodo link, the ChatGPT discussion, and the Siderust page.
+
+Read 3 pages
+ARTEMIS Lunar Mission Browser — Lunar Landing Site Navigator (NASA Space Apps Challenge 2026)
+Découvrez cette discussion - NASA's 2026 challenge: CLPS Lunar Mission Browser / Lunar Landing Site Navigator
+Siderust for NASA Space Apps Challenge 2026 | Siderust
+Found 29 web pages
+The Zenodo entry (ARTEMIS Lunar Mission Browser) is a submitted project for the 2026 challenge. It includes terrain-masked horizon, Earth visibility with libration, power sizing, DSN link budget, and an "autonomous decision engine with SHA-256 custody-chained verdicts." This is highly relevant: it suggests that other teams are already implementing sophisticated features. The user needs to differentiate. The ChatGPT discussion (LUMEN) proposes a power-access assessment and relay-planning system. The Siderust resource provides ephemeris and coordinate transformation tools, which could be a technical foundation. The judging criteria search reveals that impact and creativity are weighted heavily, with relevance also important.
+
+The user's previous strategic analysis emphasized constraint attribution and scenario replay. The challenge description itself emphasizes rapid comparison, intuitive interface, and accessibility for non-specialists. The ARTEMIS project already has custody-chained verdicts—a form of auditability. So the user's standout feature needs to go beyond that. Perhaps the key is not just auditability but interactive, conversational explanation combined with scenario replay that is accessible to non-experts, as the Artemis+ 2025 winner had a Gemini assistant. Also, the challenge explicitly mentions "rapid scenario comparison" and "why small location or date changes have large impacts." The standout feature could be a "what-if" causal comparison engine that not only shows that a site fails but explains the binding constraint in plain language and allows the user to adjust assumptions (launch date, power threshold, communication requirement) and immediately see how the verdict changes, with a clear causal chain. This aligns with the previous recommendation but should be framed specifically for this challenge.
+
+I need to synthesize a concrete winning strategy for this exact challenge. The response should cover: understanding the challenge's true gap, differentiating from existing submissions (like ARTEMIS), the recommended standout feature (causal what-if scenario engine with plain-language explanations), technical implementation advice (using Siderust or similar for ephemeris, LOLA for terrain, maybe a simplified but transparent horizon model), and how to present it to judges (impact narrative, interactive demo). Also, mention the judging criteria (impact, creativity, validity, relevance) and the need for a polished, intuitive UX. The user is likely in the ideation/planning phase. I should provide actionable steps and perhaps a 48-hour plan outline. Cite sources: the challenge description, ARTEMIS Zenodo, Siderust, judging criteria, and the 2025 winner pattern.
+
+You registered for exactly the right challenge—but the competitive landscape has already shifted. A 2026 submission called ARTEMIS Lunar Mission Browser is publicly documented on Zenodo (published October 28, 2026) and already implements real JPL DE421 ephemeris, IAU lunar rotation, LOLA terrain-masked horizons, Earth-visibility windows with libration, power sizing, DSN link budgets, and—critically—an “autonomous decision engine with SHA-256 custody-chained verdicts.” The bar for technical completeness is therefore already high. Your winning move cannot be “we also compute horizons and Earth visibility.” It has to be a capability that ARTEMIS and similar submissions do not have, framed in the language of the challenge’s actual stated gap.
+
+The challenge’s real gap is not computation—it is causal explanation under shifting constraints
+Read the challenge language closely. It does not ask you to build a more precise ephemeris engine. It asks for an intuitive tool that lets planners “compare landing sites and dates quickly” and “understand why small location or date changes have large impacts on mission feasibility.” The background explicitly says mission timelines shift, hardware challenges force replanning, and existing tools like Quickmap, Moon Trek, and JPL Horizons are “difficult for non-specialists to use effectively for rapid scenario comparison.” The gap is therefore decision agility and causal transparency, not raw data fidelity.
+
+ARTEMIS already provides custody-chained verdicts—a form of auditability. What it does not appear to provide (based on its public description) is interactive causal attribution in plain language: the ability for a planner or educator to ask “why did this site fail?” and receive an answer that names the binding constraint, shows the exact time window where the constraint binds, and lets the user adjust a threshold or launch date to see the verdict flip in real time. That is the feature that directly addresses the challenge’s stated pain point and differentiates from a computation-heavy submission.
+
+Recommended standout feature: the “Binding Constraint Explainer” with live scenario surgery
+Build your application around a single, narrow, high-impact interaction:
+
+User selects two site–date scenarios. The tool does not just show which one “wins.” It shows, for the losing scenario, the single constraint that is doing the most damage—and lets the user drag a slider to relax that constraint until the verdict flips.
+
+Concretely, the feature has three layers:
+
+Verdict with causal decomposition. For each scenario, the tool returns a binary feasibility verdict (power-positive and Earth-visible within the mission window). But beneath the verdict, it decomposes the failure into named constraint contributions: “illumination gap at azimuth 142° due to terrain horizon,” “Earth occultation during the same 14-hour window,” “solar elevation below 5° for 63% of the surface mission,” etc. This is not a heatmap; it is a ranked list of reasons, with time stamps.
+
+Plain-language binding-constraint sentence. A single sentence that a non-specialist can understand: “Site A fails primarily because the terrain horizon blocks the Sun for 19 hours immediately after landing, and Earth is below the horizon during that entire period; no solar power and no direct-to-Earth link overlap.” This directly serves the challenge’s educator/public accessibility goal without dumbing down the engineering.
+
+Live constraint surgery. Sliders for launch date, mission duration, minimum solar elevation threshold, and minimum Earth elevation threshold. As the user moves a slider, the verdict and the binding-constraint sentence update immediately. The tool should also show a flip point: the exact launch date or threshold value at which the scenario becomes feasible. This is the “rapid scenario comparison” the challenge asks for, but made causal rather than merely visual.
+
+This feature wins because it turns a comparison tool into a negotiation tool. Planners do not just see that a site is bad; they see what would have to change for it to become good, and whether that change is within their control (launch date) or not (terrain).
+
+Why this beats the obvious alternatives
+Alternative	Why it loses to the Binding Constraint Explainer
+A better horizon/illumination map	Incremental; ARTEMIS already claims terrain-masked horizons with real ephemeris. Judges scoring “creativity” will see it as an improvement, not a new capability.
+A custody-chained audit log	ARTEMIS already does SHA-256 custody-chained verdicts. Auditability alone is no longer differentiating in this challenge.
+A relay-placement planner (like LUMEN)	Interesting, but it adds operational complexity and moves away from the challenge’s core ask: rapid site/date comparison. The ChatGPT-shared LUMEN concept itself concedes that the physical relay is an “engineering extension,” not the core deliverable.
+A conversational LLM assistant	The 2025 Artemis+ simulator already paired a Unity planner with a Gemini assistant. A generic chatbot is now table stakes; the differentiator is that your explanations are causally attributed and replayable, not hallucinated.
+Technical implementation in 48 hours: keep the science honest, simplify the UX
+You do not need to out-compute ARTEMIS to win. You need to be causally correct and interactively fast.
+
+Ephemeris and geometry. Use Siderust (open-source Rust/Python) for lunar-surface geometric Alt/Az of the Sun and Earth, with explicit frame transformations and time handling. It provides the exact pipeline the challenge requires: define a lunar site, transform the target to the Moon-fixed frame, project into the local horizon. Siderust explicitly notes that its geometric altitude is not topographic visibility—which is good: you will add a terrain mask on top, and you can be transparent about that separation.
+
+Terrain horizon. Use LOLA DEM data at whatever resolution is feasible within the hackathon. You do not need a full ray-traced horizon at 5 m/pixel. A precomputed azimuthal horizon profile at 1° azimuth resolution and a few representative distances is sufficient for causal attribution. The challenge itself suggests LOLA for horizon calculations. The key is to make the horizon profile inspectable: show the user the terrain silhouette and the Sun/Earth tracks crossing it.
+
+Causal engine. For each scenario, compute a time series of Sun elevation and Earth elevation, subtract the terrain horizon at the relevant azimuth, and identify the longest contiguous interval where either constraint is violated during the surface mission window. Rank constraints by the duration of the violated interval weighted by operational criticality (power loss > communication loss, for example). This is computationally trivial compared to full illumination modeling, and it produces the ranked causal list the UX needs.
+
+Live surgery. Precompute a small grid of scenarios around the selected site and date window (e.g., ±30 days in 1-day steps, three power thresholds, three communication thresholds). When the user moves a slider, interpolate from the grid or recompute on the fly if the geometry is cheap enough. The flip point is the boundary of the feasible region in that grid.
+
+How to present it to judges: the one-sentence impact story
+The 2026 judging criteria are carried from 2025: Impact (potential to address meaningful challenges) and Creativity (originality and innovative nature) are the leading dimensions, alongside validity, relevance, and presentation. Your pitch should not be a feature list. It should be a single sentence:
+
+“When a lunar landing date slips, planners currently re-run separate tools and manually compare raw outputs; SiteLight shows them which constraint broke, by how much, and the exact launch-date shift or power-threshold relaxation that would fix it—in one interactive screen.”
+
+Then demo the live surgery. Open with a scenario that fails. Ask the judge: “Do you want to see what would make this site work?” Move the launch-date slider. Show the verdict flip. Show the binding-constraint sentence changing from “terrain horizon blocks Sun” to “Earth occultation dominates.” That demo is the innovation made visceral, and it is exactly the kind of moment that wins hackathons—not a slide about ephemeris accuracy.
+
+What to explicitly avoid in the submission
+Do not claim to have solved illumination modeling. Siderust itself warns that geometric Alt/Az is not topographic visibility; be transparent that your terrain mask is an approximation and show the horizon profile so judges can see what you did.
+
+Do not build a general-purpose lunar GIS. The challenge is narrow: site–date comparison for Sun and Earth visibility. Every additional layer dilutes the causal story and consumes 48-hour time you do not have.
+
+Do not hide the computation behind a black-box “AI verdict.” The 2025 Artemis+ simulator already has an LLM assistant; judges in this domain are now sensitized to explainability. Your verdict must be rule-based, inspectable, and reproducible, with the causal decomposition visible on screen.
+
+The winning feature is not more data. It is causal negotiability: the ability to see why a lunar site–date combination fails, and to change the terms of the decision in real time. Build that, and you will be competing on the challenge’s actual stated gap rather than on a computation race you do not need to win.
+
+but will this will be winning one
+The user wants to know if their idea will be a winning one. I need to search for information about the 2026 NASA Space Apps Challenge, including judging criteria, past winners (2025), and possibly the ARTEMIS browser. I'll also look for general tips on winning hackathons.
+
+Found 47 web pages
+The search results show judging criteria (impact, creativity, validity, relevance, presentation). Also, there's a mention of ARTEMIS Lunar Mission Browser on Zenodo. The user wants to know if their idea will win. I need to open some of these results to get more details.
+
+Read 4 pages
+Judging and Prizes
+Innovation, feasibility and relevance, among the criteria for evaluating projects at NASA Space Apps Challenge
+ARTEMIS Lunar Mission Browser — Lunar Landing Site Navigator (NASA Space Apps Challenge 2026)
+NASA Space Apps Cairo 2025: Tips for Improvement | Ayman AbdelMohaimen 发布的此话题相关的动态 | 领英
+The user's question is whether their idea will win. I need to provide an honest assessment. The search results show the judging criteria and some advice. The ARTEMIS browser already exists and is quite comprehensive. The user's idea of a "Binding Constraint Explainer" might be novel and could score well on creativity and impact, but I need to be realistic. I should structure the answer by analyzing the criteria, comparing the idea against the competition (ARTEMIS), and highlighting the strengths and potential pitfalls. I'll also mention the need for a strong presentation and execution. The answer should be balanced, not just a yes/no, but an analysis of the factors that could lead to a win. I'll cite the relevant sources.
+
+Here is a direct answer: No, the feature idea alone will not win. But it puts you in a genuinely strong position to win—if you execute the pitch and the demo with the same clarity that the 2025 and 2026 winners did.
+
+Your idea is not a guaranteed victory because NASA Space Apps does not judge ideas in isolation. It judges a working prototype, a compelling story, and a demonstrated ability to solve the challenge's specific problem—all within the pressure of a weekend. The reason your idea is a strong contender is that it attacks the actual gap in the challenge, not the technical gap that a well-resourced competitor has already filled.
+
+🎯 Why the Idea Aligns with the Judges' Scorecard
+The official criteria are Impact, Creativity, Validity, Relevance, and Presentation, with Impact and Creativity often carrying the most weight (e.g., 30% and 20% in some rubrics). Your "Binding Constraint Explainer" scores well on paper against these:
+
+Impact (High): It solves the challenge's explicit pain point: rapid replanning when mission timelines shift. It is designed for "mission planners, educators, and the public," matching the challenge's broad audience.
+
+Creativity (High): It is not an incremental map improvement. It reframes the tool from a comparison viewer into a negotiation engine—showing what must change for a site to become viable. This is a novel approach that judges will likely see as innovative.
+
+Relevance (High): It directly responds to the challenge's core ask to "understand why small location or date changes have large impacts on mission feasibility."
+
+⚠️ The Real Risk: A Strong Competitor Already Exists
+You must acknowledge that a public submission for this exact challenge, ARTEMIS Lunar Mission Browser, already exists. It is technically sophisticated, featuring real ephemeris, terrain-masked horizons, libration, and custody-chained verdicts. Your strategy should not be to out-compute it.
+
+Your winning angle is causal transparency. ARTEMIS provides a verdict; your tool provides the reasoning. The challenge brief itself complains that existing tools are too complex for rapid comparison. A judge will immediately grasp the difference between a tool that says "Site A fails" and your tool that says, "Site A fails because the terrain horizon blocks the Sun for 19 hours after landing—here is the slider to find the launch date that fixes it." This is exactly the kind of "data tells a story" insight that judges reward.
+
+🏆 The 2025 Winners Prove the Formula
+The 2025 global winners did not win because their technology was the most complex. They won because they framed their solution as an undeniable impact story:
+
+Photonics Odyssey won for framing satellite internet as a solution to broadband inequity.
+
+Queñaris won for connecting data fusion to water security in a specific community.
+
+Your one-sentence pitch is your version of this. Do not say "we built a constraint attribution engine." Say: "When a lunar landing date slips, planners waste days re-running tools by hand; SiteLight shows them exactly which constraint broke and the launch-date shift that fixes it—in one screen." This is the kind of clarity that judges explicitly ask for.
+
+🛠️ The Execution Checklist for a Winning Demo
+The idea gives you a head start, but the win is in the execution. Based on documented judging feedback, focus on these three things above all else:
+
+Clarity in the first 60 seconds: Your opening pitch must be a single, plain-language sentence. Do not start with ephemeris or LOLA data. Start with the planner's pain and your causal solution.
+
+A live "surgery" demo: Open with a failing scenario. Ask the judge, "What would make this site work?" Then move the launch-date slider live and show the verdict flip and the binding-constraint sentence change. This visceral moment is what they will remember.
+
+Authenticity over perfection: Judges know it is a 48-hour prototype. They value a working demo that solves the core problem over a polished, complex system that does not work. Show what is actually running.
+
+Final Verdict: Your idea is a top-tier contender because it is strategically aimed at the challenge's real gap and aligns perfectly with the scoring criteria. However, the win depends entirely on your ability to pitch it as an impact story and demo its causal power live. If you build the simplest version of the Binding Constraint Explainer and rehearse a crisp, problem-first narrative, you have a genuine shot at a global award.
+
+Would you like help drafting that one-sentence impact pitch or structuring the live demo flow for the judges?
+
+okie now make a prd
+The user wants a PRD (Product Requirements Document) for SiteLight AI, the lunar landing site navigator hackathon project. I should make it practical, scoped for a 48-hour hackathon, aligned with the NASA Space Apps 2026 challenge, and centered on the differentiated feature (Binding Constraint Explainer with live scenario surgery).
+
+I should structure it well: problem, goals, users, scope (MVP vs stretch), features with requirements, technical architecture, data sources, UX flows, demo script, success metrics, risks. Keep it concrete and buildable. I should be honest about approximations (Siderust geometric alt/az, LOLA horizon mask) and about the existing ARTEMIS competitor.
+
+Let me write a solid PRD. Not too bloated but complete. Use tables where useful.
+
+Key decisions:
+
+Web app (React/Next.js or plain React + Vite), single-page
+
+Ephemeris: Siderust (Python/Rust) or skyfield/astropy — actually for a hackathon, skyfield with JPL DE421 is fast and reliable; Siderust is nice but less mature. I'll recommend skyfield as primary with Siderust as alternative. Note precision vs speed. Precompute backend.
+
+Terrain horizon: LOLA DEM, precomputed 1° azimuth horizon profile at a few sites + custom coords on the fly with lower resolution. Or use LOLA data tiles.
+
+Causal engine: rule-based attribution.
+
+Live surgery: precompute scenario grid.
+
+Demo mode.
+
+I'll include acceptance criteria, API endpoints, data model, and a 48-hour build plan maybe as appendix. Also accessibility/education mode.
+
+Let me be careful with the "no guarantee of winning" tone — keep it confident but grounded.
+
+I'll write the PRD with numbered sections and make it look professional. Length: substantial but organized. Aim ~1500-2000 words equivalent with tables.
+
+Product Requirements Document
+SiteLight AI — Lunar Landing Site Navigator
+Event: 2026 NASA Space Apps Challenge — Lunar Landing Site Navigator
+Document version: 1.0 (hackathon scope)
+Owner: [Your name / team]
+Status: Build-ready
+
+1. Problem Statement
+Mission planners at the lunar south pole must jointly satisfy power generation (solar elevation and duration) and direct-to-Earth communication (Earth visibility above the local terrain horizon) for a candidate site–date pair. When launch dates slip or hardware constraints change, planners must rapidly re-evaluate alternatives. Existing tools—NASA QuickMap, Moon Trek, JPL Horizons—are built for detailed analysis and require navigating multiple interfaces and interpreting raw outputs. The result is a replanning bottleneck: planners can see that a site–date combination fails, but not which constraint is binding, by how much, or what change would make it viable.
+
+SiteLight AI closes this gap with a causal, interactive comparison tool.
+
+2. Goals and Non-Goals
+Goals
+ID	Goal	Success signal
+G1	Rapidly compare ≥2 site–date scenarios side by side	Verdict renders in <2 s per scenario
+G2	Explain why a scenario fails, naming the binding constraint and its time window	Ranked causal list with timestamps shown for every failing scenario
+G3	Enable live "scenario surgery" — adjust launch date/thresholds and see the verdict flip	Flip point surfaced in ≤1 s of slider movement
+G4	Serve both planners (technical) and educators/public (plain language)	Toggle between Technical and Plain-language views
+G5	Be scientifically honest about approximations	Horizon profile and data provenance visible in UI
+Non-Goals (explicitly out of scope for this build)
+Full high-fidelity illumination modeling or ray-traced shadowing at submeter resolution.
+
+Relay-satellite placement or link-budget analysis.
+
+Rover traverse planning or surface mobility modeling.
+
+Multi-user collaboration, accounts, or persistent cloud storage.
+
+Claiming flight-certified accuracy of any kind.
+
+Positioning note: A public submission (ARTEMIS Lunar Mission Browser) already demonstrates real ephemeris, terrain-masked horizons, libration, and audit-chained verdicts. SiteLight AI does not compete on computation fidelity. It competes on causal negotiability — explaining and letting the user change the terms of the decision.
+
+3. Target Users
+Persona	Primary need	How SiteLight serves them
+Mission planner (engineering)	"Which constraint killed this site, and is the alternative robust to a 30-day launch slip?"	Ranked causal decomposition, flip-point readout, side-by-side comparison
+Science planner	"Does relocating 40 km improve the power-positive window?"	Custom coordinates, delta view between scenarios
+Educator / student	"Why is the lunar south pole so hard?"	Plain-language binding-constraint sentence, horizon silhouette, Sun/Earth track animation
+Hackathon judge	"Does this solve the stated gap in under a minute of explanation?"	Guided demo mode with one-click failing scenario and live flip
+4. Core User Stories
+As a planner, I select two curated sites and two launch dates, and I see a side-by-side verdict card for each scenario showing power-positive duration, Earth-visible duration, and their overlap.
+
+As a planner, for a failing scenario I see a ranked list of binding constraints (e.g., "Terrain horizon at azimuth 142° blocks Sun for 19 h post-landing") with the affected time windows.
+
+As a planner, I drag a launch-date slider and watch the verdict flip from FAIL to PASS; the tool displays the earliest feasible date and the constraint that was relieved.
+
+As an educator, I toggle plain-language mode and read one sentence explaining the failure, plus a visual of the Sun and Earth tracks crossing the terrain silhouette.
+
+As any user, I can inspect the data provenance: DEM source and resolution, ephemeris kernel, horizon profile resolution, and the explicit list of modeling approximations.
+
+5. Functional Requirements
+FR-1 Site Selection
+FR-1.1 Curated site list of ≥8 entries (Apollo sites, Artemis candidate regions, notable CLPS targets, Shackleton rim, Malapert Massif, etc.) with lat/lon/height.
+
+FR-1.2 Custom coordinate entry (lat, lon, elevation) with validation for lunar south-polar bounds.
+
+FR-1.3 Minimum two scenarios active for comparison; up to four supported in the comparison grid.
+
+FR-2 Date and Time Control
+FR-2.1 Date picker constrained to a mission-relevant window (e.g., 2027–2033).
+
+FR-2.2 Mission duration input (hours; default 168 h / 7 Earth days).
+
+FR-2.3 Launch-date slider with ±60-day sweep at 1-day resolution around the selected date.
+
+FR-2.4 Display lunar local time context (solar longitude / "lunar day" phase) alongside UTC.
+
+FR-3 Ephemeris and Geometry
+FR-3.1 Compute Sun and Earth geometric altitude/azimuth from the selected lunar site over the mission window at ≤10-minute sampling.
+
+FR-3.2 Use a modern JPL ephemeris kernel (DE421 or DE440) with documented frame transformations (Moon-fixed to local horizon).
+
+FR-3.3 Account for Earth libration in Earth-position computation (state this explicitly in provenance).
+
+FR-3.4 Expose the raw geometric altitude separately from the terrain-masked visibility flag.
+
+FR-4 Terrain Horizon
+FR-4.1 Load LOLA-derived DEM for each curated site and for custom coordinates (nearest available tile).
+
+FR-4.2 Precompute an azimuthal horizon profile at 1° azimuth resolution (360 values) per scenario.
+
+FR-4.3 Visibility test = geometric altitude > terrain horizon elevation at that azimuth (no atmospheric refraction — Moon has none).
+
+FR-4.4 Render the horizon silhouette as a polar or azimuth–elevation plot with Sun and Earth tracks overlaid.
+
+FR-5 Verdict Engine
+FR-5.1 Binary verdict per scenario: PASS if, during the mission window, cumulative power-positive time ≥ threshold and cumulative Earth-visible time ≥ threshold and overlap time ≥ threshold.
+
+FR-5.2 Configurable thresholds (defaults documented): minimum solar elevation for power (default 5°), minimum Earth elevation (default 0°), minimum cumulative windows (default 6 h each, 4 h overlap).
+
+FR-5.3 Verdict must be deterministic and rule-based — no LLM in the verdict path.
+
+FR-6 Causal Attribution (the differentiator — highest priority)
+FR-6.1 For each failing scenario, compute contiguous violation intervals for each constraint (solar-below-horizon, Earth-below-horizon, solar-below-power-threshold).
+
+FR-6.2 Rank constraints by a documented criticality weight × violation duration. Default weights: power loss > communication loss > threshold-margin loss.
+
+FR-6.3 Return top-ranked constraint with: constraint name, azimuth band responsible, start/end timestamps, duration, and the operational consequence.
+
+FR-6.4 Generate a single plain-language binding-constraint sentence, e.g.: "This site fails mainly because the terrain horizon blocks the Sun for 19 hours immediately after landing, and Earth is below the horizon during that same period — so there is no solar power and no direct-to-Earth link at the same time."
+
+FR-6.5 Plain-language sentence must be templated from structured data, not free-text generated, so it is reproducible.
+
+FR-7 Scenario Surgery
+FR-7.1 Sliders for: launch date, mission duration, minimum solar elevation, minimum Earth elevation, overlap threshold.
+
+FR-7.2 On slider change, re-evaluate verdict and causal attribution within 1 s (precomputed scenario grid with interpolation acceptable).
+
+FR-7.3 Display flip point: the exact date or threshold value at which verdict changes, with the constraint relieved.
+
+FR-7.4 "Snap to flip" button sets the scenario to the earliest feasible configuration.
+
+FR-8 Comparison and Reporting
+FR-8.1 Side-by-side verdict cards for all active scenarios.
+
+FR-8.2 Delta view: differences in power-positive hours, Earth-visible hours, overlap, and binding constraint between any two scenarios.
+
+FR-8.3 Exportable one-page report (PDF or printable HTML) containing scenario parameters, verdicts, causal attributions, provenance, and timestamp.
+
+FR-9 Provenance and Honesty Panel
+FR-9.1 Always-visible provenance panel listing: ephemeris kernel, DEM product and resolution, horizon azimuth resolution, sampling interval, frame transformations, and libration treatment.
+
+FR-9.2 Explicit approximations list (e.g., "horizon precomputed at 1° azimuth; not ray-traced; DEM resolution limits sub-footpad accuracy").
+
+FR-9.3 Every verdict carries a reproducibility hash of its input parameters.
+
+FR-10 Accessibility and Education Mode
+FR-10.1 Toggle between Technical and Plain-language views.
+
+FR-10.2 Keyboard navigable controls; WCAG AA contrast on all verdict states.
+
+FR-10.3 Guided demo mode: one click loads a known failing scenario, pre-positions the slider, and highlights the flip point.
+
+6. Non-Functional Requirements
+Category	Requirement
+Performance	Initial scenario load <5 s on a laptop with precomputed caches; slider re-evaluation <1 s
+Determinism	Identical inputs produce byte-identical verdict and attribution output
+Transparency	No black-box ML in verdict or attribution path
+Responsiveness	Usable at 1280×720 and above; comparison grid degrades gracefully on tablet
+Robustness	Bad DEM values masked, never crash; invalid coordinates rejected with clear message
+Portability	Static web deploy (Vercel/Netlify) with precomputed data bundle; no login required
+7. Technical Architecture
+Stack recommendation: React + Vite (or Next.js) front end; Python precompute pipeline; static JSON/parquet data bundle served with the app. Precomputation at build time is the key hackathon advantage — it keeps the demo fast and the science defensible.
+
+text
+┌─────────────────────────────────────────────────────┐
+│  BUILD-TIME PIPELINE (Python)                        │
+│  • Ephemeris: Skyfield + DE421 (or Siderust)         │
+│  • DEM: LOLA tiles → azimuthal horizon profiles      │
+│  • Scenario grid: dates × thresholds → verdicts      │
+│  • Attribution: rule engine → ranked constraints     │
+│  Output: JSON bundle + provenance manifest           │
+└──────────────────────┬──────────────────────────────┘
+                       │ static deploy
+┌──────────────────────▼──────────────────────────────┐
+│  CLIENT (React)                                      │
+│  • Scenario builder (sites, dates, thresholds)       │
+│  • Verdict cards + comparison grid                   │
+│  • Horizon polar plot (Sun/Earth tracks)             │
+│  • Attribution panel + plain-language sentence       │
+│  • Surgery sliders → grid lookup/interpolation       │
+│  • Provenance panel + report export                  │
+└─────────────────────────────────────────────────────┘
+Data sources:
+
+Ephemeris: JPL DE421/DE440 via Skyfield (documented, well-tested) — Siderust as an alternative if the team prefers explicit Rust geometry.
+
+Topography: LOLA polar DEM products (document product name and resolution in provenance).
+
+Frame transformations: Moon-fixed frame per IAU conventions; document the exact chain in the provenance panel.
+
+Key architectural decision: precompute the scenario grid, compute geometry on the client only for the horizon plot. This trades a larger data bundle for guaranteed demo responsiveness and reproducibility.
+
+8. Information Architecture / Key Screens
+Scenario Builder — site picker, coordinate entry, date controls, threshold presets.
+
+Comparison Grid — verdict cards, PASS/FAIL, key metrics, binding-constraint headline.
+
+Deep Dive (per scenario) — horizon polar plot with Sun/Earth tracks, timeline of violation intervals, ranked causal list.
+
+Surgery Panel — sliders, flip-point readout, "snap to flip."
+
+Provenance & Report — data manifest, approximations, export button.
+
+9. MVP vs. Stretch Scope
+MVP (must ship for the demo)
+FR-1 (curated sites + custom coords)
+
+FR-2 (date picker + slider)
+
+FR-3 (Sun/Earth alt-az, libration noted)
+
+FR-4 (horizon profile + silhouette plot)
+
+FR-5 (verdict engine)
+
+FR-6 (causal attribution + plain-language sentence) ← the differentiator
+
+FR-7 (surgery sliders + flip point)
+
+FR-9 (provenance panel)
+
+FR-10 (plain-language toggle + guided demo)
+
+Stretch (only if time allows)
+FR-8.2 delta view between scenarios
+
+FR-8.3 PDF export
+
+FR-10.3 full guided demo scripting
+
+Animated Sun/Earth track over a lunar day
+
+Additional curated sites beyond eight
+
+Explicitly cut
+3D terrain rendering
+
+Relay/DSN link budgets
+
+Rover mobility
+
+Any LLM-generated explanation (templated text only)
+
+10. Acceptance Criteria (Demo-Day Checklist)
+□ Two scenarios load side by side with verdicts in under 5 s.
+□ At least one curated scenario is a documented FAIL with a named binding constraint and timestamped interval.
+□ Dragging the launch-date slider flips the verdict, and the flip point is displayed.
+□ The plain-language sentence updates live and is grammatically correct for all constraint types.
+□ Horizon silhouette visibly shows the Sun track crossing below terrain at the failure time.
+□ Provenance panel lists kernel, DEM product, resolutions, and approximations.
+□ No crashes on invalid coordinate entry or on a scenario with no terrain data.
+□ Guided demo mode runs end-to-end in under 90 seconds.
+11. Success Metrics (Hackathon Context)
+Metric	Target
+Time from page load to first explained verdict	<15 s
+Time to demonstrate a verdict flip in demo	<30 s
+Constraints correctly attributed in the three scripted demo scenarios	3/3
+Judge comprehension of the one-sentence pitch (informal)	Immediate, no follow-up question needed
+Reproducibility: same scenario re-run yields identical output	Yes, hash-verified
+12. Risks and Mitigations
+Risk	Likelihood	Mitigation
+LOLA DEM integration takes too long	Medium	Start with curated sites only; custom coordinates use nearest tile with lower horizon resolution; cut custom coords if needed
+Ephemeris frame errors produce wrong visibility	Medium	Validate against a published reference case (e.g., known Shackleton illumination pattern) before demo
+Slider re-evaluation too slow	Low–Medium	Precompute scenario grid; interpolate; cap sweep resolution
+Horizon silhouette unclear to judges	Medium	Design the polar plot early; overlay Sun/Earth tracks with color coding and a legend
+Demo scenario does not actually fail	High if unprepared	Choose demo scenario from precomputed grid after verifying the flip point exists; rehearse
+Perception of overlap with existing ARTEMIS submission	Medium	Lead with the causal/negotiation framing in pitch and UI copy; never claim superior ephemeris accuracy
+13. 48-Hour Build Plan (Suggested)
+Phase	Hours	Deliverable
+H0–H4	Setup	Repo, stack, DE421 kernel loaded, one site's Sun/Earth alt-az time series validated
+H4–H10	Science core	LOLA horizon profile pipeline for 3 sites; visibility flags; verdict engine
+H10–H16	Attribution	Ranked constraint engine + templated plain-language sentence; unit-test on 3 scenarios
+H16–H24	UI shell	Scenario builder, comparison grid, verdict cards
+H24–H32	Differentiator UI	Horizon polar plot, attribution panel, surgery sliders, flip point
+H32–H38	Polish	Provenance panel, plain-language toggle, guided demo mode, edge-case handling
+H38–H44	Rehearse	Script the 90-second demo; verify flip point; record backup video
+H44–H48	Submit	README, video, slides with one-sentence pitch, reproducibility hash demo
+14. One-Sentence Pitch (for slides, README, and verbal opening)
+When a lunar landing date slips, planners currently re-run separate tools by hand and compare raw outputs; SiteLight AI shows them which constraint broke, by how much, and the exact launch-date shift that fixes it — in one interactive screen.
+
+Would you like me to turn Section 5 into a build backlog (tickets with estimates), or draft the 90-second demo script and judge Q&A prep next?
+
+okie if one unique featufre if  we need to add what you will add ? that still yet resolved do deep reasearch let me know
+The user wants to know what unique feature they can add to their SiteLight AI hackathon project that is still unresolved, based on deep research. They already have a PRD with a "Binding Constraint Explainer" as the differentiator. They want to identify an additional unique, innovative feature that fills a gap not addressed by existing solutions. I need to search for relevant information.
+
+Found 64 web pages
+The search results show some relevant findings. The ARTEMIS Lunar Mission Browser (result 0) has features like real JPL DE421 ephemeris, terrain-masked horizons, Earth-visibility with libration, power sizing, DSN link budget, and PSR proximity. This means the user's "Binding Constraint Explainer" needs to be differentiated from this. The search results also show gaps: stochastic elevation mapping doesn't consider DEM confidence maps (result 3), illumination calculations often ignore shading effects (result 2), and there's a need for tools that can handle uncertainty and data limitations. Let me open some of these results to get more details.
+
+Read 4 pages
+Artemis III Site Selection Update: Downselection From Thirteen to Nine Candidate Regions
+ARTEMIS Lunar Mission Browser — Lunar Landing Site Navigator (NASA Space Apps Challenge 2026)
+A Stochastic Approach to Terrain Maps for Safe Lunar Landing
+A Method for Calculating Illumination at Different Heights of in the Lunar South Pole Region and Its Application in Site Selection - Skip to main content
+The search results reveal several gaps. ARTEMIS already has many features, so the user's differentiator needs to be something else. The stochastic elevation mapping paper (result 9) points out that DEM confidence maps are not considered in previous approaches. The illumination paper (result 10) notes that current calculations often ignore terrain shading. There's also a mention of "hyper datacube" and digital twin concepts. The user wants a unique feature that is still unresolved. Based on the search, a potential unique feature could be uncertainty-aware decision making—incorporating DEM confidence and other uncertainties into the site verdict. This would address the gap that ARTEMIS's "custody-chained verdicts" might not handle uncertainty propagation. Another possibility is multi-epoch robustness analysis—showing how a site's viability changes across different launch epochs and seasonal variations, which is relevant given the strong seasonal variability mentioned in the Artemis III site selection update. Let me search for more specific gaps and novel features.
+
+Found 46 web pages
+Read 1 page
+FLEXIBLE SYNTHETIC IMAGERY GENERATION FOR LUNAR MISSION PLANNING AND HAZARD MITIGATION. G.P. Parracino<sup>1</sup>, S.G. Labo<su...
+The search results indicate several gaps. The stochastic elevation mapping paper (result 9) explicitly states that no previous approaches have taken DEM confidence maps into account. This is a clear unresolved problem. The Artemis III site selection update emphasizes "robustness across mission epochs" and "reduced sensitivity to seasonal effects." This suggests that multi-epoch robustness is important. The user's PRD already includes a "Binding Constraint Explainer" and "scenario surgery," but perhaps a unique feature could be uncertainty-aware verdicts that incorporate DEM confidence and epistemic uncertainty into the feasibility assessment. Another possibility is seasonal robustness bands that show how a site's viability varies across the lunar seasonal cycle (which shifts ~2-3 weeks per year). This would address the gap that planners need to know not just if a site works for a specific date, but whether it is robust to seasonal timing uncertainties. Let me search for "lunar season calculator" to see existing tools.
+
+Found 22 web pages
+Based on the search results, a unique feature that is still unresolved is the integration of DEM confidence and epistemic uncertainty into the site verdict and causal attribution. The stochastic elevation mapping paper explicitly states that previous approaches have not taken DEM confidence maps into account, which is a gap. The LunarSite tool has epistemic uncertainty but is an ML pipeline, not an interactive planning tool like SiteLight. Therefore, the user could add an Uncertainty-Aware Verdict feature that propagates DEM confidence and modeling uncertainty into the feasibility assessment and causal explanations. Another possibility is a Seasonal Robustness Band that shows how a site's viability varies across the lunar seasonal cycle (which shifts 2-3 weeks per year) and across launch epochs, addressing the need for robustness highlighted in the Artemis III site selection update. The Lunar Season Calculator exists but has limited resolution and doesn't integrate with site-specific terrain. Let me check if there's any existing tool that combines seasonal analysis with terrain-aware illumination for site selection. The search didn't reveal one. Therefore, a feature that allows planners to see "seasonal robustness envelopes"—i.e., for a given site, what fraction of the lunar seasonal cycle (over multiple years) yields a PASS verdict, and how that changes with launch date—could be unique. However, the user's PRD already includes a launch-date slider that sweeps ±60 days, which is a short-term sensitivity. A seasonal robustness feature would extend this to the full seasonal cycle (potentially years), which is a different scale. The Artemis III update emphasizes "robustness across mission epochs" and "reduced sensitivity to seasonal effects." This is a key concern. Therefore, I propose that the unique feature should be "Epoch-Robustness Scoring" or "Seasonal Stability Envelope" that quantifies how stable a site's feasibility is across a range of launch epochs (years) and seasonal phases, incorporating uncertainty. This would address the gap that planners need to know not just if a site works now, but whether it remains viable given launch slips and seasonal shifts. Let me search for "epoch robustness lunar landing site" to see if this is addressed.
+
+Found 10 web pages
+The search for "epoch robustness" didn't reveal a dedicated tool for site selection that integrates seasonal robustness with terrain-aware illumination and uncertainty. This suggests a gap. The user's PRD already has a launch-date slider that sweeps ±60 days, but a seasonal robustness envelope would extend this to multiple years (e.g., 2027-2033) and show how the feasible launch window varies, incorporating uncertainty from DEM confidence and ephemeris. This would be a unique feature: "Multi-Year Robustness Envelope" or "Seasonal Stability Score" that quantifies the fraction of time (across a multi-year mission window) a site maintains feasibility, and identifies the binding constraints during marginal seasons. This directly addresses the Artemis III concern about "robustness across mission epochs" and "reduced sensitivity to seasonal effects." It also incorporates uncertainty quantification, which is a known gap. Therefore, I will recommend this feature: "Epoch-Robustness Envelope with Uncertainty Attribution." It extends the causal attribution from a single date to a multi-year seasonal cycle, showing planners not just if a site works for a specific launch date, but how robust that site is to launch slips across years, and which constraints (illumination, communication, thermal) are most sensitive to seasonal timing. This is still unresolved in existing tools (ARTEMIS focuses on specific dates; Lunar Season Calculator is coarse and not terrain-aware; LunarSite is ML-based but not interactive). The user can implement this by precomputing feasibility across a grid of launch epochs (e.g., monthly or weekly over 5-7 years) and then computing a robustness score (e.g., percentage of feasible epochs) and an uncertainty-aware confidence interval using DEM confidence propagation. The UI would show a "robustness band" or "feasibility calendar" that highlights stable windows and marginal periods. This is a strong candidate for a unique feature. I will now formulate the final answer, citing relevant sources.
+
+Based on the deep research, the unique feature that remains genuinely unresolved—and that would sharply differentiate SiteLight AI from the existing ARTEMIS submission—is not another map layer or a better ephemeris engine. It is an Epoch-Robustness Envelope with Uncertainty Attribution: a feature that tells a planner not just whether a site works on one date, but how robust that site’s feasibility is across the full multi-year seasonal cycle, and which specific constraint is most sensitive to seasonal timing or data uncertainty.
+
+This directly attacks the most acute, explicitly documented gap in lunar site selection: the need for robustness across mission epochs and reduced sensitivity to seasonal effects, under conditions where the available terrain data itself carries unresolved uncertainty.
+
+🎯 The Documented Gap This Feature Fills
+1. Seasonal variability is a first-order planning constraint, but tools treat it as a second-order detail. Artemis III site-selection analysis explicitly states that south polar illumination conditions exhibit “strong seasonal variability and shifting approximately 2–3 weeks per year,” and that regions demonstrating “robust illumination across mission windows and reduced sensitivity to timing uncertainties” were favored. A ±60-day launch-date slider (as in the current PRD) captures short-term slip, but it does not answer the planner’s real question when a launch slips by a year or more: “Is this site still viable in 2029, or does the seasonal drift push it into a marginal regime?” The Lunar Season Calculator provides coarse seasonal context, but it is an Excel-based tool with ±0.04° daily resolution and no terrain-aware site-specific feasibility integration. No interactive tool currently closes the loop between seasonal drift, site-specific terrain horizons, and a feasibility verdict.
+
+2. DEM uncertainty is an unresolved frontier that directly undermines verdict confidence. A 2025–2026 stochastic terrain-mapping paper states plainly: “no previous approaches to stochastic elevation mapping have taken LRO Digital Elevation Model (DEM) confidence maps into account,” despite this data containing key information about DEM quality in different areas. The same paper shows that terrain uncertainty can be propagated into downstream tasks such as hazard detection and safe landing site selection. In the SiteLight context, this means a verdict can be wrong not because the ephemeris is incorrect, but because the horizon profile was built from a low-confidence DEM tile. An epoch-robustness feature that ignores DEM confidence would simply produce a robust false answer.
+
+3. Existing competitors have not closed this gap. The ARTEMIS Lunar Mission Browser provides real ephemeris, terrain-masked horizons, libration, and SHA-256 custody-chained verdicts for specific scenario evaluations. Its architecture is oriented toward single-date verdict integrity, not toward multi-epoch seasonal robustness under uncertainty. SiteLight AI’s Binding Constraint Explainer already differentiates on causal transparency for a given date; the Epoch-Robustness Envelope differentiates on temporal and epistemic robustness across the decision space. Together, these two features form a coherent “decision audit” product that no public submission currently offers.
+
+⚙️ What the Feature Actually Does
+For any candidate site, the tool computes feasibility across a multi-year epoch grid (e.g., monthly or weekly launch opportunities from 2027 through 2033) rather than a single date. For each epoch, it runs the existing verdict engine (power-positive duration, Earth-visible duration, overlap) and records the binding constraint from the causal attribution engine. It then produces three outputs:
+
+Output	What the planner sees	Why it matters
+Robustness score	Percentage of epochs in the mission window that yield a PASS verdict, with an uncertainty band derived from DEM confidence propagation	Answers “how often does this site actually work?” rather than “does it work once?”
+Seasonal sensitivity map	A calendar heatmap showing which months or lunar seasonal phases are marginal, and which binding constraint dominates during those marginal windows	Reveals whether a site’s weakness is a narrow seasonal pocket or a persistent structural limitation
+Uncertainty attribution	A statement such as: “Site A passes in 82% of epochs; the 18% failure rate is driven primarily by Earth-occlusion during the 2029–2030 seasonal drift, and the confidence interval widens by ±11% because the western horizon profile rests on low-confidence DEM tiles”	Connects robustness directly to data quality and seasonal timing, making the verdict negotiable and honest
+This is not a computationally heavy addition if the architecture is precompute-first. The existing PRD already calls for a scenario grid; extending that grid from a ±60-day sweep to a multi-year epoch sweep is a data-generation decision, not a real-time compute burden. The uncertainty layer can be implemented by attaching a confidence weight to each horizon profile azimuth based on the DEM confidence map, and propagating that weight into the verdict as a feasibility interval rather than a binary flag.
+
+🏆 Why This Wins on the Hackathon Scorecard
+The 2026 judging criteria weight Impact at 30% and Creativity at 20%, with validity, relevance, and presentation making up the rest. The Epoch-Robustness Envelope scores strongly on both leading dimensions:
+
+Impact: It answers the replanning question that the challenge brief itself foregrounds: “When mission development rarely proceeds on a fixed timeline… engineers need to quickly evaluate alternative sites… or alternative dates… to understand how these changes impact mission feasibility.” A robustness envelope is the direct analytical answer to that stated pain point, extended across the timescale on which launch slips actually occur.
+
+Creativity: It reframes the tool from a date-comparison viewer into a temporal and epistemic robustness auditor. No public submission in this challenge space appears to combine multi-year seasonal epoch sweeps with DEM-confidence-aware feasibility intervals. It is a novel decision-support primitive, not an incremental cartographic refinement.
+
+The feature also strengthens the existing Binding Constraint Explainer rather than competing with it. The Explainer answers why a site fails on a chosen date; the Robustness Envelope answers whether that failure is a one-off seasonal artifact or a structural limitation, and how much confidence the planner should place in either conclusion. In the live demo, you can open with a site that passes on the nominal date, then show the robustness envelope revealing that it passes in only 40% of nearby epochs—and that the marginal epochs are driven by Earth-occlusion during a specific seasonal phase, with the confidence band widening where DEM quality is poor. That is a visceral, judge-memorable demonstration of decision-grade transparency that no static verdict card can match.
+
+⚠️ Execution Guardrails
+Do not attempt full probabilistic ray-tracing in 48 hours. Use the existing horizon profile and attach a per-azimuth confidence weight derived from the DEM confidence map. Propagate that weight as a feasibility interval, not a full stochastic simulation.
+
+Do not hide the uncertainty model. The provenance panel must state exactly how DEM confidence was translated into feasibility intervals, and the approximations must be visible. Judges in this domain are sensitized to explainability; a black-box “robustness score” would undermine the credibility the feature is meant to build.
+
+Scope the epoch grid deliberately. A monthly grid over 2027–2033 (84 epochs) is sufficient to reveal seasonal structure without exploding precomputation time. Weekly resolution can be a stretch goal if the pipeline is fast enough.
+
+In one sentence: The unresolved, winning feature is an Epoch-Robustness Envelope that turns SiteLight from a tool that explains a single date’s verdict into a tool that tells planners how stable that verdict is across the multi-year seasonal cycle, and how much of that stability is limited by the terrain data itself—a decision-audit capability that directly addresses the robustness and uncertainty gaps documented in the 2025–2026 lunar planning literature and absent from the existing ARTEMIS submission.

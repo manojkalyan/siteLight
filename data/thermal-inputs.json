@@ -1,0 +1,48 @@
+{
+  "schema": "sitelight-thermal-inputs-1",
+  "sourcePage": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm",
+  "records": [
+    {
+      "name": "pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+      "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.lbl",
+      "bytes": 3637,
+      "sha256": "17d9d1a8bac3963543aa59446d818253caa912b4dcf4edb4d9f45f51f1363538",
+      "retrievedDate": "2026-11-14"
+    },
+    {
+      "name": "pcp_avg_tbol_pols_sum_ltim01_240.xml",
+      "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.xml",
+      "bytes": 12210,
+      "sha256": "21d2ffad65c22e05c6878337d77b5217b3d9ce9431098a71bda8afdeef50c23a",
+      "retrievedDate": "2026-11-14"
+    },
+    {
+      "name": "pcp_avg_tbol_pols_sum_ltim01_240.tab",
+      "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim01_240.tab",
+      "bytes": 212653759,
+      "sha256": "414354cb2334b62161e895fe0f36369fdee77af13b0c5f333b86ddb05a0f618b",
+      "retrievedDate": "2026-11-14"
+    },
+    {
+      "name": "pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+      "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.lbl",
+      "bytes": 3639,
+      "sha256": "4523de3cc856cd1943d4d9e8f4e2f69f223c13be39a9d87453c7a7492227a718",
+      "retrievedDate": "2026-11-14"
+    },
+    {
+      "name": "pcp_avg_tbol_pols_sum_ltim49_240.xml",
+      "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.xml",
+      "bytes": 12211,
+      "sha256": "73e2a55db6743b5bbb5116fae9c51aa77a07743042b0284ea2bf8804fbbfd7b1",
+      "retrievedDate": "2026-11-14"
+    },
+    {
+      "name": "pcp_avg_tbol_pols_sum_ltim49_240.tab",
+      "url": "https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_pcp/diurnal/ltim/pols/pcp_avg_tbol_pols_sum_ltim49_240.tab",
+      "bytes": 197367449,
+      "sha256": "35348174fb3d973fe3d43fa7777cb4a10055361c6313675f35b181079bad5ca3",
+      "retrievedDate": "2026-11-14"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#071523"/>
+<title>SiteLight AI · CopperOS Integration Lab</title>
+<link rel="stylesheet" href="/static/styles.css"/>
+</head><body>
+<header class="top">
+  <a class="logo" href="/" aria-label="SiteLight AI Home"><span class="logomark">◈</span><span><strong>SITELIGHT <em>AI</em></strong><small>LUNAR MISSION LAB / COPPEROS INTEGRATION</small></span></a>
+  <nav><a class="nav-active" href="/">Evidence Lab</a><a href="/dashboard">3D Mission Dashboard ↗</a><a href="https://github.com/Jesse0502/CopperOS" target="_blank" rel="noopener noreferrer">CopperOS setup ↗</a></nav>
+  <div id="connectionBadge" class="status neutral"><span class="dot"></span> Checking broker…</div>
+</header>
+<main>
+<section class="hero">
+  <div class="eyebrow">READ-ONLY BROWSER AUTOMATION <span class="spark">✦</span> HUMAN-APPROVED EVIDENCE</div>
+  <h1>From mission updates to<br><span>actionable change analysis.</span></h1>
+  <p>Use CopperOS to inspect official mission sources. Review what it found. Then compare a changed landing time against the SiteLight AI mission screening engine.</p>
+  <div class="hero-badges"><span>01 / Collect</span><span>02 / Verify</span><span>03 / Analyze</span><span>04 / Explain</span></div>
+</section>
+<div class="disclaimer"><span>◉ DEMONSTRATION BOUNDARY</span> The lunar visibility CSV included here is <b>synthetic training data</b>, not NASA measurements. The CopperOS task uses real websites only if your local broker is running. No actual landing-safety claims are made.</div>
+<section class="grid-main">
+  <div class="leftstack">
+    <article class="panel">
+      <div class="ph"><div><span class="kicker">01 — INTEGRATION</span><h2>Connect CopperOS</h2></div><span class="icon">⌁</span></div>
+      <div class="body">
+        <div class="flex"><p class="hint">Local broker at <code>127.0.0.1:7332</code>. The API token stays in the Python backend, never in the browser.</p><button class="btn secondary small" id="checkBtn">Check</button></div>
+        <div id="brokerInfo" class="info">Checking connection…</div>
+        <div class="steps-mini"><span>Chrome extension</span><span>Local broker</span><span>Bearer token</span></div>
+        <a class="inline-link" href="https://github.com/Jesse0502/CopperOS#task-api" target="_blank" rel="noopener noreferrer">Official API documentation ↗</a>
+      </div>
+    </article>
+    <article class="panel">
+      <div class="ph"><div><span class="kicker">02 — EVIDENCE</span><h2>Research mission update</h2></div><span class="icon">◎</span></div>
+      <div class="body">
+        <label for="missionName">Mission name</label><input id="missionName" value="Example lunar mission" maxlength="120"/>
+        <label for="sourceUrl">Official mission webpage</label><input id="sourceUrl" type="url" value="https://www.nasa.gov/commercial-lunar-payload-services/" placeholder="https://www.nasa.gov/..."/>
+        <p class="hint">Reads only the supplied official page. CopperOS must not submit forms or change data.</p>
+        <button id="researchBtn" class="btn primary full">◉ Start read-only research</button>
+        <div id="researchStatus" class="resultnote" role="status">No research task started.</div>
+        <details><summary>See extracted text / task result</summary><pre id="researchRaw">Start a task to view the output. Exact dates may be unavailable.</pre></details>
+      </div>
+    </article>
+    <article class="panel">
+      <div class="ph"><div><span class="kicker">03 — HUMAN VERIFICATION</span><h2>Approve before applying</h2></div><span class="icon">◇</span></div>
+      <div class="body">
+        <label for="approvedUrl">Source URL you reviewed</label><input id="approvedUrl" type="url" value="https://www.nasa.gov/commercial-lunar-payload-services/"/>
+        <label for="approvedTime">Revised landing time (UTC, exact)</label><input id="approvedTime" type="text" placeholder="2027-03-12T10:00:00Z" value=""/>
+        <label for="evidenceExcerpt">Source excerpt / evidence note</label><textarea id="evidenceExcerpt" rows="3" placeholder="Quote or summarize the exact statement you checked on the official page."></textarea>
+        <label class="check"><input id="verifiedBox" type="checkbox"/> <span>I opened the original source and verified the date and time myself.</span></label>
+        <button id="approveBtn" class="btn secondary full">Approve source date for analysis</button>
+        <div id="approvalStatus" class="resultnote" role="status">You can review evidence manually even when CopperOS is offline. Do not invent a time when the source gives only a date.</div>
+      </div>
+    </article>
+  </div>
+  <div class="rightstack">
+    <article class="panel highlight">
+      <div class="ph"><div><span class="kicker">04 — DETERMINISTIC SCREENING</span><h2>Mission Change Analyzer</h2></div><span class="demo-tag">SYNTHETIC DATA</span></div>
+      <div class="body">
+        <div class="form-grid">
+          <div><label for="originalTime">Original landing time (UTC)</label><input id="originalTime" value="2027-03-10T10:00:00Z"/></div>
+          <div><label for="proposedTime">Proposed landing time (UTC)</label><input id="proposedTime" value="2027-03-12T10:00:00Z"/></div>
+          <div><label for="duration">Surface operating period</label><select id="duration"><option value="12">12 hours</option><option value="24" selected>24 hours</option><option value="48">48 hours</option><option value="72">72 hours</option></select></div>
+          <div class="pair"><div><label for="sunMin">Min sunlit fraction</label><select id="sunMin"><option value="0.5">50%</option><option value="0.65" selected>65%</option><option value="0.8">80%</option></select></div><div><label for="earthMin">Min Earth-visible</label><select id="earthMin"><option value="0.3">30%</option><option value="0.5" selected>50%</option><option value="0.7">70%</option></select></div></div>
+        </div>
+        <div class="controls"><button id="analyzeBtn" class="btn primary">Run scenario comparison</button><span id="dataInfo" class="micro">3 training sites · hourly data</span></div>
+        <div class="chart-title"><div><span class="kicker">MISSION BREAKPOINT VIEW</span><h3>Before / After landing shift</h3></div><span class="tiny-key"><i class="sun"></i> Sun <i class="earth"></i> Earth</span></div>
+        <div id="comparisonCards" class="comparison"><div class="empty">Run the comparison to generate calculated results.</div></div>
+        <div class="chart-title"><div><span class="kicker">SUGGESTED CORRECTIONS</span><h3>Nearby passing windows</h3></div></div>
+        <div id="alternatives" class="altbox"><p class="hint">Only synthetic sample alternatives will be shown. This is not a trajectory or launch-window optimizer.</p></div>
+        <div id="compareMessage" class="resultnote" role="status"></div>
+      </div>
+    </article>
+    <article class="panel horizon-panel">
+      <div class="ph"><div><span class="kicker">WORKFLOW INTEGRITY</span><h2>Why the layers stay separate</h2></div></div>
+      <div class="body workflow">
+        <div class="stage"><div class="stageicon">1</div><div><b>Web evidence</b><span>CopperOS sees websites; its text is untrusted until reviewed.</span></div></div>
+        <div class="stage"><div class="stageicon">2</div><div><b>Human confirmation</b><span>Approved dates are kept separate from unreviewed agent claims.</span></div></div>
+        <div class="stage"><div class="stageicon">3</div><div><b>Scientific inputs</b><span>Geometry and terrain belong in a verified numerical pipeline, never in browser-agent guesses.</span></div></div>
+        <div class="stage"><div class="stageicon">4</div><div><b>Mission comparison</b><span>Explicit constraints, reproducible outputs, uncertainty and alternatives.</span></div></div>
+      </div>
+    </article>
+  </div>
+</section>
+<footer>SiteLight AI research prototype · Source URLs preserved · Local-only connector · Not flight software · <a href="/dashboard">Open dark 3D prototype</a></footer>
+</main>
+<script src="/static/app.js" defer></script>
+</body></html>

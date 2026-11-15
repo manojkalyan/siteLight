@@ -1,0 +1,68 @@
+The user wants a deep research report on what additional features, capabilities, and physical constraints can be added to the SiteLight AI PRD for the 2026 NASA Space Apps Challenge "Lunar Landing Site Navigator". The existing tool covers 3D Sun/Earth visibility, temporal dynamics, lifecycle mass, gravity, and causal attribution. The search should explore lunar south pole mission planning, landing constraints, thermal environments, regolith hazards, dust, radiation, comms, power, rover traverse planning, and human factors to identify gaps and unique additions.
+
+Found 66 web pages
+The search results provide a wealth of information on additional constraints and features. I need to synthesize these into a comprehensive list of potential additions to the SiteLight AI PRD. The key areas identified are: thermal environment modeling, dust adhesion/electrostatic hazards, communication blackout/relay constraints, rover traverse planning, radiation shielding, gravity (already discussed), and rescue architecture (mentioned in a previous turn). I should also look at the specific challenges mentioned in the search results, such as the ARTEMIS Lunar Mission Browser which already includes real ephemeris, DSN link budgets, and PSR proximity. To provide a truly deep research answer, I need to open some of these results to get more details.
+
+Read 9 pages
+Includes site specific terrain (local slope, adjacent hills, craters, and horizon) Subsurface layer temperatures initialized (cy...
+The Harsh Environment of the Lunar South Pole - NASA
+Outputs from modeling efforts, including risk analysis and assessment of parameter sensitivity, can be used to inform trade stud...
+Integration of an Inter Asset Network and Ground Segment for Lunar Exploration - Description
+Lunar Surface Propagation - NASA
+View All
+The search results provide a comprehensive set of additional constraints and features. I will synthesize these into a structured response, covering thermal modeling, dust/electrostatic hazards, communication blackouts/relay constraints, rover traverse planning, radiation shielding, and other operational factors. I will also reference the ARTEMIS submission to highlight what is already being done. The response will be organized by constraint category, with explanations of why they matter and how they could be integrated into the tool.
+
+Beyond the core Sun/Earth visibility and the Life-Support/gravity models we've already discussed, deep research into recent lunar mission planning literature reveals several high-impact physical and operational constraints that remain unaddressed by standard site-selection tools.
+
+Integrating even a subset of these would push SiteLight AI from a visualization tool into a genuine mission-architecting engine.
+
+🌡️ 1. Site-Specific Thermal & Dust-Degraded Radiator Modeling
+Current tools often treat temperature as a simple global metric. However, thermal survival at the South Pole is highly site-specific and heavily degraded by dust.
+
+The Gap: Flat-ground thermal models fail to capture the extreme hot and cold environments created by local slopes, crater rims, and terrain occlusion. Furthermore, dust deposition on radiator surfaces significantly degrades their performance by increasing the sink temperature (reducing heat rejection capability), which can lead to higher daytime temperatures and longer nighttime survival durations.
+
+How to Add It: Introduce a "Thermal Penalty" metric. For each site, calculate a dust-degraded radiator efficiency based on regional regolith composition. This becomes a mass penalty (larger radiators required) that feeds directly into your LCSS model, proving that a site with "good" illumination might still fail because its dust environment requires prohibitively heavy thermal control systems.
+
+💨 2. Plume-Surface Interaction (PSI) & Ejecta Hazards
+When a lander touches down, its rocket plume blasts the surface, creating high-velocity ejecta and lofted dust that can damage the vehicle or nearby assets.
+
+The Gap: Landing site selection must account for the risk of "sand-blasted ejecta" and the time it takes for lofted dust to settle (which can be prolonged due to low gravity and electrostatics). This directly threatens EVA (Extravehicular Activity) operations and hardware.
+
+How to Add It: Add a "PSI Risk" layer. Using published models, flag sites with high probabilities of severe ejecta damage based on local regolith composition. This can generate a "EVA Safe Waiting Time" (e.g., "Wait 48 hours post-landing for dust to settle before first moonwalk").
+
+📡 3. Non-Line-of-Sight (NLOS) Comm Blackout & Relay Dependency
+At the South Pole, Earth sits extremely low on the horizon, and terrain obstructions can cause complete communication blackouts lasting nearly two weeks.
+
+The Gap: A simple line-of-sight check is insufficient. Radio frequency signals can reflect off rocky terrain, causing interference and data loss. For missions entering Permanently Shadowed Regions (PSRs), direct-to-Earth (DTE) links are completely precluded, requiring a surface communication network or orbital relay.
+
+How to Add It: Implement a "Comm Blackout / Relay Dependency" flag. If a site (or a rover traversing from it) experiences a DTE blackout greater than a critical threshold (e.g., 24 hours), the tool automatically flags that a relay asset (surface tower or orbiter) is mandatory, and adds the mass of that relay to the mission's LCSS budget.
+
+🚙 4. Rover Traverse & Reachability Envelopes
+A landing site is only as good as what you can reach from it. South Pole terrain features slopes up to 20 degrees, which risk tipping vehicles.
+
+The Gap: Path planning for polar rovers is severely affected by rugged terrain, low solar angles, and limited communication links. Traverses must simultaneously satisfy slope limits, battery levels, and communication availability.
+
+How to Add It: Add a "Reachability Envelope" overlay to the 3D map. Using a simplified traversal algorithm, calculate the maximum radius a rover can travel from the landing site and return safely, given its battery capacity, slope limits, and the requirement to maintain a comm link. This reveals if scientifically valuable PSRs are actually accessible.
+
+☢️ 5. Topographic Radiation Shielding
+Galactic Cosmic Rays (GCR) and Solar Energetic Particles (SEP) are constant threats. While regolith can be used for shielding (requiring several meters of thickness), the local topography itself provides natural shielding.
+
+The Gap: Recent studies show that dose differences of several tens of percent can occur at certain locations compared to a uniform flat model, due to the neutron shielding effects of surrounding terrain.
+
+How to Add It: Introduce a "Natural Radiation Shielding" score. Calculate how much of the sky is blocked by surrounding hills and crater walls. A site tucked at the base of a massive ridge may have a lower radiation dose than a flat plateau, offering a safer habitat location.
+
+🚨 6. The "Rescue Reachability" Constraint (The Unaddressed Safety Gap)
+NASA's Office of Inspector General has identified a fundamental flaw in the Artemis architecture: there is no pre-positioned rescue capability at the South Pole.
+
+The Gap: If a lander tips on rugged terrain, or a crew gets stranded, there is no backup vehicle. Current site-selection tools completely ignore this.
+
+How to Add It: Create a "Rescue Viability" factor. Factor in the distance to the nearest traversable ridge or communication node. A site that marginally improves sunlight but is entirely unreachable by a hypothetical rescue asset within a critical survival window should be rejected on safety grounds.
+
+💎 Summary: How to Pitch These Additions
+You do not need to build full physics simulators for these in 48 hours. You can implement them as screening-level heuristics (simple rules of thumb based on published data) and visualize them as additional layers or attribution sentences.
+
+When you present to the judges, you can say:
+
+"Most tools tell you if a site has sunlight. SiteLight AI tells you if the site is thermally survivable due to dust-degraded radiators, if the landing plume will destroy your rover, if you will face two-week communication blackouts, and if you can actually drive to the ice without tipping over."
+
+This level of systems-level depth—connecting individual environmental hazards to the overall mass and risk of the mission—is exactly what separates a winning hackathon project from a simple visualization.

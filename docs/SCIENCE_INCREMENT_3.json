@@ -1,0 +1,360 @@
+{
+  "recordedUtc": "2026-11-14T16:35:15.621Z",
+  "version": "dem-de421-4",
+  "scenarioUtc": "2027-01-13T00:00:00Z",
+  "requirements": {
+    "duration": 168,
+    "minSun": 0.4,
+    "minEarth": 0.3,
+    "minOverlap": 0.2,
+    "minElevation": 2,
+    "maxDark": null,
+    "maxEarth": null
+  },
+  "sites": [
+    {
+      "id": "real-shackleton",
+      "farFieldRaisesSectors": 306,
+      "crossProductCenterDeltaM": 0.8361985078884118,
+      "minHorizonDeg": 0.08924,
+      "maxHorizonDeg": 32.085805,
+      "fractions": {
+        "sun": 0,
+        "earth": 0,
+        "overlap": 0
+      },
+      "status": "fail",
+      "sensitivity": {
+        "status": "available",
+        "knownHours": 167.99999999999918,
+        "fractions": {
+          "sun": {
+            "lower": 0,
+            "upper": 0
+          },
+          "earth": {
+            "lower": 0,
+            "upper": 0
+          },
+          "overlap": {
+            "lower": 0,
+            "upper": 0
+          }
+        },
+        "method": "Componentwise one-source-RMS terrain/observer height perturbations; geometric and minimum-elevation rules unchanged",
+        "interpretation": "Sensitivity scenarios, not confidence bounds or guaranteed availability; spatial covariance, unresolved terrain and orientation errors remain outside this calculation",
+        "changesVerdict": false
+      },
+      "diagnosticIntervals": 3,
+      "thermal": [
+        {
+          "localTimeHours": [
+            0,
+            0.25
+          ],
+          "status": "observed_context",
+          "kelvin": 89.213486,
+          "distanceM": 54.84139596244788
+        },
+        {
+          "localTimeHours": [
+            12,
+            12.25
+          ],
+          "status": "observed_context",
+          "kelvin": 90.156509,
+          "distanceM": 54.84139596244788
+        }
+      ]
+    },
+    {
+      "id": "real-connector",
+      "farFieldRaisesSectors": 169,
+      "crossProductCenterDeltaM": -1.7858420611669317,
+      "minHorizonDeg": -3.246662,
+      "maxHorizonDeg": 2.295218,
+      "fractions": {
+        "sun": 0,
+        "earth": 0.9999999999999951,
+        "overlap": 0
+      },
+      "status": "fail",
+      "sensitivity": {
+        "status": "available",
+        "knownHours": 167.99999999999918,
+        "fractions": {
+          "sun": {
+            "lower": 0,
+            "upper": 0
+          },
+          "earth": {
+            "lower": 0.9999999999999951,
+            "upper": 0.9999999999999951
+          },
+          "overlap": {
+            "lower": 0,
+            "upper": 0
+          }
+        },
+        "method": "Componentwise one-source-RMS terrain/observer height perturbations; geometric and minimum-elevation rules unchanged",
+        "interpretation": "Sensitivity scenarios, not confidence bounds or guaranteed availability; spatial covariance, unresolved terrain and orientation errors remain outside this calculation",
+        "changesVerdict": false
+      },
+      "diagnosticIntervals": 2,
+      "thermal": [
+        {
+          "localTimeHours": [
+            0,
+            0.25
+          ],
+          "status": "observed_context",
+          "kelvin": 140.792358,
+          "distanceM": 43.67514766945815
+        },
+        {
+          "localTimeHours": [
+            12,
+            12.25
+          ],
+          "status": "no_matching_bin",
+          "kelvin": null,
+          "distanceM": null
+        }
+      ]
+    },
+    {
+      "id": "real-gerlache",
+      "farFieldRaisesSectors": 361,
+      "crossProductCenterDeltaM": -0.17638552170728872,
+      "minHorizonDeg": -3.002432,
+      "maxHorizonDeg": 3.147165,
+      "fractions": {
+        "sun": 0,
+        "earth": 0.9999999999999951,
+        "overlap": 0
+      },
+      "status": "fail",
+      "sensitivity": {
+        "status": "available",
+        "knownHours": 167.99999999999918,
+        "fractions": {
+          "sun": {
+            "lower": 0,
+            "upper": 0
+          },
+          "earth": {
+            "lower": 0.9999999999999951,
+            "upper": 0.9999999999999951
+          },
+          "overlap": {
+            "lower": 0,
+            "upper": 0
+          }
+        },
+        "method": "Componentwise one-source-RMS terrain/observer height perturbations; geometric and minimum-elevation rules unchanged",
+        "interpretation": "Sensitivity scenarios, not confidence bounds or guaranteed availability; spatial covariance, unresolved terrain and orientation errors remain outside this calculation",
+        "changesVerdict": false
+      },
+      "diagnosticIntervals": 1,
+      "thermal": [
+        {
+          "localTimeHours": [
+            0,
+            0.25
+          ],
+          "status": "observed_context",
+          "kelvin": 169.894806,
+          "distanceM": 119.4430828912086
+        },
+        {
+          "localTimeHours": [
+            12,
+            12.25
+          ],
+          "status": "no_matching_bin",
+          "kelvin": null,
+          "distanceM": null
+        }
+      ]
+    },
+    {
+      "id": "real-nobile",
+      "farFieldRaisesSectors": 174,
+      "crossProductCenterDeltaM": -1.2603464126586914,
+      "minHorizonDeg": -5.690492,
+      "maxHorizonDeg": 12.904565,
+      "fractions": {
+        "sun": 0.7311507936508014,
+        "earth": 0.9999999999999951,
+        "overlap": 0.7311507936508014
+      },
+      "status": "uncertain",
+      "sensitivity": {
+        "status": "available",
+        "knownHours": 167.99999999999918,
+        "fractions": {
+          "sun": {
+            "lower": 0.7311507936508014,
+            "upper": 0.7311507936508014
+          },
+          "earth": {
+            "lower": 0.9999999999999951,
+            "upper": 0.9999999999999951
+          },
+          "overlap": {
+            "lower": 0.7311507936508014,
+            "upper": 0.7311507936508014
+          }
+        },
+        "method": "Componentwise one-source-RMS terrain/observer height perturbations; geometric and minimum-elevation rules unchanged",
+        "interpretation": "Sensitivity scenarios, not confidence bounds or guaranteed availability; spatial covariance, unresolved terrain and orientation errors remain outside this calculation",
+        "changesVerdict": false
+      },
+      "diagnosticIntervals": 0,
+      "thermal": [
+        {
+          "localTimeHours": [
+            0,
+            0.25
+          ],
+          "status": "observed_context",
+          "kelvin": 79.99942,
+          "distanceM": 62.40387526188559
+        },
+        {
+          "localTimeHours": [
+            12,
+            12.25
+          ],
+          "status": "observed_context",
+          "kelvin": 110.666458,
+          "distanceM": 62.40387526188559
+        }
+      ]
+    },
+    {
+      "id": "real-peak",
+      "farFieldRaisesSectors": 240,
+      "crossProductCenterDeltaM": -0.43389701826799865,
+      "minHorizonDeg": -3.253083,
+      "maxHorizonDeg": 1.015122,
+      "fractions": {
+        "sun": 0,
+        "earth": 0.9999999999999951,
+        "overlap": 0
+      },
+      "status": "fail",
+      "sensitivity": {
+        "status": "available",
+        "knownHours": 167.99999999999918,
+        "fractions": {
+          "sun": {
+            "lower": 0,
+            "upper": 0
+          },
+          "earth": {
+            "lower": 0.9999999999999951,
+            "upper": 0.9999999999999951
+          },
+          "overlap": {
+            "lower": 0,
+            "upper": 0
+          }
+        },
+        "method": "Componentwise one-source-RMS terrain/observer height perturbations; geometric and minimum-elevation rules unchanged",
+        "interpretation": "Sensitivity scenarios, not confidence bounds or guaranteed availability; spatial covariance, unresolved terrain and orientation errors remain outside this calculation",
+        "changesVerdict": false
+      },
+      "diagnosticIntervals": 1,
+      "thermal": [
+        {
+          "localTimeHours": [
+            0,
+            0.25
+          ],
+          "status": "no_matching_bin",
+          "kelvin": null,
+          "distanceM": null
+        },
+        {
+          "localTimeHours": [
+            12,
+            12.25
+          ],
+          "status": "observed_context",
+          "kelvin": 155.072479,
+          "distanceM": 79.7564662040496
+        }
+      ]
+    },
+    {
+      "id": "real-malapert",
+      "farFieldRaisesSectors": 37,
+      "crossProductCenterDeltaM": 1.0093674659619865,
+      "minHorizonDeg": -4.391116,
+      "maxHorizonDeg": 5.313257,
+      "fractions": {
+        "sun": 0,
+        "earth": 0.9999999999999951,
+        "overlap": 0
+      },
+      "status": "fail",
+      "sensitivity": {
+        "status": "available",
+        "knownHours": 167.99999999999918,
+        "fractions": {
+          "sun": {
+            "lower": 0,
+            "upper": 0
+          },
+          "earth": {
+            "lower": 0.9999999999999951,
+            "upper": 0.9999999999999951
+          },
+          "overlap": {
+            "lower": 0,
+            "upper": 0
+          }
+        },
+        "method": "Componentwise one-source-RMS terrain/observer height perturbations; geometric and minimum-elevation rules unchanged",
+        "interpretation": "Sensitivity scenarios, not confidence bounds or guaranteed availability; spatial covariance, unresolved terrain and orientation errors remain outside this calculation",
+        "changesVerdict": false
+      },
+      "diagnosticIntervals": 1,
+      "thermal": [
+        {
+          "localTimeHours": [
+            0,
+            0.25
+          ],
+          "status": "observed_context",
+          "kelvin": 149.865784,
+          "distanceM": 43.214220531232534
+        },
+        {
+          "localTimeHours": [
+            12,
+            12.25
+          ],
+          "status": "no_matching_bin",
+          "kelvin": null,
+          "distanceM": null
+        }
+      ]
+    }
+  ],
+  "orientation": {
+    "passed": true,
+    "sites": [
+      "real-shackleton",
+      "real-gerlache",
+      "real-nobile"
+    ],
+    "maxAngularErrorDeg": 0.000008506578394573694
+  },
+  "limitations": [
+    "125 km is a bounded sampled horizon, not a global completeness proof",
+    "One-RMS sensitivity scenarios are not confidence bounds",
+    "Diviner bins are historical southern-summer observations, not mission forecasts"
+  ]
+}

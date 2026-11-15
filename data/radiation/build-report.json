@@ -1,0 +1,101 @@
+{
+  "schema": "sitelight-radiation-preparation-1",
+  "status": "source_contracts_verified",
+  "bundleSha256": "344b22278d78a7eb7acbd167adc6fdb7e63a8618fb66894b8167c67d64fd8af9",
+  "preparerSha256": "b4c3f55910e10cf7ec62c187c509710d2e307006f1364135f9d9151ba88e493f",
+  "craterRecords": 1285,
+  "craterStart": "2009-06-26",
+  "craterEnd": "2012-12-31",
+  "nistRows": {
+    "aluminum": 132,
+    "polyethylene": 132,
+    "water": 132
+  },
+  "sources": [
+    {
+      "name": "crater-daily-dose.html",
+      "url": "https://crater-products.sr.unh.edu/data/inst/dose/table_l30drate.php",
+      "canonicalization": "none",
+      "bytes": 327142,
+      "sha256": "8245e5c592aa5d6b1f7f9286324d84a4b861ffdbcbffd0098b92c78d5208e3ec"
+    },
+    {
+      "name": "pstar-aluminum.txt",
+      "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+      "method": "POST",
+      "body": {
+        "prog": "PSTAR",
+        "matno": "013",
+        "Energies": "",
+        "ShowDefault": "on"
+      },
+      "canonicalization": "pstar-pre-v1",
+      "bytes": 10359,
+      "sha256": "88c05b209545e34fae04e53e0c59b7d2ad07ff0d48d196faa679c96bc264dda0"
+    },
+    {
+      "name": "pstar-aluminum-composition.txt",
+      "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text013",
+      "canonicalization": "nist-composition-v1",
+      "bytes": 168,
+      "sha256": "73fe0f4618597fff276dcd0c4fada1448a8cbc72c979cbd1a9be39d50aa24787"
+    },
+    {
+      "name": "pstar-polyethylene.txt",
+      "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+      "method": "POST",
+      "body": {
+        "prog": "PSTAR",
+        "matno": "221",
+        "Energies": "",
+        "ShowDefault": "on"
+      },
+      "canonicalization": "pstar-pre-v1",
+      "bytes": 10359,
+      "sha256": "8efbbd2764c056ad5a3a773a2877363552a68024d7094d76c3a6e8aad93ecaad"
+    },
+    {
+      "name": "pstar-polyethylene-composition.txt",
+      "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text221",
+      "canonicalization": "nist-composition-v1",
+      "bytes": 181,
+      "sha256": "f66d9da8b7e0a0d9fd793b7300f806eabc618bdaaf67f4a8d43802449ddbb98c"
+    },
+    {
+      "name": "pstar-water.txt",
+      "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+      "method": "POST",
+      "body": {
+        "prog": "PSTAR",
+        "matno": "276",
+        "Energies": "",
+        "ShowDefault": "on"
+      },
+      "canonicalization": "pstar-pre-v1",
+      "bytes": 10359,
+      "sha256": "83a422df932f5a4f144eaa52e4a4011d654a473cb3ffd2e63dbb60117b40e08e"
+    },
+    {
+      "name": "pstar-water-composition.txt",
+      "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text276",
+      "canonicalization": "nist-composition-v1",
+      "bytes": 182,
+      "sha256": "e2f827c72daaa5ae8ec10012a24c9a6acfcd3cb89cc08fa0bac985249bd4c2f4"
+    },
+    {
+      "name": "pstar-help.txt",
+      "url": "https://physics.nist.gov/PhysRefData/Star/Text/programs.html",
+      "canonicalization": "body-text-v1",
+      "bytes": 8274,
+      "sha256": "87b961e30462a630228591d8bf0f0e544515aa447e9b9e39f638c77fa1095c58"
+    },
+    {
+      "name": "pstar-appendix.txt",
+      "url": "https://physics.nist.gov/PhysRefData/Star/Text/appendix.html",
+      "canonicalization": "body-text-v1",
+      "bytes": 2268,
+      "sha256": "e8e50d58a46970e1fa281efeddffb7ac36403f72d60f4c2efb71defb073cc012"
+    }
+  ],
+  "meaning": "Source/units/preparation checks only; no full space-radiation transport or health acceptance."
+}

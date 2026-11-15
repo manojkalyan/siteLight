@@ -1,0 +1,217 @@
+{
+  "schema": "sitelight-nasa-reference-study-1",
+  "source": {
+    "name": "nasa-reference-2020.pdf",
+    "url": "https://ntrs.nasa.gov/api/citations/20205007966/downloads/PolarWaterISRUstudy_Kleinhenz_final.pdf",
+    "bytes": 779067,
+    "sha256": "bb79b56bda38ae0fb2fa24167932be25ea81fe3487c7fe30d7d824648a3c1ac7",
+    "title": "Kleinhenz and Paz (2020), Case Studies for Lunar ISRU Systems Utilizing Polar Water"
+  },
+  "values": [
+    {
+      "key": "mixtureRatio",
+      "label": "Oxygen/hydrogen propellant mass ratio",
+      "value": 6,
+      "unit": "kg/kg",
+      "pdfPage": 3,
+      "pattern": "Mixture ratio \\(O/F\\)\\s+([0-9.]+)"
+    },
+    {
+      "key": "productionDays",
+      "label": "Total production period",
+      "value": 225,
+      "unit": "days",
+      "pdfPage": 3,
+      "pattern": "Total production time\\s+([0-9.]+)\\s+days"
+    },
+    {
+      "key": "commissioningHours",
+      "label": "Commissioning allowance",
+      "value": 48,
+      "unit": "h",
+      "pdfPage": 3,
+      "pattern": "Commissioning time\\s+([0-9.]+)\\s+hr"
+    },
+    {
+      "key": "extractionEfficiency",
+      "label": "Combined extraction/capture yield",
+      "value": 75,
+      "unit": "percent",
+      "pdfPage": 3,
+      "pattern": "Extraction Efficiency\\s+([0-9.]+)%"
+    },
+    {
+      "key": "batteryDischarge",
+      "label": "Maximum battery discharge",
+      "value": 80,
+      "unit": "percent",
+      "pdfPage": 3,
+      "pattern": "Maximum battery discharge\\s+([0-9.]+)%"
+    },
+    {
+      "key": "batteryWhKg",
+      "label": "Battery energy density",
+      "value": 140,
+      "unit": "Wh/kg",
+      "pdfPage": 3,
+      "pattern": "Battery Energy density\\s+([0-9.]+)\\s+Whr/kg"
+    },
+    {
+      "key": "regolithDensity",
+      "label": "Regolith bulk density",
+      "value": 1.3,
+      "unit": "g/cm3",
+      "pdfPage": 3,
+      "pattern": "Regolith density\\s+([0-9.]+)\\s+g/cc"
+    },
+    {
+      "key": "waterWtPercent",
+      "label": "Assumed mined water concentration",
+      "value": 5,
+      "unit": "wt percent",
+      "pdfPage": 9,
+      "pattern": "Water concentration\\s+([0-9.]+)%"
+    },
+    {
+      "key": "requiredOxygenT",
+      "label": "Oxygen propellant target",
+      "value": 10,
+      "unit": "tonnes",
+      "pdfPage": 9,
+      "pattern": "Production requirement\\s+([0-9.]+)\\s+mT"
+    },
+    {
+      "key": "producedOxygenT",
+      "label": "Reported oxygen production",
+      "value": 13,
+      "unit": "tonnes",
+      "pdfPage": 9,
+      "pattern": "Actual production\\s+([0-9.]+)\\s+mT"
+    },
+    {
+      "key": "producedHydrogenT",
+      "label": "Reported hydrogen production",
+      "value": 1.7,
+      "unit": "tonnes",
+      "pdfPage": 9,
+      "pattern": "Actual production\\s+[0-9.]+\\s+mT O2,\\s+([0-9.]+)\\s+mT H2"
+    },
+    {
+      "key": "waterT",
+      "label": "Reported water requirement",
+      "value": 15,
+      "unit": "tonnes",
+      "pdfPage": 9,
+      "pattern": "Water required\\s+([0-9.]+)\\s+mT"
+    },
+    {
+      "key": "regolithT",
+      "label": "Reported mined regolith",
+      "value": 398,
+      "unit": "tonnes",
+      "pdfPage": 9,
+      "pattern": "\\(75% extraction efficiency\\)\\s+([0-9.]+)\\s+mT"
+    },
+    {
+      "key": "mineWidthM",
+      "label": "Reported mine width",
+      "value": 32,
+      "unit": "m",
+      "pdfPage": 9,
+      "pattern": "Mine size at 30cm depth\\s+([0-9.]+)m x"
+    },
+    {
+      "key": "transportDays",
+      "label": "Collection period before water transport",
+      "value": 10,
+      "unit": "days",
+      "pdfPage": 9,
+      "pattern": "Time before water\\s+transport\\s+([0-9.]+)\\s+days"
+    },
+    {
+      "key": "totalMassT",
+      "label": "Reported hardware subtotal",
+      "value": 4.9,
+      "unit": "tonnes",
+      "pdfPage": 10,
+      "pattern": "Total Mass\\s+([0-9.]+)\\s+tons"
+    },
+    {
+      "key": "ridgeMassT",
+      "label": "Reported ridge hardware",
+      "value": 2.6,
+      "unit": "tonnes",
+      "pdfPage": 10,
+      "pattern": "Ridge System\\s+([0-9.]+)\\s+tons"
+    },
+    {
+      "key": "mineMassT",
+      "label": "Reported mine hardware",
+      "value": 0.49,
+      "unit": "tonnes",
+      "pdfPage": 10,
+      "pattern": "Mine system\\s+([0-9.]+)\\s+ton"
+    },
+    {
+      "key": "tankersMassT",
+      "label": "Reported two water tankers",
+      "value": 1.8,
+      "unit": "tonnes",
+      "pdfPage": 10,
+      "pattern": "2 water Tankers\\s+([0-9.]+)\\s+ton"
+    },
+    {
+      "key": "totalPowerKw",
+      "label": "Reported total power demand",
+      "value": 68,
+      "unit": "kW",
+      "pdfPage": 10,
+      "pattern": "Total power\\s+([0-9.]+)\\s+kW"
+    },
+    {
+      "key": "ridgePowerKw",
+      "label": "Reported ridge power",
+      "value": 46,
+      "unit": "kW",
+      "pdfPage": 10,
+      "pattern": "Ridge Power\\s+([0-9.]+)\\s+kW"
+    },
+    {
+      "key": "minePowerKw",
+      "label": "Reported mine power",
+      "value": 22,
+      "unit": "kW",
+      "pdfPage": 10,
+      "pattern": "Mine Power\\s+([0-9.]+)\\s+kW"
+    },
+    {
+      "key": "mineDepthCm",
+      "label": "Baseline mine depth",
+      "value": 30,
+      "unit": "cm",
+      "pdfPage": 9,
+      "pattern": "The baseline mine depth is\\s+([0-9.]+)\\s+cm"
+    }
+  ],
+  "roundingHalfWidths": {
+    "totalMassT": 0.05,
+    "ridgeMassT": 0.05,
+    "mineMassT": 0.005,
+    "tankersMassT": 0.05,
+    "waterT": 0.5,
+    "regolithT": 0.5,
+    "producedOxygenT": 0.5,
+    "producedHydrogenT": 0.05,
+    "mineWidthM": 0.5
+  },
+  "boundary": "Two-site water mining/transport and liquefied propellant production reference study; margins are already included in published totals.",
+  "exclusions": [
+    "Surface power generation and transmission",
+    "Additional communications/autonomy equipment",
+    "Water cleanup is not explicitly included",
+    "Delivery of propellant to its user",
+    "Complete four-crew/730-day life-support architecture"
+  ],
+  "siteResourceStatus": "Published 5 wt percent is an assumed reference deposit; not a measurement at the selected study point",
+  "acceptedForMissionVerdict": false
+}

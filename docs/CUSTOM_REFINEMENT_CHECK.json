@@ -1,0 +1,25 @@
+{
+  "pointStatus": 200,
+  "dateStatus": 200,
+  "version": "dem-de421-4",
+  "azimuths": 720,
+  "step": 0.5,
+  "radialBands": [
+    {
+      "startM": 2.5,
+      "endM": 7000,
+      "stepM": 2.5,
+      "pixelSpacingM": 5
+    },
+    {
+      "startM": 7000,
+      "endM": 125000,
+      "stepM": 40,
+      "pixelSpacingM": 80
+    }
+  ],
+  "registeredStatus": "fail",
+  "futureRows": 145,
+  "futureFrame": "MOON_ME",
+  "futureCorrection": "NONE"
+}

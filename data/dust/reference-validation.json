@@ -1,0 +1,31 @@
+{
+  "schema": "sitelight-dust-transcription-1",
+  "materialSpecSha256": "41510cb7aa8a452d697ac65aad86273255c3b43d9c880ac3b253bfcea49ce5a5",
+  "meaning": "Three laboratory material rows (six numeric properties); not validation of a dusty radiator or lunar site.",
+  "checks": [
+    {
+      "material": "jsc1a",
+      "alpha": 0.75,
+      "epsilon": 0.83,
+      "pdfPage": 10,
+      "sourceSha256": "02979ab8b6cdcd804fe0532e764f71861b2c5020afdd5cb0cc792e6875d85abe",
+      "status": "verified_transcription"
+    },
+    {
+      "material": "nulht2m",
+      "alpha": 0.45,
+      "epsilon": 0.78,
+      "pdfPage": 10,
+      "sourceSha256": "02979ab8b6cdcd804fe0532e764f71861b2c5020afdd5cb0cc792e6875d85abe",
+      "status": "verified_transcription"
+    },
+    {
+      "material": "ob1",
+      "alpha": 0.73,
+      "epsilon": 0.92,
+      "pdfPage": 10,
+      "sourceSha256": "02979ab8b6cdcd804fe0532e764f71861b2c5020afdd5cb0cc792e6875d85abe",
+      "status": "verified_transcription"
+    }
+  ]
+}

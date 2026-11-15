@@ -1,0 +1,1060 @@
+{
+  "schema": "sitelight-ejecta-validation-1",
+  "meaning": "Conditional ideal-sphere trajectories using pinned constants and hypothetical release/assets; not real plume or asset validation.",
+  "cases": [
+    {
+      "name": "Default hypothetical release and assets",
+      "result": {
+        "model": "conditional-spherical-ejecta-1",
+        "status": "exploratory",
+        "acceptedForVerdict": false,
+        "classification": "HYPOTHETICAL POST-ACCELERATION EJECTA",
+        "context": null,
+        "assumptions": {
+          "enabled": true,
+          "speedMps": 100,
+          "elevationDeg": 5,
+          "headingDeg": 0,
+          "launchHeightM": 0.1,
+          "diameterUm": 100,
+          "densityKgM3": 3000,
+          "assets": [
+            {
+              "id": "asset-1",
+              "name": "Hypothetical habitat",
+              "enabled": true,
+              "distanceM": 1000,
+              "bearingDeg": 0,
+              "widthM": 10,
+              "heightM": 5
+            },
+            {
+              "id": "asset-2",
+              "name": "Hypothetical solar array",
+              "enabled": true,
+              "distanceM": 500,
+              "bearingDeg": 90,
+              "widthM": 20,
+              "heightM": 3
+            }
+          ]
+        },
+        "constants": {
+          "radiusM": 1737400,
+          "gmM3S2": 4902800000000,
+          "source": "https://ssd.jpl.nasa.gov/sats/phys_par/sep.html",
+          "sourceValidation": {
+            "schema": "sitelight-ejecta-transcription-1",
+            "constantsSpecSha256": "f7a3fc7dde5b01a08f26abe2f14965530b58667d0a59139838943605305cb664",
+            "sourceSha256": "b2d4be08fba8b2b71956f3f2b3ec462f7b61d94ed8c268320fcd812e96b95e9d",
+            "gmKm3S2": 4902.8,
+            "meanRadiusKm": 1737.4,
+            "status": "verified_transcription",
+            "meaning": "Two published constants and three reference checksums verified; no erosion, launch distribution or asset damage calibration."
+          }
+        },
+        "sources": [
+          {
+            "name": "lunar-ejecta-ballistics-2010.pdf",
+            "url": "https://ntrs.nasa.gov/api/citations/20100031187/downloads/20100031187.pdf",
+            "bytes": 5970794,
+            "sha256": "b3de33a006e0ea2b4f50cbadc70555c2225619a0bfd8067a39de73ddd28d49ff"
+          },
+          {
+            "name": "spherical-ballistics-2014.pdf",
+            "url": "https://ntrs.nasa.gov/api/citations/20140017853/downloads/20140017853.pdf",
+            "bytes": 1266547,
+            "sha256": "58c6f392609b2eb6205a53634cefda46aba411333c4e8dee1c03730ebd39b9fc"
+          },
+          {
+            "name": "jpl-satellite-parameters.html",
+            "url": "https://ssd.jpl.nasa.gov/sats/phys_par/sep.html",
+            "bytes": 85633,
+            "sha256": "b2d4be08fba8b2b71956f3f2b3ec462f7b61d94ed8c268320fcd812e96b95e9d"
+          }
+        ],
+        "engineErosion": "not_evaluated",
+        "terrainApplied": false,
+        "particleDistribution": "not_evaluated",
+        "damage": "not_evaluated",
+        "trajectory": {
+          "model": "central-gravity-vacuum-conic",
+          "rangeM": 1074.0330425600662,
+          "flightSeconds": 10.781551319651877,
+          "maxHeightM": 23.56677394085353,
+          "landingSpeedMps": 100.00162420555377,
+          "samples": [
+            {
+              "distanceM": 0,
+              "heightM": 0.1
+            },
+            {
+              "distanceM": 10.740330425600662,
+              "heightM": 1.0302511351320687
+            },
+            {
+              "distanceM": 21.480660851201325,
+              "heightM": 1.9416900827237236
+            },
+            {
+              "distanceM": 32.22099127680199,
+              "heightM": 2.8343167835254155
+            },
+            {
+              "distanceM": 42.96132170240265,
+              "heightM": 3.7081311795104264
+            },
+            {
+              "distanceM": 53.70165212800331,
+              "heightM": 4.563133213874875
+            },
+            {
+              "distanceM": 64.44198255360398,
+              "heightM": 5.3993228310377335
+            },
+            {
+              "distanceM": 75.18231297920462,
+              "heightM": 6.216699976640824
+            },
+            {
+              "distanceM": 85.9226434048053,
+              "heightM": 7.015264597548843
+            },
+            {
+              "distanceM": 96.66297383040596,
+              "heightM": 7.795016641849358
+            },
+            {
+              "distanceM": 107.40330425600662,
+              "heightM": 8.555956058852816
+            },
+            {
+              "distanceM": 118.14363468160727,
+              "heightM": 9.298082799092562
+            },
+            {
+              "distanceM": 128.88396510720796,
+              "heightM": 10.021396814324842
+            },
+            {
+              "distanceM": 139.62429553280862,
+              "heightM": 10.725898057528802
+            },
+            {
+              "distanceM": 150.36462595840925,
+              "heightM": 11.411586482906504
+            },
+            {
+              "distanceM": 161.1049563840099,
+              "heightM": 12.078462045882945
+            },
+            {
+              "distanceM": 171.8452868096106,
+              "heightM": 12.726524703106035
+            },
+            {
+              "distanceM": 182.58561723521126,
+              "heightM": 13.355774412446628
+            },
+            {
+              "distanceM": 193.32594766081192,
+              "heightM": 13.966211132998529
+            },
+            {
+              "distanceM": 204.06627808641255,
+              "heightM": 14.55783482507848
+            },
+            {
+              "distanceM": 214.80660851201324,
+              "heightM": 15.130645450226185
+            },
+            {
+              "distanceM": 225.5469389376139,
+              "heightM": 15.684642971204324
+            },
+            {
+              "distanceM": 236.28726936321453,
+              "heightM": 16.219827351998518
+            },
+            {
+              "distanceM": 247.0275997888152,
+              "heightM": 16.736198557817396
+            },
+            {
+              "distanceM": 257.7679302144159,
+              "heightM": 17.23375655509254
+            },
+            {
+              "distanceM": 268.50826064001654,
+              "heightM": 17.712501311478537
+            },
+            {
+              "distanceM": 279.24859106561723,
+              "heightM": 18.17243279585294
+            },
+            {
+              "distanceM": 289.98892149121787,
+              "heightM": 18.613550978316354
+            },
+            {
+              "distanceM": 300.7292519168185,
+              "heightM": 19.035855830192297
+            },
+            {
+              "distanceM": 311.4695823424192,
+              "heightM": 19.439347324027384
+            },
+            {
+              "distanceM": 322.2099127680198,
+              "heightM": 19.824025433591178
+            },
+            {
+              "distanceM": 332.9502431936205,
+              "heightM": 20.18989013387629
+            },
+            {
+              "distanceM": 343.6905736192212,
+              "heightM": 20.536941401098332
+            },
+            {
+              "distanceM": 354.43090404482183,
+              "heightM": 20.86517921269595
+            },
+            {
+              "distanceM": 365.1712344704225,
+              "heightM": 21.174603547330808
+            },
+            {
+              "distanceM": 375.91156489602315,
+              "heightM": 21.465214384887595
+            },
+            {
+              "distanceM": 386.65189532162384,
+              "heightM": 21.737011706474046
+            },
+            {
+              "distanceM": 397.3922257472245,
+              "heightM": 21.98999549442094
+            },
+            {
+              "distanceM": 408.1325561728251,
+              "heightM": 22.224165732282056
+            },
+            {
+              "distanceM": 418.8728865984258,
+              "heightM": 22.439522404834264
+            },
+            {
+              "distanceM": 429.6132170240265,
+              "heightM": 22.636065498077436
+            },
+            {
+              "distanceM": 440.3535474496271,
+              "heightM": 22.813794999234524
+            },
+            {
+              "distanceM": 451.0938778752278,
+              "heightM": 22.972710896751504
+            },
+            {
+              "distanceM": 461.8342083008285,
+              "heightM": 23.112813180297422
+            },
+            {
+              "distanceM": 472.57453872642907,
+              "heightM": 23.234101840764346
+            },
+            {
+              "distanceM": 483.3148691520298,
+              "heightM": 23.33657687026744
+            },
+            {
+              "distanceM": 494.0551995776304,
+              "heightM": 23.420238262144867
+            },
+            {
+              "distanceM": 504.7955300032311,
+              "heightM": 23.485086010957914
+            },
+            {
+              "distanceM": 515.5358604288318,
+              "heightM": 23.531120112490882
+            },
+            {
+              "distanceM": 526.2761908544323,
+              "heightM": 23.55834056375113
+            },
+            {
+              "distanceM": 537.0165212800331,
+              "heightM": 23.566747362969064
+            },
+            {
+              "distanceM": 547.7568517056337,
+              "heightM": 23.556340509598197
+            },
+            {
+              "distanceM": 558.4971821312345,
+              "heightM": 23.527120004315048
+            },
+            {
+              "distanceM": 569.2375125568351,
+              "heightM": 23.479085849019214
+            },
+            {
+              "distanceM": 579.9778429824357,
+              "heightM": 23.412238046833373
+            },
+            {
+              "distanceM": 590.7181734080365,
+              "heightM": 23.32657660210321
+            },
+            {
+              "distanceM": 601.458503833637,
+              "heightM": 23.222101520397526
+            },
+            {
+              "distanceM": 612.1988342592376,
+              "heightM": 23.09881280850811
+            },
+            {
+              "distanceM": 622.9391646848384,
+              "heightM": 22.956710474449878
+            },
+            {
+              "distanceM": 633.679495110439,
+              "heightM": 22.795794527460735
+            },
+            {
+              "distanceM": 644.4198255360396,
+              "heightM": 22.61606497800169
+            },
+            {
+              "distanceM": 655.1601559616404,
+              "heightM": 22.41752183775676
+            },
+            {
+              "distanceM": 665.900486387241,
+              "heightM": 22.20016511963305
+            },
+            {
+              "distanceM": 676.6408168128416,
+              "heightM": 21.963994837760655
+            },
+            {
+              "distanceM": 687.3811472384424,
+              "heightM": 21.70901100749279
+            },
+            {
+              "distanceM": 698.121477664043,
+              "heightM": 21.435213645405632
+            },
+            {
+              "distanceM": 708.8618080896437,
+              "heightM": 21.142602769298463
+            },
+            {
+              "distanceM": 719.6021385152443,
+              "heightM": 20.831178398193572
+            },
+            {
+              "distanceM": 730.342468940845,
+              "heightM": 20.50094055233625
+            },
+            {
+              "distanceM": 741.0827993664458,
+              "heightM": 20.151889253194877
+            },
+            {
+              "distanceM": 751.8231297920463,
+              "heightM": 19.784024523460836
+            },
+            {
+              "distanceM": 762.563460217647,
+              "heightM": 19.397346387048497
+            },
+            {
+              "distanceM": 773.3037906432477,
+              "heightM": 18.991854869095306
+            },
+            {
+              "distanceM": 784.0441210688482,
+              "heightM": 18.567549995961688
+            },
+            {
+              "distanceM": 794.784451494449,
+              "heightM": 18.12443179523108
+            },
+            {
+              "distanceM": 805.5247819200496,
+              "heightM": 17.662500295709915
+            },
+            {
+              "distanceM": 816.2651123456502,
+              "heightM": 17.181755527427665
+            },
+            {
+              "distanceM": 827.005442771251,
+              "heightM": 16.682197521636773
+            },
+            {
+              "distanceM": 837.7457731968516,
+              "heightM": 16.163826310812674
+            },
+            {
+              "distanceM": 848.4861036224522,
+              "heightM": 15.626641928653756
+            },
+            {
+              "distanceM": 859.226434048053,
+              "heightM": 15.070644410081433
+            },
+            {
+              "distanceM": 869.9667644736536,
+              "heightM": 14.495833791240157
+            },
+            {
+              "distanceM": 880.7070948992542,
+              "heightM": 13.90221010949715
+            },
+            {
+              "distanceM": 891.447425324855,
+              "heightM": 13.289773403442787
+            },
+            {
+              "distanceM": 902.1877557504556,
+              "heightM": 12.658523712890313
+            },
+            {
+              "distanceM": 912.9280861760562,
+              "heightM": 12.008461078875944
+            },
+            {
+              "distanceM": 923.668416601657,
+              "heightM": 11.339585543658838
+            },
+            {
+              "distanceM": 934.4087470272576,
+              "heightM": 10.651897150721082
+            },
+            {
+              "distanceM": 945.1490774528581,
+              "heightM": 9.945395944767684
+            },
+            {
+              "distanceM": 955.8894078784588,
+              "heightM": 9.220081971726641
+            },
+            {
+              "distanceM": 966.6297383040596,
+              "heightM": 8.475955278748708
+            },
+            {
+              "distanceM": 977.3700687296601,
+              "heightM": 7.713015914207725
+            },
+            {
+              "distanceM": 988.1103991552608,
+              "heightM": 6.931263927700364
+            },
+            {
+              "distanceM": 998.8507295808615,
+              "heightM": 6.130699370046121
+            },
+            {
+              "distanceM": 1009.5910600064622,
+              "heightM": 5.31132229328746
+            },
+            {
+              "distanceM": 1020.3313904320628,
+              "heightM": 4.473132750689693
+            },
+            {
+              "distanceM": 1031.0717208576636,
+              "heightM": 3.6161307967409604
+            },
+            {
+              "distanceM": 1041.8120512832643,
+              "heightM": 2.7403164871523598
+            },
+            {
+              "distanceM": 1052.5523817088647,
+              "heightM": 1.84568987885773
+            },
+            {
+              "distanceM": 1063.2927121344655,
+              "heightM": 0.9322510300137747
+            },
+            {
+              "distanceM": 1074.0330425600662,
+              "heightM": 3.1569382564946274e-14
+            }
+          ]
+        },
+        "assets": [
+          {
+            "id": "asset-1",
+            "name": "Hypothetical habitat",
+            "enabled": true,
+            "distanceM": 1000,
+            "bearingDeg": 0,
+            "widthM": 10,
+            "heightM": 5,
+            "status": "passes_above",
+            "encounter": null,
+            "minimumHeightOverFootprintM": 5.663875158680476
+          },
+          {
+            "id": "asset-2",
+            "name": "Hypothetical solar array",
+            "enabled": true,
+            "distanceM": 500,
+            "bearingDeg": 90,
+            "widthM": 20,
+            "heightM": 3,
+            "status": "misses_footprint",
+            "encounter": null,
+            "crossTrackM": 499.99999999999994
+          }
+        ],
+        "grainMassKg": 1.5707963267948962e-9,
+        "meaning": "Conditional single-grain trajectory on an ideal nonrotating Moon. Release state and assets are assumptions; no safe radius or plume hazard verdict.",
+        "exclusions": [
+          "Thrust, nozzle, descent history, regolith cohesion and erosion do not determine launch speed or mass in this model; engine/soil/CFD coupling is unassessed.",
+          "No gas drag/lift after release, particle collisions, electrostatics, nonspherical gravity, lunar rotation, terrain interception, berms, rebounds or shielding.",
+          "Assets are user-placed circular footprints with radial height on a mean-radius sphere; selected-site DEM elevations and real asset coordinates are not applied.",
+          "No particle-count/size/speed distribution, flux, deposition, damage probability, material damage threshold, EVA wait time or operational exclusion distance."
+        ]
+      }
+    },
+    {
+      "name": "Taller hypothetical asset envelope",
+      "result": {
+        "model": "conditional-spherical-ejecta-1",
+        "status": "exploratory",
+        "acceptedForVerdict": false,
+        "classification": "HYPOTHETICAL POST-ACCELERATION EJECTA",
+        "context": null,
+        "assumptions": {
+          "enabled": true,
+          "speedMps": 100,
+          "elevationDeg": 5,
+          "headingDeg": 0,
+          "launchHeightM": 0.1,
+          "diameterUm": 100,
+          "densityKgM3": 3000,
+          "assets": [
+            {
+              "id": "asset-1",
+              "name": "Hypothetical habitat",
+              "enabled": true,
+              "distanceM": 1000,
+              "bearingDeg": 0,
+              "widthM": 10,
+              "heightM": 100
+            },
+            {
+              "id": "asset-2",
+              "name": "Hypothetical solar array",
+              "enabled": true,
+              "distanceM": 500,
+              "bearingDeg": 90,
+              "widthM": 20,
+              "heightM": 3
+            }
+          ]
+        },
+        "constants": {
+          "radiusM": 1737400,
+          "gmM3S2": 4902800000000,
+          "source": "https://ssd.jpl.nasa.gov/sats/phys_par/sep.html",
+          "sourceValidation": {
+            "schema": "sitelight-ejecta-transcription-1",
+            "constantsSpecSha256": "f7a3fc7dde5b01a08f26abe2f14965530b58667d0a59139838943605305cb664",
+            "sourceSha256": "b2d4be08fba8b2b71956f3f2b3ec462f7b61d94ed8c268320fcd812e96b95e9d",
+            "gmKm3S2": 4902.8,
+            "meanRadiusKm": 1737.4,
+            "status": "verified_transcription",
+            "meaning": "Two published constants and three reference checksums verified; no erosion, launch distribution or asset damage calibration."
+          }
+        },
+        "sources": [
+          {
+            "name": "lunar-ejecta-ballistics-2010.pdf",
+            "url": "https://ntrs.nasa.gov/api/citations/20100031187/downloads/20100031187.pdf",
+            "bytes": 5970794,
+            "sha256": "b3de33a006e0ea2b4f50cbadc70555c2225619a0bfd8067a39de73ddd28d49ff"
+          },
+          {
+            "name": "spherical-ballistics-2014.pdf",
+            "url": "https://ntrs.nasa.gov/api/citations/20140017853/downloads/20140017853.pdf",
+            "bytes": 1266547,
+            "sha256": "58c6f392609b2eb6205a53634cefda46aba411333c4e8dee1c03730ebd39b9fc"
+          },
+          {
+            "name": "jpl-satellite-parameters.html",
+            "url": "https://ssd.jpl.nasa.gov/sats/phys_par/sep.html",
+            "bytes": 85633,
+            "sha256": "b2d4be08fba8b2b71956f3f2b3ec462f7b61d94ed8c268320fcd812e96b95e9d"
+          }
+        ],
+        "engineErosion": "not_evaluated",
+        "terrainApplied": false,
+        "particleDistribution": "not_evaluated",
+        "damage": "not_evaluated",
+        "trajectory": {
+          "model": "central-gravity-vacuum-conic",
+          "rangeM": 1074.0330425600662,
+          "flightSeconds": 10.781551319651877,
+          "maxHeightM": 23.56677394085353,
+          "landingSpeedMps": 100.00162420555377,
+          "samples": [
+            {
+              "distanceM": 0,
+              "heightM": 0.1
+            },
+            {
+              "distanceM": 10.740330425600662,
+              "heightM": 1.0302511351320687
+            },
+            {
+              "distanceM": 21.480660851201325,
+              "heightM": 1.9416900827237236
+            },
+            {
+              "distanceM": 32.22099127680199,
+              "heightM": 2.8343167835254155
+            },
+            {
+              "distanceM": 42.96132170240265,
+              "heightM": 3.7081311795104264
+            },
+            {
+              "distanceM": 53.70165212800331,
+              "heightM": 4.563133213874875
+            },
+            {
+              "distanceM": 64.44198255360398,
+              "heightM": 5.3993228310377335
+            },
+            {
+              "distanceM": 75.18231297920462,
+              "heightM": 6.216699976640824
+            },
+            {
+              "distanceM": 85.9226434048053,
+              "heightM": 7.015264597548843
+            },
+            {
+              "distanceM": 96.66297383040596,
+              "heightM": 7.795016641849358
+            },
+            {
+              "distanceM": 107.40330425600662,
+              "heightM": 8.555956058852816
+            },
+            {
+              "distanceM": 118.14363468160727,
+              "heightM": 9.298082799092562
+            },
+            {
+              "distanceM": 128.88396510720796,
+              "heightM": 10.021396814324842
+            },
+            {
+              "distanceM": 139.62429553280862,
+              "heightM": 10.725898057528802
+            },
+            {
+              "distanceM": 150.36462595840925,
+              "heightM": 11.411586482906504
+            },
+            {
+              "distanceM": 161.1049563840099,
+              "heightM": 12.078462045882945
+            },
+            {
+              "distanceM": 171.8452868096106,
+              "heightM": 12.726524703106035
+            },
+            {
+              "distanceM": 182.58561723521126,
+              "heightM": 13.355774412446628
+            },
+            {
+              "distanceM": 193.32594766081192,
+              "heightM": 13.966211132998529
+            },
+            {
+              "distanceM": 204.06627808641255,
+              "heightM": 14.55783482507848
+            },
+            {
+              "distanceM": 214.80660851201324,
+              "heightM": 15.130645450226185
+            },
+            {
+              "distanceM": 225.5469389376139,
+              "heightM": 15.684642971204324
+            },
+            {
+              "distanceM": 236.28726936321453,
+              "heightM": 16.219827351998518
+            },
+            {
+              "distanceM": 247.0275997888152,
+              "heightM": 16.736198557817396
+            },
+            {
+              "distanceM": 257.7679302144159,
+              "heightM": 17.23375655509254
+            },
+            {
+              "distanceM": 268.50826064001654,
+              "heightM": 17.712501311478537
+            },
+            {
+              "distanceM": 279.24859106561723,
+              "heightM": 18.17243279585294
+            },
+            {
+              "distanceM": 289.98892149121787,
+              "heightM": 18.613550978316354
+            },
+            {
+              "distanceM": 300.7292519168185,
+              "heightM": 19.035855830192297
+            },
+            {
+              "distanceM": 311.4695823424192,
+              "heightM": 19.439347324027384
+            },
+            {
+              "distanceM": 322.2099127680198,
+              "heightM": 19.824025433591178
+            },
+            {
+              "distanceM": 332.9502431936205,
+              "heightM": 20.18989013387629
+            },
+            {
+              "distanceM": 343.6905736192212,
+              "heightM": 20.536941401098332
+            },
+            {
+              "distanceM": 354.43090404482183,
+              "heightM": 20.86517921269595
+            },
+            {
+              "distanceM": 365.1712344704225,
+              "heightM": 21.174603547330808
+            },
+            {
+              "distanceM": 375.91156489602315,
+              "heightM": 21.465214384887595
+            },
+            {
+              "distanceM": 386.65189532162384,
+              "heightM": 21.737011706474046
+            },
+            {
+              "distanceM": 397.3922257472245,
+              "heightM": 21.98999549442094
+            },
+            {
+              "distanceM": 408.1325561728251,
+              "heightM": 22.224165732282056
+            },
+            {
+              "distanceM": 418.8728865984258,
+              "heightM": 22.439522404834264
+            },
+            {
+              "distanceM": 429.6132170240265,
+              "heightM": 22.636065498077436
+            },
+            {
+              "distanceM": 440.3535474496271,
+              "heightM": 22.813794999234524
+            },
+            {
+              "distanceM": 451.0938778752278,
+              "heightM": 22.972710896751504
+            },
+            {
+              "distanceM": 461.8342083008285,
+              "heightM": 23.112813180297422
+            },
+            {
+              "distanceM": 472.57453872642907,
+              "heightM": 23.234101840764346
+            },
+            {
+              "distanceM": 483.3148691520298,
+              "heightM": 23.33657687026744
+            },
+            {
+              "distanceM": 494.0551995776304,
+              "heightM": 23.420238262144867
+            },
+            {
+              "distanceM": 504.7955300032311,
+              "heightM": 23.485086010957914
+            },
+            {
+              "distanceM": 515.5358604288318,
+              "heightM": 23.531120112490882
+            },
+            {
+              "distanceM": 526.2761908544323,
+              "heightM": 23.55834056375113
+            },
+            {
+              "distanceM": 537.0165212800331,
+              "heightM": 23.566747362969064
+            },
+            {
+              "distanceM": 547.7568517056337,
+              "heightM": 23.556340509598197
+            },
+            {
+              "distanceM": 558.4971821312345,
+              "heightM": 23.527120004315048
+            },
+            {
+              "distanceM": 569.2375125568351,
+              "heightM": 23.479085849019214
+            },
+            {
+              "distanceM": 579.9778429824357,
+              "heightM": 23.412238046833373
+            },
+            {
+              "distanceM": 590.7181734080365,
+              "heightM": 23.32657660210321
+            },
+            {
+              "distanceM": 601.458503833637,
+              "heightM": 23.222101520397526
+            },
+            {
+              "distanceM": 612.1988342592376,
+              "heightM": 23.09881280850811
+            },
+            {
+              "distanceM": 622.9391646848384,
+              "heightM": 22.956710474449878
+            },
+            {
+              "distanceM": 633.679495110439,
+              "heightM": 22.795794527460735
+            },
+            {
+              "distanceM": 644.4198255360396,
+              "heightM": 22.61606497800169
+            },
+            {
+              "distanceM": 655.1601559616404,
+              "heightM": 22.41752183775676
+            },
+            {
+              "distanceM": 665.900486387241,
+              "heightM": 22.20016511963305
+            },
+            {
+              "distanceM": 676.6408168128416,
+              "heightM": 21.963994837760655
+            },
+            {
+              "distanceM": 687.3811472384424,
+              "heightM": 21.70901100749279
+            },
+            {
+              "distanceM": 698.121477664043,
+              "heightM": 21.435213645405632
+            },
+            {
+              "distanceM": 708.8618080896437,
+              "heightM": 21.142602769298463
+            },
+            {
+              "distanceM": 719.6021385152443,
+              "heightM": 20.831178398193572
+            },
+            {
+              "distanceM": 730.342468940845,
+              "heightM": 20.50094055233625
+            },
+            {
+              "distanceM": 741.0827993664458,
+              "heightM": 20.151889253194877
+            },
+            {
+              "distanceM": 751.8231297920463,
+              "heightM": 19.784024523460836
+            },
+            {
+              "distanceM": 762.563460217647,
+              "heightM": 19.397346387048497
+            },
+            {
+              "distanceM": 773.3037906432477,
+              "heightM": 18.991854869095306
+            },
+            {
+              "distanceM": 784.0441210688482,
+              "heightM": 18.567549995961688
+            },
+            {
+              "distanceM": 794.784451494449,
+              "heightM": 18.12443179523108
+            },
+            {
+              "distanceM": 805.5247819200496,
+              "heightM": 17.662500295709915
+            },
+            {
+              "distanceM": 816.2651123456502,
+              "heightM": 17.181755527427665
+            },
+            {
+              "distanceM": 827.005442771251,
+              "heightM": 16.682197521636773
+            },
+            {
+              "distanceM": 837.7457731968516,
+              "heightM": 16.163826310812674
+            },
+            {
+              "distanceM": 848.4861036224522,
+              "heightM": 15.626641928653756
+            },
+            {
+              "distanceM": 859.226434048053,
+              "heightM": 15.070644410081433
+            },
+            {
+              "distanceM": 869.9667644736536,
+              "heightM": 14.495833791240157
+            },
+            {
+              "distanceM": 880.7070948992542,
+              "heightM": 13.90221010949715
+            },
+            {
+              "distanceM": 891.447425324855,
+              "heightM": 13.289773403442787
+            },
+            {
+              "distanceM": 902.1877557504556,
+              "heightM": 12.658523712890313
+            },
+            {
+              "distanceM": 912.9280861760562,
+              "heightM": 12.008461078875944
+            },
+            {
+              "distanceM": 923.668416601657,
+              "heightM": 11.339585543658838
+            },
+            {
+              "distanceM": 934.4087470272576,
+              "heightM": 10.651897150721082
+            },
+            {
+              "distanceM": 945.1490774528581,
+              "heightM": 9.945395944767684
+            },
+            {
+              "distanceM": 955.8894078784588,
+              "heightM": 9.220081971726641
+            },
+            {
+              "distanceM": 966.6297383040596,
+              "heightM": 8.475955278748708
+            },
+            {
+              "distanceM": 977.3700687296601,
+              "heightM": 7.713015914207725
+            },
+            {
+              "distanceM": 988.1103991552608,
+              "heightM": 6.931263927700364
+            },
+            {
+              "distanceM": 998.8507295808615,
+              "heightM": 6.130699370046121
+            },
+            {
+              "distanceM": 1009.5910600064622,
+              "heightM": 5.31132229328746
+            },
+            {
+              "distanceM": 1020.3313904320628,
+              "heightM": 4.473132750689693
+            },
+            {
+              "distanceM": 1031.0717208576636,
+              "heightM": 3.6161307967409604
+            },
+            {
+              "distanceM": 1041.8120512832643,
+              "heightM": 2.7403164871523598
+            },
+            {
+              "distanceM": 1052.5523817088647,
+              "heightM": 1.84568987885773
+            },
+            {
+              "distanceM": 1063.2927121344655,
+              "heightM": 0.9322510300137747
+            },
+            {
+              "distanceM": 1074.0330425600662,
+              "heightM": 3.1569382564946274e-14
+            }
+          ]
+        },
+        "assets": [
+          {
+            "id": "asset-1",
+            "name": "Hypothetical habitat",
+            "enabled": true,
+            "distanceM": 1000,
+            "bearingDeg": 0,
+            "widthM": 10,
+            "heightM": 100,
+            "status": "intersects_assumed_envelope",
+            "encounter": {
+              "surfaceDistanceM": 995,
+              "heightM": 6.419889012631864,
+              "secondsAfterRelease": 9.98819899683953,
+              "speedMps": 99.89729881969329,
+              "singleGrainEnergyJ": 0.000007837857654308756
+            },
+            "meaning": "One assumed particle centerline crosses this hypothetical radial asset column. Not damage, impact count, deposition or encounter probability."
+          },
+          {
+            "id": "asset-2",
+            "name": "Hypothetical solar array",
+            "enabled": true,
+            "distanceM": 500,
+            "bearingDeg": 90,
+            "widthM": 20,
+            "heightM": 3,
+            "status": "misses_footprint",
+            "encounter": null,
+            "crossTrackM": 499.99999999999994
+          }
+        ],
+        "grainMassKg": 1.5707963267948962e-9,
+        "meaning": "Conditional single-grain trajectory on an ideal nonrotating Moon. Release state and assets are assumptions; no safe radius or plume hazard verdict.",
+        "exclusions": [
+          "Thrust, nozzle, descent history, regolith cohesion and erosion do not determine launch speed or mass in this model; engine/soil/CFD coupling is unassessed.",
+          "No gas drag/lift after release, particle collisions, electrostatics, nonspherical gravity, lunar rotation, terrain interception, berms, rebounds or shielding.",
+          "Assets are user-placed circular footprints with radial height on a mean-radius sphere; selected-site DEM elevations and real asset coordinates are not applied.",
+          "No particle-count/size/speed distribution, flux, deposition, damage probability, material damage threshold, EVA wait time or operational exclusion distance."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "sitelight-engineering-transcription-1",
+  "referenceSpecSha256": "26236b957d957f3318d7875305d123f83cb871e09fff0534efc7ec212ff4284b",
+  "meaning": "Pinned PDF value transcription checks only; no architecture calibration or engineering acceptance.",
+  "checks": [
+    {
+      "reference": "bvad",
+      "observation": "potable",
+      "pdfPage": 72,
+      "value": 3.217,
+      "sourceSha256": "b9eab584c2bc88b52f6eb6744e321eb72ca58003e8ac77dc1ebeb034aba11d1e",
+      "status": "verified_transcription"
+    },
+    {
+      "reference": "isru",
+      "observation": "extraction",
+      "pdfPage": 3,
+      "value": 75,
+      "sourceSha256": "4b7faf8d3cb5cc2b28a9c6f6dde5e7316983e17781b079247f0ce64055223a10",
+      "status": "verified_transcription"
+    },
+    {
+      "reference": "isru",
+      "observation": "battery",
+      "pdfPage": 3,
+      "value": 140,
+      "sourceSha256": "4b7faf8d3cb5cc2b28a9c6f6dde5e7316983e17781b079247f0ce64055223a10",
+      "status": "verified_transcription"
+    },
+    {
+      "reference": "isru",
+      "observation": "discharge",
+      "pdfPage": 3,
+      "value": 80,
+      "sourceSha256": "4b7faf8d3cb5cc2b28a9c6f6dde5e7316983e17781b079247f0ce64055223a10",
+      "status": "verified_transcription"
+    },
+    {
+      "reference": "isru",
+      "observation": "time",
+      "pdfPage": 3,
+      "value": 225,
+      "sourceSha256": "4b7faf8d3cb5cc2b28a9c6f6dde5e7316983e17781b079247f0ce64055223a10",
+      "status": "verified_transcription"
+    },
+    {
+      "reference": "isru",
+      "observation": "mass",
+      "pdfPage": 8,
+      "value": 4.9,
+      "sourceSha256": "4b7faf8d3cb5cc2b28a9c6f6dde5e7316983e17781b079247f0ce64055223a10",
+      "status": "verified_transcription"
+    },
+    {
+      "reference": "isru",
+      "observation": "power",
+      "pdfPage": 8,
+      "value": 68,
+      "sourceSha256": "4b7faf8d3cb5cc2b28a9c6f6dde5e7316983e17781b079247f0ce64055223a10",
+      "status": "verified_transcription"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "src/workspace/main-classic.mjs": "1ba87c14f7b1792740115e1fac3c2ed9275bea4a250786cadac9afa8607c8b0d",
+  "src/workspace/style-classic.css": "b54350926b70aac83632f665e3ec0fe3abf4c091f15f0cc1dad0d2eceb86c037",
+  "src/workspace/engine.mjs": "00cb112679caf97e28b0d072b6119bc403af9199527b3ce96c6c9d7df8fe4e0d",
+  "src/workspace/store.mjs": "1fbb06e83d0bffca37c18bccc773ddba51011bbb681e73f6b0904050095480a8",
+  "data/science/real-workspace.json": "ac1c739e97e9c70c74dbdc05ac6be705575eef3e32c98ea064ff7402a7278a62",
+  "data/science/terrain-acceptance-evidence.json": "b57e815cc4ff44c67e71b8eade566b2ada135f97af80a3fa559ca5d4ad6be6eb"
+}

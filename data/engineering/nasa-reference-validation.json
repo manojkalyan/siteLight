@@ -1,0 +1,148 @@
+{
+  "schema": "sitelight-nasa-reference-transcription-1",
+  "sourceSha256": "bb79b56bda38ae0fb2fa24167932be25ea81fe3487c7fe30d7d824648a3c1ac7",
+  "specSha256": "49c51518f19c3fa1054acf10fe48f79070e58ba4b7580b7f795de864a926c475",
+  "validatorSha256": "b8d07adbf4bddd57aa13005a23303589185fcc7da5cbb593ed9322368db52657",
+  "status": "verified_transcription",
+  "checks": [
+    {
+      "key": "mixtureRatio",
+      "value": 6,
+      "unit": "kg/kg",
+      "pdfPage": 3
+    },
+    {
+      "key": "productionDays",
+      "value": 225,
+      "unit": "days",
+      "pdfPage": 3
+    },
+    {
+      "key": "commissioningHours",
+      "value": 48,
+      "unit": "h",
+      "pdfPage": 3
+    },
+    {
+      "key": "extractionEfficiency",
+      "value": 75,
+      "unit": "percent",
+      "pdfPage": 3
+    },
+    {
+      "key": "batteryDischarge",
+      "value": 80,
+      "unit": "percent",
+      "pdfPage": 3
+    },
+    {
+      "key": "batteryWhKg",
+      "value": 140,
+      "unit": "Wh/kg",
+      "pdfPage": 3
+    },
+    {
+      "key": "regolithDensity",
+      "value": 1.3,
+      "unit": "g/cm3",
+      "pdfPage": 3
+    },
+    {
+      "key": "waterWtPercent",
+      "value": 5,
+      "unit": "wt percent",
+      "pdfPage": 9
+    },
+    {
+      "key": "requiredOxygenT",
+      "value": 10,
+      "unit": "tonnes",
+      "pdfPage": 9
+    },
+    {
+      "key": "producedOxygenT",
+      "value": 13,
+      "unit": "tonnes",
+      "pdfPage": 9
+    },
+    {
+      "key": "producedHydrogenT",
+      "value": 1.7,
+      "unit": "tonnes",
+      "pdfPage": 9
+    },
+    {
+      "key": "waterT",
+      "value": 15,
+      "unit": "tonnes",
+      "pdfPage": 9
+    },
+    {
+      "key": "regolithT",
+      "value": 398,
+      "unit": "tonnes",
+      "pdfPage": 9
+    },
+    {
+      "key": "mineWidthM",
+      "value": 32,
+      "unit": "m",
+      "pdfPage": 9
+    },
+    {
+      "key": "transportDays",
+      "value": 10,
+      "unit": "days",
+      "pdfPage": 9
+    },
+    {
+      "key": "totalMassT",
+      "value": 4.9,
+      "unit": "tonnes",
+      "pdfPage": 10
+    },
+    {
+      "key": "ridgeMassT",
+      "value": 2.6,
+      "unit": "tonnes",
+      "pdfPage": 10
+    },
+    {
+      "key": "mineMassT",
+      "value": 0.49,
+      "unit": "tonnes",
+      "pdfPage": 10
+    },
+    {
+      "key": "tankersMassT",
+      "value": 1.8,
+      "unit": "tonnes",
+      "pdfPage": 10
+    },
+    {
+      "key": "totalPowerKw",
+      "value": 68,
+      "unit": "kW",
+      "pdfPage": 10
+    },
+    {
+      "key": "ridgePowerKw",
+      "value": 46,
+      "unit": "kW",
+      "pdfPage": 10
+    },
+    {
+      "key": "minePowerKw",
+      "value": 22,
+      "unit": "kW",
+      "pdfPage": 10
+    },
+    {
+      "key": "mineDepthCm",
+      "value": 30,
+      "unit": "cm",
+      "pdfPage": 9
+    }
+  ],
+  "meaning": "Published reference-study values; physical equipment and selected-site resource calibration are not implied"
+}

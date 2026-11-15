@@ -1,0 +1,153 @@
+{
+  "schema": "sitelight-real-science-1",
+  "version": "dem-de421-4",
+  "bytes": 10942627,
+  "sha256": "ac1c739e97e9c70c74dbdc05ac6be705575eef3e32c98ea064ff7402a7278a62",
+  "buildSeconds": 60.14232509996509,
+  "sites": [
+    {
+      "id": "real-shackleton",
+      "name": "Shackleton · DEM study point",
+      "lat": -89.76674147713055,
+      "lon": -171.89280908299654,
+      "altKm": 0.7699786376953125,
+      "polar": true,
+      "surfaceElevationM": 767.9786376953125,
+      "observerHeightM": 2.0,
+      "tile": "Site04",
+      "source": "https://pgda.gsfc.nasa.gov/products/78",
+      "coordinateStatus": "Derived center of Site04 pixel row 1600, column 1600; study point, not a certified landing site",
+      "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+      "projectedPointM": [
+        -997.5,
+        -7002.5
+      ],
+      "sourcePixel": [
+        1600,
+        1600
+      ],
+      "horizonExtentM": 125000,
+      "transformPathMaxErrorDeg": 6.661338147750939e-16
+    },
+    {
+      "id": "real-connector",
+      "name": "Connecting ridge · DEM study point",
+      "lat": -89.4631577569723,
+      "lon": -137.50198490762307,
+      "altKm": 1.94676708984375,
+      "polar": true,
+      "surfaceElevationM": 1944.76708984375,
+      "observerHeightM": 2.0,
+      "tile": "Site01",
+      "source": "https://pgda.gsfc.nasa.gov/products/78",
+      "coordinateStatus": "Derived center of Site01 pixel row 1600, column 1600; study point, not a certified landing site",
+      "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+      "projectedPointM": [
+        -10997.5,
+        -12002.5
+      ],
+      "sourcePixel": [
+        1600,
+        1600
+      ],
+      "horizonExtentM": 125000,
+      "transformPathMaxErrorDeg": 1.1102230246251565e-15
+    },
+    {
+      "id": "real-gerlache",
+      "name": "de Gerlache · DEM study point",
+      "lat": -88.68352551547558,
+      "lon": -67.93407755484023,
+      "altKm": 1.7956644287109376,
+      "polar": true,
+      "surfaceElevationM": 1793.6644287109375,
+      "observerHeightM": 2.0,
+      "tile": "Site11",
+      "source": "https://pgda.gsfc.nasa.gov/products/78",
+      "coordinateStatus": "Derived center of Site11 pixel row 1600, column 1600; study point, not a certified landing site",
+      "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+      "projectedPointM": [
+        -36997.5,
+        14997.5
+      ],
+      "sourcePixel": [
+        1600,
+        1600
+      ],
+      "horizonExtentM": 125000,
+      "transformPathMaxErrorDeg": 1.7763568394002505e-15
+    },
+    {
+      "id": "real-nobile",
+      "name": "Nobile · DEM study point",
+      "lat": -85.43811594434003,
+      "lon": 37.36812005733697,
+      "altKm": 5.948380859375,
+      "polar": true,
+      "surfaceElevationM": 5946.380859375,
+      "observerHeightM": 2.0,
+      "tile": "Site06",
+      "source": "https://pgda.gsfc.nasa.gov/products/78",
+      "coordinateStatus": "Derived center of Site06 pixel row 2000, column 2000; study point, not a certified landing site",
+      "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+      "projectedPointM": [
+        84002.5,
+        109997.5
+      ],
+      "sourcePixel": [
+        2000,
+        2000
+      ],
+      "horizonExtentM": 125000,
+      "transformPathMaxErrorDeg": 1.7763568394002505e-15
+    },
+    {
+      "id": "real-peak",
+      "name": "Peak near Shackleton · DEM study point",
+      "lat": -88.81089375534428,
+      "lon": 123.69116926195721,
+      "altKm": 1.647548828125,
+      "polar": true,
+      "surfaceElevationM": 1645.548828125,
+      "observerHeightM": 2.0,
+      "tile": "Site07",
+      "source": "https://pgda.gsfc.nasa.gov/products/78",
+      "coordinateStatus": "Derived center of Site07 pixel row 1600, column 1600; study point, not a certified landing site",
+      "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+      "projectedPointM": [
+        30002.5,
+        -20002.5
+      ],
+      "sourcePixel": [
+        1600,
+        1600
+      ],
+      "horizonExtentM": 125000,
+      "transformPathMaxErrorDeg": 9.159339953157541e-16
+    },
+    {
+      "id": "real-malapert",
+      "name": "Malapert · DEM study point",
+      "lat": -85.99486736492493,
+      "lon": -0.23460969154338968,
+      "altKm": 4.78562939453125,
+      "polar": true,
+      "surfaceElevationM": 4783.62939453125,
+      "observerHeightM": 2.0,
+      "tile": "Site23",
+      "source": "https://pgda.gsfc.nasa.gov/products/78",
+      "coordinateStatus": "Derived center of Site23 pixel row 2100, column 2100; study point, not a certified landing site",
+      "frame": "MOON_ME / DE421; spherical reference radius 1737400 m",
+      "projectedPointM": [
+        -497.5,
+        121497.5
+      ],
+      "sourcePixel": [
+        2100,
+        2100
+      ],
+      "horizonExtentM": 125000,
+      "transformPathMaxErrorDeg": 1.1102230246251565e-15
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+okie from where this data we can collect should use sample data or real data they will provide
+The user needs to know data sources for their hackathon project, distinguishing between sample and real data, and whether NASA provides datasets. I need to search for official NASA resources, the challenge's specific data provisions, and general data portals. I'll search for the challenge page, NASA's data portal, and specific datasets like LOLA, LROC, and water ice data.
+
+Found 48 web pages
+The search results show some relevant links. The first result is the ARTEMIS Lunar Mission Browser on Zenodo, which mentions using real JPL DE421 ephemeris and NASA LOLA terrain data. The third result is a discussion about the challenge. The fifth result mentions resources will be available on Friday, November 13. The search results also indicate that NASA provides open data and that participants can use NASA's free and open data. For LOLA/LROC DEM data, there are links to PDS, Lunar Toolkit, and QuickMap. For water ice data, there's LCROSS and neutron spectrometer data. I need to open some of these links to get more details.
+
+Read 5 pages
+ARTEMIS Lunar Mission Browser — Lunar Landing Site Navigator (NASA Space Apps Challenge 2026)
+Découvrez cette discussion - NASA's 2026 challenge: CLPS Lunar Mission Browser / Lunar Landing Site Navigator
+Lunar Landing Site Navigator
+lunar-toolkit - Lunar Toolkit
+LRO data, including WAC images, NAC images, and Diviner data, are archived in the NASA Planetary Data System (PDS) at https://pd...
+The ARTEMIS submission uses real JPL DE421 ephemeris and NASA LOLA terrain data. The hackathlone page says resources will be available on Friday, November 13. The Lunar Toolkit provides access to LROC images and LOLA DEMs. The AGU paper lists PDS and QuickMap for LRO data. The user is asking where to collect data and whether to use sample or real data. I need to clarify that NASA provides open data, and the challenge likely expects participants to use real NASA data. However, for a hackathon, using sample or mock data might be acceptable for parts of the project, especially for the LCSS model which isn't part of the core challenge. I should structure the answer by data type: ephemeris, topography, water ice, and mention official sources and whether to use real or sample data. I'll also note that the ARTEMIS team used real data, so that's the standard. I need to provide a clear recommendation: use real NASA data for the core challenge (Sun/Earth, LOLA DEM), and for the LCSS, use documented sample values or published data as a screening approximation. I'll cite the relevant sources.
+
+The short answer is: Use real NASA data for the core challenge, and clearly-labeled published sample values for the LCSS extension. NASA does not hand you a curated dataset on a platter for this challenge—you are expected to pull from their open data archives. But the good news is that the exact data you need is publicly and freely available, and a prior submission (ARTEMIS) already proves it can be done in the hackathon window using real JPL ephemeris and NASA LOLA terrain data.
+
+Here is the breakdown of where each piece of data comes from and the real-vs-sample decision for each.
+
+🔭 Ephemeris Data (Sun and Earth Positions)
+You need the positions of the Sun and Earth as seen from a lunar site. This is real, deterministic, and freely available—there is no reason to use sample data here.
+
+Where to get it: Use the JPL DE421 or DE440 ephemeris kernels with a library like Skyfield (Python) or Sparrow (JavaScript). The ARTEMIS submission explicitly used JPL DE421 with IAU lunar rotation to compute Sun/Earth visibility with libration. The challenge brief itself suggests the JPL Horizons System as a legitimate tool for ephemeris calculation.
+
+Real vs. Sample: Use real data. This is the scientific core of your tool. Mock ephemeris would undermine your credibility with judges, especially since a competitor already demonstrated real ephemeris.
+
+🏔️ Topography Data (Terrain Horizon Profiles)
+You need a Digital Elevation Model (DEM) to compute the azimuthal horizon profile—the terrain silhouette that determines when the Sun or Earth is actually blocked.
+
+Where to get it: The NASA Planetary Data System (PDS) is the primary archive. Specifically:
+
+LOLA DEMs: Available from the LOLA PDS Data Node (e.g., imbrium.mit.edu). The PGDA LOLA DEMs (5 m site DEMs) are explicitly listed as available resources.
+
+QuickMap / Moon Trek: Both are web-based access points for LOLA and LROC data. The challenge brief itself names NASA QuickMap and Moon Trek as existing tools—you can use them to download DEM tiles for your curated sites.
+
+Lunar Toolkit: An open-source Python package that can search, download, and process LROC imagery and LOLA DEMs, specifically including Artemis III regions and PGDA LOLA DEMs.
+
+Real vs. Sample: Use real data for your curated sites. Download a LOLA DEM tile for each of your 5–6 sites and precompute the horizon profile in your build pipeline. For custom coordinates (if you implement them), you can fall back to the nearest available tile or a coarser global DEM—but label it explicitly in your provenance panel as lower-confidence.
+
+💧 Water-Ice Concentration (for the LCSS Extension)
+This is the data for your logistics mass penalty. This is where sample values are legitimate, because a full 3D resource model is beyond hackathon scope—but you must be honest about it.
+
+Where to get real anchors:
+
+LCROSS/Cabeus: The LCROSS impact team estimated south-polar regolith water ice at 5.6 ± 2.9 wt%. This is your highest-confidence anchor and should be the default for Cabeus-adjacent sites.
+
+LRO Neutron Spectrometer / LEND: Provides hydrogen maps that can be converted to water-ice estimates. Permanently shadowed regions (PSRs) show elevated hydrogen, corresponding to ice at the ~1% level in the upper meter in some areas.
+
+Artemis candidate regions: A published upper bound of ≤2.0 wt% is documented for Artemis candidate regions (their WEH is at most half of the LCROSS site).
+
+Real vs. Sample: Use published sample values with clear provenance. You are not expected to process raw neutron-spectrometer data in 48 hours. Assign each curated site a documented value from the literature above, store the source and confidence flag in your data table, and display it in your provenance panel. The water-ice slider in your LCSS tab then becomes a feature, not a weakness: it lets the user explore how the logistics verdict changes as the resource assumption moves within the published uncertainty band.
+
+📊 Summary Table: Data Sourcing Strategy
+Data need	Source	Real or Sample?	Implementation note
+Sun/Earth ephemeris	JPL DE421/DE440 via Skyfield or Sparrow	Real	Precompute time series in build pipeline; validate against a known reference case
+Terrain horizon	LOLA DEM via PDS, QuickMap, Moon Trek, or Lunar Toolkit	Real for curated sites	Precompute 1° azimuth horizon profiles; document DEM product name and resolution
+Water-ice concentration (LCSS)	LCROSS (5.6 ± 2.9 wt%), neutron spectrometer proxies, Artemis upper bound (≤2.0 wt%)	Published sample values with source citation	Store in data table with confidence flag; expose slider for sensitivity
+Curated site coordinates	Published Apollo, CLPS, Artemis candidate coordinates	Real (published)	Hard-code in your site list with source reference
+💡 What NASA Actually “Provides” for Space Apps
+The Space Apps program does not ship a pre-packaged dataset for each challenge. Instead, it provides access to NASA's open data ecosystem—PDS, Earthdata, and the challenge-specific “Resources” tab that opens on the event weekend. The official guidance to participants is to fetch and inspect a small real sample and use NASA's free and open data. This means your strategy of downloading LOLA DEMs and using published water-ice values is exactly aligned with how the event is designed.
+
+⚠️ The One Rule: Never Hide Your Data Quality
+Whatever mix of real and sample data you use, your provenance panel must make it visible. If a judge asks “is this real?” your answer should be: “The ephemeris and terrain are real NASA data; the water-ice concentration is a published screening value with a source and a slider so you can see how sensitive the conclusion is.” That level of honesty is itself a differentiator—and it protects you from the credibility risk of presenting a screening estimate as a design-grade number.
+
+Would you like me to draft the Python precompute script that loads a LOLA DEM tile and generates the azimuthal horizon profile, so you can start the build pipeline immediately?

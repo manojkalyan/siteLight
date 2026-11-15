@@ -1,0 +1,18 @@
+{
+  "schema": "sitelight-engineering-inputs-1",
+  "retrievedUtc": "2026-11-14T17:30:53.828Z",
+  "records": [
+    {
+      "name": "isru-2021.pdf",
+      "url": "https://ntrs.nasa.gov/api/citations/20210016820/downloads/WaterMiningArchitecture_PTMSS2021_Kleinhenz.pdf",
+      "bytes": 919778,
+      "sha256": "4b7faf8d3cb5cc2b28a9c6f6dde5e7316983e17781b079247f0ce64055223a10"
+    },
+    {
+      "name": "bvad-2022.pdf",
+      "url": "https://ntrs.nasa.gov/api/citations/20210024855/downloads/BVAD_2.15.22-final.pdf",
+      "bytes": 3134809,
+      "sha256": "b9eab584c2bc88b52f6eb6744e321eb72ca58003e8ac77dc1ebeb034aba11d1e"
+    }
+  ]
+}

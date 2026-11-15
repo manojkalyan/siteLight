@@ -1,0 +1,188 @@
+{
+  "schema": "sitelight-orientation-reference-1",
+  "purpose": "Independent Horizons airless apparent topocentric AZ/EL cases; validation recipe only, not the production geometric evaluator.",
+  "thresholds": {
+    "sunAngularDeg": 0.01,
+    "earthAngularDeg": 0.01
+  },
+  "thresholdRationale": "Predeclared 0.01 degree screening tolerance for independent DE441/Horizons orientation versus DE421/ME, including kernel and apparent-correction differences; not flight certification.",
+  "sites": {
+    "real-shackleton": {
+      "coordinates": {
+        "lat": -89.76674147713055,
+        "lon": -171.89280908299654,
+        "altKm": 0.7699786376953125
+      },
+      "targets": {
+        "SUN": [
+          [
+            1799798400000,
+            288.827329261,
+            0.873076378
+          ],
+          [
+            1799820000000,
+            285.783975243,
+            0.855131783
+          ],
+          [
+            1799841600000,
+            282.740980256,
+            0.83693096
+          ]
+        ],
+        "EARTH": [
+          [
+            1799798400000,
+            165.315794852,
+            2.680696689
+          ],
+          [
+            1799820000000,
+            165.109893922,
+            2.999951379
+          ],
+          [
+            1799841600000,
+            164.920603533,
+            3.310504781
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "name": "orientation/real-shackleton-SUN.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27188.10719091700346%2C-89.76674147713055%2C0.7699786376953125%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "6e6a8cf4cd873d97916c6bf7078c9dfe642b3847f98181bdd6c371ccc487e1d2",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        },
+        {
+          "name": "orientation/real-shackleton-EARTH.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27399%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27188.10719091700346%2C-89.76674147713055%2C0.7699786376953125%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "646faf0493848d6ad3417df0990ab76409b9f40d402d1b9455c8448bf53f476d",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        }
+      ]
+    },
+    "real-gerlache": {
+      "coordinates": {
+        "lat": -88.68352551547558,
+        "lon": -67.93407755484023,
+        "altKm": 1.7956644287109376
+      },
+      "targets": {
+        "SUN": [
+          [
+            1799798400000,
+            184.87154142,
+            -0.513925907
+          ],
+          [
+            1799820000000,
+            181.828373763,
+            -0.524128248
+          ],
+          [
+            1799841600000,
+            178.785535174,
+            -0.530698462
+          ]
+        ],
+        "EARTH": [
+          [
+            1799798400000,
+            61.424055944,
+            3.536819774
+          ],
+          [
+            1799820000000,
+            61.224142153,
+            3.859975404
+          ],
+          [
+            1799841600000,
+            61.040656476,
+            4.174104104
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "name": "orientation/real-gerlache-SUN.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27292.0659224451598%2C-88.68352551547558%2C1.7956644287109376%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "370cb58a21d38a5b4dd1a6e3da31615d27ad745267e923df02874b8b86786f26",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        },
+        {
+          "name": "orientation/real-gerlache-EARTH.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27399%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27292.0659224451598%2C-88.68352551547558%2C1.7956644287109376%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "3209ec29ec30550c603089b6b47581180632cf9a45ea6247f26ccc833191cbca",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        }
+      ]
+    },
+    "real-nobile": {
+      "coordinates": {
+        "lat": -85.43811594434003,
+        "lon": 37.36812005733697,
+        "altKm": 5.948380859375
+      },
+      "targets": {
+        "SUN": [
+          [
+            1799798400000,
+            79.664430717,
+            1.620386479
+          ],
+          [
+            1799820000000,
+            76.628736727,
+            1.851153949
+          ],
+          [
+            1799841600000,
+            73.592762318,
+            2.078850522
+          ]
+        ],
+        "EARTH": [
+          [
+            1799798400000,
+            315.785280879,
+            6.184659068
+          ],
+          [
+            1799820000000,
+            315.560388525,
+            6.491820939
+          ],
+          [
+            1799841600000,
+            315.352515462,
+            6.791186305
+          ]
+        ]
+      },
+      "sources": [
+        {
+          "name": "orientation/real-nobile-SUN.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%2737.36812005733697%2C-85.43811594434003%2C5.948380859375%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "0908e31728f1f313d22f3b6248aedaa521248441c103a4a16e6bd1195e89868e",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        },
+        {
+          "name": "orientation/real-nobile-EARTH.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27399%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%2737.36812005733697%2C-85.43811594434003%2C5.948380859375%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "b9a8a21820161ca4d0baaec3095df1baba5e44597133115502e0ab69c1edcb2b",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "recordedUtc": "2026-11-14T21:22:34.097023+00:00",
+  "command": ".tools/python/python.exe -m unittest discover -s tests-science -v",
+  "testsRun": 14,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "meaning": "Scientific/numerical and source-parser fixtures; not independent physical or mission acceptance"
+}

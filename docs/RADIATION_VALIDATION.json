@@ -1,0 +1,2472 @@
+{
+  "schema": "sitelight-radiation-validation-1",
+  "meaning": "Historical silicon orbital observations and independent monoenergetic primary-proton CSDA examples; no surface/human dose acceptance.",
+  "cases": [
+    {
+      "model": "orbital-context-proton-csda-1",
+      "status": "exploratory",
+      "acceptedForVerdict": false,
+      "assumptions": {
+        "enabled": true,
+        "material": "aluminum",
+        "energyMeV": 100,
+        "arealDensityGcm2": 5,
+        "areaM2": 10,
+        "archiveMonth": "2012-12",
+        "detector": "D1",
+        "corrected": false,
+        "minCoveragePercent": 95
+      },
+      "environment": "Hypothetical monoenergetic protons at normal incidence on a uniform slab",
+      "sources": [
+        {
+          "name": "crater-daily-dose.html",
+          "url": "https://crater-products.sr.unh.edu/data/inst/dose/table_l30drate.php",
+          "canonicalization": "none",
+          "bytes": 327142,
+          "sha256": "8245e5c592aa5d6b1f7f9286324d84a4b861ffdbcbffd0098b92c78d5208e3ec"
+        },
+        {
+          "name": "pstar-aluminum.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "013",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "88c05b209545e34fae04e53e0c59b7d2ad07ff0d48d196faa679c96bc264dda0"
+        },
+        {
+          "name": "pstar-aluminum-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text013",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 168,
+          "sha256": "73fe0f4618597fff276dcd0c4fada1448a8cbc72c979cbd1a9be39d50aa24787"
+        },
+        {
+          "name": "pstar-polyethylene.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "221",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "8efbbd2764c056ad5a3a773a2877363552a68024d7094d76c3a6e8aad93ecaad"
+        },
+        {
+          "name": "pstar-polyethylene-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text221",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 181,
+          "sha256": "f66d9da8b7e0a0d9fd793b7300f806eabc618bdaaf67f4a8d43802449ddbb98c"
+        },
+        {
+          "name": "pstar-water.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "276",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "83a422df932f5a4f144eaa52e4a4011d654a473cb3ffd2e63dbb60117b40e08e"
+        },
+        {
+          "name": "pstar-water-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text276",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 182,
+          "sha256": "e2f827c72daaa5ae8ec10012a24c9a6acfcd3cb89cc08fa0bac985249bd4c2f4"
+        },
+        {
+          "name": "pstar-help.txt",
+          "url": "https://physics.nist.gov/PhysRefData/Star/Text/programs.html",
+          "canonicalization": "body-text-v1",
+          "bytes": 8274,
+          "sha256": "87b961e30462a630228591d8bf0f0e544515aa447e9b9e39f638c77fa1095c58"
+        },
+        {
+          "name": "pstar-appendix.txt",
+          "url": "https://physics.nist.gov/PhysRefData/Star/Text/appendix.html",
+          "canonicalization": "body-text-v1",
+          "bytes": 2268,
+          "sha256": "e8e50d58a46970e1fa281efeddffb7ac36403f72d60f4c2efb71defb073cc012"
+        }
+      ],
+      "dataVersion": "radiation-prepare-1",
+      "orbitalObservations": {
+        "classification": "UNH CRaTER PI legacy derived orbital observations",
+        "quantity": "absorbed dose rate in silicon",
+        "unit": "mGy_Si/day",
+        "month": "2012-12",
+        "detector": "D1",
+        "correction": "as measured",
+        "minimumCoveragePercent": 95,
+        "calendarDays": 31,
+        "qualifyingDays": 31,
+        "unavailableDays": 0,
+        "arithmeticMeanMgySiDay": 0.10582967741935484,
+        "minMgySiDay": 0.09652,
+        "maxMgySiDay": 0.19892,
+        "meaning": "Arithmetic mean of qualifying archived daily rates only. No missing-day fill, dose integration, surface conversion or mission-time forecast.",
+        "uncertainty": null,
+        "records": [
+          {
+            "date": "2012-12-01",
+            "sourceValueMgySiDay": 0.0991,
+            "usedValueMgySiDay": 0.0991,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 32,
+            "reason": null
+          },
+          {
+            "date": "2012-12-02",
+            "sourceValueMgySiDay": 0.09652,
+            "usedValueMgySiDay": 0.09652,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 31,
+            "reason": null
+          },
+          {
+            "date": "2012-12-03",
+            "sourceValueMgySiDay": 0.10396,
+            "usedValueMgySiDay": 0.10396,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 30,
+            "reason": null
+          },
+          {
+            "date": "2012-12-04",
+            "sourceValueMgySiDay": 0.09784,
+            "usedValueMgySiDay": 0.09784,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 29,
+            "reason": null
+          },
+          {
+            "date": "2012-12-05",
+            "sourceValueMgySiDay": 0.09842,
+            "usedValueMgySiDay": 0.09842,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 28,
+            "reason": null
+          },
+          {
+            "date": "2012-12-06",
+            "sourceValueMgySiDay": 0.09876,
+            "usedValueMgySiDay": 0.09876,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 27,
+            "reason": null
+          },
+          {
+            "date": "2012-12-07",
+            "sourceValueMgySiDay": 0.10025,
+            "usedValueMgySiDay": 0.10025,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 26,
+            "reason": null
+          },
+          {
+            "date": "2012-12-08",
+            "sourceValueMgySiDay": 0.10277,
+            "usedValueMgySiDay": 0.10277,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 25,
+            "reason": null
+          },
+          {
+            "date": "2012-12-09",
+            "sourceValueMgySiDay": 0.10108,
+            "usedValueMgySiDay": 0.10108,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 24,
+            "reason": null
+          },
+          {
+            "date": "2012-12-10",
+            "sourceValueMgySiDay": 0.09996,
+            "usedValueMgySiDay": 0.09996,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 23,
+            "reason": null
+          },
+          {
+            "date": "2012-12-11",
+            "sourceValueMgySiDay": 0.09927,
+            "usedValueMgySiDay": 0.09927,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 22,
+            "reason": null
+          },
+          {
+            "date": "2012-12-12",
+            "sourceValueMgySiDay": 0.09963,
+            "usedValueMgySiDay": 0.09963,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 21,
+            "reason": null
+          },
+          {
+            "date": "2012-12-13",
+            "sourceValueMgySiDay": 0.10034,
+            "usedValueMgySiDay": 0.10034,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 20,
+            "reason": null
+          },
+          {
+            "date": "2012-12-14",
+            "sourceValueMgySiDay": 0.11661,
+            "usedValueMgySiDay": 0.11661,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 19,
+            "reason": null
+          },
+          {
+            "date": "2012-12-15",
+            "sourceValueMgySiDay": 0.19892,
+            "usedValueMgySiDay": 0.19892,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 18,
+            "reason": null
+          },
+          {
+            "date": "2012-12-16",
+            "sourceValueMgySiDay": 0.13625,
+            "usedValueMgySiDay": 0.13625,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 17,
+            "reason": null
+          },
+          {
+            "date": "2012-12-17",
+            "sourceValueMgySiDay": 0.10804,
+            "usedValueMgySiDay": 0.10804,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 16,
+            "reason": null
+          },
+          {
+            "date": "2012-12-18",
+            "sourceValueMgySiDay": 0.10128,
+            "usedValueMgySiDay": 0.10128,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 15,
+            "reason": null
+          },
+          {
+            "date": "2012-12-19",
+            "sourceValueMgySiDay": 0.09946,
+            "usedValueMgySiDay": 0.09946,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 14,
+            "reason": null
+          },
+          {
+            "date": "2012-12-20",
+            "sourceValueMgySiDay": 0.0986,
+            "usedValueMgySiDay": 0.0986,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 13,
+            "reason": null
+          },
+          {
+            "date": "2012-12-21",
+            "sourceValueMgySiDay": 0.09776,
+            "usedValueMgySiDay": 0.09776,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 12,
+            "reason": null
+          },
+          {
+            "date": "2012-12-22",
+            "sourceValueMgySiDay": 0.09831,
+            "usedValueMgySiDay": 0.09831,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 11,
+            "reason": null
+          },
+          {
+            "date": "2012-12-23",
+            "sourceValueMgySiDay": 0.10281,
+            "usedValueMgySiDay": 0.10281,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 10,
+            "reason": null
+          },
+          {
+            "date": "2012-12-24",
+            "sourceValueMgySiDay": 0.10238,
+            "usedValueMgySiDay": 0.10238,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 9,
+            "reason": null
+          },
+          {
+            "date": "2012-12-25",
+            "sourceValueMgySiDay": 0.10221,
+            "usedValueMgySiDay": 0.10221,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 8,
+            "reason": null
+          },
+          {
+            "date": "2012-12-26",
+            "sourceValueMgySiDay": 0.10208,
+            "usedValueMgySiDay": 0.10208,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 7,
+            "reason": null
+          },
+          {
+            "date": "2012-12-27",
+            "sourceValueMgySiDay": 0.10266,
+            "usedValueMgySiDay": 0.10266,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 6,
+            "reason": null
+          },
+          {
+            "date": "2012-12-28",
+            "sourceValueMgySiDay": 0.1035,
+            "usedValueMgySiDay": 0.1035,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 5,
+            "reason": null
+          },
+          {
+            "date": "2012-12-29",
+            "sourceValueMgySiDay": 0.10461,
+            "usedValueMgySiDay": 0.10461,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 4,
+            "reason": null
+          },
+          {
+            "date": "2012-12-30",
+            "sourceValueMgySiDay": 0.10378,
+            "usedValueMgySiDay": 0.10378,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 3,
+            "reason": null
+          },
+          {
+            "date": "2012-12-31",
+            "sourceValueMgySiDay": 0.10356,
+            "usedValueMgySiDay": 0.10356,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 2,
+            "reason": null
+          }
+        ],
+        "source": {
+          "name": "crater-daily-dose.html",
+          "url": "https://crater-products.sr.unh.edu/data/inst/dose/table_l30drate.php",
+          "canonicalization": "none",
+          "bytes": 327142,
+          "sha256": "8245e5c592aa5d6b1f7f9286324d84a4b861ffdbcbffd0098b92c78d5208e3ec"
+        }
+      },
+      "protonComparison": {
+        "material": "aluminum",
+        "name": "Aluminum",
+        "incidentEnergyMeV": 100,
+        "incidentCsdaRangeGcm2": 10.01,
+        "incidentSourceLine": 114,
+        "arealDensityGcm2": 5,
+        "remainingRangeGcm2": 5.01,
+        "referenceDensityGcm3": 2.6989,
+        "thicknessCm": 1.8526066175108378,
+        "panelMassKg": 500,
+        "areaM2": 10,
+        "source": {
+          "name": "pstar-aluminum.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "013",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "88c05b209545e34fae04e53e0c59b7d2ad07ff0d48d196faa679c96bc264dda0"
+        },
+        "compositionSource": {
+          "name": "pstar-aluminum-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text013",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 168,
+          "sha256": "73fe0f4618597fff276dcd0c4fada1448a8cbc72c979cbd1a9be39d50aa24787"
+        },
+        "residualEnergyMeV": 67.63481184552202,
+        "residualEnergyBracketMeV": [
+          65,
+          70
+        ],
+        "interpolation": {
+          "method": "log-log inverse CSDA-range interpolation",
+          "sourceLines": [
+            107,
+            108
+          ],
+          "rangeBracketGcm2": [
+            4.669,
+            5.325
+          ]
+        },
+        "secondaryDose": "not_evaluated",
+        "humanDose": "not_evaluated",
+        "status": "primary_energy_estimated"
+      },
+      "materialComparisons": [
+        {
+          "material": "aluminum",
+          "name": "Aluminum",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 10.01,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 5.01,
+          "referenceDensityGcm3": 2.6989,
+          "thicknessCm": 1.8526066175108378,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-aluminum.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "013",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "88c05b209545e34fae04e53e0c59b7d2ad07ff0d48d196faa679c96bc264dda0"
+          },
+          "compositionSource": {
+            "name": "pstar-aluminum-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text013",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 168,
+            "sha256": "73fe0f4618597fff276dcd0c4fada1448a8cbc72c979cbd1a9be39d50aa24787"
+          },
+          "residualEnergyMeV": 67.63481184552202,
+          "residualEnergyBracketMeV": [
+            65,
+            70
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              107,
+              108
+            ],
+            "rangeBracketGcm2": [
+              4.669,
+              5.325
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        },
+        {
+          "material": "polyethylene",
+          "name": "Polyethylene",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 7.242,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 2.242,
+          "referenceDensityGcm3": 0.94,
+          "thicknessCm": 5.319148936170213,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-polyethylene.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "221",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "8efbbd2764c056ad5a3a773a2877363552a68024d7094d76c3a6e8aad93ecaad"
+          },
+          "compositionSource": {
+            "name": "pstar-polyethylene-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text221",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 181,
+            "sha256": "f66d9da8b7e0a0d9fd793b7300f806eabc618bdaaf67f4a8d43802449ddbb98c"
+          },
+          "residualEnergyMeV": 52.10062647514807,
+          "residualEnergyBracketMeV": [
+            50,
+            55
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              104,
+              105
+            ],
+            "rangeBracketGcm2": [
+              2.081,
+              2.473
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        },
+        {
+          "material": "water",
+          "name": "Water, liquid",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 7.718,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 2.718,
+          "referenceDensityGcm3": 1,
+          "thicknessCm": 5,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-water.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "276",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "83a422df932f5a4f144eaa52e4a4011d654a473cb3ffd2e63dbb60117b40e08e"
+          },
+          "compositionSource": {
+            "name": "pstar-water-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text276",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 182,
+            "sha256": "e2f827c72daaa5ae8ec10012a24c9a6acfcd3cb89cc08fa0bac985249bd4c2f4"
+          },
+          "residualEnergyMeV": 55.84869187434682,
+          "residualEnergyBracketMeV": [
+            55,
+            60
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              105,
+              106
+            ],
+            "rangeBracketGcm2": [
+              2.644,
+              3.093
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        }
+      ],
+      "curve": [
+        {
+          "arealDensityGcm2": 0,
+          "residualEnergyMeV": 100,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 0.4004,
+          "residualEnergyMeV": 97.72070220943318,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 0.8008,
+          "residualEnergyMeV": 95.39968246410399,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 1.2011999999999998,
+          "residualEnergyMeV": 93.02828737028122,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 1.6016,
+          "residualEnergyMeV": 90.60842334373146,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.002,
+          "residualEnergyMeV": 88.13960503665074,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.4023999999999996,
+          "residualEnergyMeV": 85.61713078027223,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.8027999999999995,
+          "residualEnergyMeV": 83.0395548228038,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 3.2032,
+          "residualEnergyMeV": 80.39995801587993,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 3.6035999999999997,
+          "residualEnergyMeV": 77.69484693634222,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.004,
+          "residualEnergyMeV": 74.91562632249206,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.404399999999999,
+          "residualEnergyMeV": 72.05683077287871,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.804799999999999,
+          "residualEnergyMeV": 69.10786573834861,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 5.2052,
+          "residualEnergyMeV": 66.0590302159213,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 5.605599999999999,
+          "residualEnergyMeV": 62.9005149616621,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.005999999999999,
+          "residualEnergyMeV": 59.61611378348033,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.4064,
+          "residualEnergyMeV": 56.189125112274105,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.806799999999999,
+          "residualEnergyMeV": 52.58974066198301,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 7.207199999999999,
+          "residualEnergyMeV": 48.78817737510282,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 7.6076,
+          "residualEnergyMeV": 44.74316255553659,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 8.008,
+          "residualEnergyMeV": 40.38680574761719,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 8.408399999999999,
+          "residualEnergyMeV": 35.624631968964884,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 8.808799999999998,
+          "residualEnergyMeV": 30.302013953115395,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 9.2092,
+          "residualEnergyMeV": 24.119279216896206,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 9.609599999999999,
+          "residualEnergyMeV": 16.292292000732516,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 10.009999999999998,
+          "residualEnergyMeV": null,
+          "status": "below_table_range"
+        },
+        {
+          "arealDensityGcm2": 10.4104,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 10.810799999999999,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 11.211199999999998,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 11.6116,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 12.011999999999999,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        }
+      ],
+      "surfaceDose": "not_evaluated",
+      "effectiveDose": "not_evaluated",
+      "secondaryTransport": "not_evaluated",
+      "terrainApplied": false,
+      "meaning": "Historical silicon detector dose rates and a separate primary-proton CSDA comparison. Residual energy is not a dose-reduction percentage or a safety verdict.",
+      "exclusions": [
+        "No GCR/SEP spectrum, particle fluence, nuclear reactions/secondary neutron transport, range straggling, scattering or angular shielding geometry.",
+        "The NIST CSDA path range is used as a straight normal-slab approximation; it is distinct from projected range. Bulk density is a NIST material reference.",
+        "CRaTER is historical lunar-orbital silicon detector context. Gy in silicon is not Sv in tissue; lunar-shadow correction is not a surface/human-dose conversion.",
+        "No terrain solid-angle dose multiplier, future-date prediction, exposure limit, health risk or validated shelter/hardware protection result. Source uncertainties are not propagated."
+      ]
+    },
+    {
+      "model": "orbital-context-proton-csda-1",
+      "status": "exploratory",
+      "acceptedForVerdict": false,
+      "assumptions": {
+        "enabled": true,
+        "material": "polyethylene",
+        "energyMeV": 100,
+        "arealDensityGcm2": 5,
+        "areaM2": 10,
+        "archiveMonth": "2012-12",
+        "detector": "D1",
+        "corrected": false,
+        "minCoveragePercent": 95
+      },
+      "environment": "Hypothetical monoenergetic protons at normal incidence on a uniform slab",
+      "sources": [
+        {
+          "name": "crater-daily-dose.html",
+          "url": "https://crater-products.sr.unh.edu/data/inst/dose/table_l30drate.php",
+          "canonicalization": "none",
+          "bytes": 327142,
+          "sha256": "8245e5c592aa5d6b1f7f9286324d84a4b861ffdbcbffd0098b92c78d5208e3ec"
+        },
+        {
+          "name": "pstar-aluminum.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "013",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "88c05b209545e34fae04e53e0c59b7d2ad07ff0d48d196faa679c96bc264dda0"
+        },
+        {
+          "name": "pstar-aluminum-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text013",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 168,
+          "sha256": "73fe0f4618597fff276dcd0c4fada1448a8cbc72c979cbd1a9be39d50aa24787"
+        },
+        {
+          "name": "pstar-polyethylene.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "221",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "8efbbd2764c056ad5a3a773a2877363552a68024d7094d76c3a6e8aad93ecaad"
+        },
+        {
+          "name": "pstar-polyethylene-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text221",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 181,
+          "sha256": "f66d9da8b7e0a0d9fd793b7300f806eabc618bdaaf67f4a8d43802449ddbb98c"
+        },
+        {
+          "name": "pstar-water.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "276",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "83a422df932f5a4f144eaa52e4a4011d654a473cb3ffd2e63dbb60117b40e08e"
+        },
+        {
+          "name": "pstar-water-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text276",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 182,
+          "sha256": "e2f827c72daaa5ae8ec10012a24c9a6acfcd3cb89cc08fa0bac985249bd4c2f4"
+        },
+        {
+          "name": "pstar-help.txt",
+          "url": "https://physics.nist.gov/PhysRefData/Star/Text/programs.html",
+          "canonicalization": "body-text-v1",
+          "bytes": 8274,
+          "sha256": "87b961e30462a630228591d8bf0f0e544515aa447e9b9e39f638c77fa1095c58"
+        },
+        {
+          "name": "pstar-appendix.txt",
+          "url": "https://physics.nist.gov/PhysRefData/Star/Text/appendix.html",
+          "canonicalization": "body-text-v1",
+          "bytes": 2268,
+          "sha256": "e8e50d58a46970e1fa281efeddffb7ac36403f72d60f4c2efb71defb073cc012"
+        }
+      ],
+      "dataVersion": "radiation-prepare-1",
+      "orbitalObservations": {
+        "classification": "UNH CRaTER PI legacy derived orbital observations",
+        "quantity": "absorbed dose rate in silicon",
+        "unit": "mGy_Si/day",
+        "month": "2012-12",
+        "detector": "D1",
+        "correction": "as measured",
+        "minimumCoveragePercent": 95,
+        "calendarDays": 31,
+        "qualifyingDays": 31,
+        "unavailableDays": 0,
+        "arithmeticMeanMgySiDay": 0.10582967741935484,
+        "minMgySiDay": 0.09652,
+        "maxMgySiDay": 0.19892,
+        "meaning": "Arithmetic mean of qualifying archived daily rates only. No missing-day fill, dose integration, surface conversion or mission-time forecast.",
+        "uncertainty": null,
+        "records": [
+          {
+            "date": "2012-12-01",
+            "sourceValueMgySiDay": 0.0991,
+            "usedValueMgySiDay": 0.0991,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 32,
+            "reason": null
+          },
+          {
+            "date": "2012-12-02",
+            "sourceValueMgySiDay": 0.09652,
+            "usedValueMgySiDay": 0.09652,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 31,
+            "reason": null
+          },
+          {
+            "date": "2012-12-03",
+            "sourceValueMgySiDay": 0.10396,
+            "usedValueMgySiDay": 0.10396,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 30,
+            "reason": null
+          },
+          {
+            "date": "2012-12-04",
+            "sourceValueMgySiDay": 0.09784,
+            "usedValueMgySiDay": 0.09784,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 29,
+            "reason": null
+          },
+          {
+            "date": "2012-12-05",
+            "sourceValueMgySiDay": 0.09842,
+            "usedValueMgySiDay": 0.09842,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 28,
+            "reason": null
+          },
+          {
+            "date": "2012-12-06",
+            "sourceValueMgySiDay": 0.09876,
+            "usedValueMgySiDay": 0.09876,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 27,
+            "reason": null
+          },
+          {
+            "date": "2012-12-07",
+            "sourceValueMgySiDay": 0.10025,
+            "usedValueMgySiDay": 0.10025,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 26,
+            "reason": null
+          },
+          {
+            "date": "2012-12-08",
+            "sourceValueMgySiDay": 0.10277,
+            "usedValueMgySiDay": 0.10277,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 25,
+            "reason": null
+          },
+          {
+            "date": "2012-12-09",
+            "sourceValueMgySiDay": 0.10108,
+            "usedValueMgySiDay": 0.10108,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 24,
+            "reason": null
+          },
+          {
+            "date": "2012-12-10",
+            "sourceValueMgySiDay": 0.09996,
+            "usedValueMgySiDay": 0.09996,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 23,
+            "reason": null
+          },
+          {
+            "date": "2012-12-11",
+            "sourceValueMgySiDay": 0.09927,
+            "usedValueMgySiDay": 0.09927,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 22,
+            "reason": null
+          },
+          {
+            "date": "2012-12-12",
+            "sourceValueMgySiDay": 0.09963,
+            "usedValueMgySiDay": 0.09963,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 21,
+            "reason": null
+          },
+          {
+            "date": "2012-12-13",
+            "sourceValueMgySiDay": 0.10034,
+            "usedValueMgySiDay": 0.10034,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 20,
+            "reason": null
+          },
+          {
+            "date": "2012-12-14",
+            "sourceValueMgySiDay": 0.11661,
+            "usedValueMgySiDay": 0.11661,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 19,
+            "reason": null
+          },
+          {
+            "date": "2012-12-15",
+            "sourceValueMgySiDay": 0.19892,
+            "usedValueMgySiDay": 0.19892,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 18,
+            "reason": null
+          },
+          {
+            "date": "2012-12-16",
+            "sourceValueMgySiDay": 0.13625,
+            "usedValueMgySiDay": 0.13625,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 17,
+            "reason": null
+          },
+          {
+            "date": "2012-12-17",
+            "sourceValueMgySiDay": 0.10804,
+            "usedValueMgySiDay": 0.10804,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 16,
+            "reason": null
+          },
+          {
+            "date": "2012-12-18",
+            "sourceValueMgySiDay": 0.10128,
+            "usedValueMgySiDay": 0.10128,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 15,
+            "reason": null
+          },
+          {
+            "date": "2012-12-19",
+            "sourceValueMgySiDay": 0.09946,
+            "usedValueMgySiDay": 0.09946,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 14,
+            "reason": null
+          },
+          {
+            "date": "2012-12-20",
+            "sourceValueMgySiDay": 0.0986,
+            "usedValueMgySiDay": 0.0986,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 13,
+            "reason": null
+          },
+          {
+            "date": "2012-12-21",
+            "sourceValueMgySiDay": 0.09776,
+            "usedValueMgySiDay": 0.09776,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 12,
+            "reason": null
+          },
+          {
+            "date": "2012-12-22",
+            "sourceValueMgySiDay": 0.09831,
+            "usedValueMgySiDay": 0.09831,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 11,
+            "reason": null
+          },
+          {
+            "date": "2012-12-23",
+            "sourceValueMgySiDay": 0.10281,
+            "usedValueMgySiDay": 0.10281,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 10,
+            "reason": null
+          },
+          {
+            "date": "2012-12-24",
+            "sourceValueMgySiDay": 0.10238,
+            "usedValueMgySiDay": 0.10238,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 9,
+            "reason": null
+          },
+          {
+            "date": "2012-12-25",
+            "sourceValueMgySiDay": 0.10221,
+            "usedValueMgySiDay": 0.10221,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 8,
+            "reason": null
+          },
+          {
+            "date": "2012-12-26",
+            "sourceValueMgySiDay": 0.10208,
+            "usedValueMgySiDay": 0.10208,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 7,
+            "reason": null
+          },
+          {
+            "date": "2012-12-27",
+            "sourceValueMgySiDay": 0.10266,
+            "usedValueMgySiDay": 0.10266,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 6,
+            "reason": null
+          },
+          {
+            "date": "2012-12-28",
+            "sourceValueMgySiDay": 0.1035,
+            "usedValueMgySiDay": 0.1035,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 5,
+            "reason": null
+          },
+          {
+            "date": "2012-12-29",
+            "sourceValueMgySiDay": 0.10461,
+            "usedValueMgySiDay": 0.10461,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 4,
+            "reason": null
+          },
+          {
+            "date": "2012-12-30",
+            "sourceValueMgySiDay": 0.10378,
+            "usedValueMgySiDay": 0.10378,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 3,
+            "reason": null
+          },
+          {
+            "date": "2012-12-31",
+            "sourceValueMgySiDay": 0.10356,
+            "usedValueMgySiDay": 0.10356,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 2,
+            "reason": null
+          }
+        ],
+        "source": {
+          "name": "crater-daily-dose.html",
+          "url": "https://crater-products.sr.unh.edu/data/inst/dose/table_l30drate.php",
+          "canonicalization": "none",
+          "bytes": 327142,
+          "sha256": "8245e5c592aa5d6b1f7f9286324d84a4b861ffdbcbffd0098b92c78d5208e3ec"
+        }
+      },
+      "protonComparison": {
+        "material": "polyethylene",
+        "name": "Polyethylene",
+        "incidentEnergyMeV": 100,
+        "incidentCsdaRangeGcm2": 7.242,
+        "incidentSourceLine": 114,
+        "arealDensityGcm2": 5,
+        "remainingRangeGcm2": 2.242,
+        "referenceDensityGcm3": 0.94,
+        "thicknessCm": 5.319148936170213,
+        "panelMassKg": 500,
+        "areaM2": 10,
+        "source": {
+          "name": "pstar-polyethylene.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "221",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "8efbbd2764c056ad5a3a773a2877363552a68024d7094d76c3a6e8aad93ecaad"
+        },
+        "compositionSource": {
+          "name": "pstar-polyethylene-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text221",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 181,
+          "sha256": "f66d9da8b7e0a0d9fd793b7300f806eabc618bdaaf67f4a8d43802449ddbb98c"
+        },
+        "residualEnergyMeV": 52.10062647514807,
+        "residualEnergyBracketMeV": [
+          50,
+          55
+        ],
+        "interpolation": {
+          "method": "log-log inverse CSDA-range interpolation",
+          "sourceLines": [
+            104,
+            105
+          ],
+          "rangeBracketGcm2": [
+            2.081,
+            2.473
+          ]
+        },
+        "secondaryDose": "not_evaluated",
+        "humanDose": "not_evaluated",
+        "status": "primary_energy_estimated"
+      },
+      "materialComparisons": [
+        {
+          "material": "aluminum",
+          "name": "Aluminum",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 10.01,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 5.01,
+          "referenceDensityGcm3": 2.6989,
+          "thicknessCm": 1.8526066175108378,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-aluminum.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "013",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "88c05b209545e34fae04e53e0c59b7d2ad07ff0d48d196faa679c96bc264dda0"
+          },
+          "compositionSource": {
+            "name": "pstar-aluminum-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text013",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 168,
+            "sha256": "73fe0f4618597fff276dcd0c4fada1448a8cbc72c979cbd1a9be39d50aa24787"
+          },
+          "residualEnergyMeV": 67.63481184552202,
+          "residualEnergyBracketMeV": [
+            65,
+            70
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              107,
+              108
+            ],
+            "rangeBracketGcm2": [
+              4.669,
+              5.325
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        },
+        {
+          "material": "polyethylene",
+          "name": "Polyethylene",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 7.242,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 2.242,
+          "referenceDensityGcm3": 0.94,
+          "thicknessCm": 5.319148936170213,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-polyethylene.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "221",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "8efbbd2764c056ad5a3a773a2877363552a68024d7094d76c3a6e8aad93ecaad"
+          },
+          "compositionSource": {
+            "name": "pstar-polyethylene-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text221",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 181,
+            "sha256": "f66d9da8b7e0a0d9fd793b7300f806eabc618bdaaf67f4a8d43802449ddbb98c"
+          },
+          "residualEnergyMeV": 52.10062647514807,
+          "residualEnergyBracketMeV": [
+            50,
+            55
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              104,
+              105
+            ],
+            "rangeBracketGcm2": [
+              2.081,
+              2.473
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        },
+        {
+          "material": "water",
+          "name": "Water, liquid",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 7.718,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 2.718,
+          "referenceDensityGcm3": 1,
+          "thicknessCm": 5,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-water.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "276",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "83a422df932f5a4f144eaa52e4a4011d654a473cb3ffd2e63dbb60117b40e08e"
+          },
+          "compositionSource": {
+            "name": "pstar-water-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text276",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 182,
+            "sha256": "e2f827c72daaa5ae8ec10012a24c9a6acfcd3cb89cc08fa0bac985249bd4c2f4"
+          },
+          "residualEnergyMeV": 55.84869187434682,
+          "residualEnergyBracketMeV": [
+            55,
+            60
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              105,
+              106
+            ],
+            "rangeBracketGcm2": [
+              2.644,
+              3.093
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        }
+      ],
+      "curve": [
+        {
+          "arealDensityGcm2": 0,
+          "residualEnergyMeV": 100,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 0.28968,
+          "residualEnergyMeV": 97.73672158667938,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 0.57936,
+          "residualEnergyMeV": 95.43162865927688,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 0.86904,
+          "residualEnergyMeV": 93.08721190237735,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 1.15872,
+          "residualEnergyMeV": 90.6965299188317,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 1.4484,
+          "residualEnergyMeV": 88.25852935651935,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 1.73808,
+          "residualEnergyMeV": 85.76745301305209,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.0277600000000002,
+          "residualEnergyMeV": 83.21966575679541,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.31744,
+          "residualEnergyMeV": 80.6093024798379,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.60712,
+          "residualEnergyMeV": 77.9341697999915,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.8968,
+          "residualEnergyMeV": 75.1850427123933,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 3.1864800000000004,
+          "residualEnergyMeV": 72.35632065448856,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 3.47616,
+          "residualEnergyMeV": 69.4365761321278,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 3.76584,
+          "residualEnergyMeV": 66.41540006780846,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.0555200000000005,
+          "residualEnergyMeV": 63.28605052259485,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.3452,
+          "residualEnergyMeV": 60.0321430161288,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.63488,
+          "residualEnergyMeV": 56.631468205043944,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.9245600000000005,
+          "residualEnergyMeV": 53.0616139265921,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 5.21424,
+          "residualEnergyMeV": 49.28850682559804,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 5.50392,
+          "residualEnergyMeV": 45.26097190420598,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 5.7936,
+          "residualEnergyMeV": 40.933762163511915,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.08328,
+          "residualEnergyMeV": 36.1988203976339,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.372960000000001,
+          "residualEnergyMeV": 30.8877144197243,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.66264,
+          "residualEnergyMeV": 24.701837652955966,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.95232,
+          "residualEnergyMeV": 16.846181994599327,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 7.242000000000001,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 7.53168,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 7.82136,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 8.111040000000001,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 8.40072,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 8.6904,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        }
+      ],
+      "surfaceDose": "not_evaluated",
+      "effectiveDose": "not_evaluated",
+      "secondaryTransport": "not_evaluated",
+      "terrainApplied": false,
+      "meaning": "Historical silicon detector dose rates and a separate primary-proton CSDA comparison. Residual energy is not a dose-reduction percentage or a safety verdict.",
+      "exclusions": [
+        "No GCR/SEP spectrum, particle fluence, nuclear reactions/secondary neutron transport, range straggling, scattering or angular shielding geometry.",
+        "The NIST CSDA path range is used as a straight normal-slab approximation; it is distinct from projected range. Bulk density is a NIST material reference.",
+        "CRaTER is historical lunar-orbital silicon detector context. Gy in silicon is not Sv in tissue; lunar-shadow correction is not a surface/human-dose conversion.",
+        "No terrain solid-angle dose multiplier, future-date prediction, exposure limit, health risk or validated shelter/hardware protection result. Source uncertainties are not propagated."
+      ]
+    },
+    {
+      "model": "orbital-context-proton-csda-1",
+      "status": "exploratory",
+      "acceptedForVerdict": false,
+      "assumptions": {
+        "enabled": true,
+        "material": "water",
+        "energyMeV": 100,
+        "arealDensityGcm2": 5,
+        "areaM2": 10,
+        "archiveMonth": "2012-12",
+        "detector": "D1",
+        "corrected": false,
+        "minCoveragePercent": 95
+      },
+      "environment": "Hypothetical monoenergetic protons at normal incidence on a uniform slab",
+      "sources": [
+        {
+          "name": "crater-daily-dose.html",
+          "url": "https://crater-products.sr.unh.edu/data/inst/dose/table_l30drate.php",
+          "canonicalization": "none",
+          "bytes": 327142,
+          "sha256": "8245e5c592aa5d6b1f7f9286324d84a4b861ffdbcbffd0098b92c78d5208e3ec"
+        },
+        {
+          "name": "pstar-aluminum.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "013",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "88c05b209545e34fae04e53e0c59b7d2ad07ff0d48d196faa679c96bc264dda0"
+        },
+        {
+          "name": "pstar-aluminum-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text013",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 168,
+          "sha256": "73fe0f4618597fff276dcd0c4fada1448a8cbc72c979cbd1a9be39d50aa24787"
+        },
+        {
+          "name": "pstar-polyethylene.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "221",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "8efbbd2764c056ad5a3a773a2877363552a68024d7094d76c3a6e8aad93ecaad"
+        },
+        {
+          "name": "pstar-polyethylene-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text221",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 181,
+          "sha256": "f66d9da8b7e0a0d9fd793b7300f806eabc618bdaaf67f4a8d43802449ddbb98c"
+        },
+        {
+          "name": "pstar-water.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "276",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "83a422df932f5a4f144eaa52e4a4011d654a473cb3ffd2e63dbb60117b40e08e"
+        },
+        {
+          "name": "pstar-water-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text276",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 182,
+          "sha256": "e2f827c72daaa5ae8ec10012a24c9a6acfcd3cb89cc08fa0bac985249bd4c2f4"
+        },
+        {
+          "name": "pstar-help.txt",
+          "url": "https://physics.nist.gov/PhysRefData/Star/Text/programs.html",
+          "canonicalization": "body-text-v1",
+          "bytes": 8274,
+          "sha256": "87b961e30462a630228591d8bf0f0e544515aa447e9b9e39f638c77fa1095c58"
+        },
+        {
+          "name": "pstar-appendix.txt",
+          "url": "https://physics.nist.gov/PhysRefData/Star/Text/appendix.html",
+          "canonicalization": "body-text-v1",
+          "bytes": 2268,
+          "sha256": "e8e50d58a46970e1fa281efeddffb7ac36403f72d60f4c2efb71defb073cc012"
+        }
+      ],
+      "dataVersion": "radiation-prepare-1",
+      "orbitalObservations": {
+        "classification": "UNH CRaTER PI legacy derived orbital observations",
+        "quantity": "absorbed dose rate in silicon",
+        "unit": "mGy_Si/day",
+        "month": "2012-12",
+        "detector": "D1",
+        "correction": "as measured",
+        "minimumCoveragePercent": 95,
+        "calendarDays": 31,
+        "qualifyingDays": 31,
+        "unavailableDays": 0,
+        "arithmeticMeanMgySiDay": 0.10582967741935484,
+        "minMgySiDay": 0.09652,
+        "maxMgySiDay": 0.19892,
+        "meaning": "Arithmetic mean of qualifying archived daily rates only. No missing-day fill, dose integration, surface conversion or mission-time forecast.",
+        "uncertainty": null,
+        "records": [
+          {
+            "date": "2012-12-01",
+            "sourceValueMgySiDay": 0.0991,
+            "usedValueMgySiDay": 0.0991,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 32,
+            "reason": null
+          },
+          {
+            "date": "2012-12-02",
+            "sourceValueMgySiDay": 0.09652,
+            "usedValueMgySiDay": 0.09652,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 31,
+            "reason": null
+          },
+          {
+            "date": "2012-12-03",
+            "sourceValueMgySiDay": 0.10396,
+            "usedValueMgySiDay": 0.10396,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 30,
+            "reason": null
+          },
+          {
+            "date": "2012-12-04",
+            "sourceValueMgySiDay": 0.09784,
+            "usedValueMgySiDay": 0.09784,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 29,
+            "reason": null
+          },
+          {
+            "date": "2012-12-05",
+            "sourceValueMgySiDay": 0.09842,
+            "usedValueMgySiDay": 0.09842,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 28,
+            "reason": null
+          },
+          {
+            "date": "2012-12-06",
+            "sourceValueMgySiDay": 0.09876,
+            "usedValueMgySiDay": 0.09876,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 27,
+            "reason": null
+          },
+          {
+            "date": "2012-12-07",
+            "sourceValueMgySiDay": 0.10025,
+            "usedValueMgySiDay": 0.10025,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 26,
+            "reason": null
+          },
+          {
+            "date": "2012-12-08",
+            "sourceValueMgySiDay": 0.10277,
+            "usedValueMgySiDay": 0.10277,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 25,
+            "reason": null
+          },
+          {
+            "date": "2012-12-09",
+            "sourceValueMgySiDay": 0.10108,
+            "usedValueMgySiDay": 0.10108,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 24,
+            "reason": null
+          },
+          {
+            "date": "2012-12-10",
+            "sourceValueMgySiDay": 0.09996,
+            "usedValueMgySiDay": 0.09996,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 23,
+            "reason": null
+          },
+          {
+            "date": "2012-12-11",
+            "sourceValueMgySiDay": 0.09927,
+            "usedValueMgySiDay": 0.09927,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 22,
+            "reason": null
+          },
+          {
+            "date": "2012-12-12",
+            "sourceValueMgySiDay": 0.09963,
+            "usedValueMgySiDay": 0.09963,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 21,
+            "reason": null
+          },
+          {
+            "date": "2012-12-13",
+            "sourceValueMgySiDay": 0.10034,
+            "usedValueMgySiDay": 0.10034,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 20,
+            "reason": null
+          },
+          {
+            "date": "2012-12-14",
+            "sourceValueMgySiDay": 0.11661,
+            "usedValueMgySiDay": 0.11661,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 19,
+            "reason": null
+          },
+          {
+            "date": "2012-12-15",
+            "sourceValueMgySiDay": 0.19892,
+            "usedValueMgySiDay": 0.19892,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 18,
+            "reason": null
+          },
+          {
+            "date": "2012-12-16",
+            "sourceValueMgySiDay": 0.13625,
+            "usedValueMgySiDay": 0.13625,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 17,
+            "reason": null
+          },
+          {
+            "date": "2012-12-17",
+            "sourceValueMgySiDay": 0.10804,
+            "usedValueMgySiDay": 0.10804,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 16,
+            "reason": null
+          },
+          {
+            "date": "2012-12-18",
+            "sourceValueMgySiDay": 0.10128,
+            "usedValueMgySiDay": 0.10128,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 15,
+            "reason": null
+          },
+          {
+            "date": "2012-12-19",
+            "sourceValueMgySiDay": 0.09946,
+            "usedValueMgySiDay": 0.09946,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 14,
+            "reason": null
+          },
+          {
+            "date": "2012-12-20",
+            "sourceValueMgySiDay": 0.0986,
+            "usedValueMgySiDay": 0.0986,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 13,
+            "reason": null
+          },
+          {
+            "date": "2012-12-21",
+            "sourceValueMgySiDay": 0.09776,
+            "usedValueMgySiDay": 0.09776,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 12,
+            "reason": null
+          },
+          {
+            "date": "2012-12-22",
+            "sourceValueMgySiDay": 0.09831,
+            "usedValueMgySiDay": 0.09831,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 11,
+            "reason": null
+          },
+          {
+            "date": "2012-12-23",
+            "sourceValueMgySiDay": 0.10281,
+            "usedValueMgySiDay": 0.10281,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 10,
+            "reason": null
+          },
+          {
+            "date": "2012-12-24",
+            "sourceValueMgySiDay": 0.10238,
+            "usedValueMgySiDay": 0.10238,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 9,
+            "reason": null
+          },
+          {
+            "date": "2012-12-25",
+            "sourceValueMgySiDay": 0.10221,
+            "usedValueMgySiDay": 0.10221,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 8,
+            "reason": null
+          },
+          {
+            "date": "2012-12-26",
+            "sourceValueMgySiDay": 0.10208,
+            "usedValueMgySiDay": 0.10208,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 7,
+            "reason": null
+          },
+          {
+            "date": "2012-12-27",
+            "sourceValueMgySiDay": 0.10266,
+            "usedValueMgySiDay": 0.10266,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 6,
+            "reason": null
+          },
+          {
+            "date": "2012-12-28",
+            "sourceValueMgySiDay": 0.1035,
+            "usedValueMgySiDay": 0.1035,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 5,
+            "reason": null
+          },
+          {
+            "date": "2012-12-29",
+            "sourceValueMgySiDay": 0.10461,
+            "usedValueMgySiDay": 0.10461,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 4,
+            "reason": null
+          },
+          {
+            "date": "2012-12-30",
+            "sourceValueMgySiDay": 0.10378,
+            "usedValueMgySiDay": 0.10378,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 3,
+            "reason": null
+          },
+          {
+            "date": "2012-12-31",
+            "sourceValueMgySiDay": 0.10356,
+            "usedValueMgySiDay": 0.10356,
+            "coveragePercent": 100,
+            "sourceRateFlag": null,
+            "sourceCoverageFlag": null,
+            "sourceTableRow": 2,
+            "reason": null
+          }
+        ],
+        "source": {
+          "name": "crater-daily-dose.html",
+          "url": "https://crater-products.sr.unh.edu/data/inst/dose/table_l30drate.php",
+          "canonicalization": "none",
+          "bytes": 327142,
+          "sha256": "8245e5c592aa5d6b1f7f9286324d84a4b861ffdbcbffd0098b92c78d5208e3ec"
+        }
+      },
+      "protonComparison": {
+        "material": "water",
+        "name": "Water, liquid",
+        "incidentEnergyMeV": 100,
+        "incidentCsdaRangeGcm2": 7.718,
+        "incidentSourceLine": 114,
+        "arealDensityGcm2": 5,
+        "remainingRangeGcm2": 2.718,
+        "referenceDensityGcm3": 1,
+        "thicknessCm": 5,
+        "panelMassKg": 500,
+        "areaM2": 10,
+        "source": {
+          "name": "pstar-water.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+          "method": "POST",
+          "body": {
+            "prog": "PSTAR",
+            "matno": "276",
+            "Energies": "",
+            "ShowDefault": "on"
+          },
+          "canonicalization": "pstar-pre-v1",
+          "bytes": 10359,
+          "sha256": "83a422df932f5a4f144eaa52e4a4011d654a473cb3ffd2e63dbb60117b40e08e"
+        },
+        "compositionSource": {
+          "name": "pstar-water-composition.txt",
+          "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text276",
+          "canonicalization": "nist-composition-v1",
+          "bytes": 182,
+          "sha256": "e2f827c72daaa5ae8ec10012a24c9a6acfcd3cb89cc08fa0bac985249bd4c2f4"
+        },
+        "residualEnergyMeV": 55.84869187434682,
+        "residualEnergyBracketMeV": [
+          55,
+          60
+        ],
+        "interpolation": {
+          "method": "log-log inverse CSDA-range interpolation",
+          "sourceLines": [
+            105,
+            106
+          ],
+          "rangeBracketGcm2": [
+            2.644,
+            3.093
+          ]
+        },
+        "secondaryDose": "not_evaluated",
+        "humanDose": "not_evaluated",
+        "status": "primary_energy_estimated"
+      },
+      "materialComparisons": [
+        {
+          "material": "aluminum",
+          "name": "Aluminum",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 10.01,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 5.01,
+          "referenceDensityGcm3": 2.6989,
+          "thicknessCm": 1.8526066175108378,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-aluminum.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "013",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "88c05b209545e34fae04e53e0c59b7d2ad07ff0d48d196faa679c96bc264dda0"
+          },
+          "compositionSource": {
+            "name": "pstar-aluminum-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text013",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 168,
+            "sha256": "73fe0f4618597fff276dcd0c4fada1448a8cbc72c979cbd1a9be39d50aa24787"
+          },
+          "residualEnergyMeV": 67.63481184552202,
+          "residualEnergyBracketMeV": [
+            65,
+            70
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              107,
+              108
+            ],
+            "rangeBracketGcm2": [
+              4.669,
+              5.325
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        },
+        {
+          "material": "polyethylene",
+          "name": "Polyethylene",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 7.242,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 2.242,
+          "referenceDensityGcm3": 0.94,
+          "thicknessCm": 5.319148936170213,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-polyethylene.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "221",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "8efbbd2764c056ad5a3a773a2877363552a68024d7094d76c3a6e8aad93ecaad"
+          },
+          "compositionSource": {
+            "name": "pstar-polyethylene-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text221",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 181,
+            "sha256": "f66d9da8b7e0a0d9fd793b7300f806eabc618bdaaf67f4a8d43802449ddbb98c"
+          },
+          "residualEnergyMeV": 52.10062647514807,
+          "residualEnergyBracketMeV": [
+            50,
+            55
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              104,
+              105
+            ],
+            "rangeBracketGcm2": [
+              2.081,
+              2.473
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        },
+        {
+          "material": "water",
+          "name": "Water, liquid",
+          "incidentEnergyMeV": 100,
+          "incidentCsdaRangeGcm2": 7.718,
+          "incidentSourceLine": 114,
+          "arealDensityGcm2": 5,
+          "remainingRangeGcm2": 2.718,
+          "referenceDensityGcm3": 1,
+          "thicknessCm": 5,
+          "panelMassKg": 500,
+          "areaM2": 10,
+          "source": {
+            "name": "pstar-water.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/ap_table-t.pl",
+            "method": "POST",
+            "body": {
+              "prog": "PSTAR",
+              "matno": "276",
+              "Energies": "",
+              "ShowDefault": "on"
+            },
+            "canonicalization": "pstar-pre-v1",
+            "bytes": 10359,
+            "sha256": "83a422df932f5a4f144eaa52e4a4011d654a473cb3ffd2e63dbb60117b40e08e"
+          },
+          "compositionSource": {
+            "name": "pstar-water-composition.txt",
+            "url": "https://physics.nist.gov/cgi-bin/Star/compos.pl?ap-text276",
+            "canonicalization": "nist-composition-v1",
+            "bytes": 182,
+            "sha256": "e2f827c72daaa5ae8ec10012a24c9a6acfcd3cb89cc08fa0bac985249bd4c2f4"
+          },
+          "residualEnergyMeV": 55.84869187434682,
+          "residualEnergyBracketMeV": [
+            55,
+            60
+          ],
+          "interpolation": {
+            "method": "log-log inverse CSDA-range interpolation",
+            "sourceLines": [
+              105,
+              106
+            ],
+            "rangeBracketGcm2": [
+              2.644,
+              3.093
+            ]
+          },
+          "secondaryDose": "not_evaluated",
+          "humanDose": "not_evaluated",
+          "status": "primary_energy_estimated"
+        }
+      ],
+      "curve": [
+        {
+          "arealDensityGcm2": 0,
+          "residualEnergyMeV": 100,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 0.30872,
+          "residualEnergyMeV": 97.73113188790009,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 0.61744,
+          "residualEnergyMeV": 95.42048093864156,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 0.9261599999999999,
+          "residualEnergyMeV": 93.06861879240336,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 1.23488,
+          "residualEnergyMeV": 90.67008340745612,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 1.5436,
+          "residualEnergyMeV": 88.22538112153529,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 1.8523199999999997,
+          "residualEnergyMeV": 85.72800396713205,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.16104,
+          "residualEnergyMeV": 83.17231138507492,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.46976,
+          "residualEnergyMeV": 80.55340302235868,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 2.77848,
+          "residualEnergyMeV": 77.87148114746435,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 3.0872,
+          "residualEnergyMeV": 75.1159726473046,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 3.39592,
+          "residualEnergyMeV": 72.283848025029,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 3.7046399999999995,
+          "residualEnergyMeV": 69.36047218612667,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.01336,
+          "residualEnergyMeV": 66.3343260651152,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.32208,
+          "residualEnergyMeV": 63.1988007715371,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.6308,
+          "residualEnergyMeV": 59.93755808297827,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 4.93952,
+          "residualEnergyMeV": 56.534712099927106,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 5.248239999999999,
+          "residualEnergyMeV": 52.95684637048148,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 5.55696,
+          "residualEnergyMeV": 49.174785118431785,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 5.865679999999999,
+          "residualEnergyMeV": 45.15294785409577,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.1744,
+          "residualEnergyMeV": 40.80759015156859,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.4831199999999995,
+          "residualEnergyMeV": 36.06196962278861,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 6.79184,
+          "residualEnergyMeV": 30.75774756628444,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 7.10056,
+          "residualEnergyMeV": 24.571278720756276,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 7.409279999999999,
+          "residualEnergyMeV": 16.72272005766083,
+          "status": "primary_energy_estimated"
+        },
+        {
+          "arealDensityGcm2": 7.718,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 8.02672,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 8.33544,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 8.64416,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 8.952879999999999,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        },
+        {
+          "arealDensityGcm2": 9.2616,
+          "residualEnergyMeV": 0,
+          "status": "csda_range_exhausted"
+        }
+      ],
+      "surfaceDose": "not_evaluated",
+      "effectiveDose": "not_evaluated",
+      "secondaryTransport": "not_evaluated",
+      "terrainApplied": false,
+      "meaning": "Historical silicon detector dose rates and a separate primary-proton CSDA comparison. Residual energy is not a dose-reduction percentage or a safety verdict.",
+      "exclusions": [
+        "No GCR/SEP spectrum, particle fluence, nuclear reactions/secondary neutron transport, range straggling, scattering or angular shielding geometry.",
+        "The NIST CSDA path range is used as a straight normal-slab approximation; it is distinct from projected range. Bulk density is a NIST material reference.",
+        "CRaTER is historical lunar-orbital silicon detector context. Gy in silicon is not Sv in tissue; lunar-shadow correction is not a surface/human-dose conversion.",
+        "No terrain solid-angle dose multiplier, future-date prediction, exposure limit, health risk or validated shelter/hardware protection result. Source uncertainties are not propagated."
+      ]
+    }
+  ]
+}

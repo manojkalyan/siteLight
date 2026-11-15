@@ -1,0 +1,3877 @@
+{
+  "schema": "sitelight-stereo-cross-product-1",
+  "scienceSha256": "ac1c739e97e9c70c74dbdc05ac6be705575eef3e32c98ea064ff7402a7278a62",
+  "validatorSha256": "533ca9e7730586a9dcc8c6a2613005db9af0cc8304fef839565436e4cc42716b",
+  "footprintRadiusM": 100,
+  "slopeBaselineM": 20,
+  "sites": {
+    "real-shackleton": [],
+    "real-connector": [
+      {
+        "product": "SHACKRDGE02",
+        "coveredSamples": 57,
+        "expectedSamples": 317,
+        "meanHeightDifferenceM": 0.6884893185965147,
+        "heightRmseM": 0.835193961424264,
+        "medianHeightDifferenceM": 0.6208583849213483,
+        "heightNmadM": 0.3454760170074054,
+        "slopeSamples": 22,
+        "slopeRmseDeg": 1.209933727740441,
+        "rawFiniteHeightSamples": 66,
+        "confidenceRejectedHeightSamples": 9,
+        "points": [
+          {
+            "xM": 80,
+            "zM": 20,
+            "pgdaHeightM": 1940.0566033629073,
+            "nacHeightM": 1942.5529340188857,
+            "pgdaSlopeDeg": 4.995208988139292,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 90,
+            "zM": 20,
+            "pgdaHeightM": 1939.707745480377,
+            "nacHeightM": 1942.5344338213235,
+            "pgdaSlopeDeg": 4.613564875789763,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 40,
+            "zM": 30,
+            "pgdaHeightM": 1943.2035678476404,
+            "nacHeightM": 1945.112699317871,
+            "pgdaSlopeDeg": 5.697989963489287,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 50,
+            "zM": 30,
+            "pgdaHeightM": 1942.3935097629128,
+            "nacHeightM": 1944.2488355533455,
+            "pgdaSlopeDeg": 5.044198748112731,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 60,
+            "zM": 30,
+            "pgdaHeightM": 1941.7541140615185,
+            "nacHeightM": 1943.4789014538474,
+            "pgdaSlopeDeg": 4.318161605161401,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 70,
+            "zM": 30,
+            "pgdaHeightM": 1941.269243510614,
+            "nacHeightM": 1942.7237243627155,
+            "pgdaSlopeDeg": 4.102960342561935,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": 40,
+            "pgdaHeightM": 1947.2401503065973,
+            "nacHeightM": 1948.6377471945445,
+            "pgdaSlopeDeg": 2.265592915925923,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 0,
+            "zM": 40,
+            "pgdaHeightM": 1946.946707721252,
+            "nacHeightM": 1948.0171031024647,
+            "pgdaSlopeDeg": 3.8164205837344958,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 10,
+            "zM": 40,
+            "pgdaHeightM": 1946.5429885854135,
+            "nacHeightM": 1947.1734146584085,
+            "pgdaSlopeDeg": 4.37343267272058,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 20,
+            "zM": 40,
+            "pgdaHeightM": 1945.7665680521468,
+            "nacHeightM": 1946.6032602619853,
+            "pgdaSlopeDeg": 6.142829992903666,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 30,
+            "zM": 40,
+            "pgdaHeightM": 1944.594198071814,
+            "nacHeightM": 1945.9035083101965,
+            "pgdaSlopeDeg": 6.509735013309707,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 40,
+            "zM": 40,
+            "pgdaHeightM": 1943.6051737051387,
+            "nacHeightM": 1945.0053232203697,
+            "pgdaSlopeDeg": 5.386731137701862,
+            "nacSlopeDeg": 5.119570543267549,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 50,
+            "zM": 40,
+            "pgdaHeightM": 1942.8076908610303,
+            "nacHeightM": 1944.1566432280415,
+            "pgdaSlopeDeg": 4.579360312115236,
+            "nacSlopeDeg": 4.374006990807646,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 60,
+            "zM": 40,
+            "pgdaHeightM": 1942.158641067752,
+            "nacHeightM": 1943.5331671280192,
+            "pgdaSlopeDeg": 3.9872119831436668,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -40,
+            "zM": 50,
+            "pgdaHeightM": 1948.0161590314374,
+            "nacHeightM": 1948.5329429625979,
+            "pgdaSlopeDeg": 2.2179909777598183,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -30,
+            "zM": 50,
+            "pgdaHeightM": 1947.9851515054977,
+            "nacHeightM": 1948.6564764965424,
+            "pgdaSlopeDeg": 2.6334736945376895,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -20,
+            "zM": 50,
+            "pgdaHeightM": 1948.2234786224399,
+            "nacHeightM": 1948.810230250633,
+            "pgdaSlopeDeg": 2.5853882810672104,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": 50,
+            "pgdaHeightM": 1947.6008556635193,
+            "nacHeightM": 1948.611704945614,
+            "pgdaSlopeDeg": 2.316256352061891,
+            "nacSlopeDeg": 2.302754686880014,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": 50,
+            "pgdaHeightM": 1947.6603636856546,
+            "nacHeightM": 1948.0059843490046,
+            "pgdaSlopeDeg": 2.7111747530268393,
+            "nacSlopeDeg": 4.334261683881788,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": 50,
+            "pgdaHeightM": 1946.7735432170803,
+            "nacHeightM": 1947.0980170365488,
+            "pgdaSlopeDeg": 4.774239153198417,
+            "nacSlopeDeg": 4.5343487575390675,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": 50,
+            "pgdaHeightM": 1946.0010987550122,
+            "nacHeightM": 1946.4206771425652,
+            "pgdaSlopeDeg": 5.926656800387676,
+            "nacSlopeDeg": 4.2243881823881955,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": 50,
+            "pgdaHeightM": 1944.882768030071,
+            "nacHeightM": 1945.687098218569,
+            "pgdaSlopeDeg": 6.467194278227136,
+            "nacSlopeDeg": 5.060712176735178,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": 50,
+            "pgdaHeightM": 1943.8076779873452,
+            "nacHeightM": 1944.7137663418678,
+            "pgdaSlopeDeg": 5.385775924349309,
+            "nacSlopeDeg": 5.443662883036605,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 50,
+            "zM": 50,
+            "pgdaHeightM": 1943.0817403849512,
+            "nacHeightM": 1943.832888177366,
+            "pgdaSlopeDeg": 4.161738493534109,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": 60,
+            "pgdaHeightM": 1949.1802965976017,
+            "nacHeightM": 1950.7098801591528,
+            "pgdaSlopeDeg": 3.237144829791859,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": 60,
+            "pgdaHeightM": 1948.880114970821,
+            "nacHeightM": 1950.1483245063725,
+            "pgdaSlopeDeg": 3.5616722934138036,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -60,
+            "zM": 60,
+            "pgdaHeightM": 1948.6979997507046,
+            "nacHeightM": 1949.1546285784775,
+            "pgdaSlopeDeg": 4.168349292191238,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -50,
+            "zM": 60,
+            "pgdaHeightM": 1948.5612643187726,
+            "nacHeightM": 1948.6111784566547,
+            "pgdaSlopeDeg": 3.852295437786766,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 60,
+            "pgdaHeightM": 1948.4480675047134,
+            "nacHeightM": 1948.9038053561537,
+            "pgdaSlopeDeg": 2.5616368101123332,
+            "nacSlopeDeg": 2.6886233782852615,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -30,
+            "zM": 60,
+            "pgdaHeightM": 1948.3352491094563,
+            "nacHeightM": 1949.1875296906005,
+            "pgdaSlopeDeg": 1.9448874947020363,
+            "nacSlopeDeg": 2.2385103588885094,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -20,
+            "zM": 60,
+            "pgdaHeightM": 1948.202169604038,
+            "nacHeightM": 1948.9228617744743,
+            "pgdaSlopeDeg": 1.4993787215365566,
+            "nacSlopeDeg": 1.66883871188388,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": 60,
+            "pgdaHeightM": 1947.8209503988853,
+            "nacHeightM": 1948.6383113297256,
+            "pgdaSlopeDeg": 2.475690713224798,
+            "nacSlopeDeg": 2.3664860760257214,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": 60,
+            "pgdaHeightM": 1947.4077121111402,
+            "nacHeightM": 1948.0977601200866,
+            "pgdaSlopeDeg": 3.1758540104738735,
+            "nacSlopeDeg": 4.3384038354885535,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": 60,
+            "pgdaHeightM": 1946.7354673426084,
+            "nacHeightM": 1947.1233053464375,
+            "pgdaSlopeDeg": 2.2443453881642585,
+            "nacSlopeDeg": 5.530978378008871,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": 60,
+            "pgdaHeightM": 1946.624234186218,
+            "nacHeightM": 1946.165507809679,
+            "pgdaSlopeDeg": 4.48947113015979,
+            "nacSlopeDeg": 4.883963712064741,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": 60,
+            "pgdaHeightM": 1945.1675271963254,
+            "nacHeightM": 1945.430901640666,
+            "pgdaSlopeDeg": 7.035709297438742,
+            "nacSlopeDeg": 4.653343291868819,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": 60,
+            "pgdaHeightM": 1944.1633742071149,
+            "nacHeightM": 1944.5643085996046,
+            "pgdaSlopeDeg": 5.3728986331271935,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": 70,
+            "pgdaHeightM": 1949.404378681086,
+            "nacHeightM": 1950.2928003590446,
+            "pgdaSlopeDeg": 2.8500744808438667,
+            "nacSlopeDeg": 3.5200976032189515,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -60,
+            "zM": 70,
+            "pgdaHeightM": 1949.4292431562033,
+            "nacHeightM": 1949.67092935772,
+            "pgdaSlopeDeg": 3.0476840970460697,
+            "nacSlopeDeg": 3.941854153478973,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -50,
+            "zM": 70,
+            "pgdaHeightM": 1949.246320013574,
+            "nacHeightM": 1949.1876036483432,
+            "pgdaSlopeDeg": 3.1384692532681884,
+            "nacSlopeDeg": 3.077441000803526,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -40,
+            "zM": 70,
+            "pgdaHeightM": 1948.881919720612,
+            "nacHeightM": 1949.2745011319053,
+            "pgdaSlopeDeg": 2.920203341657079,
+            "nacSlopeDeg": 2.3061510853781555,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -30,
+            "zM": 70,
+            "pgdaHeightM": 1948.618227566015,
+            "nacHeightM": 1949.4380295461763,
+            "pgdaSlopeDeg": 2.3365740711660914,
+            "nacSlopeDeg": 1.65398960902974,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -20,
+            "zM": 70,
+            "pgdaHeightM": 1948.3212056324533,
+            "nacHeightM": 1949.004903762513,
+            "pgdaSlopeDeg": 2.113339699971148,
+            "nacSlopeDeg": 2.669867829904046,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": 70,
+            "pgdaHeightM": 1947.9422839818326,
+            "nacHeightM": 1948.563142366754,
+            "pgdaSlopeDeg": 2.7504355336011095,
+            "nacSlopeDeg": 2.623004805575732,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": 70,
+            "pgdaHeightM": 1947.4297068171609,
+            "nacHeightM": 1948.0891965669646,
+            "pgdaSlopeDeg": 3.316818320370837,
+            "nacSlopeDeg": 3.8729906741064624,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": 70,
+            "pgdaHeightM": 1946.7968754548153,
+            "nacHeightM": 1947.2291262921967,
+            "pgdaSlopeDeg": 3.890546384563732,
+            "nacSlopeDeg": 5.443607204676099,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": 70,
+            "pgdaHeightM": 1946.0878128962393,
+            "nacHeightM": 1946.1833274895803,
+            "pgdaSlopeDeg": 5.3366257687489975,
+            "nacSlopeDeg": 5.264130791909892,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": 70,
+            "pgdaHeightM": 1945.0748493418305,
+            "nacHeightM": 1945.3934441287442,
+            "pgdaSlopeDeg": 5.692276331761673,
+            "nacSlopeDeg": 4.27613353749429,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": 70,
+            "pgdaHeightM": 1944.1261173194137,
+            "nacHeightM": 1944.7108441367432,
+            "pgdaSlopeDeg": 4.952889532712812,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -60,
+            "zM": 80,
+            "pgdaHeightM": 1949.7510507603276,
+            "nacHeightM": 1949.977923656842,
+            "pgdaSlopeDeg": 2.038477832969998,
+            "nacSlopeDeg": 2.9399368970869864,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -50,
+            "zM": 80,
+            "pgdaHeightM": 1949.5115449273883,
+            "nacHeightM": 1949.610696766175,
+            "pgdaSlopeDeg": 1.9386369438379871,
+            "nacSlopeDeg": 2.5437673604891877,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 80,
+            "pgdaHeightM": 1949.2520343130477,
+            "nacHeightM": 1949.6693183419218,
+            "pgdaSlopeDeg": 2.4895553851685572,
+            "nacSlopeDeg": 2.0340492445297036,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 80,
+            "pgdaHeightM": 1948.928183370863,
+            "nacHeightM": 1949.6982517713855,
+            "pgdaSlopeDeg": 2.708130094832333,
+            "nacSlopeDeg": 1.577152448624972,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -20,
+            "zM": 80,
+            "pgdaHeightM": 1948.4984595442222,
+            "nacHeightM": 1949.2459408991176,
+            "pgdaSlopeDeg": 2.276839120178244,
+            "nacSlopeDeg": 3.271559697806595,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": 80,
+            "pgdaHeightM": 1948.179290148349,
+            "nacHeightM": 1948.6070228144613,
+            "pgdaSlopeDeg": 2.73887406018627,
+            "nacSlopeDeg": 3.964600746096108,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 0,
+            "zM": 80,
+            "pgdaHeightM": 1947.585230712854,
+            "nacHeightM": 1947.8660392826896,
+            "pgdaSlopeDeg": 3.5377536381814556,
+            "nacSlopeDeg": 4.283934650620047,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 10,
+            "zM": 80,
+            "pgdaHeightM": 1946.9575556875245,
+            "nacHeightM": 1947.1099984006144,
+            "pgdaSlopeDeg": 4.824088712655964,
+            "nacSlopeDeg": 4.426990285872153,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": 80,
+            "pgdaHeightM": 1945.8997033793266,
+            "nacHeightM": 1946.3263614013927,
+            "pgdaSlopeDeg": 6.228818574608007,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 30,
+            "zM": 80,
+            "pgdaHeightM": 1944.8126157260385,
+            "nacHeightM": 1945.6918669827187,
+            "pgdaSlopeDeg": 6.065057557838284,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -40,
+            "zM": 90,
+            "pgdaHeightM": 1949.5267719981232,
+            "nacHeightM": 1949.9793999307028,
+            "pgdaSlopeDeg": 1.6832531935028066,
+            "nacSlopeDeg": 0.6608087841093483,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 90,
+            "pgdaHeightM": 1949.1901362352603,
+            "nacHeightM": 1949.7901489202532,
+            "pgdaSlopeDeg": 2.8868726729395493,
+            "nacSlopeDeg": 1.8281403559188558,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -20,
+            "zM": 90,
+            "pgdaHeightM": 1948.588560744174,
+            "nacHeightM": 1949.345784794341,
+            "pgdaSlopeDeg": 2.851002893670288,
+            "nacSlopeDeg": 3.269917669493579,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": 90,
+            "pgdaHeightM": 1948.2276503274522,
+            "nacHeightM": 1948.6942884744797,
+            "pgdaSlopeDeg": 2.7772820602852217,
+            "nacSlopeDeg": 3.958123916810088,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 0,
+            "zM": 90,
+            "pgdaHeightM": 1947.6200999230575,
+            "nacHeightM": 1948.03066819661,
+            "pgdaSlopeDeg": 3.8360698869539527,
+            "nacSlopeDeg": 4.160293111004599,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 10,
+            "zM": 90,
+            "pgdaHeightM": 1946.8866243415018,
+            "nacHeightM": 1947.3931838790381,
+            "pgdaSlopeDeg": 5.619197925539734,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 0,
+            "zM": 100,
+            "pgdaHeightM": 1947.5780192194554,
+            "nacHeightM": 1948.5168032499307,
+            "pgdaSlopeDeg": 4.673960943151034,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          }
+        ],
+        "acceptedAbsoluteAccuracy": false,
+        "qualityMaskApplied": true,
+        "confidencePolicy": "All four bilinear supports must be successful source correlations (classes 10-14). Classes 0-4 and manually edited 15 excluded. Not a calibrated probability.",
+        "interpretation": "Image-stereo vs laser-derived terrain at common coordinates/baseline; no bias fit or shift applied. Source-confidence classes 10-14 required for all interpolation supports. Both use LOLA control; remaining image artifacts and independent absolute truth remain open."
+      }
+    ],
+    "real-gerlache": [],
+    "real-nobile": [],
+    "real-peak": [],
+    "real-malapert": [
+      {
+        "product": "MALAPERT02",
+        "coveredSamples": 215,
+        "expectedSamples": 317,
+        "meanHeightDifferenceM": 0.49841731215558466,
+        "heightRmseM": 0.6736272577917195,
+        "medianHeightDifferenceM": 0.5063085458677961,
+        "heightNmadM": 0.35591067361179246,
+        "slopeSamples": 159,
+        "slopeRmseDeg": 1.2951032196967032,
+        "rawFiniteHeightSamples": 224,
+        "confidenceRejectedHeightSamples": 9,
+        "points": [
+          {
+            "xM": -60,
+            "zM": -80,
+            "pgdaHeightM": 4782.592336649179,
+            "nacHeightM": 4783.738372585057,
+            "pgdaSlopeDeg": 6.24013692789165,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": -80,
+            "pgdaHeightM": 4781.951161396664,
+            "nacHeightM": 4783.3966102203785,
+            "pgdaSlopeDeg": 5.890497165605894,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -80,
+            "pgdaHeightM": 4781.245573352379,
+            "nacHeightM": 4782.920808656977,
+            "pgdaSlopeDeg": 5.190351073513938,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": -80,
+            "pgdaHeightM": 4780.450066415397,
+            "nacHeightM": 4782.303712025434,
+            "pgdaSlopeDeg": 4.084819233938371,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": -80,
+            "pgdaHeightM": 4779.842628680239,
+            "nacHeightM": 4781.47518718527,
+            "pgdaSlopeDeg": 2.736486244240275,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": -80,
+            "pgdaHeightM": 4779.532680680051,
+            "nacHeightM": 4780.771686211453,
+            "pgdaSlopeDeg": 3.821833989694223,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -80,
+            "pgdaHeightM": 4779.215412738224,
+            "nacHeightM": 4780.334864337468,
+            "pgdaSlopeDeg": 3.9686992719632594,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": -80,
+            "pgdaHeightM": 4779.01202236991,
+            "nacHeightM": 4779.914825374635,
+            "pgdaSlopeDeg": 4.034788660840746,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 20,
+            "zM": -80,
+            "pgdaHeightM": 4778.687462356523,
+            "nacHeightM": 4779.523961848728,
+            "pgdaSlopeDeg": 3.508341943710328,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": -80,
+            "pgdaHeightM": 4778.26818603464,
+            "nacHeightM": 4779.191973514599,
+            "pgdaSlopeDeg": 2.853675500885347,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": -80,
+            "pgdaHeightM": 4777.720965894129,
+            "nacHeightM": 4778.775560331422,
+            "pgdaSlopeDeg": 2.9066062518415854,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 50,
+            "zM": -80,
+            "pgdaHeightM": 4777.259306735794,
+            "nacHeightM": 4778.099338981696,
+            "pgdaSlopeDeg": 1.8957769613309448,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": -70,
+            "pgdaHeightM": 4784.086838458863,
+            "nacHeightM": 4784.822062079008,
+            "pgdaSlopeDeg": 5.214161729360802,
+            "nacSlopeDeg": 4.252536336237116,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": -70,
+            "pgdaHeightM": 4783.499392969168,
+            "nacHeightM": 4784.304984764778,
+            "pgdaSlopeDeg": 5.804519808398444,
+            "nacSlopeDeg": 4.540699027388639,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": -70,
+            "pgdaHeightM": 4782.753668278063,
+            "nacHeightM": 4783.657180616749,
+            "pgdaSlopeDeg": 6.449213559882419,
+            "nacSlopeDeg": 4.044694334379607,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -70,
+            "pgdaHeightM": 4781.815804932855,
+            "nacHeightM": 4783.142579108569,
+            "pgdaSlopeDeg": 7.258890096810702,
+            "nacSlopeDeg": 3.4573931254827595,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": -70,
+            "pgdaHeightM": 4780.60416230579,
+            "nacHeightM": 4782.716469902954,
+            "pgdaSlopeDeg": 6.491290844378546,
+            "nacSlopeDeg": 4.207965555053292,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": -70,
+            "pgdaHeightM": 4779.953475342888,
+            "nacHeightM": 4782.021484327712,
+            "pgdaSlopeDeg": 3.7972931529685505,
+            "nacSlopeDeg": 4.937953429881256,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": -70,
+            "pgdaHeightM": 4780.199783792466,
+            "nacHeightM": 4781.3482937424105,
+            "pgdaSlopeDeg": 4.320271921241639,
+            "nacSlopeDeg": 4.750443290815672,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -70,
+            "pgdaHeightM": 4779.885387066413,
+            "nacHeightM": 4780.748464511152,
+            "pgdaSlopeDeg": 4.41381291547342,
+            "nacSlopeDeg": 3.895417676042158,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": -70,
+            "pgdaHeightM": 4779.620489965541,
+            "nacHeightM": 4780.420979665431,
+            "pgdaSlopeDeg": 4.09434702352829,
+            "nacSlopeDeg": 3.7276014489456957,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": -70,
+            "pgdaHeightM": 4779.120769584794,
+            "nacHeightM": 4779.955318076912,
+            "pgdaSlopeDeg": 5.057944626656101,
+            "nacSlopeDeg": 3.6403264917793634,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": -70,
+            "pgdaHeightM": 4778.192869756873,
+            "nacHeightM": 4779.4867019573985,
+            "pgdaSlopeDeg": 4.319889144287788,
+            "nacSlopeDeg": 3.1850181668218345,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": -70,
+            "pgdaHeightM": 4777.753787255964,
+            "nacHeightM": 4779.2507575304935,
+            "pgdaSlopeDeg": 3.507757597902188,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -60,
+            "pgdaHeightM": 4784.900799022778,
+            "nacHeightM": 4785.515538518499,
+            "pgdaSlopeDeg": 3.335627664096864,
+            "nacSlopeDeg": 3.197800513798597,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": -60,
+            "pgdaHeightM": 4784.608231634027,
+            "nacHeightM": 4785.306099782129,
+            "pgdaSlopeDeg": 3.7854968765186965,
+            "nacSlopeDeg": 3.58711479631592,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": -60,
+            "pgdaHeightM": 4784.1273395388225,
+            "nacHeightM": 4784.8181142275835,
+            "pgdaSlopeDeg": 4.626072627425634,
+            "nacSlopeDeg": 4.176483528327197,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": -60,
+            "pgdaHeightM": 4783.45998516436,
+            "nacHeightM": 4784.2021014775455,
+            "pgdaSlopeDeg": 5.72520151848441,
+            "nacSlopeDeg": 4.59240208556345,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -60,
+            "pgdaHeightM": 4782.612779375074,
+            "nacHeightM": 4783.679170224312,
+            "pgdaSlopeDeg": 6.685838442641518,
+            "nacSlopeDeg": 4.3501172961328445,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": -60,
+            "pgdaHeightM": 4781.757825040605,
+            "nacHeightM": 4783.256848786419,
+            "pgdaSlopeDeg": 8.034103797666825,
+            "nacSlopeDeg": 4.678996282106622,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": -60,
+            "pgdaHeightM": 4781.106986302016,
+            "nacHeightM": 4782.53060624178,
+            "pgdaSlopeDeg": 6.978045796696677,
+            "nacSlopeDeg": 5.1665124080030305,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": -60,
+            "pgdaHeightM": 4781.042069720571,
+            "nacHeightM": 4781.840216257706,
+            "pgdaSlopeDeg": 4.971951900500674,
+            "nacSlopeDeg": 4.4720487225759085,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -60,
+            "pgdaHeightM": 4780.646368121998,
+            "nacHeightM": 4781.332231403509,
+            "pgdaSlopeDeg": 4.925666400027186,
+            "nacSlopeDeg": 4.291316101725696,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": -60,
+            "pgdaHeightM": 4780.222368302446,
+            "nacHeightM": 4780.948640066495,
+            "pgdaSlopeDeg": 4.54133191138464,
+            "nacSlopeDeg": 4.279010050647789,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": -60,
+            "pgdaHeightM": 4779.734054056203,
+            "nacHeightM": 4780.387786967485,
+            "pgdaSlopeDeg": 5.307784898167152,
+            "nacSlopeDeg": 3.9126301749134886,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": -60,
+            "pgdaHeightM": 4778.911493545328,
+            "nacHeightM": 4780.053485242119,
+            "pgdaSlopeDeg": 7.112704248748799,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -50,
+            "pgdaHeightM": 4785.661296807508,
+            "nacHeightM": 4786.095519762689,
+            "pgdaSlopeDeg": 3.431058374920529,
+            "nacSlopeDeg": 2.659261675771253,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": -50,
+            "pgdaHeightM": 4785.160579434477,
+            "nacHeightM": 4785.863963313619,
+            "pgdaSlopeDeg": 4.31026865057231,
+            "nacSlopeDeg": 3.7185894289694366,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": -50,
+            "pgdaHeightM": 4784.63978609874,
+            "nacHeightM": 4785.261079762938,
+            "pgdaSlopeDeg": 4.393786703723247,
+            "nacSlopeDeg": 4.4720233553509505,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": -50,
+            "pgdaHeightM": 4784.067721428449,
+            "nacHeightM": 4784.7901522156535,
+            "pgdaSlopeDeg": 5.081304007901555,
+            "nacSlopeDeg": 4.551967285373972,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -50,
+            "pgdaHeightM": 4783.4279743837815,
+            "nacHeightM": 4784.334703666683,
+            "pgdaSlopeDeg": 5.297346834941267,
+            "nacSlopeDeg": 4.407685972675012,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": -50,
+            "pgdaHeightM": 4782.99198039549,
+            "nacHeightM": 4783.88278988374,
+            "pgdaSlopeDeg": 6.980646463500917,
+            "nacSlopeDeg": 4.780059478417573,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": -50,
+            "pgdaHeightM": 4782.2944089924895,
+            "nacHeightM": 4783.145453808902,
+            "pgdaSlopeDeg": 7.335039671218255,
+            "nacSlopeDeg": 6.028226935866652,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": -50,
+            "pgdaHeightM": 4781.8776130903325,
+            "nacHeightM": 4782.353616242675,
+            "pgdaSlopeDeg": 5.547962394266431,
+            "nacSlopeDeg": 5.3216270442068145,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -50,
+            "pgdaHeightM": 4781.40162945345,
+            "nacHeightM": 4781.955680344536,
+            "pgdaSlopeDeg": 5.065842075400939,
+            "nacSlopeDeg": 4.284734468559501,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": -50,
+            "pgdaHeightM": 4780.920943785954,
+            "nacHeightM": 4781.581736212485,
+            "pgdaSlopeDeg": 4.809287948968012,
+            "nacSlopeDeg": 4.315114371429079,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": -50,
+            "pgdaHeightM": 4780.437616717244,
+            "nacHeightM": 4780.989642892087,
+            "pgdaSlopeDeg": 5.209868896537917,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -40,
+            "pgdaHeightM": 4786.025667634247,
+            "nacHeightM": 4786.443612595464,
+            "pgdaSlopeDeg": 3.1196984582810403,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": -40,
+            "pgdaHeightM": 4785.716747634129,
+            "nacHeightM": 4786.30276482276,
+            "pgdaSlopeDeg": 4.320540828323979,
+            "nacSlopeDeg": 3.449704011017206,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -60,
+            "zM": -40,
+            "pgdaHeightM": 4785.207716404055,
+            "nacHeightM": 4785.955513646124,
+            "pgdaSlopeDeg": 4.821128504543411,
+            "nacSlopeDeg": 4.045481762336491,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": -40,
+            "pgdaHeightM": 4784.761572010347,
+            "nacHeightM": 4785.497172051101,
+            "pgdaSlopeDeg": 5.136438744204496,
+            "nacSlopeDeg": 4.389950729542708,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -40,
+            "pgdaHeightM": 4784.1232815991,
+            "nacHeightM": 4784.925472860551,
+            "pgdaSlopeDeg": 4.95558430059035,
+            "nacSlopeDeg": 4.580392944491814,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": -40,
+            "pgdaHeightM": 4783.928497157292,
+            "nacHeightM": 4784.432745014281,
+            "pgdaSlopeDeg": 4.80150543556002,
+            "nacSlopeDeg": 4.478857973503374,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": -40,
+            "pgdaHeightM": 4783.427803880454,
+            "nacHeightM": 4783.987442211478,
+            "pgdaSlopeDeg": 6.0680264715787215,
+            "nacSlopeDeg": 5.651635480079445,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": -40,
+            "pgdaHeightM": 4782.767453353388,
+            "nacHeightM": 4783.273761899256,
+            "pgdaSlopeDeg": 5.741820399399966,
+            "nacSlopeDeg": 6.654923304909266,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -40,
+            "pgdaHeightM": 4782.139044063552,
+            "nacHeightM": 4782.61657956622,
+            "pgdaSlopeDeg": 5.135804339618274,
+            "nacSlopeDeg": 5.562590252973506,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": -40,
+            "pgdaHeightM": 4781.601570571987,
+            "nacHeightM": 4782.108034256956,
+            "pgdaSlopeDeg": 4.7432143839382706,
+            "nacSlopeDeg": 4.4828997036952085,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": -40,
+            "pgdaHeightM": 4781.1111697934,
+            "nacHeightM": 4781.593920960451,
+            "pgdaSlopeDeg": 4.744970109200543,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -30,
+            "pgdaHeightM": 4786.723863671426,
+            "nacHeightM": 4787.25770878933,
+            "pgdaSlopeDeg": 5.189225151541909,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": -30,
+            "pgdaHeightM": 4786.431064519613,
+            "nacHeightM": 4786.966372338251,
+            "pgdaSlopeDeg": 4.779801709662064,
+            "nacSlopeDeg": 5.0227472629774255,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": -30,
+            "pgdaHeightM": 4786.030176246954,
+            "nacHeightM": 4786.4237511522115,
+            "pgdaSlopeDeg": 5.026646766318427,
+            "nacSlopeDeg": 4.721452895410381,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": -30,
+            "pgdaHeightM": 4785.50159469606,
+            "nacHeightM": 4785.928761416715,
+            "pgdaSlopeDeg": 5.029090450023713,
+            "nacSlopeDeg": 3.495526685768108,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -30,
+            "pgdaHeightM": 4784.948917590675,
+            "nacHeightM": 4785.532316093246,
+            "pgdaSlopeDeg": 5.029725533907944,
+            "nacSlopeDeg": 2.950887398712041,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": -30,
+            "pgdaHeightM": 4784.521238557913,
+            "nacHeightM": 4785.137525418158,
+            "pgdaSlopeDeg": 4.050061910395985,
+            "nacSlopeDeg": 3.25475507524639,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": -30,
+            "pgdaHeightM": 4784.075493048207,
+            "nacHeightM": 4784.749839986286,
+            "pgdaSlopeDeg": 4.317628788694047,
+            "nacSlopeDeg": 3.8608208309201735,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": -30,
+            "pgdaHeightM": 4783.421393922015,
+            "nacHeightM": 4784.242002533254,
+            "pgdaSlopeDeg": 4.792779297252261,
+            "nacSlopeDeg": 4.938565763004084,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -30,
+            "pgdaHeightM": 4782.769805655729,
+            "nacHeightM": 4783.516172662147,
+            "pgdaSlopeDeg": 4.678682043800158,
+            "nacSlopeDeg": 5.238263104418011,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": -30,
+            "pgdaHeightM": 4782.223775783483,
+            "nacHeightM": 4782.770383231082,
+            "pgdaSlopeDeg": 4.280746998638561,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -20,
+            "pgdaHeightM": 4787.840280186305,
+            "nacHeightM": 4788.1591770895375,
+            "pgdaSlopeDeg": 6.105955608527655,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": -20,
+            "pgdaHeightM": 4787.238438094696,
+            "nacHeightM": 4787.850112963784,
+            "pgdaSlopeDeg": 5.895917021585028,
+            "nacSlopeDeg": 4.691669546531593,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": -20,
+            "pgdaHeightM": 4786.7012630684685,
+            "nacHeightM": 4787.2407896710365,
+            "pgdaSlopeDeg": 5.195591788440184,
+            "nacSlopeDeg": 6.210597786239942,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": -20,
+            "pgdaHeightM": 4786.150276660358,
+            "nacHeightM": 4786.332551000917,
+            "pgdaSlopeDeg": 4.891108581165693,
+            "nacSlopeDeg": 6.245005077375454,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -20,
+            "pgdaHeightM": 4785.585235483626,
+            "nacHeightM": 4785.586408517658,
+            "pgdaSlopeDeg": 4.733401287103001,
+            "nacSlopeDeg": 4.205216730237593,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": -20,
+            "pgdaHeightM": 4785.0431550299545,
+            "nacHeightM": 4785.258148231233,
+            "pgdaSlopeDeg": 4.437409039359205,
+            "nacSlopeDeg": 2.861469774587489,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": -20,
+            "pgdaHeightM": 4784.462419744061,
+            "nacHeightM": 4784.997290778676,
+            "pgdaSlopeDeg": 4.2093747161185435,
+            "nacSlopeDeg": 2.96211240810607,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": -20,
+            "pgdaHeightM": 4783.819690561722,
+            "nacHeightM": 4784.483978642596,
+            "pgdaSlopeDeg": 4.003231714066609,
+            "nacSlopeDeg": 3.8001368993727347,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -20,
+            "pgdaHeightM": 4783.254772889886,
+            "nacHeightM": 4783.710409360499,
+            "pgdaSlopeDeg": 3.7624713369036797,
+            "nacSlopeDeg": 4.144545836969632,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": -20,
+            "pgdaHeightM": 4782.7204273857,
+            "nacHeightM": 4783.035421037897,
+            "pgdaSlopeDeg": 3.476363611282407,
+            "nacSlopeDeg": 2.9524987757005676,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": -20,
+            "pgdaHeightM": 4782.268454863032,
+            "nacHeightM": 4782.679185542421,
+            "pgdaSlopeDeg": 2.486134305549065,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": -20,
+            "pgdaHeightM": 4782.8114873056875,
+            "nacHeightM": 4783.13182487874,
+            "pgdaSlopeDeg": 7.057116883380467,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 90,
+            "zM": -20,
+            "pgdaHeightM": 4784.415646009534,
+            "nacHeightM": 4784.787229471758,
+            "pgdaSlopeDeg": 5.959304401787442,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -10,
+            "pgdaHeightM": 4788.622150267106,
+            "nacHeightM": 4788.755739508823,
+            "pgdaSlopeDeg": 4.018934153800685,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": -10,
+            "pgdaHeightM": 4788.153953308625,
+            "nacHeightM": 4788.326764191635,
+            "pgdaSlopeDeg": 4.995793493810596,
+            "nacSlopeDeg": 4.12543717854801,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": -10,
+            "pgdaHeightM": 4787.487289237027,
+            "nacHeightM": 4787.983843957042,
+            "pgdaSlopeDeg": 5.446498831488405,
+            "nacSlopeDeg": 5.047615038061289,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": -10,
+            "pgdaHeightM": 4786.799146490462,
+            "nacHeightM": 4787.361575774432,
+            "pgdaSlopeDeg": 5.157520412703222,
+            "nacSlopeDeg": 6.903700278512036,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -10,
+            "pgdaHeightM": 4786.180478933627,
+            "nacHeightM": 4786.5363796661395,
+            "pgdaSlopeDeg": 4.775937270827679,
+            "nacSlopeDeg": 6.8559854963848075,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": -10,
+            "pgdaHeightM": 4785.592756746215,
+            "nacHeightM": 4785.945167477658,
+            "pgdaSlopeDeg": 4.670551990856558,
+            "nacSlopeDeg": 5.014173369331427,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": -10,
+            "pgdaHeightM": 4784.893975551039,
+            "nacHeightM": 4785.436620868555,
+            "pgdaSlopeDeg": 4.669810977078846,
+            "nacSlopeDeg": 4.4738367868678495,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": -10,
+            "pgdaHeightM": 4784.128970587645,
+            "nacHeightM": 4784.571709075478,
+            "pgdaSlopeDeg": 4.235116252851774,
+            "nacSlopeDeg": 5.392329710198777,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -10,
+            "pgdaHeightM": 4783.491941548422,
+            "nacHeightM": 4783.560901917807,
+            "pgdaSlopeDeg": 3.5850289595322113,
+            "nacSlopeDeg": 5.142132931003947,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": -10,
+            "pgdaHeightM": 4782.933234380789,
+            "nacHeightM": 4782.7955024510675,
+            "pgdaSlopeDeg": 3.1736511677821078,
+            "nacSlopeDeg": 3.3096817597151573,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 20,
+            "zM": -10,
+            "pgdaHeightM": 4782.4420561876395,
+            "nacHeightM": 4782.5642467050875,
+            "pgdaSlopeDeg": 1.7292254063175423,
+            "nacSlopeDeg": 1.5063389286122848,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 30,
+            "zM": -10,
+            "pgdaHeightM": 4782.424372037321,
+            "nacHeightM": 4782.698382369791,
+            "pgdaSlopeDeg": 1.686142064506736,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 40,
+            "zM": -10,
+            "pgdaHeightM": 4782.900171425751,
+            "nacHeightM": 4783.035297580696,
+            "pgdaSlopeDeg": 2.055807562834016,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 50,
+            "zM": -10,
+            "pgdaHeightM": 4782.901125681548,
+            "nacHeightM": 4783.339213572608,
+            "pgdaSlopeDeg": 1.6929985678677901,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": -10,
+            "pgdaHeightM": 4782.764801662381,
+            "nacHeightM": 4783.783769819703,
+            "pgdaSlopeDeg": 2.9094425069782446,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 70,
+            "zM": -10,
+            "pgdaHeightM": 4783.707795841294,
+            "nacHeightM": 4784.548194424062,
+            "pgdaSlopeDeg": 7.6752600225614955,
+            "nacSlopeDeg": 6.86303829334057,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 80,
+            "zM": -10,
+            "pgdaHeightM": 4784.514148644393,
+            "nacHeightM": 4785.214436131551,
+            "pgdaSlopeDeg": 6.172033994378515,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": -10,
+            "pgdaHeightM": 4785.25778368237,
+            "nacHeightM": 4785.692926186273,
+            "pgdaSlopeDeg": 6.3459339591794715,
+            "nacSlopeDeg": 5.294222544380567,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": 0,
+            "pgdaHeightM": 4789.50780084112,
+            "nacHeightM": 4789.97971684529,
+            "pgdaSlopeDeg": 4.456142897023621,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": 0,
+            "pgdaHeightM": 4789.023339997699,
+            "nacHeightM": 4789.500410689278,
+            "pgdaSlopeDeg": 4.4425281320745755,
+            "nacSlopeDeg": 5.492148926551565,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": 0,
+            "pgdaHeightM": 4788.568333308694,
+            "nacHeightM": 4789.068762838502,
+            "pgdaSlopeDeg": 3.3345396443452944,
+            "nacSlopeDeg": 4.633867195245449,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": 0,
+            "pgdaHeightM": 4788.043237747091,
+            "nacHeightM": 4788.720321031804,
+            "pgdaSlopeDeg": 4.354042143104051,
+            "nacSlopeDeg": 3.895519023519722,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 0,
+            "pgdaHeightM": 4787.395654987668,
+            "nacHeightM": 4788.273911317575,
+            "pgdaSlopeDeg": 4.952144008896148,
+            "nacSlopeDeg": 4.9410783678278545,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 0,
+            "pgdaHeightM": 4786.741447577993,
+            "nacHeightM": 4787.5296701775405,
+            "pgdaSlopeDeg": 5.034529081919359,
+            "nacSlopeDeg": 6.031791829157283,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 0,
+            "pgdaHeightM": 4786.050480617645,
+            "nacHeightM": 4786.625521126922,
+            "pgdaSlopeDeg": 5.121625766671226,
+            "nacSlopeDeg": 5.588002318989868,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": 0,
+            "pgdaHeightM": 4785.187867893715,
+            "nacHeightM": 4785.747192480521,
+            "pgdaSlopeDeg": 5.159933029151339,
+            "nacSlopeDeg": 5.589579484294098,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": 0,
+            "pgdaHeightM": 4784.296931195312,
+            "nacHeightM": 4784.697698181249,
+            "pgdaSlopeDeg": 4.462888819203157,
+            "nacSlopeDeg": 6.686005754347602,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": 0,
+            "pgdaHeightM": 4783.629394531247,
+            "nacHeightM": 4783.4200820922815,
+            "pgdaSlopeDeg": 3.532055096958351,
+            "nacSlopeDeg": 6.485953686765778,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": 0,
+            "pgdaHeightM": 4783.077506539245,
+            "nacHeightM": 4782.448595701299,
+            "pgdaSlopeDeg": 3.0542609161198233,
+            "nacSlopeDeg": 3.599522124256244,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": 0,
+            "pgdaHeightM": 4782.593462220456,
+            "nacHeightM": 4782.162297884255,
+            "pgdaSlopeDeg": 1.8227258373499113,
+            "nacSlopeDeg": 1.5621513765258157,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 30,
+            "zM": 0,
+            "pgdaHeightM": 4782.534061607693,
+            "nacHeightM": 4782.5875672449565,
+            "pgdaSlopeDeg": 1.1306778286743664,
+            "nacSlopeDeg": 3.0010145079538777,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": 0,
+            "pgdaHeightM": 4782.941818279415,
+            "nacHeightM": 4783.190773994913,
+            "pgdaSlopeDeg": 1.7530642905300962,
+            "nacSlopeDeg": 3.1662631237404897,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 50,
+            "zM": 0,
+            "pgdaHeightM": 4783.145930427062,
+            "nacHeightM": 4783.681563906674,
+            "pgdaSlopeDeg": 1.6839846473619482,
+            "nacSlopeDeg": 3.4469895464086004,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": 0,
+            "pgdaHeightM": 4783.2807446512015,
+            "nacHeightM": 4784.351428785893,
+            "pgdaSlopeDeg": 5.883201273568695,
+            "nacSlopeDeg": 4.186033702289941,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": 0,
+            "pgdaHeightM": 4784.861974206626,
+            "nacHeightM": 4785.067720003672,
+            "pgdaSlopeDeg": 6.205404614013187,
+            "nacSlopeDeg": 4.113487644007845,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 80,
+            "zM": 0,
+            "pgdaHeightM": 4785.250604694513,
+            "nacHeightM": 4785.718416736721,
+            "pgdaSlopeDeg": 4.353284074919545,
+            "nacSlopeDeg": 4.26408309106532,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": 0,
+            "pgdaHeightM": 4786.122165555447,
+            "nacHeightM": 4786.4486550651445,
+            "pgdaSlopeDeg": 5.970093522614196,
+            "nacSlopeDeg": 5.151274576908676,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 100,
+            "zM": 0,
+            "pgdaHeightM": 4786.938339860542,
+            "nacHeightM": 4787.107785624579,
+            "pgdaSlopeDeg": 6.209130095102275,
+            "nacSlopeDeg": 6.101142923381106,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": 10,
+            "pgdaHeightM": 4790.345900981799,
+            "nacHeightM": 4790.921532530721,
+            "pgdaSlopeDeg": 5.458625752702633,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": 10,
+            "pgdaHeightM": 4789.859829776522,
+            "nacHeightM": 4790.449300750313,
+            "pgdaSlopeDeg": 6.28626987570365,
+            "nacSlopeDeg": 5.574902263890307,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": 10,
+            "pgdaHeightM": 4788.7842707183,
+            "nacHeightM": 4789.747784299147,
+            "pgdaSlopeDeg": 5.066196733863155,
+            "nacSlopeDeg": 5.3060963383526,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": 10,
+            "pgdaHeightM": 4788.458723199644,
+            "nacHeightM": 4789.089719323498,
+            "pgdaSlopeDeg": 3.531291281538213,
+            "nacSlopeDeg": 4.020318482547073,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 10,
+            "pgdaHeightM": 4787.943012493137,
+            "nacHeightM": 4788.615356069839,
+            "pgdaSlopeDeg": 4.053374002752279,
+            "nacSlopeDeg": 3.985367901291061,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 10,
+            "pgdaHeightM": 4787.3184001967165,
+            "nacHeightM": 4787.8588279532805,
+            "pgdaSlopeDeg": 5.128547165795099,
+            "nacSlopeDeg": 5.654261975257422,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 10,
+            "pgdaHeightM": 4786.486998003629,
+            "nacHeightM": 4786.752506567098,
+            "pgdaSlopeDeg": 6.503925632254857,
+            "nacSlopeDeg": 6.165572212159317,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": 10,
+            "pgdaHeightM": 4785.3262379748085,
+            "nacHeightM": 4785.775290818731,
+            "pgdaSlopeDeg": 6.6711083229520565,
+            "nacSlopeDeg": 5.457176256826917,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": 10,
+            "pgdaHeightM": 4784.217755509401,
+            "nacHeightM": 4784.856795514334,
+            "pgdaSlopeDeg": 4.723560505868536,
+            "nacSlopeDeg": 5.44883294907151,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": 10,
+            "pgdaHeightM": 4783.684176352482,
+            "nacHeightM": 4783.8947535942125,
+            "pgdaSlopeDeg": 3.005087443602138,
+            "nacSlopeDeg": 6.5640620875811075,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": 10,
+            "pgdaHeightM": 4783.189460137623,
+            "nacHeightM": 4782.766183466893,
+            "pgdaSlopeDeg": 2.6542993749224943,
+            "nacSlopeDeg": 6.033657905202809,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": 10,
+            "pgdaHeightM": 4782.773351618884,
+            "nacHeightM": 4782.036819414407,
+            "pgdaSlopeDeg": 1.6906732949782188,
+            "nacSlopeDeg": 1.8797006302748465,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": 10,
+            "pgdaHeightM": 4782.610010430494,
+            "nacHeightM": 4782.494393266744,
+            "pgdaSlopeDeg": 0.6054267505028729,
+            "nacSlopeDeg": 3.3659879860924127,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": 10,
+            "pgdaHeightM": 4782.882432431404,
+            "nacHeightM": 4783.200238430216,
+            "pgdaSlopeDeg": 2.2316331424408804,
+            "nacSlopeDeg": 3.3557798280552182,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 50,
+            "zM": 10,
+            "pgdaHeightM": 4783.381606853249,
+            "nacHeightM": 4783.661912458365,
+            "pgdaSlopeDeg": 3.250095308025977,
+            "nacSlopeDeg": 3.135407451251879,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": 10,
+            "pgdaHeightM": 4783.906024604229,
+            "nacHeightM": 4784.254196981196,
+            "pgdaSlopeDeg": 4.435245627693168,
+            "nacSlopeDeg": 3.9956854761945646,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": 10,
+            "pgdaHeightM": 4784.628966055409,
+            "nacHeightM": 4784.995626163116,
+            "pgdaSlopeDeg": 4.205440867422319,
+            "nacSlopeDeg": 4.402530904465868,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 80,
+            "zM": 10,
+            "pgdaHeightM": 4785.368528916551,
+            "nacHeightM": 4785.777193179475,
+            "pgdaSlopeDeg": 5.328217355734733,
+            "nacSlopeDeg": 5.294610793879786,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": 10,
+            "pgdaHeightM": 4786.493117803343,
+            "nacHeightM": 4786.842031852592,
+            "pgdaSlopeDeg": 6.2874730522312285,
+            "nacSlopeDeg": 5.682290688242809,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": 20,
+            "pgdaHeightM": 4791.276997532342,
+            "nacHeightM": 4791.4861873466825,
+            "pgdaSlopeDeg": 5.61731190996679,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -80,
+            "zM": 20,
+            "pgdaHeightM": 4790.5774529257105,
+            "nacHeightM": 4791.060312193127,
+            "pgdaSlopeDeg": 5.834624225643127,
+            "nacSlopeDeg": 4.636149969306647,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": 20,
+            "pgdaHeightM": 4789.654906097654,
+            "nacHeightM": 4790.334388540482,
+            "pgdaSlopeDeg": 6.229954699771622,
+            "nacSlopeDeg": 5.638193316811839,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": 20,
+            "pgdaHeightM": 4788.946329433264,
+            "nacHeightM": 4789.553085355768,
+            "pgdaSlopeDeg": 4.778563180285662,
+            "nacSlopeDeg": 5.231408129766899,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 20,
+            "pgdaHeightM": 4788.237253610732,
+            "nacHeightM": 4788.9269661053095,
+            "pgdaSlopeDeg": 3.681383150939768,
+            "nacSlopeDeg": 4.43293717083371,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 20,
+            "pgdaHeightM": 4787.791226802351,
+            "nacHeightM": 4788.201052469116,
+            "pgdaSlopeDeg": 4.805207719593998,
+            "nacSlopeDeg": 5.28201023042165,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 20,
+            "pgdaHeightM": 4787.159600503,
+            "nacHeightM": 4787.1971781857055,
+            "pgdaSlopeDeg": 6.60298507828752,
+            "nacSlopeDeg": 6.713493478003657,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": 20,
+            "pgdaHeightM": 4785.755816181029,
+            "nacHeightM": 4785.986013638876,
+            "pgdaSlopeDeg": 8.071319051476818,
+            "nacSlopeDeg": 6.382716948201132,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": 20,
+            "pgdaHeightM": 4784.4830820670895,
+            "nacHeightM": 4785.018811287866,
+            "pgdaSlopeDeg": 5.942972996367914,
+            "nacSlopeDeg": 4.644010367160997,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": 20,
+            "pgdaHeightM": 4783.841467427795,
+            "nacHeightM": 4784.38218001849,
+            "pgdaSlopeDeg": 3.699284959573258,
+            "nacSlopeDeg": 4.6906610919405605,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": 20,
+            "pgdaHeightM": 4783.250934039715,
+            "nacHeightM": 4783.457022497448,
+            "pgdaSlopeDeg": 3.2915078562233737,
+            "nacSlopeDeg": 5.443583804183748,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": 20,
+            "pgdaHeightM": 4782.706266381641,
+            "nacHeightM": 4782.759757477875,
+            "pgdaSlopeDeg": 1.5609257747417997,
+            "nacSlopeDeg": 4.069784089720373,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": 20,
+            "pgdaHeightM": 4782.715077290844,
+            "nacHeightM": 4782.761203929312,
+            "pgdaSlopeDeg": 1.5751011803734243,
+            "nacSlopeDeg": 1.9494527667058945,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": 20,
+            "pgdaHeightM": 4783.051699259187,
+            "nacHeightM": 4783.080351104645,
+            "pgdaSlopeDeg": 3.048376070150734,
+            "nacSlopeDeg": 1.7865808801884298,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 50,
+            "zM": 20,
+            "pgdaHeightM": 4783.637976325695,
+            "nacHeightM": 4783.38253620039,
+            "pgdaSlopeDeg": 3.652331419417443,
+            "nacSlopeDeg": 2.5603696065012067,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": 20,
+            "pgdaHeightM": 4784.203026476098,
+            "nacHeightM": 4783.935639728312,
+            "pgdaSlopeDeg": 3.534434767141921,
+            "nacSlopeDeg": 4.18738680056894,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": 20,
+            "pgdaHeightM": 4784.7077099445705,
+            "nacHeightM": 4784.84082476293,
+            "pgdaSlopeDeg": 3.5813354688393177,
+            "nacSlopeDeg": 5.565328139249494,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 80,
+            "zM": 20,
+            "pgdaHeightM": 4785.31543836783,
+            "nacHeightM": 4785.879817234091,
+            "pgdaSlopeDeg": 5.766412302505947,
+            "nacSlopeDeg": 6.285071533830154,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": 20,
+            "pgdaHeightM": 4786.44569404267,
+            "nacHeightM": 4787.005091412696,
+            "pgdaSlopeDeg": 6.170963410688131,
+            "nacSlopeDeg": 5.971817640827419,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": 30,
+            "pgdaHeightM": 4791.976305385148,
+            "nacHeightM": 4792.086856289815,
+            "pgdaSlopeDeg": 4.863763593650135,
+            "nacSlopeDeg": 3.9297099416646226,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": 30,
+            "pgdaHeightM": 4791.10308452197,
+            "nacHeightM": 4791.591140756958,
+            "pgdaSlopeDeg": 5.800317224734566,
+            "nacSlopeDeg": 4.034542813670841,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": 30,
+            "pgdaHeightM": 4790.235521159875,
+            "nacHeightM": 4791.023257292718,
+            "pgdaSlopeDeg": 6.002521562715316,
+            "nacSlopeDeg": 4.749119010486966,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": 30,
+            "pgdaHeightM": 4789.34503556166,
+            "nacHeightM": 4790.261233803503,
+            "pgdaSlopeDeg": 5.549430599451919,
+            "nacSlopeDeg": 5.5729415566965,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 30,
+            "pgdaHeightM": 4788.510140748692,
+            "nacHeightM": 4789.3743036089745,
+            "pgdaSlopeDeg": 2.6446134144088145,
+            "nacSlopeDeg": 5.46990547711154,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 30,
+            "pgdaHeightM": 4788.608887749133,
+            "nacHeightM": 4788.512030322983,
+            "pgdaSlopeDeg": 3.0357429468614674,
+            "nacSlopeDeg": 5.532511629410145,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 30,
+            "pgdaHeightM": 4787.5901540215455,
+            "nacHeightM": 4787.55001938489,
+            "pgdaSlopeDeg": 6.754467531342386,
+            "nacSlopeDeg": 6.612945946749013,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": 30,
+            "pgdaHeightM": 4786.264494014874,
+            "nacHeightM": 4786.285201490405,
+            "pgdaSlopeDeg": 7.5575471137545,
+            "nacSlopeDeg": 7.154850563161133,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": 30,
+            "pgdaHeightM": 4785.03618650962,
+            "nacHeightM": 4785.115876944903,
+            "pgdaSlopeDeg": 6.572823376853288,
+            "nacSlopeDeg": 5.5398162497925,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": 30,
+            "pgdaHeightM": 4784.0764727477945,
+            "nacHeightM": 4784.398493588369,
+            "pgdaSlopeDeg": 4.790950909110487,
+            "nacSlopeDeg": 3.8708926333603744,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 10,
+            "zM": 30,
+            "pgdaHeightM": 4783.3747205101945,
+            "nacHeightM": 4783.766297308276,
+            "pgdaSlopeDeg": 3.4791199062134432,
+            "nacSlopeDeg": 3.4243289534498467,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 20,
+            "zM": 30,
+            "pgdaHeightM": 4782.872766567388,
+            "nacHeightM": 4783.278114310268,
+            "pgdaSlopeDeg": 1.5994681223488174,
+            "nacSlopeDeg": 3.0557898209000403,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": 30,
+            "pgdaHeightM": 4783.037940293308,
+            "nacHeightM": 4783.094926717168,
+            "pgdaSlopeDeg": 2.25651479995669,
+            "nacSlopeDeg": 1.871995539538104,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 40,
+            "zM": 30,
+            "pgdaHeightM": 4783.414101760136,
+            "nacHeightM": 4783.144396883336,
+            "pgdaSlopeDeg": 3.1030075233558327,
+            "nacSlopeDeg": 1.0458038745918123,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 50,
+            "zM": 30,
+            "pgdaHeightM": 4783.933185998546,
+            "nacHeightM": 4783.400545202063,
+            "pgdaSlopeDeg": 3.533940568966501,
+            "nacSlopeDeg": 2.959996485555173,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": 30,
+            "pgdaHeightM": 4784.5238272324,
+            "nacHeightM": 4784.121851544198,
+            "pgdaSlopeDeg": 3.9887740538845393,
+            "nacSlopeDeg": 4.9708016545938225,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 70,
+            "zM": 30,
+            "pgdaHeightM": 4785.202920935246,
+            "nacHeightM": 4785.129754451649,
+            "pgdaSlopeDeg": 5.831922508956589,
+            "nacSlopeDeg": 6.047141176814825,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 80,
+            "zM": 30,
+            "pgdaHeightM": 4786.397374854471,
+            "nacHeightM": 4786.187120716742,
+            "pgdaSlopeDeg": 5.584290032888963,
+            "nacSlopeDeg": 5.978084297070448,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": 30,
+            "pgdaHeightM": 4786.839287732909,
+            "nacHeightM": 4787.162504143683,
+            "pgdaSlopeDeg": 5.090161885118424,
+            "nacSlopeDeg": 5.677191250700181,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": 40,
+            "pgdaHeightM": 4792.330628716358,
+            "nacHeightM": 4792.553692251302,
+            "pgdaSlopeDeg": 4.222575800915081,
+            "nacSlopeDeg": 4.314144636740158,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -80,
+            "zM": 40,
+            "pgdaHeightM": 4791.624936766078,
+            "nacHeightM": 4791.986973007477,
+            "pgdaSlopeDeg": 5.248676282405594,
+            "nacSlopeDeg": 4.146399494111895,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": 40,
+            "pgdaHeightM": 4790.808927814692,
+            "nacHeightM": 4791.330448998098,
+            "pgdaSlopeDeg": 6.112221229346524,
+            "nacSlopeDeg": 4.373587448743704,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": 40,
+            "pgdaHeightM": 4789.8402403517675,
+            "nacHeightM": 4790.596748229002,
+            "pgdaSlopeDeg": 6.7018356267993875,
+            "nacSlopeDeg": 5.025923133627705,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 40,
+            "pgdaHeightM": 4788.7953696613085,
+            "nacHeightM": 4789.706836792394,
+            "pgdaSlopeDeg": 4.968845317404525,
+            "nacSlopeDeg": 5.349584289336411,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 40,
+            "pgdaHeightM": 4788.319089197704,
+            "nacHeightM": 4788.852871841929,
+            "pgdaSlopeDeg": 3.779042514259488,
+            "nacSlopeDeg": 5.621476088822237,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 40,
+            "pgdaHeightM": 4787.498325303396,
+            "nacHeightM": 4787.843251604422,
+            "pgdaSlopeDeg": 5.271855816623695,
+            "nacSlopeDeg": 6.564528806738812,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": 40,
+            "pgdaHeightM": 4786.475713044981,
+            "nacHeightM": 4786.600790054864,
+            "pgdaSlopeDeg": 6.5403515240363035,
+            "nacSlopeDeg": 6.953070905203379,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": 40,
+            "pgdaHeightM": 4785.206357058467,
+            "nacHeightM": 4785.469580911569,
+            "pgdaSlopeDeg": 6.934365901562068,
+            "nacSlopeDeg": 6.279030415926213,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": 40,
+            "pgdaHeightM": 4784.063724741659,
+            "nacHeightM": 4784.481861969396,
+            "pgdaSlopeDeg": 5.275867334688516,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 10,
+            "zM": 40,
+            "pgdaHeightM": 4783.422962137195,
+            "nacHeightM": 4783.877665557897,
+            "pgdaSlopeDeg": 2.6815494500360724,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 20,
+            "zM": 40,
+            "pgdaHeightM": 4783.151757116306,
+            "nacHeightM": 4783.5899451083305,
+            "pgdaSlopeDeg": 0.5369951279971948,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 30,
+            "zM": 40,
+            "pgdaHeightM": 4783.287812752858,
+            "nacHeightM": 4783.401063476676,
+            "pgdaSlopeDeg": 1.7092369007617365,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 40,
+            "zM": 40,
+            "pgdaHeightM": 4783.663300053815,
+            "nacHeightM": 4782.880622100401,
+            "pgdaSlopeDeg": 2.7624319326905886,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 50,
+            "zM": 40,
+            "pgdaHeightM": 4784.180278528795,
+            "nacHeightM": 4783.044813477,
+            "pgdaSlopeDeg": 3.4357624233174255,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": 40,
+            "pgdaHeightM": 4784.779809165617,
+            "nacHeightM": 4784.124605431949,
+            "pgdaSlopeDeg": 3.995807941425631,
+            "nacSlopeDeg": 6.472701450860585,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": 40,
+            "pgdaHeightM": 4785.521827972225,
+            "nacHeightM": 4785.313743025316,
+            "pgdaSlopeDeg": 4.850292808121312,
+            "nacSlopeDeg": 6.59816767521385,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 80,
+            "zM": 40,
+            "pgdaHeightM": 4786.386049738334,
+            "nacHeightM": 4786.384032105573,
+            "pgdaSlopeDeg": 5.825254346700305,
+            "nacSlopeDeg": 6.007553151499305,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": 40,
+            "pgdaHeightM": 4787.448301722672,
+            "nacHeightM": 4787.313333616774,
+            "pgdaSlopeDeg": 7.143084454794278,
+            "nacSlopeDeg": 5.775635025381132,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -80,
+            "zM": 50,
+            "pgdaHeightM": 4792.132651898367,
+            "nacHeightM": 4792.369524676623,
+            "pgdaSlopeDeg": 4.768891331521698,
+            "nacSlopeDeg": 5.321243307604464,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": 50,
+            "pgdaHeightM": 4791.419467984444,
+            "nacHeightM": 4791.661285643955,
+            "pgdaSlopeDeg": 5.686007120199291,
+            "nacSlopeDeg": 5.0578312968805825,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": 50,
+            "pgdaHeightM": 4790.556893153733,
+            "nacHeightM": 4790.937683123665,
+            "pgdaSlopeDeg": 7.1502241999150185,
+            "nacSlopeDeg": 5.457555418717381,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 50,
+            "pgdaHeightM": 4789.352505610291,
+            "nacHeightM": 4790.057153617225,
+            "pgdaSlopeDeg": 7.151659999796296,
+            "nacSlopeDeg": 5.607629753675312,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 50,
+            "pgdaHeightM": 4788.358185924208,
+            "nacHeightM": 4789.146365678453,
+            "pgdaSlopeDeg": 5.415708045474173,
+            "nacSlopeDeg": 5.903850535516007,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 50,
+            "pgdaHeightM": 4787.5029929625425,
+            "nacHeightM": 4788.0245492483455,
+            "pgdaSlopeDeg": 6.210831877143262,
+            "nacSlopeDeg": 6.59203904293156,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": 50,
+            "pgdaHeightM": 4786.1963345113945,
+            "nacHeightM": 4786.846203672627,
+            "pgdaSlopeDeg": 7.939969022087654,
+            "nacSlopeDeg": 6.681881039958065,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -10,
+            "zM": 50,
+            "pgdaHeightM": 4784.721433814256,
+            "nacHeightM": 4785.709877270171,
+            "pgdaSlopeDeg": 7.620283887299753,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": 50,
+            "pgdaHeightM": 4784.913747612966,
+            "nacHeightM": 4784.097520818297,
+            "pgdaSlopeDeg": 4.175941291872761,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": 50,
+            "pgdaHeightM": 4785.750856197914,
+            "nacHeightM": 4785.626698243799,
+            "pgdaSlopeDeg": 6.245804027159059,
+            "nacSlopeDeg": 7.942644789300011,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 80,
+            "zM": 50,
+            "pgdaHeightM": 4787.069732271599,
+            "nacHeightM": 4786.844092387971,
+            "pgdaSlopeDeg": 7.316736919966842,
+            "nacSlopeDeg": 6.502931561633802,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": 60,
+            "pgdaHeightM": 4792.60814854448,
+            "nacHeightM": 4793.088678459029,
+            "pgdaSlopeDeg": 4.120132993330143,
+            "nacSlopeDeg": 4.515787800045166,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": 60,
+            "pgdaHeightM": 4792.026461859267,
+            "nacHeightM": 4792.371190207311,
+            "pgdaSlopeDeg": 5.255951696880792,
+            "nacSlopeDeg": 4.991265142122323,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": 60,
+            "pgdaHeightM": 4791.262362819998,
+            "nacHeightM": 4791.635028916857,
+            "pgdaSlopeDeg": 6.693318224292173,
+            "nacSlopeDeg": 6.473935375393162,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 60,
+            "pgdaHeightM": 4790.004917938804,
+            "nacHeightM": 4790.511400865436,
+            "pgdaSlopeDeg": 7.566407255321208,
+            "nacSlopeDeg": 7.576470914306982,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 60,
+            "pgdaHeightM": 4788.736768617576,
+            "nacHeightM": 4789.234702323292,
+            "pgdaSlopeDeg": 6.702015920645971,
+            "nacSlopeDeg": 7.0495546990801605,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 60,
+            "pgdaHeightM": 4787.750599452063,
+            "nacHeightM": 4788.069505735643,
+            "pgdaSlopeDeg": 7.2649710373081,
+            "nacSlopeDeg": 6.5496964027069735,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -20,
+            "zM": 60,
+            "pgdaHeightM": 4786.266030992128,
+            "nacHeightM": 4786.964340400462,
+            "pgdaSlopeDeg": 9.0998246677368,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": 60,
+            "pgdaHeightM": 4785.8998485686325,
+            "nacHeightM": 4785.806384453532,
+            "pgdaSlopeDeg": 7.002769779066561,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 80,
+            "zM": 60,
+            "pgdaHeightM": 4787.4978780475185,
+            "nacHeightM": 4787.043786298719,
+            "pgdaSlopeDeg": 7.824805901924619,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": 70,
+            "pgdaHeightM": 4792.674004037198,
+            "nacHeightM": 4792.629721060943,
+            "pgdaSlopeDeg": 3.8668993466625734,
+            "nacSlopeDeg": 2.802252132510477,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": 70,
+            "pgdaHeightM": 4791.749460734786,
+            "nacHeightM": 4792.238374055929,
+            "pgdaSlopeDeg": 7.5380880381688256,
+            "nacSlopeDeg": 4.435990845203558,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 70,
+            "pgdaHeightM": 4790.176573513474,
+            "nacHeightM": 4791.203955110444,
+            "pgdaSlopeDeg": 8.079247769817238,
+            "nacSlopeDeg": 8.229274261001995,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 70,
+            "pgdaHeightM": 4789.022537724825,
+            "nacHeightM": 4789.538949763748,
+            "pgdaSlopeDeg": 6.500889662622381,
+            "nacSlopeDeg": 8.623945661106285,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -30,
+            "zM": 70,
+            "pgdaHeightM": 4788.1323409342285,
+            "nacHeightM": 4788.368624880833,
+            "pgdaSlopeDeg": 7.318319562723069,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -60,
+            "zM": 80,
+            "pgdaHeightM": 4792.138267829333,
+            "nacHeightM": 4792.24700293467,
+            "pgdaSlopeDeg": 5.189592349066744,
+            "nacSlopeDeg": 2.7370973875835936,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -50,
+            "zM": 80,
+            "pgdaHeightM": 4790.794847976666,
+            "nacHeightM": 4791.5504022086025,
+            "pgdaSlopeDeg": 7.435139369930966,
+            "nacSlopeDeg": 5.920687494048166,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 80,
+            "pgdaHeightM": 4789.744278460531,
+            "nacHeightM": 4790.312480050008,
+            "pgdaSlopeDeg": 7.100861302132553,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": 90,
+            "pgdaHeightM": 4790.232542466354,
+            "nacHeightM": 4791.003032666055,
+            "pgdaSlopeDeg": 7.152576841436486,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          }
+        ],
+        "acceptedAbsoluteAccuracy": false,
+        "qualityMaskApplied": true,
+        "confidencePolicy": "All four bilinear supports must be successful source correlations (classes 10-14). Classes 0-4 and manually edited 15 excluded. Not a calibrated probability.",
+        "interpretation": "Image-stereo vs laser-derived terrain at common coordinates/baseline; no bias fit or shift applied. Source-confidence classes 10-14 required for all interpolation supports. Both use LOLA control; remaining image artifacts and independent absolute truth remain open."
+      },
+      {
+        "product": "MALAPERT03",
+        "coveredSamples": 56,
+        "expectedSamples": 317,
+        "meanHeightDifferenceM": -0.43844134901777515,
+        "heightRmseM": 0.6122951463965712,
+        "medianHeightDifferenceM": -0.31485206216120787,
+        "heightNmadM": 0.4174054939238369,
+        "slopeSamples": 19,
+        "slopeRmseDeg": 1.1719283786601091,
+        "rawFiniteHeightSamples": 73,
+        "confidenceRejectedHeightSamples": 17,
+        "points": [
+          {
+            "xM": 0,
+            "zM": -100,
+            "pgdaHeightM": 4777.858432220139,
+            "nacHeightM": 4777.587560023173,
+            "pgdaSlopeDeg": 5.096593177351862,
+            "nacSlopeDeg": 5.513722618708703,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -40,
+            "zM": -90,
+            "pgdaHeightM": 4780.792436876846,
+            "nacHeightM": 4780.7755924216735,
+            "pgdaSlopeDeg": 3.6874273363994194,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -30,
+            "zM": -90,
+            "pgdaHeightM": 4780.336275805765,
+            "nacHeightM": 4779.939815045319,
+            "pgdaSlopeDeg": 3.2169500447862185,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -20,
+            "zM": -90,
+            "pgdaHeightM": 4779.684725724164,
+            "nacHeightM": 4779.063824535793,
+            "pgdaSlopeDeg": 4.1945958213101955,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": -90,
+            "pgdaHeightM": 4779.020105846307,
+            "nacHeightM": 4778.580455639994,
+            "pgdaSlopeDeg": 4.659579283076525,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 0,
+            "zM": -90,
+            "pgdaHeightM": 4778.599218355574,
+            "nacHeightM": 4778.426882492298,
+            "pgdaSlopeDeg": 4.376036062496413,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 10,
+            "zM": -90,
+            "pgdaHeightM": 4778.312264138854,
+            "nacHeightM": 4778.272479418896,
+            "pgdaSlopeDeg": 4.393321452467055,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 20,
+            "zM": -90,
+            "pgdaHeightM": 4778.145980812161,
+            "nacHeightM": 4778.084948825732,
+            "pgdaSlopeDeg": 3.3471794639800607,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 30,
+            "zM": -90,
+            "pgdaHeightM": 4777.9483616126645,
+            "nacHeightM": 4777.800623819304,
+            "pgdaSlopeDeg": 2.277387852727828,
+            "nacSlopeDeg": 4.260143680326684,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 40,
+            "zM": -90,
+            "pgdaHeightM": 4777.638295659332,
+            "nacHeightM": 4777.512483226132,
+            "pgdaSlopeDeg": 2.1181784993719988,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 30,
+            "zM": -80,
+            "pgdaHeightM": 4778.26818603464,
+            "nacHeightM": 4778.286381359347,
+            "pgdaSlopeDeg": 2.853675500885347,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -50,
+            "pgdaHeightM": 4785.661296807508,
+            "nacHeightM": 4785.545431693147,
+            "pgdaSlopeDeg": 3.431058374920529,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": -50,
+            "pgdaHeightM": 4785.160579434477,
+            "nacHeightM": 4785.318819372104,
+            "pgdaSlopeDeg": 4.31026865057231,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 0,
+            "zM": -50,
+            "pgdaHeightM": 4781.40162945345,
+            "nacHeightM": 4781.3371925300535,
+            "pgdaSlopeDeg": 5.065842075400939,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -40,
+            "pgdaHeightM": 4786.025667634247,
+            "nacHeightM": 4786.383603812637,
+            "pgdaSlopeDeg": 3.1196984582810403,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": -40,
+            "pgdaHeightM": 4785.716747634129,
+            "nacHeightM": 4786.029095103774,
+            "pgdaSlopeDeg": 4.320540828323979,
+            "nacSlopeDeg": 5.352497259372015,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -60,
+            "zM": -40,
+            "pgdaHeightM": 4785.207716404055,
+            "nacHeightM": 4784.952566280791,
+            "pgdaSlopeDeg": 4.821128504543411,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -20,
+            "zM": -40,
+            "pgdaHeightM": 4783.427803880454,
+            "nacHeightM": 4782.961220189938,
+            "pgdaSlopeDeg": 6.0680264715787215,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": -40,
+            "pgdaHeightM": 4782.767453353388,
+            "nacHeightM": 4782.593747524403,
+            "pgdaSlopeDeg": 5.741820399399966,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 0,
+            "zM": -40,
+            "pgdaHeightM": 4782.139044063552,
+            "nacHeightM": 4782.1121969564,
+            "pgdaSlopeDeg": 5.135804339618274,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 90,
+            "zM": -40,
+            "pgdaHeightM": 4782.576012538061,
+            "nacHeightM": 4781.325883900124,
+            "pgdaSlopeDeg": 7.813709079474841,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -90,
+            "zM": -30,
+            "pgdaHeightM": 4786.510499676654,
+            "nacHeightM": 4786.556021508972,
+            "pgdaSlopeDeg": 7.157932360697552,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -30,
+            "pgdaHeightM": 4786.723863671426,
+            "nacHeightM": 4786.826148121101,
+            "pgdaSlopeDeg": 5.189225151541909,
+            "nacSlopeDeg": 3.308898042781552,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": -30,
+            "pgdaHeightM": 4786.431064519613,
+            "nacHeightM": 4786.52851505097,
+            "pgdaSlopeDeg": 4.779801709662064,
+            "nacSlopeDeg": 4.837920503285368,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -60,
+            "zM": -30,
+            "pgdaHeightM": 4786.030176246954,
+            "nacHeightM": 4785.705345448169,
+            "pgdaSlopeDeg": 5.026646766318427,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -50,
+            "zM": -30,
+            "pgdaHeightM": 4785.50159469606,
+            "nacHeightM": 4785.1099310763775,
+            "pgdaSlopeDeg": 5.029090450023713,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -30,
+            "zM": -30,
+            "pgdaHeightM": 4784.521238557913,
+            "nacHeightM": 4784.183558341408,
+            "pgdaSlopeDeg": 4.050061910395985,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -20,
+            "zM": -30,
+            "pgdaHeightM": 4784.075493048207,
+            "nacHeightM": 4783.791827541443,
+            "pgdaSlopeDeg": 4.317628788694047,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -10,
+            "zM": -30,
+            "pgdaHeightM": 4783.421393922015,
+            "nacHeightM": 4783.218801038751,
+            "pgdaSlopeDeg": 4.792779297252261,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 0,
+            "zM": -30,
+            "pgdaHeightM": 4782.769805655729,
+            "nacHeightM": 4782.719594764564,
+            "pgdaSlopeDeg": 4.678682043800158,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 10,
+            "zM": -30,
+            "pgdaHeightM": 4782.223775783483,
+            "nacHeightM": 4782.225780320868,
+            "pgdaSlopeDeg": 4.280746998638561,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 20,
+            "zM": -30,
+            "pgdaHeightM": 4781.775162187224,
+            "nacHeightM": 4781.689024758481,
+            "pgdaSlopeDeg": 3.916445202434286,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 80,
+            "zM": -30,
+            "pgdaHeightM": 4782.953495829904,
+            "nacHeightM": 4781.4187176118685,
+            "pgdaSlopeDeg": 8.739828175830855,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 90,
+            "zM": -30,
+            "pgdaHeightM": 4783.574718808475,
+            "nacHeightM": 4782.429645844117,
+            "pgdaSlopeDeg": 6.394838898980395,
+            "nacSlopeDeg": 8.55796329770187,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": -20,
+            "pgdaHeightM": 4788.225306208823,
+            "nacHeightM": 4787.238023786839,
+            "pgdaSlopeDeg": 7.595248176229495,
+            "nacSlopeDeg": 5.881894962494586,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": -20,
+            "pgdaHeightM": 4787.840280186305,
+            "nacHeightM": 4787.5395857037865,
+            "pgdaSlopeDeg": 6.105955608527655,
+            "nacSlopeDeg": 4.219970823947739,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": -20,
+            "pgdaHeightM": 4787.238438094696,
+            "nacHeightM": 4787.29767616129,
+            "pgdaSlopeDeg": 5.895917021585028,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 30,
+            "zM": -20,
+            "pgdaHeightM": 4782.164263535656,
+            "nacHeightM": 4781.348212346683,
+            "pgdaSlopeDeg": 2.697544156481119,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 40,
+            "zM": -20,
+            "pgdaHeightM": 4782.405054306829,
+            "nacHeightM": 4781.328547407913,
+            "pgdaSlopeDeg": 4.430553523313806,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 50,
+            "zM": -20,
+            "pgdaHeightM": 4782.5704987877625,
+            "nacHeightM": 4781.517263172447,
+            "pgdaSlopeDeg": 3.8978080656235656,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": -20,
+            "pgdaHeightM": 4782.662298304558,
+            "nacHeightM": 4781.55099189423,
+            "pgdaSlopeDeg": 3.322193704007513,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": -20,
+            "pgdaHeightM": 4782.8114873056875,
+            "nacHeightM": 4781.925328013959,
+            "pgdaSlopeDeg": 7.057116883380467,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 80,
+            "zM": -20,
+            "pgdaHeightM": 4783.742187609182,
+            "nacHeightM": 4782.6623680410285,
+            "pgdaSlopeDeg": 6.385037889935416,
+            "nacSlopeDeg": 7.982889504435724,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": -20,
+            "pgdaHeightM": 4784.415646009534,
+            "nacHeightM": 4783.533061685443,
+            "pgdaSlopeDeg": 5.959304401787442,
+            "nacSlopeDeg": 7.513203600443943,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": -10,
+            "pgdaHeightM": 4788.912171370383,
+            "nacHeightM": 4788.3360841409385,
+            "pgdaSlopeDeg": 3.7197418806491505,
+            "nacSlopeDeg": 5.8551628692732915,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -80,
+            "zM": -10,
+            "pgdaHeightM": 4788.622150267106,
+            "nacHeightM": 4788.30065907292,
+            "pgdaSlopeDeg": 4.018934153800685,
+            "nacSlopeDeg": 4.371917221036635,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -70,
+            "zM": -10,
+            "pgdaHeightM": 4788.153953308625,
+            "nacHeightM": 4787.882283960018,
+            "pgdaSlopeDeg": 4.995793493810596,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 40,
+            "zM": -10,
+            "pgdaHeightM": 4782.900171425751,
+            "nacHeightM": 4781.935214285106,
+            "pgdaSlopeDeg": 2.055807562834016,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 50,
+            "zM": -10,
+            "pgdaHeightM": 4782.901125681548,
+            "nacHeightM": 4782.204102415429,
+            "pgdaSlopeDeg": 1.6929985678677901,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": -10,
+            "pgdaHeightM": 4782.764801662381,
+            "nacHeightM": 4782.538635522487,
+            "pgdaSlopeDeg": 2.9094425069782446,
+            "nacSlopeDeg": 5.65077264934596,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": -10,
+            "pgdaHeightM": 4783.707795841294,
+            "nacHeightM": 4783.053957431848,
+            "pgdaSlopeDeg": 7.6752600225614955,
+            "nacSlopeDeg": 6.578034038002603,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 80,
+            "zM": -10,
+            "pgdaHeightM": 4784.514148644393,
+            "nacHeightM": 4783.716908638968,
+            "pgdaSlopeDeg": 6.172033994378515,
+            "nacSlopeDeg": 6.612553663482165,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": -10,
+            "pgdaHeightM": 4785.25778368237,
+            "nacHeightM": 4784.395329277162,
+            "pgdaSlopeDeg": 6.3459339591794715,
+            "nacSlopeDeg": 6.311637666751687,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -100,
+            "zM": 0,
+            "pgdaHeightM": 4789.634691520561,
+            "nacHeightM": 4789.107150620725,
+            "pgdaSlopeDeg": 6.206141366210602,
+            "nacSlopeDeg": 6.981344350607262,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": 0,
+            "pgdaHeightM": 4789.50780084112,
+            "nacHeightM": 4789.199587910984,
+            "pgdaSlopeDeg": 4.456142897023621,
+            "nacSlopeDeg": 4.33671333491608,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -80,
+            "zM": 0,
+            "pgdaHeightM": 4789.023339997699,
+            "nacHeightM": 4788.999748982251,
+            "pgdaSlopeDeg": 4.4425281320745755,
+            "nacSlopeDeg": 4.3239399544889485,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -70,
+            "zM": 0,
+            "pgdaHeightM": 4788.568333308694,
+            "nacHeightM": 4788.386340080473,
+            "pgdaSlopeDeg": 3.3345396443452944,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -60,
+            "zM": 0,
+            "pgdaHeightM": 4788.043237747091,
+            "nacHeightM": 4787.660993286903,
+            "pgdaSlopeDeg": 4.354042143104051,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 60,
+            "zM": 0,
+            "pgdaHeightM": 4783.2807446512015,
+            "nacHeightM": 4783.338123539435,
+            "pgdaSlopeDeg": 5.883201273568695,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": 0,
+            "pgdaHeightM": 4784.861974206626,
+            "nacHeightM": 4783.907935903479,
+            "pgdaSlopeDeg": 6.205404614013187,
+            "nacSlopeDeg": 5.020053317719489,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 80,
+            "zM": 0,
+            "pgdaHeightM": 4785.250604694513,
+            "nacHeightM": 4784.553467078451,
+            "pgdaSlopeDeg": 4.353284074919545,
+            "nacSlopeDeg": 5.444205328640855,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 90,
+            "zM": 0,
+            "pgdaHeightM": 4786.122165555447,
+            "nacHeightM": 4785.232472257261,
+            "pgdaSlopeDeg": 5.970093522614196,
+            "nacSlopeDeg": 6.258297332815925,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": 100,
+            "zM": 0,
+            "pgdaHeightM": 4786.938339860542,
+            "nacHeightM": 4786.07245696457,
+            "pgdaSlopeDeg": 6.209130095102275,
+            "nacSlopeDeg": 6.838245029772262,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -90,
+            "zM": 10,
+            "pgdaHeightM": 4790.345900981799,
+            "nacHeightM": 4789.848972652285,
+            "pgdaSlopeDeg": 5.458625752702633,
+            "nacSlopeDeg": 4.57069343112094,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -80,
+            "zM": 10,
+            "pgdaHeightM": 4789.859829776522,
+            "nacHeightM": 4789.575575597031,
+            "pgdaSlopeDeg": 6.28626987570365,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 70,
+            "zM": 10,
+            "pgdaHeightM": 4784.628966055409,
+            "nacHeightM": 4784.322571309603,
+            "pgdaSlopeDeg": 4.205440867422319,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 80,
+            "zM": 10,
+            "pgdaHeightM": 4785.368528916551,
+            "nacHeightM": 4785.08764588104,
+            "pgdaSlopeDeg": 5.328217355734733,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 90,
+            "zM": 10,
+            "pgdaHeightM": 4786.493117803343,
+            "nacHeightM": 4785.977473094197,
+            "pgdaSlopeDeg": 6.2874730522312285,
+            "nacSlopeDeg": 6.658471068735011,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -90,
+            "zM": 20,
+            "pgdaHeightM": 4791.276997532342,
+            "nacHeightM": 4790.711901131293,
+            "pgdaSlopeDeg": 5.61731190996679,
+            "nacSlopeDeg": 5.469725797081644,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": true
+          },
+          {
+            "xM": -80,
+            "zM": 20,
+            "pgdaHeightM": 4790.5774529257105,
+            "nacHeightM": 4790.310837373751,
+            "pgdaSlopeDeg": 5.834624225643127,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": 90,
+            "zM": 20,
+            "pgdaHeightM": 4786.44569404267,
+            "nacHeightM": 4786.761519943726,
+            "pgdaSlopeDeg": 6.170963410688131,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": false,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -90,
+            "zM": 30,
+            "pgdaHeightM": 4791.976305385148,
+            "nacHeightM": 4791.622386022367,
+            "pgdaSlopeDeg": 4.863763593650135,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          },
+          {
+            "xM": -80,
+            "zM": 30,
+            "pgdaHeightM": 4791.10308452197,
+            "nacHeightM": 4790.896588945692,
+            "pgdaSlopeDeg": 5.800317224734566,
+            "nacSlopeDeg": null,
+            "heightConfidenceAccepted": true,
+            "slopeConfidenceAccepted": false
+          }
+        ],
+        "acceptedAbsoluteAccuracy": false,
+        "qualityMaskApplied": true,
+        "confidencePolicy": "All four bilinear supports must be successful source correlations (classes 10-14). Classes 0-4 and manually edited 15 excluded. Not a calibrated probability.",
+        "interpretation": "Image-stereo vs laser-derived terrain at common coordinates/baseline; no bias fit or shift applied. Source-confidence classes 10-14 required for all interpolation supports. Both use LOLA control; remaining image artifacts and independent absolute truth remain open."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/SHACKRDGE02/NAC_DTM_SHACKRDGE02.TIF",
+      "product": "SHACKRDGE02",
+      "subsetFile": "data/raw/terrain-evidence/SHACKRDGE02-real-connector.npz",
+      "subsetSha256": "5fdeb6977023e39fe575fb1d6ce89c81e26baf8e6a4bbfe94bc0b16a9c0a8f97",
+      "affine": [
+        3.5,
+        0.0,
+        -11397.75,
+        0.0,
+        -3.5,
+        -11600.75
+      ],
+      "shape": [
+        229,
+        229
+      ],
+      "sourcePixelM": [
+        3.5,
+        3.5
+      ],
+      "readmeFile": "data/raw/terrain-evidence/SHACKRDGE02-README.TXT",
+      "readmeSha256": "47934d934b7f7df18b81e681e919ba14c69e4bca19199bd51a275793a7799969",
+      "wholeRemoteSha256": null,
+      "window": [
+        663,
+        969,
+        229,
+        229
+      ],
+      "confidence": {
+        "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/SHACKRDGE02/NAC_DTM_SHACKRDGE02_CONF.IMG",
+        "subsetFile": "data/raw/terrain-evidence/SHACKRDGE02-real-connector-confidence-pds.npz",
+        "subsetSha256": "773dc995ec370adac43c7a6161d99fde2493ef298f6cc38e7327f4cd18db7cbb",
+        "wholeRemoteSha256": null,
+        "sourceAffine": [
+          3.5,
+          0.0,
+          -11397.75,
+          0.0,
+          -3.5,
+          -11600.75
+        ],
+        "targetAffine": [
+          3.5,
+          0.0,
+          -11397.75,
+          0.0,
+          -3.5,
+          -11600.75
+        ],
+        "alignment": "Nearest-neighbor categorical resampling from raw PDS georeferencing to DTM grid. No fitted registration or browse-image grayscale interpretation. Source/header registration remains a review limit.",
+        "policy": "All four bilinear supports must be successful source correlations (classes 10-14). Classes 0-4 and manually edited 15 excluded. Not a calibrated probability."
+      }
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/MALAPERT02/NAC_DTM_MALAPERT02.TIF",
+      "product": "MALAPERT02",
+      "subsetFile": "data/raw/terrain-evidence/MALAPERT02-real-malapert.npz",
+      "subsetSha256": "72eb9d12ddf76f62d71d2dac387c6bd0b54b320afe94433ff93724c244bcb5a7",
+      "affine": [
+        4.0,
+        0.0,
+        -898.0,
+        0.0,
+        -4.0,
+        121898.0
+      ],
+      "shape": [
+        174,
+        200
+      ],
+      "sourcePixelM": [
+        4.0,
+        4.0
+      ],
+      "readmeFile": "data/raw/terrain-evidence/MALAPERT02-README.TXT",
+      "readmeSha256": "56c8907d51dd7feaf26c5c3399d6f300f18016bec7fbe9a13384506c78f5ad2e",
+      "wholeRemoteSha256": null,
+      "window": [
+        931,
+        8513,
+        200,
+        174
+      ],
+      "confidence": {
+        "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/MALAPERT02/NAC_DTM_MALAPERT02_CONF.IMG",
+        "subsetFile": "data/raw/terrain-evidence/MALAPERT02-real-malapert-confidence-pds.npz",
+        "subsetSha256": "541be86561499673bd5fe83bedf11967b5af211355c2d9c274947859fcbdb049",
+        "wholeRemoteSha256": null,
+        "sourceAffine": [
+          4.0,
+          0.0,
+          -898.0,
+          0.0,
+          -4.0,
+          121898.0
+        ],
+        "targetAffine": [
+          4.0,
+          0.0,
+          -898.0,
+          0.0,
+          -4.0,
+          121898.0
+        ],
+        "alignment": "Nearest-neighbor categorical resampling from raw PDS georeferencing to DTM grid. No fitted registration or browse-image grayscale interpretation. Source/header registration remains a review limit.",
+        "policy": "All four bilinear supports must be successful source correlations (classes 10-14). Classes 0-4 and manually edited 15 excluded. Not a calibrated probability."
+      }
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/MALAPERT03/NAC_DTM_MALAPERT03.TIF",
+      "product": "MALAPERT03",
+      "subsetFile": "data/raw/terrain-evidence/MALAPERT03-real-malapert.npz",
+      "subsetSha256": "843269d61975abf4b4f55d6d0c3a7332aa9cb19ebd75791ff4dabb26e6874f03",
+      "affine": [
+        4.0,
+        0.0,
+        -898.0,
+        0.0,
+        -4.0,
+        121898.0
+      ],
+      "shape": [
+        200,
+        200
+      ],
+      "sourcePixelM": [
+        4.0,
+        4.0
+      ],
+      "readmeFile": "data/raw/terrain-evidence/MALAPERT03-README.TXT",
+      "readmeSha256": "8ae028a019a6606310ef19d7e28af6aba238afb8e5fcba21d637fc9b8df09b21",
+      "wholeRemoteSha256": null,
+      "window": [
+        883,
+        145,
+        200,
+        200
+      ],
+      "confidence": {
+        "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/MALAPERT03/NAC_DTM_MALAPERT03_CONF.IMG",
+        "subsetFile": "data/raw/terrain-evidence/MALAPERT03-real-malapert-confidence-pds.npz",
+        "subsetSha256": "5bc8d1e001f874f6f53bea90deaf3899adf918fe1a0a3faa52c5a3999334e4b1",
+        "wholeRemoteSha256": null,
+        "sourceAffine": [
+          4.0,
+          0.0,
+          -898.0,
+          0.0,
+          -4.0,
+          121898.0
+        ],
+        "targetAffine": [
+          4.0,
+          0.0,
+          -898.0,
+          0.0,
+          -4.0,
+          121898.0
+        ],
+        "alignment": "Nearest-neighbor categorical resampling from raw PDS georeferencing to DTM grid. No fitted registration or browse-image grayscale interpretation. Source/header registration remains a review limit.",
+        "policy": "All four bilinear supports must be successful source correlations (classes 10-14). Classes 0-4 and manually edited 15 excluded. Not a calibrated probability."
+      }
+    }
+  ],
+  "limits": [
+    "No matching stereo data is substituted for an uncovered point",
+    "Shared LOLA geodetic control prevents claiming fully independent absolute ground truth",
+    "NAC source-confidence classes 10-14 are required at every interpolation support; this filter cannot remove all jitter, seams or geolocation differences",
+    "Coverage/statistics are not a landing-safety or approved accuracy verdict"
+  ]
+}

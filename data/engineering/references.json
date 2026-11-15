@@ -1,0 +1,30 @@
+{
+  "schema": "sitelight-engineering-references-1",
+  "references": [
+    {
+      "id": "bvad",
+      "file": "bvad-2022.pdf",
+      "title": "NASA Life Support Baseline Values and Assumptions, Rev. 2 (2022)",
+      "url": "https://ntrs.nasa.gov/citations/20210024855",
+      "scope": "Reference human metabolic interfaces; the potable stream is not the complete habitat water loop.",
+      "observations": [
+        {"id":"potable","label":"Nominal potable water content","value":3.217,"unit":"kg / crew / day","pdfPage":72,"location":"Table 3-31, printed p. 58","pattern":"Potable Water Content\\s+kg/CM-d\\s+([0-9.]+)"}
+      ]
+    },
+    {
+      "id": "isru",
+      "file": "isru-2021.pdf",
+      "title": "NASA lunar water ISRU propellant system study (2021)",
+      "url": "https://ntrs.nasa.gov/citations/20210016820",
+      "scope": "Propellant architecture, including excavation, transport and cryogenic processing. Published mass excludes power supply/transmission and system thermal management. Its operating timeline needs further site analysis.",
+      "observations": [
+        {"id":"extraction","label":"Study extraction efficiency","value":75,"unit":"%","pdfPage":3,"location":"Ground rules","pattern":"Extraction Efficiency\\s+([0-9.]+)%"},
+        {"id":"battery","label":"Assumed battery energy density","value":140,"unit":"Wh / kg","pdfPage":3,"location":"Ground rules","pattern":"Battery Energy density\\s+([0-9.]+)\\s+Whr/kg"},
+        {"id":"discharge","label":"Maximum battery discharge","value":80,"unit":"%","pdfPage":3,"location":"Ground rules","pattern":"Maximum battery discharge\\s+([0-9.]+)%"},
+        {"id":"time","label":"Assumed production time","value":225,"unit":"days","pdfPage":3,"location":"Ground rules; timeline caveat on PDF p. 7","pattern":"Total production time\\s+([0-9.]+)\\s+days"},
+        {"id":"mass","label":"Rounded baseline system mass","value":4.9,"unit":"tonnes","pdfPage":8,"location":"Baseline case","pattern":"Total Mass\\s+([0-9.]+)\\s+tons"},
+        {"id":"power","label":"Baseline power requirement","value":68,"unit":"kW","pdfPage":8,"location":"Baseline case","pattern":"Total power\\s+([0-9.]+)\\s+kW"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "schema": "sitelight-orientation-reference-1",
+  "purpose": "Independent Horizons airless apparent topocentric AZ/EL cases; validation recipe only, not the production geometric evaluator.",
+  "thresholds": {
+    "sunAngularDeg": 0.01,
+    "earthAngularDeg": 0.01
+  },
+  "thresholdRationale": "Predeclared 0.01 degree screening tolerance for independent DE441/Horizons orientation versus DE421/ME, including kernel and apparent-correction differences; not flight certification.",
+  "algorithm": {
+    "file": "scripts/validate-orientation.py",
+    "sha256": "f3088cd19947fc4c1861a06efe4903bff2bfbda24f25d12cfd8b822612c3832d"
+  },
+  "recipe": "CSPICE spkcpo, observer-fixed MOON_ME, reception CN+S; airless center directions; compared with independently computed Horizons MEAN_ME DE441 apparent AZ/EL",
+  "sites": {
+    "real-shackleton": {
+      "coordinates": {
+        "lat": -89.76674147713055,
+        "lon": -171.89280908299654,
+        "altKm": 0.7699786376953125
+      },
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "maxAngularErrorDeg": 7.5526227489852715e-06,
+          "toleranceDeg": 0.01,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 288.827329261,
+              "referenceElDeg": 0.873076378,
+              "computedAzDeg": 288.8273260959611,
+              "computedElDeg": 0.8730688253772511,
+              "azErrorDeg": 3.165038890529104e-06,
+              "elErrorDeg": 7.5526227489852715e-06
+            },
+            {
+              "utc": "2027-01-13T06:00:00+00:00",
+              "referenceAzDeg": 285.783975243,
+              "referenceElDeg": 0.855131783,
+              "computedAzDeg": 285.7839720878902,
+              "computedElDeg": 0.8551244885393238,
+              "azErrorDeg": 3.155109766339592e-06,
+              "elErrorDeg": 7.294460676265935e-06
+            },
+            {
+              "utc": "2027-01-13T12:00:00+00:00",
+              "referenceAzDeg": 282.740980256,
+              "referenceElDeg": 0.83693096,
+              "computedAzDeg": 282.7409771096039,
+              "computedElDeg": 0.8369239508280774,
+              "azErrorDeg": 3.146396124975581e-06,
+              "elErrorDeg": 7.009171922645052e-06
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "maxAngularErrorDeg": 8.436266810463167e-06,
+          "toleranceDeg": 0.01,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 165.315794852,
+              "referenceElDeg": 2.680696689,
+              "computedAzDeg": 165.31579111794264,
+              "computedElDeg": 2.6807048443606654,
+              "azErrorDeg": 3.734057372639654e-06,
+              "elErrorDeg": 8.155360665451639e-06
+            },
+            {
+              "utc": "2027-01-13T06:00:00+00:00",
+              "referenceAzDeg": 165.109893922,
+              "referenceElDeg": 2.999951379,
+              "computedAzDeg": 165.1098901965056,
+              "computedElDeg": 2.999959674105071,
+              "azErrorDeg": 3.725494394757334e-06,
+              "elErrorDeg": 8.29510507083242e-06
+            },
+            {
+              "utc": "2027-01-13T12:00:00+00:00",
+              "referenceAzDeg": 164.920603533,
+              "referenceElDeg": 3.310504781,
+              "computedAzDeg": 164.92059981195356,
+              "computedElDeg": 3.3105132172668106,
+              "azErrorDeg": 3.721046425653185e-06,
+              "elErrorDeg": 8.436266810463167e-06
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "name": "orientation/real-shackleton-SUN.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27188.10719091700346%2C-89.76674147713055%2C0.7699786376953125%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "6e6a8cf4cd873d97916c6bf7078c9dfe642b3847f98181bdd6c371ccc487e1d2",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        },
+        {
+          "name": "orientation/real-shackleton-EARTH.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27399%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27188.10719091700346%2C-89.76674147713055%2C0.7699786376953125%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "646faf0493848d6ad3417df0990ab76409b9f40d402d1b9455c8448bf53f476d",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        }
+      ]
+    },
+    "real-gerlache": {
+      "coordinates": {
+        "lat": -88.68352551547558,
+        "lon": -67.93407755484023,
+        "altKm": 1.7956644287109376
+      },
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "maxAngularErrorDeg": 7.546569625760391e-06,
+          "toleranceDeg": 0.01,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 184.87154142,
+              "referenceElDeg": -0.513925907,
+              "computedAzDeg": 184.87153824021675,
+              "computedElDeg": -0.5139334535696257,
+              "azErrorDeg": 3.179783249152024e-06,
+              "elErrorDeg": 7.546569625760391e-06
+            },
+            {
+              "utc": "2027-01-13T06:00:00+00:00",
+              "referenceAzDeg": 181.828373763,
+              "referenceElDeg": -0.524128248,
+              "computedAzDeg": 181.82837058482403,
+              "computedElDeg": -0.5241355330659819,
+              "azErrorDeg": 3.178175973062025e-06,
+              "elErrorDeg": 7.285065981910144e-06
+            },
+            {
+              "utc": "2027-01-13T12:00:00+00:00",
+              "referenceAzDeg": 178.785535174,
+              "referenceElDeg": -0.530698462,
+              "computedAzDeg": 178.7855319969039,
+              "computedElDeg": -0.5307054575041461,
+              "azErrorDeg": 3.177096090212217e-06,
+              "elErrorDeg": 6.995504146067866e-06
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "maxAngularErrorDeg": 8.506578394573694e-06,
+          "toleranceDeg": 0.01,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 61.424055944,
+              "referenceElDeg": 3.536819774,
+              "computedAzDeg": 61.42405236422263,
+              "computedElDeg": 3.5368279992904497,
+              "azErrorDeg": 3.579777370532611e-06,
+              "elErrorDeg": 8.225290449637157e-06
+            },
+            {
+              "utc": "2027-01-13T06:00:00+00:00",
+              "referenceAzDeg": 61.224142153,
+              "referenceElDeg": 3.859975404,
+              "computedAzDeg": 61.22413858367872,
+              "computedElDeg": 3.859983768694628,
+              "azErrorDeg": 3.56932127942855e-06,
+              "elErrorDeg": 8.36469462806022e-06
+            },
+            {
+              "utc": "2027-01-13T12:00:00+00:00",
+              "referenceAzDeg": 61.040656476,
+              "referenceElDeg": 4.174104104,
+              "computedAzDeg": 61.04065291291327,
+              "computedElDeg": 4.174112610578395,
+              "azErrorDeg": 3.5630867500913155e-06,
+              "elErrorDeg": 8.506578394573694e-06
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "name": "orientation/real-gerlache-SUN.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27292.0659224451598%2C-88.68352551547558%2C1.7956644287109376%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "370cb58a21d38a5b4dd1a6e3da31615d27ad745267e923df02874b8b86786f26",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        },
+        {
+          "name": "orientation/real-gerlache-EARTH.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27399%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27292.0659224451598%2C-88.68352551547558%2C1.7956644287109376%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "3209ec29ec30550c603089b6b47581180632cf9a45ea6247f26ccc833191cbca",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        }
+      ]
+    },
+    "real-nobile": {
+      "coordinates": {
+        "lat": -85.43811594434003,
+        "lon": 37.36812005733697,
+        "altKm": 5.948380859375
+      },
+      "checks": {
+        "SUN": {
+          "passed": true,
+          "maxAngularErrorDeg": 7.266958087503994e-06,
+          "toleranceDeg": 0.01,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 79.664430717,
+              "referenceElDeg": 1.620386479,
+              "computedAzDeg": 79.6644269412172,
+              "computedElDeg": 1.6203792120419125,
+              "azErrorDeg": 3.77578280108537e-06,
+              "elErrorDeg": 7.266958087503994e-06
+            },
+            {
+              "utc": "2027-01-13T06:00:00+00:00",
+              "referenceAzDeg": 76.628736727,
+              "referenceElDeg": 1.851153949,
+              "computedAzDeg": 76.6287329872963,
+              "computedElDeg": 1.85114693453355,
+              "azErrorDeg": 3.739703686278517e-06,
+              "elErrorDeg": 7.014466449906109e-06
+            },
+            {
+              "utc": "2027-01-13T12:00:00+00:00",
+              "referenceAzDeg": 73.592762318,
+              "referenceElDeg": 2.078850522,
+              "computedAzDeg": 73.5927586172556,
+              "computedElDeg": 2.0788437871870666,
+              "azErrorDeg": 3.7007444007031154e-06,
+              "elErrorDeg": 6.73481293356204e-06
+            }
+          ]
+        },
+        "EARTH": {
+          "passed": true,
+          "maxAngularErrorDeg": 8.212692584663728e-06,
+          "toleranceDeg": 0.01,
+          "cases": [
+            {
+              "utc": "2027-01-13T00:00:00+00:00",
+              "referenceAzDeg": 315.785280879,
+              "referenceElDeg": 6.184659068,
+              "computedAzDeg": 315.7852766680167,
+              "computedElDeg": 6.184667000911064,
+              "azErrorDeg": 4.21098332026304e-06,
+              "elErrorDeg": 7.932911064045811e-06
+            },
+            {
+              "utc": "2027-01-13T06:00:00+00:00",
+              "referenceAzDeg": 315.560388525,
+              "referenceElDeg": 6.491820939,
+              "computedAzDeg": 315.5603843112716,
+              "computedElDeg": 6.4918290115660495,
+              "azErrorDeg": 4.213728402646666e-06,
+              "elErrorDeg": 8.072566049399654e-06
+            },
+            {
+              "utc": "2027-01-13T12:00:00+00:00",
+              "referenceAzDeg": 315.352515462,
+              "referenceElDeg": 6.791186305,
+              "computedAzDeg": 315.3525112415072,
+              "computedElDeg": 6.791194517692585,
+              "azErrorDeg": 4.220492769491102e-06,
+              "elErrorDeg": 8.212692584663728e-06
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "name": "orientation/real-nobile-SUN.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%2737.36812005733697%2C-85.43811594434003%2C5.948380859375%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "0908e31728f1f313d22f3b6248aedaa521248441c103a4a16e6bd1195e89868e",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        },
+        {
+          "name": "orientation/real-nobile-EARTH.json",
+          "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27399%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%2737.36812005733697%2C-85.43811594434003%2C5.948380859375%27&START_TIME=%272027-01-13+00%3A00%27&STOP_TIME=%272027-01-13+12%3A00%27&STEP_SIZE=%276+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&CAL_FORMAT=%27JD%27&APPARENT=%27AIRLESS%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&ELEV_CUT=%27-90%27",
+          "sha256": "b9a8a21820161ca4d0baaec3095df1baba5e44597133115502e0ab69c1edcb2b",
+          "orientation": "Center pole/equ : MEAN_ME (high precision)        {East-longitude positive}",
+          "refraction": "Atmos refraction: NO (AIRLESS)"
+        }
+      ]
+    }
+  },
+  "passed": true
+}
