@@ -1,4 +1,4 @@
-# SiteLight AI — CopperOS step-by-step integration (working prototype)
+# SiteLight AI —(working prototype)
 
 ## Current development requirements
 
